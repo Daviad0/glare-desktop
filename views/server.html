@@ -9,6 +9,10 @@
 </head>
 <body class="bg">
     <div class="outsidecontainer">
+      <div class="topcontainer" style="text-align: center;">
+        <span class="maintext" style="font-size:48px">Glare Desktop</span><br/>
+        <span class="maintext" style="font-size:20px">Licensed to 862</span>
+      </div>
       <div class="channels" style="margin-top:20px;" id="channelsMax">
         <div data-channel="1" class="bg-selected channelarea-parent channelbutton">
           <span class="maintext channelnum">1</span>
@@ -45,12 +49,32 @@
         <span class="maintext" style="font-size: 16px;">Match 22</span>
       </div>
     </div>
+    <div class="menus" style="text-align: right;">
+      <div data-menuItem="currentmatch" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
+        <span class="maintext" style="font-size: 18px;pointer-events: none;">Current Match</span>
+      </div>
+      <div data-menuItem="dataanalysis" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
+        <span class="maintext" style="font-size: 18px;pointer-events: none;">Team Analysis</span>
+      </div>
+      <div data-menuItem="allmatches" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
+        <span class="maintext" style="font-size: 18px;pointer-events: none;">All Matches</span>
+      </div>
+      <div data-menuItem="teamanalysis" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
+        <span class="maintext" style="font-size: 18px;pointer-events: none;">Data Analysis</span>
+      </div>
+      <div data-menuItem="settings" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
+        <span class="maintext" style="font-size: 18px;pointer-events: none;">Settings</span>
+      </div>
+      <div class="bg-error-dull mainbutton" id="lockScreen" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
+        <span class="maintext" id="lockScreenLabel" style="font-size: 18px;pointer-events: none;">Lock System</span>
+      </div>
+    </div>
     <div class="overlayBox" id="channelOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
         <div class="bg-overlay" style="padding:50px;border-radius: 16px;text-align: center;">
           <span class="maintext">Channel 1</span>
           <br/>
-          <div class="bg-main" id="exitChannelOverlay" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:100px;display: inline-block;margin-top: 10px;cursor: pointer;">
+          <div class="bg-main mainbutton" id="exitChannelOverlay">
             <span class="maintext" style="font-size: 16px;">Exit</span>
           </div>
         </div>
@@ -60,7 +84,8 @@
 </body>
 <script>
   var expanded = true;
-
+  var locked = false;
+  var currentMenuSelection = "";
   function toggleExpand(evt){
     if(expanded){
       var elements = document.getElementsByClassName("channelarea-parent");
@@ -104,6 +129,40 @@
     });
     document.getElementById("channelOverlay").style.opacity = "100";
   }
+
+  function changeMenu(evt){
+    var selectedMenuItem = evt.srcElement;
+    if(currentMenuSelection != "" && currentMenuSelection != undefined){
+      document.querySelector("[data-menuItem='" + currentMenuSelection + "']").classList.replace("bg-selected", "bg-main");
+      document.querySelector("[data-menuItem='" + currentMenuSelection + "']").style.width = "180px";
+    }
+    selectedMenuItem.classList.replace("bg-main", "bg-selected");
+    selectedMenuItem.style.width = "200px";
+    currentMenuSelection = selectedMenuItem.dataset.menuitem;
+  }
+  Array.from(document.getElementsByClassName("selectableMenuItem")).forEach(element => {
+    element.addEventListener('click', changeMenu);
+  });
+
+  function toggleLock(){
+    if(locked){
+      Array.from(document.getElementsByClassName("selectableMenuItem")).forEach(element => {
+        element.style.display = "inline-block";
+      });
+      document.getElementById("lockScreen").classList.replace("bg-error", "bg-error-dull");
+      document.getElementById("lockScreenLabel").innerHTML = "Lock System";
+      locked = false;
+    }else{
+      Array.from(document.getElementsByClassName("selectableMenuItem")).forEach(element => {
+        element.style.display = "none";
+      });
+      document.getElementById("lockScreen").classList.replace("bg-error-dull", "bg-error");
+      document.getElementById("lockScreenLabel").innerHTML = "Unlock System";
+      locked = true;
+    }
+  }
+
+  document.getElementById("lockScreen").addEventListener('click', toggleLock);
 
   Array.from(document.getElementsByClassName("channelarea-parent")).forEach(element => {
     element.addEventListener('click', showChannelOverlay);

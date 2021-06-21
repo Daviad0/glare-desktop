@@ -57,18 +57,21 @@
     left: 5%;
     width: 90%;
 }
-.centercontainer {
+.topcontainer {
     position: absolute;
     top: 5%;
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%)
 }
-.rightcontainer {
+.menus {
     position: absolute;
-    top: 5%;
-    left: 50%;
-    width: 45%;
+    top: 40%;
+    right: 0%;
+    width: 15%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: all .5s ease-in-out;
 }
 
 .statuscontainer{
@@ -92,6 +95,11 @@
     background-color: #EB264A;
     color: white;
 }
+.bg-error-dull{
+    background-color: #7d1b3a;
+    color: white;
+}
+
 .bg-success{
     background-color: #00D974;
     color: white;
@@ -113,10 +121,14 @@
     color: white;
 }
 .mainbutton{
-    border-radius: 12px;
-    padding: 4px 8px 4px 8px;
-    margin: 5px;
-    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px 5px 10px 5px;
+    text-align: center;
+    width:100px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: all .25s ease-in-out;
+    
 }
 .maintext{
     color:white;
@@ -131,9 +143,8 @@
     transition: all 1s ease-in-out;
 }
 .channelbutton{
-    cursor: pointer;
-    width:5vh; 
-    height:5vh;
+    width:6vh; 
+    height:6vh;
     padding: 8px;
     text-align: center;
     border-radius: 50%;
@@ -143,15 +154,11 @@
     align-content: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 2.5vh;
-    transition: all .5s ease-in-out, margin-left .25s ease-in-out;
+    font-size: 3vh;
+    transition: all .5s ease-in-out;
     
 }
-.channelbutton:hover{
-    margin-left: 23px;
-}
 .channelmin{
-    cursor: pointer;
     width: 40px;
     margin: 5px;
     margin-left: 0px;
@@ -161,11 +168,9 @@
     justify-content: center;
     flex-direction: column;
     border-radius: 0px 8px 8px 0px;
-    transition: all .5s ease-in-out, width .25s ease-in-out;
+    transition: all .5s ease-in-out;
 }
-.channelmin:hover{
-    width: 50px;
-}
+
 
 .overlayBox {
     position: fixed;
@@ -178,3 +183,4 @@
     background-color: rgba(0,0,0,0.5);
     z-index: 2;
   }
+

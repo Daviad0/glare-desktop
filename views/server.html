@@ -9,6 +9,124 @@
 </head>
 <body class="bg">
     <div class="outsidecontainer">
+      <div class="channels" style="margin-top:20px;" id="channelsMax">
+        <div data-channel="1" class="bg-selected channelarea-parent channelbutton">
+          <span class="maintext channelnum">1</span>
+        </div>
+        <div data-channel="2" class="bg-error channelarea-parent channelbutton">
+          <span class="maintext channelnum">2</span>
+        </div>
+        <div data-channel="3" class="bg-success channelarea-parent channelbutton">
+          <span class="maintext channelnum">3</span>
+        </div>
+        <div data-channel="4" class="bg-warning channelarea-parent channelbutton">
+          <span class="maintext channelnum">4</span>
+        </div>
+        <div data-channel="5" class="bg-disabled channelarea-parent channelbutton">
+          <span class="maintext channelnum">5</span>
+        </div>
+        <div data-channel="6" class="bg-main channelarea-parent channelbutton">
+          <span class="maintext channelnum">6</span>
+        </div>
+        <div data-channel="7" class="bg-main channelarea-parent channelbutton">
+          <span class="maintext channelnum">7</span>
+        </div>
+        <div data-channel="8" class="bg-main channelarea-parent channelbutton">
+          <span class="maintext channelnum">8</span>
+        </div>
+        <div data-channel="9" class="bg-main channelarea-parent channelbutton">
+          <span class="maintext channelnum">9</span>
+        </div>
+        <input type="button" value="Ex/Cnt" id="uwu"/>
+      </div>
+    </div>
+    <div class="additionalcontainer">
+      <div class="bg-main" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:140px">
+        <span class="maintext" style="font-size: 16px;">Match 22</span>
+      </div>
+    </div>
+    <div class="overlayBox" id="channelOverlay" style="display: none;">
+      <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
+        <div class="bg-overlay" style="padding:50px;border-radius: 16px;text-align: center;">
+          <span class="maintext">Channel 1</span>
+          <br/>
+          <div class="bg-main" id="exitChannelOverlay" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:100px;display: inline-block;margin-top: 10px;cursor: pointer;">
+            <span class="maintext" style="font-size: 16px;">Exit</span>
+          </div>
+        </div>
+        
+      </div>
     </div>
 </body>
+<script>
+  var expanded = true;
+
+  function toggleExpand(evt){
+    if(expanded){
+      var elements = document.getElementsByClassName("channelarea-parent");
+      for(var i = 0; i < elements.length; i++){
+        elements[i].classList.replace("channelbutton", "channelmin");
+      }
+      elements = document.getElementsByClassName("channelnum");
+      for(var i = 0; i < elements.length; i++){
+        elements[i].classList.add("hiddentext");
+      }
+      document.getElementById("channelsMax").style.top = "25%";
+      expanded = false;
+    }else{
+      var elements = document.getElementsByClassName("channelarea-parent");
+      for(var i = 0; i < elements.length; i++){
+        elements[i].classList.replace("channelmin", "channelbutton");
+        
+      }
+      elements = document.getElementsByClassName("channelnum");
+      for(var i = 0; i < elements.length; i++){
+        elements[i].classList.remove("hiddentext");
+      }
+      document.getElementById("channelsMax").style.top = "50%";
+      expanded = true;
+    }
+  }
+
+  document.getElementById("uwu").addEventListener('click', toggleExpand);
+
+  function showChannelOverlay(evt){
+    // use data attribute
+    document.getElementById("channelOverlay").style.opacity = "0";
+    document.getElementById("channelOverlay").style.display = "block";
+    document.getElementById("channelOverlay").animate([
+      { opacity: '0'},
+      { opacity: '100'}
+    ],
+    {
+      duration: 250,
+      iterations: 1
+    });
+    document.getElementById("channelOverlay").style.opacity = "100";
+  }
+
+  Array.from(document.getElementsByClassName("channelarea-parent")).forEach(element => {
+    element.addEventListener('click', showChannelOverlay);
+  });
+
+  document.getElementById("exitChannelOverlay").addEventListener('click', function(){
+    document.getElementById("channelOverlay").style.opacity = "0";
+    document.getElementById("channelOverlay").animate([
+      { opacity: '100'},
+      { opacity: '0'}
+    ],
+    {
+      duration: 250,
+      iterations: 1
+    });
+    
+    setTimeout(function(){
+      
+      document.getElementById("channelOverlay").style.display = "none";
+    }, 250);
+    
+    
+  });
+
+</script>
 </html>

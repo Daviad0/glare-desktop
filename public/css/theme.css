@@ -64,6 +64,14 @@
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%)
 }
+
+.contentcontainer {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
 .menus {
     position: absolute;
     top: 40%;
@@ -184,3 +192,14 @@
     z-index: 2;
   }
 
+.expansionarrowmain{
+    transition: transform .5s ease-in-out, margin-left .5s ease-in-out, opacity .25s ease-in-out;
+    color: white;
+    margin-left: 4vh;
+    margin-top: -5px;
+}
+
+.expansionarrowopp{
+    transform:rotate(180deg);
+    margin-left: 15px;
+}

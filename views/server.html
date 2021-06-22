@@ -41,8 +41,13 @@
         <div data-channel="9" class="bg-main channelarea-parent channelbutton">
           <span class="maintext channelnum">9</span>
         </div>
-        <input type="button" value="Ex/Cnt" id="uwu"/>
+        <span class="material-icons-round expansionarrowmain" id="uwu" style="font-size: 30px;">
+          expand_less
+        </span>
       </div>
+    </div>
+    <div class="contentcontainer">
+      <span class="maintext" style="font-size: 16px;">Match 22</span>
     </div>
     <div class="additionalcontainer">
       <div class="bg-main" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:140px">
@@ -87,47 +92,56 @@
   var locked = false;
   var currentMenuSelection = "";
   function toggleExpand(evt){
-    if(expanded){
-      var elements = document.getElementsByClassName("channelarea-parent");
-      for(var i = 0; i < elements.length; i++){
-        elements[i].classList.replace("channelbutton", "channelmin");
+    if(!locked){
+      var expansionarrow = document.getElementById("uwu");
+      if(expanded){
+        var elements = document.getElementsByClassName("channelarea-parent");
+        for(var i = 0; i < elements.length; i++){
+          elements[i].classList.replace("channelbutton", "channelmin");
+        }
+        elements = document.getElementsByClassName("channelnum");
+        for(var i = 0; i < elements.length; i++){
+          elements[i].classList.add("hiddentext");
+        }
+        expansionarrow.classList.add("expansionarrowopp");
+        document.getElementById("channelsMax").style.top = "30%";
+        expanded = false;
+      }else{
+        var elements = document.getElementsByClassName("channelarea-parent");
+        for(var i = 0; i < elements.length; i++){
+          elements[i].classList.replace("channelmin", "channelbutton");
+          
+        }
+        elements = document.getElementsByClassName("channelnum");
+        for(var i = 0; i < elements.length; i++){
+          elements[i].classList.remove("hiddentext");
+        }
+        expansionarrow.classList.remove("expansionarrowopp");
+        document.getElementById("channelsMax").style.top = "50%";
+        expanded = true;
       }
-      elements = document.getElementsByClassName("channelnum");
-      for(var i = 0; i < elements.length; i++){
-        elements[i].classList.add("hiddentext");
-      }
-      document.getElementById("channelsMax").style.top = "25%";
-      expanded = false;
-    }else{
-      var elements = document.getElementsByClassName("channelarea-parent");
-      for(var i = 0; i < elements.length; i++){
-        elements[i].classList.replace("channelmin", "channelbutton");
-        
-      }
-      elements = document.getElementsByClassName("channelnum");
-      for(var i = 0; i < elements.length; i++){
-        elements[i].classList.remove("hiddentext");
-      }
-      document.getElementById("channelsMax").style.top = "50%";
-      expanded = true;
     }
+    
   }
 
   document.getElementById("uwu").addEventListener('click', toggleExpand);
 
   function showChannelOverlay(evt){
     // use data attribute
-    document.getElementById("channelOverlay").style.opacity = "0";
-    document.getElementById("channelOverlay").style.display = "block";
-    document.getElementById("channelOverlay").animate([
-      { opacity: '0'},
-      { opacity: '100'}
-    ],
-    {
-      duration: 250,
-      iterations: 1
-    });
-    document.getElementById("channelOverlay").style.opacity = "100";
+    if(!locked){
+      document.getElementById("channelOverlay").style.opacity = "0";
+      document.getElementById("channelOverlay").style.display = "block";
+      document.getElementById("channelOverlay").animate([
+        { opacity: '0'},
+        { opacity: '100'}
+      ],
+      {
+        duration: 250,
+        iterations: 1
+      });
+      document.getElementById("channelOverlay").style.opacity = "100";
+    }
+    
   }
 
   function changeMenu(evt){
@@ -149,13 +163,22 @@
       Array.from(document.getElementsByClassName("selectableMenuItem")).forEach(element => {
         element.style.display = "inline-block";
       });
+      locked = false;
+      if(!expanded){
+        toggleExpand(undefined);
+        document.getElementById("uwu").style.opacity = "100";
+      }
       document.getElementById("lockScreen").classList.replace("bg-error", "bg-error-dull");
       document.getElementById("lockScreenLabel").innerHTML = "Lock System";
-      locked = false;
+      
     }else{
       Array.from(document.getElementsByClassName("selectableMenuItem")).forEach(element => {
         element.style.display = "none";
       });
+      if(expanded){
+        toggleExpand(undefined);
+        document.getElementById("uwu").style.opacity = "0";
+      }
       document.getElementById("lockScreen").classList.replace("bg-error-dull", "bg-error");
       document.getElementById("lockScreenLabel").innerHTML = "Unlock System";
       locked = true;

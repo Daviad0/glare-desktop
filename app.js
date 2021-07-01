@@ -8,8 +8,59 @@
 */
 const {app, BrowserWindow, dialog} = require('electron')
 const {ipcMain} = require('electron')
-// Defines where to grab the already available audio files.
+const RXDB = require('rxdb')
 
+// Defines where to grab the already available audio files.
+RXDB.addRxPlugin(require('pouchdb-adapter-leveldb')); // leveldown adapters need the leveldb plugin to work
+
+const leveldown = require('leveldown');
+
+async function thisNeedsToWork(){
+  const database = await RXDB.createRxDatabase({
+    name: 'mydatabase',
+    adapter: leveldown // the name of your adapter
+  });
+  console.log(database.heroes2);
+  
+  const mySchema = {
+    keyCompression: true, // set this to true, to enable the keyCompression
+    version: 0,
+    title: 100,
+    type: 'object',
+    properties: {
+        firstName: {
+            type: 'string'
+        },
+        lastName: {
+            type: 'string'
+        },
+        id:{
+          type: 'string',
+          primary: true
+        }
+    },
+    required: ['firstName', 'lastName']
+  };
+
+  const collections = await database.addCollections({
+    heroes: {
+      schema: mySchema
+    }
+  });
+  
+  collections.heroes.insert({
+    firstName: 'David',
+    lastName: 'Doe',
+    id: (Math.random()*100000).toString()
+  });
+
+  collections.heroes.find().exec() // <- find all documents
+    .then(documents => console.dir(documents));
+
+  console.log(database.collections)
+}
+
+thisNeedsToWork();
 
 /*
   Title: FS (File System)

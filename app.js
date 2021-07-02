@@ -9,6 +9,121 @@
 const {app, BrowserWindow, dialog} = require('electron')
 const {ipcMain} = require('electron')
 const RXDB = require('rxdb')
+const BLEService = require('./bluetooth/mainbluetooth')
+BLEService.startAdvertising('1010');
+const entrySchema = {
+  keyCompression: true,
+  version: 0,
+  title: 'Entry DataSchema',
+  type: 'object',
+  properties: {
+    competition: {
+      type: 'string'
+    },
+    dataSchemaKey: {
+      type: 'string'
+    },
+    createdAt: {
+      type: 'number'
+    },
+    updatedAt: {
+      type: 'array',
+      items:{
+        type: 'number'
+      }
+    },
+    finalDataJSON: {
+      type: 'string'
+    }
+  },
+  required: ['competition', 'dataSchemaKey', 'createdAt', 'finalDataJSON']
+}
+
+const schemaSchema = {
+  keyCompression: true,
+  version: 0,
+  title: 'Schema DataSchema',
+  type: 'object',
+  properties: {
+    idCode: {
+      type: 'string',
+      primary: true
+    },
+    createdAt: {
+      type: 'number'
+    },
+    dataHash: {
+      type: 'string'
+    },
+    finalDataJSON: {
+      type: 'string'
+    }
+  },
+  required: ['idCode', 'createdAt', 'dataHash', 'finalDataJSON']
+}
+
+const deviceSchema = {
+  keyCompression: true,
+  version: 0,
+  title: 'Device DataSchema',
+  type: 'object',
+  properties: {
+    idCode: {
+      type: 'string',
+      primary: true
+    },
+    firstConnectionAt: {
+      type: 'number'
+    },
+    deviceType: {
+      type: 'string'
+    },
+    diagnostics:{
+      type: 'array',
+      items: {
+        type: 'object',
+        properties: {
+          gotAt: {
+            type: 'number'
+          },
+          appVersion: {
+            type: 'string'
+          },
+          readyForCompetition: {
+            type: 'boolean'
+          }
+        }
+      }
+    }
+  },
+  required: ['idCode', 'firstConnectionAt']
+}
+
+const requestsSchema = {
+  keyCompression: true,
+  version: 0,
+  title: 'Schema DataSchema',
+  type: 'object',
+  properties: {
+    idCode: {
+      type: 'string',
+      primary: true
+    },
+    gotAt: {
+      type: 'number'
+    },
+    finalDataJSON: {
+      type: 'string'
+    },
+    requestType: {
+      type: 'string'
+    },
+    forChannel: {
+      type: 'number'
+    }
+  },
+  required: ['idCode', 'gotAt', 'requestType', 'finalDataJSON', 'forChannel']
+}
 
 // Defines where to grab the already available audio files.
 RXDB.addRxPlugin(require('pouchdb-adapter-leveldb')); // leveldown adapters need the leveldb plugin to work
@@ -17,47 +132,28 @@ const leveldown = require('leveldown');
 
 async function thisNeedsToWork(){
   const database = await RXDB.createRxDatabase({
-    name: 'mydatabase',
+    name: 'glaredb',
     adapter: leveldown // the name of your adapter
   });
   console.log(database.heroes2);
-  
-  const mySchema = {
-    keyCompression: true, // set this to true, to enable the keyCompression
-    version: 0,
-    title: 100,
-    type: 'object',
-    properties: {
-        firstName: {
-            type: 'string'
-        },
-        lastName: {
-            type: 'string'
-        },
-        id:{
-          type: 'string',
-          primary: true
-        }
-    },
-    required: ['firstName', 'lastName']
-  };
 
   const collections = await database.addCollections({
-    heroes: {
-      schema: mySchema
+    entries: {
+      schema: entrySchema
+    },
+    schemas: {
+      schema: schemaSchema
+    },
+    devices: {
+      schema: deviceSchema
+    },
+    requests: {
+      schema: requestsSchema
     }
   });
   
-  collections.heroes.insert({
-    firstName: 'David',
-    lastName: 'Doe',
-    id: (Math.random()*100000).toString()
-  });
 
-  collections.heroes.find().exec() // <- find all documents
-    .then(documents => console.dir(documents));
-
-  console.log(database.collections)
+  console.log(Object.keys(database.collections))
 }
 
 thisNeedsToWork();

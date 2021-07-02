@@ -8,6 +8,7 @@
     },
     "author": "David Reeves",
     "dependencies": {
+        "bleno": "^0.5.0",
         "bootstrap": "4.2.1",
         "docxtemplater": "^3.16.3",
         "ejs": "^3.0.1",

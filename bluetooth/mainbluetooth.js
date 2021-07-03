@@ -14,7 +14,9 @@ var channel_7 = channelFile.createChannel('0007', 'Channel 7');
 var channel_8 = channelFile.createChannel('0008', 'Channel 8');
 
 exports.startAdvertising = function(uuid){
+  console.log("Debug 1")
     bleno.on('stateChange', function(state) {
+      console.log("Debug 2; " + state)
         if (state === 'poweredOn') {
           bleno.startAdvertising('Glare Bluetooth Service', [uuid]);
         } else {

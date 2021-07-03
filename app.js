@@ -10,8 +10,8 @@ const {app, BrowserWindow, dialog} = require('electron')
 console.log("wuwuauawuwau");
 const {ipcMain} = require('electron')
 const RXDB = require('rxdb')
-//const BLEService = require('./bluetooth/mainbluetooth')
-//BLEService.startAdvertising('1010');
+const BLEService = require('./bluetooth/mainbluetooth')
+BLEService.startAdvertising('1010');
 const entrySchema = {
   keyCompression: true,
   version: 0,

@@ -1,7 +1,15 @@
+//const bleno = require('@abandonware/bleno');
 const bleno = require('@abandonware/bleno');
-
+/*bleno.on('stateChange', function(state) {
+    console.log('on stateChange: ' + state);
+    if (state === 'poweredOn') {
+      bleno.startAdvertising('Glare for 862', ['0862']);
+    } else {
+      bleno.stopAdvertising();
+    }
+})*/
 var BlenoPrimaryService = bleno.PrimaryService;
-
+var uuid = '0862'
 var channelFile = require("./channel")
 
 var channel_1 = channelFile.createChannel('0001', 'Channel 1');
@@ -12,20 +20,10 @@ var channel_5 = channelFile.createChannel('0005', 'Channel 5');
 var channel_6 = channelFile.createChannel('0006', 'Channel 6');
 var channel_7 = channelFile.createChannel('0007', 'Channel 7');
 var channel_8 = channelFile.createChannel('0008', 'Channel 8');
-
-exports.startAdvertising = function(uuid){
+console.log(channel_1 + "AAA")
+//exports.startAdvertising = function(uuid){
   console.log("Debug 1")
-    bleno.on('stateChange', function(state) {
-      console.log("Debug 2; " + state)
-        if (state === 'poweredOn') {
-          bleno.startAdvertising('Glare Bluetooth Service', [uuid]);
-        } else {
-          bleno.stopAdvertising();
-        }
-      });
-
-    console.log("(GLog) [" + new Date().toTimeString() + "] Starting Bluetooth Channels...")
-    bleno.on('advertisingStart', function(error) {
+bleno.on('advertisingStart', function(error) {
         console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
       
         if (!error) {
@@ -46,4 +44,15 @@ exports.startAdvertising = function(uuid){
           ]);
         }
       });
-}
+    bleno.on('stateChange', function(state) {
+      console.log("Debug 2; " + state)
+        if (state === 'poweredOn') {
+          bleno.startAdvertising('Glare Bluetooth Service', [uuid]);
+        } else {
+          bleno.stopAdvertising();
+        }
+      });
+
+    console.log("(GLog) [" + new Date().toTimeString() + "] Starting Bluetooth Channels...")
+    
+//}

@@ -1,5 +1,5 @@
 var util = require('util');
-
+console.log("A")
 var bleno = require('@abandonware/bleno');
 
 

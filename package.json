@@ -9,9 +9,11 @@
     "author": "David Reeves",
     "dependencies": {
         "@abandonware/bleno": "^0.5.1-4",
+        "bleno": "^0.5.0",
         "bootstrap": "4.2.1",
         "docxtemplater": "^3.16.3",
         "ejs": "^3.0.1",
+        "electron": "^4.2.12",
         "electron-packager": "^15.2.0",
         "express": "^4.17.1",
         "filesize": "^6.1.0",
@@ -22,6 +24,7 @@
         "node-id3": "^0.2.2",
         "node-machine-id": "^1.1.12",
         "nodemon": "^2.0.2",
+        "onoff": "^6.0.3",
         "pizzip": "^3.0.6",
         "pouchdb-adapter-leveldb": "^7.2.2",
         "pouchdb-adapter-node-websql": "^7.0.0",
@@ -32,8 +35,7 @@
         "socket.io": "^3.1.1",
         "socket.io-client": "^3.1.1",
         "sqlite3": "^5.0.2",
-        "ws": "^7.4.3",
-	"electron":"^4.2.12"
+        "ws": "^7.4.3"
     },
     "devDependencies": {
         "browser-sync": "2.26.3",

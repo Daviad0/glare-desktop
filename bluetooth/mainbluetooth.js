@@ -1,4 +1,4 @@
-const bleno = require('bleno');
+const bleno = require('@abandonware/bleno');
 
 var BlenoPrimaryService = bleno.PrimaryService;
 

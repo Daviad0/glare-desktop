@@ -1,6 +1,6 @@
 var util = require('util');
 
-var bleno = require('bleno');
+var bleno = require('@abandonware/bleno');
 
 
 exports.createChannel = function(uuid, loggingName){

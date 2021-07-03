@@ -7,10 +7,11 @@
   Notes: This is the library that brings the HTML page to life in a new window instead of the Chrome browser. All content that shows up inside the window is not within Electron's control, and is completely coded by this project's author
 */
 const {app, BrowserWindow, dialog} = require('electron')
+console.log("wuwuauawuwau");
 const {ipcMain} = require('electron')
 const RXDB = require('rxdb')
-const BLEService = require('./bluetooth/mainbluetooth')
-BLEService.startAdvertising('1010');
+//const BLEService = require('./bluetooth/mainbluetooth')
+//BLEService.startAdvertising('1010');
 const entrySchema = {
   keyCompression: true,
   version: 0,
@@ -126,11 +127,11 @@ const requestsSchema = {
 }
 
 // Defines where to grab the already available audio files.
-RXDB.addRxPlugin(require('pouchdb-adapter-leveldb')); // leveldown adapters need the leveldb plugin to work
+//RXDB.addRxPlugin(require('pouchdb-adapter-leveldb')); // leveldown adapters need the leveldb plugin to work
 
-const leveldown = require('leveldown');
+//const leveldown = require('leveldown');
 
-async function thisNeedsToWork(){
+/*async function thisNeedsToWork(){
   const database = await RXDB.createRxDatabase({
     name: 'glaredb',
     adapter: leveldown // the name of your adapter
@@ -157,7 +158,7 @@ async function thisNeedsToWork(){
 }
 
 thisNeedsToWork();
-
+*/
 /*
   Title: FS (File System)
   Author: NPM Js
@@ -201,10 +202,10 @@ const request = require('request')
 const machineId = require('node-machine-id')
 
 
-
+console.log("HIII")
 // main window that actually allows the user to interact with the show
 function createWindow () {
-
+  console.log('HELLLLLP');
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
@@ -238,7 +239,6 @@ function createWindow () {
 }
 
 
-
 // when ElectronJS is ready, start up the role selection window
 app.on('ready', createWindow)
 
@@ -250,6 +250,7 @@ app.on('resize', function(e,x,y){
 // quit when every window is closed, except if on macintosh (due to library issues)
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
+    console.log('uwu');
     app.quit()
   }
 })

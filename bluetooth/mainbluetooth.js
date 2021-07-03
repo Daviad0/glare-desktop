@@ -20,7 +20,7 @@ var channel_5 = channelFile.createChannel('0005', 'Channel 5');
 var channel_6 = channelFile.createChannel('0006', 'Channel 6');
 var channel_7 = channelFile.createChannel('0007', 'Channel 7');
 var channel_8 = channelFile.createChannel('0008', 'Channel 8');
-console.log(channel_1 + "AAA")
+
 //exports.startAdvertising = function(uuid){
   console.log("Debug 1")
 bleno.on('advertisingStart', function(error) {
@@ -31,14 +31,14 @@ bleno.on('advertisingStart', function(error) {
             new BlenoPrimaryService({
               uuid: uuid,
               characteristics: [
-                channel_1,
-                channel_2,
-                channel_3,
-                channel_4,
-                channel_5,
-                channel_6,
-                channel_7,
-                channel_8
+                new channel_1(),
+                new channel_2(),
+                new channel_3(),
+                new channel_4(),
+                new channel_5(),
+                new channel_6(),
+                new channel_7(),
+                new channel_8()
               ]
             })
           ]);

@@ -1,5 +1,5 @@
 var util = require('util');
-console.log("A")
+
 var bleno = require('@abandonware/bleno');
 
 
@@ -8,7 +8,7 @@ exports.createChannel = function(uuid, loggingName){
 
     var thischannel = function() {
         thischannel.super_.call(this, {
-        uuid: '6ad0f836b49011eab3de0242ac130006',
+        uuid: uuid,
         properties: ['read', 'write', 'notify'],
         value: null
     });
@@ -45,6 +45,7 @@ exports.createChannel = function(uuid, loggingName){
             this._value = data;
             var hextocheck = this._value.toString('hex');
             var rawstring = hex2a(hextocheck)
+            console.log("(GLog) [" + new Date().toTimeString() + "] " + loggingName + " has sent '" + rawstring + "'");
         }
     }
     

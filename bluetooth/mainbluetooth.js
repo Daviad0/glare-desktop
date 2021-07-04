@@ -1,5 +1,5 @@
+try{
 const bleno = require('@abandonware/bleno');
-console.log('a')
 //const bleno = require('@abandonware/bleno');
 /*bleno.on('stateChange', function(state) {
     console.log('on stateChange: ' + state);
@@ -21,9 +21,10 @@ var channel_5 = channelFile.createChannel('0005', 'Channel 5');
 var channel_6 = channelFile.createChannel('0006', 'Channel 6');
 var channel_7 = channelFile.createChannel('0007', 'Channel 7');
 var channel_8 = channelFile.createChannel('0008', 'Channel 8');
-
-//exports.startAdvertising = function(uuid){
-  console.log("Debug 1")
+}catch(e){
+console.log('load fail')
+}
+exports.startAdvertising = function(uuid){
 bleno.on('advertisingStart', function(error) {
         console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
       
@@ -56,4 +57,4 @@ bleno.on('advertisingStart', function(error) {
 
     console.log("(GLog) [" + new Date().toTimeString() + "] Starting Bluetooth Channels...")
     
-//}
+}

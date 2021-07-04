@@ -1,5 +1,6 @@
-try{
 const bleno = require('@abandonware/bleno');
+try{
+
 //const bleno = require('@abandonware/bleno');
 /*bleno.on('stateChange', function(state) {
     console.log('on stateChange: ' + state);

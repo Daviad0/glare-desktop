@@ -10,8 +10,23 @@ const {app, BrowserWindow, dialog} = require('electron')
 console.log("wuwuauawuwau");
 const {ipcMain} = require('electron')
 const RXDB = require('rxdb')
-const BLEService = require('./bluetooth/mainbluetooth')
-BLEService.startAdvertising('1010');
+
+const sudo = require('sudo-prompt');
+// ok so BLE is in sudo-prompt
+// "this is so gonna work"
+// said David Reeves, July 3rd 2021
+
+var options = {
+  name: "God Awful Workaround"
+}
+sudo.exec('node EXBS.js', options, 
+  function(err, stdout, stderr){
+    if(err) throw err;
+    console.log('stdout: ' + stdout)
+  }
+);
+//const BLEService = require('./bluetooth/mainbluetooth')
+//BLEService.startAdvertising('1010');
 const entrySchema = {
   keyCompression: true,
   version: 0,

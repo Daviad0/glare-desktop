@@ -48,7 +48,8 @@ exports.createChannel = function(uuid, loggingName, channelNum){
             var rawstring = hex2a(hextocheck)
             notify.emit('channelUpdate', channelNum, 'written', {});
             console.log("(GLog) [" + new Date().toTimeString() + "] " + loggingName + " has sent '" + rawstring + "'");
-        }
+		callback(this.RESULT_SUCCESS)        
+}
     }
     
 

@@ -233,7 +233,9 @@
   ipcRenderer.on('channelUpdate', (event, args) => {
     var elementToChange = document.querySelector("[data-channel='" + args["channelNumber"] + "']")
     var currentTypeClass = "bg-" + channelList.find(chan => chan.number == args["channelNumber"]).statusClass;
-    if(args["status"] == "failed"){
+    console.log(args)
+	console.log(currentTypeClass)
+	if(args["status"] == "failed"){
       channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Failure";
       channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "disabled";
       elementToChange.classList.replace(currentTypeClass, "bg-disabled")
@@ -257,11 +259,11 @@
 
   setInterval(function(){
     channelList.forEach(chan => {
-      if(chan.status != "Failure" && chan.status != "Ready"){
+      if(chan.status != "Failure" && chan.status != "Connected"){
         if((new Date() - chan.update)/1000 > 5){
           document.querySelector("[data-channel='" + chan.number + "']").classList.replace("bg-" + chan.statusClass, "bg-main");
-          channelList[channelList.indexOf(channelList.find(chan => chan.number == chan.number))].status = "Ready";
-          channelList[channelList.indexOf(channelList.find(chan => chan.number == chan.number))].statusClass = "main";
+          channelList[channelList.indexOf(channelList.find(schan => schan.number == chan.number))].status = "Ready";
+          channelList[channelList.indexOf(channelList.find(schan => schan.number == chan.number))].statusClass = "main";
         }
       }
     });

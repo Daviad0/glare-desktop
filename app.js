@@ -10,11 +10,12 @@ const {app, BrowserWindow, dialog} = require('electron')
 console.log("wuwuauawuwau");
 const {ipcMain} = require('electron')
 const RXDB = require('rxdb')
-
 const sudo = require('sudo-prompt');
 // ok so BLE is in sudo-prompt
 // "this is so gonna work"
 // said David Reeves, July 3rd 2021
+
+
 
 var options = {
   name: "God Awful Workaround"
@@ -253,6 +254,26 @@ function createWindow () {
   
 }
 
+const socket = io.connect("http://localhost:4004", {reconnect: true});
+socket.on("connect", function(instance){
+  console.log('connected to server instance')
+  socket.emit('Ping');
+})
+
+
+socket.on('Pong', () => {
+  console.log('pong')
+  socket.emit('Ping');
+})
+
+socket.on('closeWindow', () => {
+  socket.close();
+  app.quit();
+});
+
+socket.on('channelUpdate', (channelNumber, status, details) => {
+  console.log(channelNumber + " had its status changed to " + status);
+});
 
 // when ElectronJS is ready, start up the role selection window
 app.on('ready', createWindow)
@@ -265,8 +286,8 @@ app.on('resize', function(e,x,y){
 // quit when every window is closed, except if on macintosh (due to library issues)
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
-    console.log('uwu');
-    app.quit()
+    socket.emit('destroyThyself');
+    //app.quit()
   }
 })
 

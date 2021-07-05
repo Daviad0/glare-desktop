@@ -1,5 +1,5 @@
 const bleno = require('@abandonware/bleno');
-try{
+const notify = require('./updateHandler')
 
 //const bleno = require('@abandonware/bleno');
 /*bleno.on('stateChange', function(state) {
@@ -10,6 +10,13 @@ try{
       bleno.stopAdvertising();
     }
 })*/
+
+const express = require('express')
+// app instance foer the webserver
+const app = express();
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 var BlenoPrimaryService = bleno.PrimaryService;
 var uuid = '0862'
 var channelFile = require("./channel")
@@ -22,31 +29,45 @@ var channel_5 = channelFile.createChannel('0005', 'Channel 5');
 var channel_6 = channelFile.createChannel('0006', 'Channel 6');
 var channel_7 = channelFile.createChannel('0007', 'Channel 7');
 var channel_8 = channelFile.createChannel('0008', 'Channel 8');
-}catch(e){
-console.log('load fail')
-}
+
+
+io.on('connection', (socket) => {
+  socket.on('Ping', () => {
+    socket.emit("Pong");
+  });
+  socket.on('destroyThyself', () => {
+    socket.emit("closeWindow");
+    io.server.close();
+  });
+});
+
+notify.on('channelUpdate', (channelNumber, status, details) => {
+  io.emit('channelUpdate', channelNumber, status, details);
+});
+
 exports.startAdvertising = function(uuid){
-bleno.on('advertisingStart', function(error) {
-        console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
-      
-        if (!error) {
-          bleno.setServices([
-            new BlenoPrimaryService({
-              uuid: uuid,
-              characteristics: [
-                new channel_1(),
-                new channel_2(),
-                new channel_3(),
-                new channel_4(),
-                new channel_5(),
-                new channel_6(),
-                new channel_7(),
-                new channel_8()
-              ]
-            })
-          ]);
-        }
-      });
+  try{
+    bleno.on('advertisingStart', function(error) {
+      console.log('on -> advertisingStart: ' + (error ? 'error ' + error : 'success'));
+    
+      if (!error) {
+        bleno.setServices([
+          new BlenoPrimaryService({
+            uuid: uuid,
+            characteristics: [
+              new channel_1(),
+              new channel_2(),
+              new channel_3(),
+              new channel_4(),
+              new channel_5(),
+              new channel_6(),
+              new channel_7(),
+              new channel_8()
+            ]
+          })
+        ]);
+      }
+    });
     bleno.on('stateChange', function(state) {
       console.log("Debug 2; " + state)
         if (state === 'poweredOn') {
@@ -57,5 +78,14 @@ bleno.on('advertisingStart', function(error) {
       });
 
     console.log("(GLog) [" + new Date().toTimeString() + "] Starting Bluetooth Channels...")
+  }catch(err){
+    console.log('error supporting!!')
+    io.emit('channelUpdate', 'allChannels', 'failed', {});
+  }
+    
     
 }
+
+http.listen(4004, () => {
+  console.log('listening on *:4004');
+});

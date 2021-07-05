@@ -11,11 +11,7 @@ const notify = require('./updateHandler')
     }
 })*/
 
-const express = require('express')
-// app instance foer the webserver
-const app = express();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+
 
 var BlenoPrimaryService = bleno.PrimaryService;
 var uuid = '0862'
@@ -31,19 +27,23 @@ var channel_7 = channelFile.createChannel('0007', 'Channel 7');
 var channel_8 = channelFile.createChannel('0008', 'Channel 8');
 
 
-io.on('connection', (socket) => {
-  socket.on('Ping', () => {
-    socket.emit("Pong");
-  });
-  socket.on('destroyThyself', () => {
-    socket.emit("closeWindow");
-    io.server.close();
-  });
-});
+const io = require("socket.io-client")
 
 notify.on('channelUpdate', (channelNumber, status, details) => {
-  io.emit('channelUpdate', channelNumber, status, details);
+  socket.emit('channelUpdate', channelNumber, status, details);
 });
+
+const socket = io.connect("http://localhost:4004", {reconnect: true});
+socket.on("connect", function(instance){
+  socket.emit('Ping');
+})
+
+
+socket.on('Pong', () => {
+  //console.log('pong')
+  socket.emit('Ping');
+})
+
 
 exports.startAdvertising = function(uuid){
   try{
@@ -80,12 +80,13 @@ exports.startAdvertising = function(uuid){
     console.log("(GLog) [" + new Date().toTimeString() + "] Starting Bluetooth Channels...")
   }catch(err){
     console.log('error supporting!!')
-    io.emit('channelUpdate', 'allChannels', 'failed', {});
+    var channelArray = [1,2,3,4,5,6,7,8]
+    channelArray.forEach(el => {
+      socket.emit('channelUpdate', el, 'failed', {});
+    });
+    
   }
     
     
 }
 
-http.listen(4004, () => {
-  console.log('listening on *:4004');
-});

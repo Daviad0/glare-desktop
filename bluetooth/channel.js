@@ -4,7 +4,7 @@ var bleno = require('@abandonware/bleno');
 const notify = require('./updateHandler')
 
 
-exports.createChannel = function(uuid, loggingName){
+exports.createChannel = function(uuid, loggingName, channelNum){
     var BlenoCharacteristic = bleno.Characteristic;
 
     var thischannel = function() {
@@ -17,14 +17,14 @@ exports.createChannel = function(uuid, loggingName){
     this._value = new Buffer(0);
     this._updateValueCallback = null;
     };
-    notify.emit('channelUpdate', loggingName, 'Online', {});
+    notify.emit('channelUpdate', channelNum, 'Online', {});
     util.inherits(thischannel, BlenoCharacteristic);
 
     if(loggingName != undefined){
         // this channel should be logged
         thischannel.prototype.onReadRequest = function(offset, callback) {
             console.log("(GLog) [" + new Date().toTimeString() + "] " + loggingName + " has had its value read by a client!");
-            notify.emit('channelUpdate', loggingName, 'Read', {});
+            notify.emit('channelUpdate', channelNum, 'read', {});
             callback(this.RESULT_SUCCESS, this._value);
           };
           
@@ -32,13 +32,13 @@ exports.createChannel = function(uuid, loggingName){
           
         thischannel.prototype.onSubscribe = function(maxValueSize, updateValueCallback) {
             console.log("(GLog) [" + new Date().toTimeString() + "] " + loggingName + " has lost a client");
-            notify.emit('channelUpdate', loggingName, 'Subscribed', {});
+            notify.emit('channelUpdate', channelNum, 'subscribed', {});
             this._updateValueCallback = updateValueCallback;
         };
         
         thischannel.prototype.onUnsubscribe = function() {
             console.log("(GLog) [" + new Date().toTimeString() + "] " + loggingName + " has gained a client!");
-            notify.emit('channelUpdate', loggingName, 'Unsubscribed', {});
+            notify.emit('channelUpdate', channelNum, 'unsubscribed', {});
             this._updateValueCallback = null;
         };
 
@@ -46,7 +46,7 @@ exports.createChannel = function(uuid, loggingName){
             this._value = data;
             var hextocheck = this._value.toString('hex');
             var rawstring = hex2a(hextocheck)
-            notify.emit('channelUpdate', loggingName, 'Written', {});
+            notify.emit('channelUpdate', channelNum, 'written', {});
             console.log("(GLog) [" + new Date().toTimeString() + "] " + loggingName + " has sent '" + rawstring + "'");
         }
     }

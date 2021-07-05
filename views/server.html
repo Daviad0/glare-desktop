@@ -11,8 +11,8 @@
 <body class="bg" style="font-family:'Poppins';font-weight:400">
     <div class="outsidecontainer">
       <div class="topcontainer" style="text-align: center;">
-        <span class="maintext" style="font-size:48px;font-weight:500">Glare Desktop</span><br/>
-        <span class="maintext" style="font-size:20px;font-weight:300">Licensed to 862</span>
+        <span class="maintext" style="font-size:5vh;font-weight:500">Glare Desktop</span><br/>
+        <span class="maintext" style="font-size:2vh;font-weight:300">Licensed to 862</span>
       </div>
       <div class="channels" style="margin-top:20px;" id="channelsMax">
         <div data-channel="1" class="bg-main channelarea-parent channelbutton">
@@ -56,23 +56,23 @@
       </div>
     </div>
     <div class="menus" style="text-align: right;">
-      <div data-menuItem="currentmatch" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
-        <span class="maintext" style="font-size: 18px;pointer-events: none;">Current Match</span>
+      <div data-menuItem="currentmatch" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Current Match</span>
       </div>
-      <div data-menuItem="dataanalysis" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
-        <span class="maintext" style="font-size: 18px;pointer-events: none;">Team Analysis</span>
+      <div data-menuItem="dataanalysis" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Team Analysis</span>
       </div>
-      <div data-menuItem="allmatches" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
-        <span class="maintext" style="font-size: 18px;pointer-events: none;">All Matches</span>
+      <div data-menuItem="allmatches" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">All Matches</span>
       </div>
-      <div data-menuItem="teamanalysis" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
-        <span class="maintext" style="font-size: 18px;pointer-events: none;">Data Analysis</span>
+      <div data-menuItem="teamanalysis" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Data Analysis</span>
       </div>
-      <div data-menuItem="settings" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
-        <span class="maintext" style="font-size: 18px;pointer-events: none;">Settings</span>
+      <div data-menuItem="settings" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Settings</span>
       </div>
-      <div class="bg-error-dull mainbutton" id="lockScreen" style="border-radius: 8px 0px 0px 8px;width:180px;padding:15px">
-        <span class="maintext" id="lockScreenLabel" style="font-size: 18px;pointer-events: none;">Lock System</span>
+      <div class="bg-error-dull mainbutton" id="lockScreen" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" id="lockScreenLabel" style="font-size: 1vw;pointer-events: none;">Lock System</span>
       </div>
     </div>
     <div class="overlayBox" id="channelOverlay" style="display: none;">
@@ -89,9 +89,28 @@
     </div>
 </body>
 <script>
+  const {ipcRenderer} = require('electron');
   var expanded = true;
   var locked = false;
   var currentMenuSelection = "";
+  var channelList = []
+
+  class Channel{
+    constructor(number, status, statusClass, update){
+      this.number = number;
+      this.status = status;
+      this.statusClass = statusClass
+      this.update = update;
+    }
+  }
+
+  var channelArray = [1,2,3,4,5,6,7,8]
+  channelArray.forEach(el => {
+    var newChannel = new Channel(el, "Ready", "main", undefined);
+    channelList.push(newChannel);
+  });
+
+
   function toggleExpand(evt){
     if(!locked){
       var expansionarrow = document.getElementById("uwu");
@@ -149,10 +168,10 @@
     var selectedMenuItem = evt.srcElement;
     if(currentMenuSelection != "" && currentMenuSelection != undefined){
       document.querySelector("[data-menuItem='" + currentMenuSelection + "']").classList.replace("bg-selected", "bg-main");
-      document.querySelector("[data-menuItem='" + currentMenuSelection + "']").style.width = "180px";
+      document.querySelector("[data-menuItem='" + currentMenuSelection + "']").style.width = "12vw";
     }
     selectedMenuItem.classList.replace("bg-main", "bg-selected");
-    selectedMenuItem.style.width = "200px";
+    selectedMenuItem.style.width = "13vw";
     currentMenuSelection = selectedMenuItem.dataset.menuitem;
   }
   Array.from(document.getElementsByClassName("selectableMenuItem")).forEach(element => {
@@ -210,6 +229,44 @@
     
     
   });
+
+  ipcRenderer.on('channelUpdate', (event, args) => {
+    var elementToChange = document.querySelector("[data-channel='" + args["channelNumber"] + "']")
+    var currentTypeClass = "bg-" + channelList.find(chan => chan.number == args["channelNumber"]).statusClass;
+    if(args["status"] == "failed"){
+      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Failure";
+      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "disabled";
+      elementToChange.classList.replace(currentTypeClass, "bg-disabled")
+    }else if(args["status"] == "subscribed"){
+      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Connected";
+      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "selected";
+      elementToChange.classList.replace(currentTypeClass, "bg-selected")
+    }
+    else if(args["status"] == "unsubscribed"){
+      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Ready";
+      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "main";
+      elementToChange.classList.replace(currentTypeClass, "bg-main")
+    }
+    else if(args["status"] == "read" || args["status"] == "written"){
+      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Communicating";
+      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "success";
+      elementToChange.classList.replace(currentTypeClass, "bg-success")
+    }
+    channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].update = new Date();
+  });
+
+  setInterval(function(){
+    channelList.forEach(chan => {
+      if(chan.status != "Failure" && chan.status != "Ready"){
+        if((new Date() - chan.update)/1000 > 5){
+          document.querySelector("[data-channel='" + chan.number + "']").classList.replace("bg-" + chan.statusClass, "bg-main");
+          channelList[channelList.indexOf(channelList.find(chan => chan.number == chan.number))].status = "Ready";
+          channelList[channelList.indexOf(channelList.find(chan => chan.number == chan.number))].statusClass = "main";
+        }
+      }
+    });
+
+  }, 500);
 
 </script>
 </html>

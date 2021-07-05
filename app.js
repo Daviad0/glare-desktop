@@ -16,17 +16,7 @@ const sudo = require('sudo-prompt');
 // said David Reeves, July 3rd 2021
 
 
-var btpath = path.join(__dirname, "EXBS.js")
-console.log(btpath)
-var options = {
-  name: "God Awful Workaround"
-}
-sudo.exec('node ' + btpath, options, 
-  function(err, stdout, stderr){
-    if(err) throw err;
-    console.log('stdout: ' + stdout)
-  }
-);
+
 //const BLEService = require('./bluetooth/mainbluetooth')
 //BLEService.startAdvertising('1010');
 const entrySchema = {
@@ -190,6 +180,30 @@ const fs = require('fs')
 
 //resetServerMem();
 
+const express = require('express')
+// app instance foer the webserver
+const sapp = express();
+const http = require('http').Server(sapp);
+const io = require('socket.io')(http);
+
+io.on('connection', (socket) => {
+  socket.on('Ping', () => {
+    socket.emit("Pong");
+  });
+  
+  socket.on('channelUpdate', (channelNumber, status, details) => {
+    console.log("Channel " + channelNumber + " had its status changed to " + status);
+    mainWindow.webContents.send('channelUpdate', {"status" : status, "details" : details, "channelNumber" : channelNumber});
+  });
+});
+
+
+http.listen(4004, () => {
+  console.log('listening on *:4004');
+});
+
+
+
 
 /*
   Title: Socket.IO (Client)
@@ -199,7 +213,7 @@ const fs = require('fs')
   Code Availaibility: https://github.com/socketio/socket.io-client
   Notes: Paired with the Socket.IO package on app.js through port 3000
 */
-const io = require("socket.io-client")
+
 /*
   Title: Request
   Author: fredkschott
@@ -249,30 +263,20 @@ function createWindow () {
     }
     
   });
-  
+  var btpath = path.join(__dirname, "EXBS.js")
+  var options = {
+    name: "God Awful Workaround"
+  }
+  sudo.exec('node ' + btpath, options, 
+    function(err, stdout, stderr){
+      if(err) throw err;
+      console.log('stdout: ' + stdout)
+    }
+  );
   
 }
 
-const socket = io.connect("http://localhost:4004", {reconnect: true});
-socket.on("connect", function(instance){
-  console.log('connected to server instance')
-  socket.emit('Ping');
-})
 
-
-socket.on('Pong', () => {
-  //console.log('pong')
-  socket.emit('Ping');
-})
-
-socket.on('closeWindow', () => {
-  socket.close();
-  app.quit();
-});
-
-socket.on('channelUpdate', (channelNumber, status, details) => {
-  console.log(channelNumber + " had its status changed to " + status);
-});
 
 // when ElectronJS is ready, start up the role selection window
 app.on('ready', createWindow)
@@ -285,8 +289,9 @@ app.on('resize', function(e,x,y){
 // quit when every window is closed, except if on macintosh (due to library issues)
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
-    socket.emit('destroyThyself');
-    //app.quit()
+    //socket.emit('destroyThyself');
+    //io.server.close();
+    app.quit();
   }
 })
 

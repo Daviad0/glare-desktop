@@ -20,9 +20,8 @@ const sudo = require('sudo-prompt');
 var options = {
   name: "God Awful Workaround"
 }
-sudo.exec('node EXBS.js', options, 
+sudo.exec('node /home/pi/glare-desktop/EXBS.js', options, 
   function(err, stdout, stderr){
-    if(err) throw err;
     console.log('stdout: ' + stdout)
   }
 );

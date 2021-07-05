@@ -6,8 +6,8 @@
   Code Availaibility: https://www.electronjs.org/
   Notes: This is the library that brings the HTML page to life in a new window instead of the Chrome browser. All content that shows up inside the window is not within Electron's control, and is completely coded by this project's author
 */
+var path = require('path');
 const {app, BrowserWindow, dialog} = require('electron')
-console.log("wuwuauawuwau");
 const {ipcMain} = require('electron')
 const RXDB = require('rxdb')
 const sudo = require('sudo-prompt');
@@ -16,12 +16,14 @@ const sudo = require('sudo-prompt');
 // said David Reeves, July 3rd 2021
 
 
-
+var btpath = path.join(__dirname, "EXBS.js")
+console.log(btpath)
 var options = {
   name: "God Awful Workaround"
 }
-sudo.exec('node /home/pi/glare-desktop/EXBS.js', options, 
+sudo.exec('node ' + btpath, options, 
   function(err, stdout, stderr){
+    if(err) throw err;
     console.log('stdout: ' + stdout)
   }
 );
@@ -217,10 +219,8 @@ const request = require('request')
 const machineId = require('node-machine-id')
 
 
-console.log("HIII")
 // main window that actually allows the user to interact with the show
 function createWindow () {
-  console.log('HELLLLLP');
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
@@ -261,7 +261,7 @@ socket.on("connect", function(instance){
 
 
 socket.on('Pong', () => {
-  console.log('pong')
+  //console.log('pong')
   socket.emit('Ping');
 })
 

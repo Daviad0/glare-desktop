@@ -16,31 +16,31 @@
       </div>
       <div class="channels" style="margin-top:20px;" id="channelsMax">
         <div data-channel="1" class="bg-main channelarea-parent channelbutton">
-          <span class="maintext channelnum bolderfont">1</span>
+          <span data-channel="1" class="maintext channelnum bolderfont">1</span>
         </div>
         <div data-channel="2" class="bg-main channelarea-parent channelbutton">
-          <span class="maintext channelnum bolderfont">2</span>
+          <span data-channel="2" class="maintext channelnum bolderfont">2</span>
         </div>
         <div data-channel="3" class="bg-main channelarea-parent channelbutton">
-          <span class="maintext channelnum bolderfont">3</span>
+          <span data-channel="3" class="maintext channelnum bolderfont">3</span>
         </div>
         <div data-channel="4" class="bg-main channelarea-parent channelbutton">
-          <span class="maintext channelnum bolderfont">4</span>
+          <span data-channel="4" class="maintext channelnum bolderfont">4</span>
         </div>
         <div data-channel="5" class="bg-main channelarea-parent channelbutton">
-          <span class="maintext channelnum bolderfont">5</span>
+          <span data-channel="5" class="maintext channelnum bolderfont">5</span>
         </div>
         <div data-channel="6" class="bg-main channelarea-parent channelbutton">
-          <span class="maintext channelnum bolderfont">6</span>
+          <span data-channel="6" class="maintext channelnum bolderfont">6</span>
         </div>
         <div data-channel="7" class="bg-main channelarea-parent channelbutton">
-          <span class="maintext channelnum bolderfont">7</span>
+          <span data-channel="7" class="maintext channelnum bolderfont">7</span>
         </div>
         <div data-channel="8" class="bg-main channelarea-parent channelbutton">
-          <span class="maintext channelnum bolderfont">8</span>
+          <span data-channel="8" class="maintext channelnum bolderfont">8</span>
         </div>
         <div data-channel="9" class="bg-main channelarea-parent channelbutton">
-          <span class="maintext channelnum bolderfont">9</span>
+          <span data-channel="9" class="maintext channelnum bolderfont">9</span>
         </div>
         <span class="material-icons-round expansionarrowmain" id="uwu" style="font-size: 30px;">
           expand_less
@@ -77,8 +77,53 @@
     </div>
     <div class="overlayBox" id="channelOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
-        <div class="bg-overlay" style="padding:50px;border-radius: 16px;text-align: center;">
-          <span class="maintext">Channel 1</span>
+        <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
+          <div class="bg-selected" style="text-align: center; padding:20px; width: 100%;border-radius: 16px;" id="overlay_channelStatusContainer">
+            <span class="maintext" style="font-size: 2vw;" id="overlay_channelNum">Channel 1</span></br>
+            <span class="maintext" style="font-size: 1vw;" id="overlay_channelStatus">Connected</span>
+          </div>
+          <br/>
+          <div style="display:table;clear: both;width:100%;height:40vh">
+            <div class="tablewidthanimation" style="width: 100%;overflow: hidden;display: inline-block;text-align: left;float:left;max-height: 40vh; overflow-y: auto; overflow-x: hidden;" id="requestsCol">
+              <span class="maintext" style="font-size: 1.5vw;margin-bottom:10px">Requests</span><br/>
+              <div id="overlay_requestsContainer">
+                
+              </div>
+              
+              
+            </div>
+            <div class="tablewidthanimation" style="width: 0%;overflow: hidden;display: none;text-align: left;float:left;margin-left:10px;max-height: 40vh; overflow-y: auto;opacity:0" id="optionsCol">
+              <span class="maintext" style="font-size: 1.5vw;margin-bottom:10px">Details</span><br/>
+              <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
+                <span class="maintext" style="font-size: 16px;font-weight: 600;">When?</span><br/>
+                <span class="maintext">12:57:04 PM</span><br/>
+              </div>
+              <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
+                <span class="maintext" style="font-size: 16px;font-weight: 600;"># of Messages</span><br/>
+                <span class="maintext">4</span><br/>
+              </div>
+              <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
+                <span class="maintext" style="font-size: 16px;font-weight: 600;">End Result</span><br/>
+                <span class="maintext" style="color: #00D974">Successful</span><br/>
+              </div>
+              <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
+                <span class="maintext" style="font-size: 16px;font-weight: 600;">Protocol</span><br/>
+                <span class="maintext">UPDATE (77a729ba)</span><br/>
+              </div>
+              <div style="display: flex;justify-content: space-evenly;width:95%">
+                <div class="bg-main iconbutton" id="contractOptions">
+                  <span class="maintext material-icons-round" style="font-size: 20px;pointer-events: none;">first_page</span>
+                </div>
+                <div class="bg-main iconbutton">
+                  <span class="maintext material-icons-round" style="font-size: 20px;color:#EB264A">delete</span>
+                </div>
+                <div class="bg-main iconbutton">
+                  <span class="maintext material-icons-round" style="font-size: 20px;">send</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <br/>
           <div class="bg-main mainbutton" id="exitChannelOverlay">
             <span class="maintext" style="font-size: 16px;">Exit</span>
@@ -94,19 +139,30 @@
   var locked = false;
   var currentMenuSelection = "";
   var channelList = []
-
+  var currentlySelectedChannel = 0;
   class Channel{
-    constructor(number, status, statusClass, update){
+    constructor(number, status, statusClass, update, requests){
       this.number = number;
       this.status = status;
       this.statusClass = statusClass
       this.update = update;
+      this.requests = requests;
+    }
+  }
+
+  class Request{
+    constructor(idCode, timestamp, direction, requestType, successful){
+      this.idCode = idCode;
+      this.timestamp = timestamp;
+      this.direction = direction;
+      this.requestType = requestType;
+      this.successful = successful;
     }
   }
 
   var channelArray = [1,2,3,4,5,6,7,8]
   channelArray.forEach(el => {
-    var newChannel = new Channel(el, "Ready", "main", undefined);
+    var newChannel = new Channel(el, "Ready", "main", undefined, []);
     channelList.push(newChannel);
   });
 
@@ -149,6 +205,28 @@
   function showChannelOverlay(evt){
     // use data attribute
     if(!locked){
+
+      var channelNum = parseInt(evt.srcElement.dataset.channel);
+      currentlySelectedChannel = channelNum;
+      document.getElementById("overlay_channelNum").innerHTML = "Channel " + channelNum;
+      document.getElementById("overlay_channelStatus").innerHTML = channelList.find(ch => ch.number == channelNum).status;
+      document.getElementById("overlay_channelStatusContainer").classList.replace(document.getElementById("overlay_channelStatusContainer").classList[0], "bg-" + channelList.find(ch => ch.number == channelNum).statusClass)
+      
+      document.getElementById("overlay_requestsContainer").innerHTML = channelList.find(ch => ch.number == channelNum).requests.length > 0 ? "" : `<span class="maintext" style="font-size: 1vw;margin-top:10px;opacity: 0.6;width:100%;text-align: center;">Why don't you make a request?</span>`;
+      channelList.find(ch => ch.number == channelNum).requests.forEach(el => {
+        document.getElementById("overlay_requestsContainer").innerHTML = document.getElementById("overlay_requestsContainer").innerHTML + `
+        <div class="bg-main requestToSelect" style="width: 95%;display: table;padding:10px;border-radius: 8px;margin-top:5px;padding-top: 12px;">
+          <span style="display:table-cell;text-align: left;pointer-events: none;" class="maintext"><span style="display: inline;border-radius: 4px;padding-left: 8px;padding-right:8px;" class="bg-success">In</span></span>
+          <span style="display:table-cell;text-align: left;pointer-events: none;" class="maintext">12:57:04 PM</span>
+          <span style="display:table-cell;text-align: right;padding-right: 10px;pointer-events: none;" class="maintext">OK</span>
+        </div>
+        
+        `
+      });
+      Array.from(document.getElementsByClassName("requestToSelect")).forEach(el => {
+        el.addEventListener('click', expandOptions);
+      });
+
       document.getElementById("channelOverlay").style.opacity = "0";
       document.getElementById("channelOverlay").style.display = "block";
       document.getElementById("channelOverlay").animate([
@@ -211,6 +289,47 @@
     element.addEventListener('click', showChannelOverlay);
   });
 
+  
+
+  function contractOptions(evt){
+    var RC = document.getElementById('requestsCol')
+    var OC = document.getElementById('optionsCol')
+    OC.style.width = "0%"
+    setTimeout(function(){
+      RC.style.width = "100%"
+      OC.style.opacity = "0"
+      OC.style.overflowY = "none";
+      setTimeout(function(){
+        OC.style.display = "none";
+      }, 400)
+    }, 50)
+    
+  }
+
+  function expandOptions(evt){
+    var RC = document.getElementById('requestsCol')
+    var OC = document.getElementById('optionsCol')
+    RC.style.width = "55%"
+    OC.style.overflowY = "none";
+    setTimeout(function(){
+      console.log(OC.style.opacity)
+      OC.style.width = "0%"
+      OC.style.display = "inline-block"
+      console.log(OC.style.opacity)
+      
+      setTimeout(function(){
+        OC.style.opacity = "1"
+        OC.style.width = "40%"
+        setTimeout(function(){
+          OC.style.overflowY = "auto";
+        }, 500);
+      }, 20)
+      
+      
+    }, 80)
+    
+  }
+  document.getElementById('contractOptions').addEventListener('click', contractOptions)
   document.getElementById("exitChannelOverlay").addEventListener('click', function(){
     document.getElementById("channelOverlay").style.opacity = "0";
     document.getElementById("channelOverlay").animate([
@@ -221,7 +340,7 @@
       duration: 250,
       iterations: 1
     });
-    
+    contractOptions();
     setTimeout(function(){
       
       document.getElementById("channelOverlay").style.display = "none";
@@ -229,7 +348,6 @@
     
     
   });
-
   ipcRenderer.on('channelUpdate', (event, args) => {
     var elementToChange = document.querySelector("[data-channel='" + args["channelNumber"] + "']")
     var currentTypeClass = "bg-" + channelList.find(chan => chan.number == args["channelNumber"]).statusClass;
@@ -237,8 +355,8 @@
 	console.log(currentTypeClass)
 	if(args["status"] == "failed"){
       channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Failure";
-      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "disabled";
-      elementToChange.classList.replace(currentTypeClass, "bg-disabled")
+      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "error";
+      elementToChange.classList.replace(currentTypeClass, "bg-error")
     }else if(args["status"] == "subscribed"){
       channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Connected";
       channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "selected";
@@ -255,6 +373,14 @@
       elementToChange.classList.replace(currentTypeClass, "bg-success")
     }
     channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].update = new Date();
+  });
+
+  ipcRenderer.on('addRequest', (event, args) => {
+    var channelIndex = channelList.findIndex(ch => ch.number == args["channelNumber"])
+    if(channelList[channelIndex].requests.length > 20){
+      channelList[channelIndex].requests.shift();
+    }
+    channelList[channelIndex].requests.push(new Request(args["idCode"], args["timestamp"], args["direction"], args["requestType"], args["successful"]))
   });
 
   setInterval(function(){

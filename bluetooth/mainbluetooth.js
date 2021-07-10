@@ -84,7 +84,15 @@ exports.startAdvertising = function(uuid){
     channelArray.forEach(el => {
       socket.emit('channelUpdate', el, 'failed', {});
     });
-    
+    socket.emit('addDocument', 'entries', {
+      competition: 'davhome21',
+      dataSchemaKey: 'davdev1',
+      entryNumber: 1,
+      createdAt: new Date(),
+      updatedAt: [],
+      deviceIdentifier: null,
+      finalDataJSON: "{}"
+    });
   }
     
     

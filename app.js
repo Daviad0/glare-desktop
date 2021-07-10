@@ -9,7 +9,6 @@
 var path = require('path');
 const {app, BrowserWindow, dialog} = require('electron')
 const {ipcMain} = require('electron')
-const RXDB = require('rxdb')
 const sudo = require('sudo-prompt');
 // ok so BLE is in sudo-prompt
 // "this is so gonna work"
@@ -133,39 +132,34 @@ const requestsSchema = {
   required: ['idCode', 'gotAt', 'requestType', 'finalDataJSON', 'forChannel']
 }
 
-// Defines where to grab the already available audio files.
-//RXDB.addRxPlugin(require('pouchdb-adapter-leveldb')); // leveldown adapters need the leveldb plugin to work
+var Datastore = require('nedb');
 
-//const leveldown = require('leveldown');
+var db = {};
+db.entries = new Datastore({ filename: 'storage/entries.db', autoload: true });
+db.devices = new Datastore({ filename: 'storage/devices.db', autoload: true });
+db.requests = new Datastore({ filename: 'storage/requests.db', autoload: true });
+db.schemas = new Datastore({ filename: 'storage/schemas.db', autoload: true });
+db.entries.loadDatabase();
+db.devices.loadDatabase();
+db.requests.loadDatabase();
+db.schemas.loadDatabase();
 
-/*async function thisNeedsToWork(){
-  const database = await RXDB.createRxDatabase({
-    name: 'glaredb',
-    adapter: leveldown // the name of your adapter
-  });
-  console.log(database.heroes2);
+const fs = require('fs')
+fs.readFile('./testSchema.json', 'utf8' , (err, data) => {
+  db.schemas.insert({
+    _id: '76628abc',
+    prettyName: 'Infinite Recharge',
+    usedFor: '2020 - 2021 Season',
+    createdAt: new Date(),
+    dataHash: 'aaaabbbb',
+    finalDataJSON: data
+  }, function(err, newDoc){
+    console.log(newDoc)
+    console.log("Document added!");
+  })
+})
 
-  const collections = await database.addCollections({
-    entries: {
-      schema: entrySchema
-    },
-    schemas: {
-      schema: schemaSchema
-    },
-    devices: {
-      schema: deviceSchema
-    },
-    requests: {
-      schema: requestsSchema
-    }
-  });
-  
 
-  console.log(Object.keys(database.collections))
-}
-
-thisNeedsToWork();
-*/
 /*
   Title: FS (File System)
   Author: NPM Js
@@ -173,7 +167,6 @@ thisNeedsToWork();
   Code Version: Built in w/ NodeJS
   Code Availaibility: https://nodejs.org/en/
 */
-const fs = require('fs')
 
 
 
@@ -194,6 +187,12 @@ io.on('connection', (socket) => {
   socket.on('channelUpdate', (channelNumber, status, details) => {
     console.log("Channel " + channelNumber + " had its status changed to " + status);
     mainWindow.webContents.send('channelUpdate', {"status" : status, "details" : details, "channelNumber" : channelNumber});
+  });
+
+  socket.on('addDocument', (addTo, objectToAdd) => {
+    db[addTo].insert(objectToAdd, function(err, newDoc){
+      console.log("New document added to " + addTo + " with id " + newDoc._id + " at " + new Date().toTimeString());
+    });
   });
 });
 
@@ -230,7 +229,8 @@ const request = require('request')
   Code Version: 1.1.12
   Code Availaibility: https://www.npmjs.com/package/node-machine-id
 */
-const machineId = require('node-machine-id')
+const machineId = require('node-machine-id');
+const { data } = require('jquery');
 
 
 // main window that actually allows the user to interact with the show
@@ -256,11 +256,7 @@ function createWindow () {
   });
   mainWindow.webContents.on('did-finish-load', function() {
     mainWindow.show();
-    try{
-      roleSelectionWindow.close();
-    }catch(err){
-      
-    }
+    mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
     
   });
   var btpath = path.join(__dirname, "EXBS.js")

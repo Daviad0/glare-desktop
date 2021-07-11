@@ -28,8 +28,13 @@ var channel_8 = channelFile.createChannel('0008', 'Channel 8', 8);
 
 
 const io = require("socket.io-client")
+notify.on('requestTrack', (requestObject) => {
+  // will toss
+  socket.emit('requestTrack', requestObject);
+})
 
 notify.on('channelUpdate', (channelNumber, status, details) => {
+  // will toss
   socket.emit('channelUpdate', channelNumber, status, details);
 });
 
@@ -93,6 +98,12 @@ exports.startAdvertising = function(uuid){
       deviceIdentifier: null,
       finalDataJSON: "{}"
     });
+    /*var i = 0;
+    while(i < 50){
+      socket.emit('requestTrack', { 'channelNumber' : Math.round(Math.random()*7)+1,'addedAt' : new Date(), 'requestType' : 'Not Defined', 'numMessages' : Math.random()*100, 'successful' : true, 'data' : 'Yeetus oof', 'fromId' : '12345678', 'direction' : 'In'})
+      i = i + 1
+    }
+    */
   }
     
     

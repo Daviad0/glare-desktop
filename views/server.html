@@ -95,20 +95,24 @@
             <div class="tablewidthanimation" style="width: 0%;overflow: hidden;display: none;text-align: left;float:left;margin-left:10px;max-height: 40vh; overflow-y: auto;opacity:0" id="optionsCol">
               <span class="maintext" style="font-size: 1.5vw;margin-bottom:10px">Details</span><br/>
               <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
+                <span class="maintext" style="font-size: 16px;font-weight: 600;">From</span><br/>
+                <span class="maintext" id="overlay_detailFrom">Tablet 12345678</span><br/>
+              </div>
+              <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
                 <span class="maintext" style="font-size: 16px;font-weight: 600;">When?</span><br/>
-                <span class="maintext">12:57:04 PM</span><br/>
+                <span class="maintext" id="overlay_detailWhen">12:57:04 PM</span><br/>
               </div>
               <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
                 <span class="maintext" style="font-size: 16px;font-weight: 600;"># of Messages</span><br/>
-                <span class="maintext">4</span><br/>
+                <span class="maintext" id="overlay_detailMessages">4</span><br/>
               </div>
               <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
                 <span class="maintext" style="font-size: 16px;font-weight: 600;">End Result</span><br/>
-                <span class="maintext" style="color: #00D974">Successful</span><br/>
+                <span class="maintext" style="color: #00D974" id="overlay_detailSuccessful">Successful</span><br/>
               </div>
               <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
                 <span class="maintext" style="font-size: 16px;font-weight: 600;">Protocol</span><br/>
-                <span class="maintext">UPDATE (77a729ba)</span><br/>
+                <span class="maintext" id="overlay_detailProtocol">UPDATE (77a729ba)</span><br/>
               </div>
               <div style="display: flex;justify-content: space-evenly;width:95%">
                 <div class="bg-main iconbutton" id="contractOptions">
@@ -151,12 +155,14 @@
   }
 
   class Request{
-    constructor(idCode, timestamp, direction, requestType, successful){
-      this.idCode = idCode;
-      this.timestamp = timestamp;
+    constructor(_id, addedAt, direction, requestType, successful, numMessages, fromId){
+      this._id = _id;
+      this.addedAt = addedAt;
       this.direction = direction;
       this.requestType = requestType;
       this.successful = successful;
+      this.numMessages = numMessages;
+      this.fromId = fromId;
     }
   }
 
@@ -215,10 +221,10 @@
       document.getElementById("overlay_requestsContainer").innerHTML = channelList.find(ch => ch.number == channelNum).requests.length > 0 ? "" : `<span class="maintext" style="font-size: 1vw;margin-top:10px;opacity: 0.6;width:100%;text-align: center;">Why don't you make a request?</span>`;
       channelList.find(ch => ch.number == channelNum).requests.forEach(el => {
         document.getElementById("overlay_requestsContainer").innerHTML = document.getElementById("overlay_requestsContainer").innerHTML + `
-        <div class="bg-main requestToSelect" style="width: 95%;display: table;padding:10px;border-radius: 8px;margin-top:5px;padding-top: 12px;">
-          <span style="display:table-cell;text-align: left;pointer-events: none;" class="maintext"><span style="display: inline;border-radius: 4px;padding-left: 8px;padding-right:8px;" class="bg-success">In</span></span>
-          <span style="display:table-cell;text-align: left;pointer-events: none;" class="maintext">12:57:04 PM</span>
-          <span style="display:table-cell;text-align: right;padding-right: 10px;pointer-events: none;" class="maintext">OK</span>
+        <div class="bg-main requestToSelect" style="width: 95%;display: table;padding:10px;border-radius: 8px;margin-top:5px;padding-top: 12px;" data-request="` + el._id + `">
+          <span style="display:table-cell;text-align: left;pointer-events: none;width:15%" class="maintext"><span style="display: inline;border-radius: 4px;padding-left: 8px;padding-right:8px;" class="bg-` + (el.direction == "In" ? "success" : "warning") + `">` + el.direction +`</span></span>
+          <span style="display:table-cell;text-align: left;pointer-events: none;" class="maintext">` + new Date(el.addedAt).toLocaleTimeString() + `</span>
+          <span style="display:table-cell;text-align: right;padding-right: 10px;pointer-events: none;" class="maintext">` + (el.successful ? "OK" : "BAD") + `</span>
         </div>
         
         `
@@ -307,6 +313,18 @@
   }
 
   function expandOptions(evt){
+    var requestToChoose = channelList.find(ch => ch.number == currentlySelectedChannel).requests.find(rq => rq._id == evt.srcElement.dataset.request)
+    
+    document.getElementById('overlay_detailFrom').innerHTML = requestToChoose.fromId;
+    document.getElementById('overlay_detailWhen').innerHTML = new Date(requestToChoose.addedAt).toLocaleTimeString();
+    document.getElementById('overlay_detailMessages').innerHTML = requestToChoose.numMessages;
+    document.getElementById('overlay_detailSuccessful').innerHTML = requestToChoose.successful ? "Successful" : "Failed";
+    document.getElementById('overlay_detailSuccessful').style.color = requestToChoose.successful ? "#00D974" : "#EB264A";
+    document.getElementById('overlay_detailProtocol').innerHTML = requestToChoose.requestType+"<span style='display: inline;border-radius: 4px;padding-left: 8px;padding-right:8px;margin-left:7px' class='bg-" + (requestToChoose.direction == "In" ? "success" : "warning") + "'>"+ (requestToChoose.direction == "In" ? "I" : "O") +"</span>";
+
+
+
+
     var RC = document.getElementById('requestsCol')
     var OC = document.getElementById('optionsCol')
     RC.style.width = "55%"
@@ -380,9 +398,23 @@
     if(channelList[channelIndex].requests.length > 20){
       channelList[channelIndex].requests.shift();
     }
-    channelList[channelIndex].requests.push(new Request(args["idCode"], args["timestamp"], args["direction"], args["requestType"], args["successful"]))
+    channelList[channelIndex].requests.push(new Request(args["_id"], args["addedAt"], args["direction"], args["requestType"], args["successful"], args["numMessages"], args["fromId"]))
+    channelList[channelIndex].requests.sort((a,b) => (new Date(a.addedAt).getTime()-new Date(b.addedAt).getTime())*-1)
   });
-
+  ipcRenderer.on('bulkAddRequest', (event, args) => {
+    args['bulkContents'].forEach(el => {
+      var channelIndex = channelList.findIndex(ch => ch.number == el["channelNumber"])
+      if(channelList[channelIndex].requests.length > 20){
+        channelList[channelIndex].requests.shift();
+      }
+      channelList[channelIndex].requests.push(new Request(el["_id"], el["addedAt"], el["direction"], el["requestType"], el["successful"], el["numMessages"], el["fromId"]))
+    });
+    var i = 0
+    while(i < channelList.length){
+      channelList[i].requests.sort((a,b) => (new Date(a.addedAt).getTime()-new Date(b.addedAt).getTime())*-1)
+    }
+  });
+  ipcRenderer.send('getChannelStatus', {'all' : true});
   setInterval(function(){
     channelList.forEach(chan => {
       if(chan.status != "Failure" && chan.status != "Connected"){

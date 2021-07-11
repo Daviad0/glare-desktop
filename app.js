@@ -15,122 +15,21 @@ const sudo = require('sudo-prompt');
 // said David Reeves, July 3rd 2021
 
 
-
-//const BLEService = require('./bluetooth/mainbluetooth')
-//BLEService.startAdvertising('1010');
-const entrySchema = {
-  keyCompression: true,
-  version: 0,
-  title: 'Entry DataSchema',
-  type: 'object',
-  properties: {
-    competition: {
-      type: 'string'
-    },
-    dataSchemaKey: {
-      type: 'string'
-    },
-    createdAt: {
-      type: 'number'
-    },
-    updatedAt: {
-      type: 'array',
-      items:{
-        type: 'number'
-      }
-    },
-    finalDataJSON: {
-      type: 'string'
-    }
-  },
-  required: ['competition', 'dataSchemaKey', 'createdAt', 'finalDataJSON']
+var channelList = []
+class Channel{
+  constructor(number, status, update){
+    this.number = number;
+    this.status = status;
+    this.update = update;
+  }
 }
 
-const schemaSchema = {
-  keyCompression: true,
-  version: 0,
-  title: 'Schema DataSchema',
-  type: 'object',
-  properties: {
-    idCode: {
-      type: 'string',
-      primary: true
-    },
-    createdAt: {
-      type: 'number'
-    },
-    dataHash: {
-      type: 'string'
-    },
-    finalDataJSON: {
-      type: 'string'
-    }
-  },
-  required: ['idCode', 'createdAt', 'dataHash', 'finalDataJSON']
-}
 
-const deviceSchema = {
-  keyCompression: true,
-  version: 0,
-  title: 'Device DataSchema',
-  type: 'object',
-  properties: {
-    idCode: {
-      type: 'string',
-      primary: true
-    },
-    firstConnectionAt: {
-      type: 'number'
-    },
-    deviceType: {
-      type: 'string'
-    },
-    diagnostics:{
-      type: 'array',
-      items: {
-        type: 'object',
-        properties: {
-          gotAt: {
-            type: 'number'
-          },
-          appVersion: {
-            type: 'string'
-          },
-          readyForCompetition: {
-            type: 'boolean'
-          }
-        }
-      }
-    }
-  },
-  required: ['idCode', 'firstConnectionAt']
-}
-
-const requestsSchema = {
-  keyCompression: true,
-  version: 0,
-  title: 'Schema DataSchema',
-  type: 'object',
-  properties: {
-    idCode: {
-      type: 'string',
-      primary: true
-    },
-    gotAt: {
-      type: 'number'
-    },
-    finalDataJSON: {
-      type: 'string'
-    },
-    requestType: {
-      type: 'string'
-    },
-    forChannel: {
-      type: 'number'
-    }
-  },
-  required: ['idCode', 'gotAt', 'requestType', 'finalDataJSON', 'forChannel']
-}
+var initChannelArray = [1,2,3,4,5,6,7,8]
+initChannelArray.forEach(el => {
+  var newChannel = new Channel(el, "Ready", undefined);
+  channelList.push(newChannel);
+});
 
 var Datastore = require('nedb');
 
@@ -186,6 +85,9 @@ io.on('connection', (socket) => {
   
   socket.on('channelUpdate', (channelNumber, status, details) => {
     console.log("Channel " + channelNumber + " had its status changed to " + status);
+    var chanIndex = channelList.findIndex(ch => ch.number == channelNumber);
+    channelList[chanIndex].status = status;
+    channelList[chanIndex].update = new Date();
     mainWindow.webContents.send('channelUpdate', {"status" : status, "details" : details, "channelNumber" : channelNumber});
   });
 
@@ -194,13 +96,19 @@ io.on('connection', (socket) => {
       console.log("New document added to " + addTo + " with id " + newDoc._id + " at " + new Date().toTimeString());
     });
   });
+
+  socket.on('requestTrack', (requestObject) => {
+    db.requests.insert(requestObject, function(err, newDoc){
+      console.log("New document added to requests with id " + newDoc._id + " at " + new Date().toTimeString());
+      mainWindow.webContents.send('addRequest', newDoc);
+    })
+  });
 });
 
 
 http.listen(4004, () => {
   console.log('listening on *:4004');
 });
-
 
 
 
@@ -256,7 +164,7 @@ function createWindow () {
   });
   mainWindow.webContents.on('did-finish-load', function() {
     mainWindow.show();
-    mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
+    //mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
     
   });
   var btpath = path.join(__dirname, "EXBS.js")
@@ -272,7 +180,19 @@ function createWindow () {
   
 }
 
-
+ipcMain.on('getChannelStatus', (event, args) => {
+  db.requests.find({}, function(err, docs){
+    mainWindow.webContents.send('bulkAddRequest', {'bulkContents' : docs})
+  });
+  if(args['all'] == true){
+    channelList.forEach(ch => {
+      mainWindow.webContents.send('channelUpdate', {"status" : ch.status, "details" : {}, "channelNumber" : ch.number});
+    });
+  }else{
+    var channelIndex = channelList.findIndex(ch => ch.number == args["channelNumber"])
+    mainWindow.webContents.send('channelUpdate', {"status" : channelList[channelIndex].status, "details" : {}, "channelNumber" : channelList[channelIndex].number});
+  }
+});
 
 // when ElectronJS is ready, start up the role selection window
 app.on('ready', createWindow)

@@ -48,7 +48,9 @@
       </div>
     </div>
     <div class="contentcontainer">
-      <span class="maintext" style="font-size: 16px;">Match 22</span>
+      <div class="bg-main mainbutton" id="showCompetitionOverlay" style="width: 500px;">
+        <span class="maintext" style="font-size: 16px;">Show Competition Overlay</span>
+      </div>
     </div>
     <div class="additionalcontainer">
       <div class="bg-main" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:140px">
@@ -136,6 +138,64 @@
         
       </div>
     </div>
+    <div class="overlayBox" id="competitionOverlay" style="display: none;">
+      <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
+        <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
+          <span class="maintext" style="font-size: 2vw;">Add Competition</span></br>
+          <table style="width:100%;margin-bottom:10px">
+            <tr>
+              <td style="text-align:right;padding:5px;width:40%;vertical-align: middle;padding-top:12px">
+                <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Event Code   </span>
+              </td>
+              <td style="text-align:left;padding:5px;width:60%;vertical-align: middle;">
+                <input class="textbox" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;" id="competition_code" placeholder="FIRST Identified..."/>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:right;padding:5px;width:40%;vertical-align: middle;padding-top:12px">
+                <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Event Name   </span>
+              </td>
+              <td style="text-align:left;padding:5px;width:60%;vertical-align: middle;">
+                <input class="textbox" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;" id="competition_name" placeholder="Cool Name..."/>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:right;padding:5px;width:40%;vertical-align: middle;">
+                <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Allowed Schemas   </span>
+              </td>
+              <td style="text-align:left;width:60%;vertical-align: middle;padding:5px">
+                <div style="border-radius: 4px;border-left: 2px solid white;padding:10px">
+                  <select id="competition_allowedSchemas" style="display:block;padding:10px;width:90%" class="textbox">
+            
+                  </select>
+                  <div id="competition_selectedSchemas" style="max-height: 20vh;overflow-y: auto;">
+                    
+                  </div>
+                  
+                </div>
+                
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:right;padding:5px;width:40%;vertical-align: middle;">
+                <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Force Schemas?   </span>
+              </td>
+              <td style="text-align:left;padding:5px;width:60%;vertical-align: middle;">
+                <input type="checkbox" class="checkbox" id="competition_forceSchemas" style="margin-left:10px"/>
+              </td>
+            </tr>
+            
+          </table>
+          <div class="bg-main mainbutton" id="exitCompetitionOverlay">
+            <span class="maintext" style="font-size: 16px;">Exit</span>
+          </div>
+          <div class="bg-main mainbutton" id="saveCompetitionOverlay">
+            <span class="maintext" style="font-size: 16px;color:#00D974">Save</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
 </body>
 <script>
   const {ipcRenderer} = require('electron');
@@ -144,6 +204,16 @@
   var currentMenuSelection = "";
   var channelList = []
   var currentlySelectedChannel = 0;
+  var allSchemas = [];
+  var selectedSchemas = [];
+
+  class Schema{
+    constructor(_id, prettyName){
+      this._id = _id;
+      this.prettyName = prettyName;
+    }
+  }
+
   class Channel{
     constructor(number, status, statusClass, update, requests){
       this.number = number;
@@ -172,7 +242,40 @@
     channelList.push(newChannel);
   });
 
+  allSchemas.push(new Schema("12345678", "Infinite Recharge"));
+  allSchemas.push(new Schema("22345678", "Infinite Recharge 2"));
+  allSchemas.push(new Schema("32345678", "Infinite Recharge 3"));
+  allSchemas.push(new Schema("42345678", "Infinite Recharge 4"));
 
+  function repopulateDropdown(evt){
+    document.getElementById("competition_allowedSchemas").innerHTML = "";
+    document.getElementById("competition_selectedSchemas").innerHTML = "";
+    allSchemas.forEach(el => {
+      if(!selectedSchemas.includes(el._id)){
+        document.getElementById("competition_allowedSchemas").innerHTML = document.getElementById("competition_allowedSchemas").innerHTML + `<option value="` + el._id + `">` + el.prettyName + `</option>`
+      }else{
+        document.getElementById("competition_selectedSchemas").innerHTML = document.getElementById("competition_selectedSchemas").innerHTML + `
+        <div class="bg-main" style="padding:4px 8px;width:90%;margin-top:10px;border-radius: 6px;display: flex;justify-content: space-between;">
+          <span class="maintext">` + el.prettyName + ` (` + el._id + `)</span>
+          <span class="maintext material-icons-round removeAllowedSchema" style="font-size: 16px" data-id="` + el._id + `">close</span>
+        </div>
+        `
+      }
+    });
+    Array.from(document.getElementsByClassName('removeAllowedSchema')).forEach(el => {
+      el.addEventListener('click', function(evt){
+        selectedSchemas.splice(selectedSchemas.findIndex(sh => sh == evt.srcElement.dataset.id), 1);
+        repopulateDropdown();
+      });
+    });
+    document.getElementById("competition_allowedSchemas").selectedIndex = -1;
+  }
+
+  document.getElementById("competition_allowedSchemas").addEventListener('change', function(evt){
+    selectedSchemas.push(evt.srcElement.options[evt.srcElement.selectedIndex].value);
+    repopulateDropdown();
+  });
+  repopulateDropdown();
   function toggleExpand(evt){
     if(!locked){
       var expansionarrow = document.getElementById("uwu");
@@ -247,6 +350,80 @@
     }
     
   }
+  function showCompetitionOverlay(evt){
+    selectedSchemas = []
+    document.getElementById("competition_code").value = ""
+    document.getElementById("competition_name").value = ""
+    document.getElementById("competition_forceSchemas").checked = false
+    // need to check if an edit or not
+    if(!locked){
+      document.getElementById("competitionOverlay").style.opacity = "0";
+      document.getElementById("competitionOverlay").style.display = "block";
+      document.getElementById("competitionOverlay").animate([
+        { opacity: '0'},
+        { opacity: '100'}
+      ],
+      {
+        duration: 250,
+        iterations: 1
+      });
+      document.getElementById("competitionOverlay").style.opacity = "100";
+    }
+  }
+  document.getElementById("showCompetitionOverlay").addEventListener('click', showCompetitionOverlay);
+  document.getElementById("exitCompetitionOverlay").addEventListener('click', function(){
+    document.getElementById("competitionOverlay").style.opacity = "0";
+    document.getElementById("competitionOverlay").animate([
+      { opacity: '100'},
+      { opacity: '0'}
+    ],
+    {
+      duration: 250,
+      iterations: 1
+    });
+    contractOptions();
+    setTimeout(function(){
+      
+      document.getElementById("competitionOverlay").style.display = "none";
+    }, 250);
+    
+    
+  });
+
+  function sendCompetition(evt){
+    // check if edit or no
+    ipcRenderer.send("addCompetition", {"competition" : {
+      _id: document.getElementById("competition_code").value,
+      prettyName: document.getElementById("competition_name").value,
+      forceSchemas: document.getElementById("competition_forceSchemas").checked,
+      acceptedSchemas: selectedSchemas
+    }})
+  }
+  document.getElementById('saveCompetitionOverlay').addEventListener('click', sendCompetition);
+
+  ipcRenderer.on('competitionStatus', (event, args) => {
+    if(args["success"]){
+
+      // add to master comp list whenever I get to it
+
+      document.getElementById("competitionOverlay").style.opacity = "0";
+      document.getElementById("competitionOverlay").animate([
+        { opacity: '100'},
+        { opacity: '0'}
+      ],
+      {
+        duration: 250,
+        iterations: 1
+      });
+      contractOptions();
+      setTimeout(function(){
+        
+        document.getElementById("competitionOverlay").style.display = "none";
+      }, 250);
+    }else{
+      console.log("There was an error loading the competition!")
+    }
+  });
 
   function changeMenu(evt){
     var selectedMenuItem = evt.srcElement;

@@ -38,10 +38,12 @@ db.entries = new Datastore({ filename: 'storage/entries.db', autoload: true });
 db.devices = new Datastore({ filename: 'storage/devices.db', autoload: true });
 db.requests = new Datastore({ filename: 'storage/requests.db', autoload: true });
 db.schemas = new Datastore({ filename: 'storage/schemas.db', autoload: true });
+db.competitions = new Datastore({ filename: 'storage/competitions.db', autoload: true });
 db.entries.loadDatabase();
 db.devices.loadDatabase();
 db.requests.loadDatabase();
 db.schemas.loadDatabase();
+db.competitions.loadDatabase();
 
 const fs = require('fs')
 fs.readFile('./testSchema.json', 'utf8' , (err, data) => {
@@ -58,7 +60,14 @@ fs.readFile('./testSchema.json', 'utf8' , (err, data) => {
   })
 })
 
-
+db.competitions.insert({
+  _id: 'davEnv4004',
+  prettyName: "David's Test Environment",
+  acceptedSchemas: ['17823788']
+}, function(err, newDoc){
+  console.log(newDoc)
+  console.log("Document added!");
+});
 /*
   Title: FS (File System)
   Author: NPM Js
@@ -192,6 +201,12 @@ ipcMain.on('getChannelStatus', (event, args) => {
     var channelIndex = channelList.findIndex(ch => ch.number == args["channelNumber"])
     mainWindow.webContents.send('channelUpdate', {"status" : channelList[channelIndex].status, "details" : {}, "channelNumber" : channelList[channelIndex].number});
   }
+});
+
+ipcMain.on('addCompetition', (event, args) => {
+  db.competitions.insert(args["competition"], function(err, newDoc){
+    mainWindow.webContents.send('competitionStatus', {"success" : (err ? false : true), "instance" : newDoc})
+  });
 });
 
 // when ElectronJS is ready, start up the role selection window

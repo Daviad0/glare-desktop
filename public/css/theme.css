@@ -138,6 +138,28 @@
     transition: all .25s ease-in-out;
     
 }
+.textbox {
+    background-color: #293E61;
+    padding:5px 8px;
+    color:white;
+    border-radius: 8px;
+    border: 2px solid #223554;
+    transition: border .25s ease-in-out, padding .25s ease-in-out;
+    
+}
+
+
+.textbox:hover{
+    border-bottom: 2px solid #2A7AFA;
+}
+.textbox:focus{
+    border-bottom: 2px solid #2A7AFA;
+    padding-left:10px;
+}
+.textbox::placeholder{
+    color:#6382B7;
+}
+
 .iconbutton{
     border-radius: 8px;
     padding: 6px 12px 6px 12px;

@@ -3,6 +3,17 @@ var util = require('util');
 var bleno = require('@abandonware/bleno');
 const notify = require('./updateHandler')
 
+var currentMessages = [];
+
+class QueuedMessageIn{
+    constructor(deviceId, requestType, messagesLeft, currentHeader, currentData, ended){
+        this.deviceId = deviceId;
+        this.requestType = requestType;
+        this.currentHeader = currentHeader;
+        this.currentData = currentData;
+        this.ended = ended;
+    }
+}
 
 exports.createChannel = function(uuid, loggingName, channelNum){
     var BlenoCharacteristic = bleno.Characteristic;
@@ -45,12 +56,13 @@ exports.createChannel = function(uuid, loggingName, channelNum){
         thischannel.prototype.onWriteRequest = function(data, offset, withoutResponse, callback){
             this._value = data;
             var hextocheck = this._value.toString('hex');
+            notify.emit('metadataTest', hextocheck.substring(0,4), hextocheck.substring(4,12), hextocheck.substring(12,20))
             var rawstring = hex2a(hextocheck)
             notify.emit('channelUpdate', channelNum, 'written', {});
             notify.emit('requestTrack', { 'channelNumber' : channelNum,'addedAt' : new Date(), 'requestType' : 'Not Defined', 'numMessages' : 5, 'successful' : true, 'data' : 'Yeetus oof', 'fromId' : '12345678', 'direction' : 'In'})
             console.log("(GLog) [" + new Date().toTimeString() + "] " + loggingName + " has sent '" + rawstring + "'");
-		callback(this.RESULT_SUCCESS)        
-}
+            callback(this.RESULT_SUCCESS)        
+        }
     }
     
 

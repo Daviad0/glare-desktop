@@ -28,6 +28,10 @@ var channel_8 = channelFile.createChannel('0008', 'Channel 8', 8);
 
 
 const io = require("socket.io-client")
+notify.on('metadataTest', (teamId, deviceId, requestType) => {
+  socket.emit('metadataTest',teamId, deviceId, requestType)
+});
+
 notify.on('requestTrack', (requestObject) => {
   // will toss
   socket.emit('requestTrack', requestObject);

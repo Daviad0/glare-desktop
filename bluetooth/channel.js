@@ -78,7 +78,7 @@ exports.createChannel = function(uuid, loggingName, channelNum){
             var communicationId = hextocheck.substring(26,34);
             if(currentMessages.find(msg => msg.communicationId == communicationId) == undefined){
                 currentMessages.push(new QueuedMessageIn(deviceId, protocolId, hextocheck.substring(0,34), hex2a(hextocheck.substring(34)), isEnd, communicationId, 1));
-                handleCheckMessage(currentMessages.find(msg => msg.communicationId == communicationId));
+                
             }else{
                 var indexToUse = currentMessages.findIndex(msg => msg.communicationId == communicationId);
                 currentMessages[indexToUse].ended = isEnd;

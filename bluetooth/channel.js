@@ -17,13 +17,21 @@ class QueuedMessageIn{
     }
 }
 
-function handleCheckMessage(){
+var globChannelNum = 0;
 
+function handleCheckMessage(handleObject){
+	if(handleObject.ended){
+	notify.emit('metadataTest', handleObject)	
+	notify.emit('channelUpdate', globChannelNum, 'written', {});
+            notify.emit('requestTrack', { 'channelNumber' : globChannelNum,'addedAt' : new Date(), 'requestType' : handleObject.requestType, 'numMessages' : handleObject.messages, 'successful' : true, 'data' : handleObject.currentData, 'fromId' : handleObject.deviceId, 'direction' : 'In'})	
+// actually send back request object now
+	channelMessages.splice(channelMessages.find(msg => msg.communicationId == communicationId), 1);
+	}
 }
 
 exports.createChannel = function(uuid, loggingName, channelNum){
     var BlenoCharacteristic = bleno.Characteristic;
-
+    globChannelNum = channelNum;
     var thischannel = function() {
         thischannel.super_.call(this, {
         uuid: uuid,
@@ -69,21 +77,21 @@ exports.createChannel = function(uuid, loggingName, channelNum){
             var messageNumber = hextocheck.substring(22,26);
             var communicationId = hextocheck.substring(26,34);
             if(currentMessages.find(msg => msg.communicationId == communicationId) == undefined){
-                currentMessages.push(new QueuedMessageIn(deviceId, protocolId, hextocheck.substring(0,34), hex2a(hextocheck(34)), isEnd, communicationId, 1));
+                currentMessages.push(new QueuedMessageIn(deviceId, protocolId, hextocheck.substring(0,34), hex2a(hextocheck.substring(34)), isEnd, communicationId, 1));
                 handleCheckMessage(currentMessages.find(msg => msg.communicationId == communicationId));
             }else{
-                var indexToUse = currentMessages.findIndex(currentMessages.find(el => el.communicationId == communicationId));
-                currentMessages[indexToUse].isEnd = isEnd;
+                var indexToUse = currentMessages.findIndex(msg => msg.communicationId == communicationId);
+                currentMessages[indexToUse].ended = isEnd;
                 currentMessages[indexToUse].messages = currentMessages[indexToUse].messages + 1
+		currentMessages[indexToUse].currentData = currentMessages[indexToUse].currentData + hex2a(hextocheck.substring(34))
                 if(currentMessages[indexToUse].messages != messageNumber){
                     notify.emit('communicationError', currentMessages[indexToUse]);
                 }
             }
-            handleCheckMessage();
-            notify.emit('metadataTest', currentMessages.find(msg => msg.communicationId == communicationId))
+            handleCheckMessage(currentMessages.find(msg => msg.communicationId == communicationId));
+            
             var rawstring = hex2a(hextocheck)
-            notify.emit('channelUpdate', channelNum, 'written', {});
-            notify.emit('requestTrack', { 'channelNumber' : channelNum,'addedAt' : new Date(), 'requestType' : 'Not Defined', 'numMessages' : 5, 'successful' : true, 'data' : 'Yeetus oof', 'fromId' : '12345678', 'direction' : 'In'})
+            
             console.log("(GLog) [" + new Date().toTimeString() + "] " + loggingName + " has sent '" + rawstring + "'");
             callback(this.RESULT_SUCCESS)        
         }

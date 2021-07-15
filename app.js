@@ -112,10 +112,8 @@ io.on('connection', (socket) => {
       mainWindow.webContents.send('addRequest', newDoc);
     })
   });
-  socket.on('metadataTest', (teamId, deviceId, requestType) => {
-    console.log(teamId);
-    console.log(deviceId)
-    console.log(requestType)
+  socket.on('metadataTest', (object) => {
+    console.log(object);
   });
 });
 

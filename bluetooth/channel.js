@@ -6,13 +6,19 @@ const notify = require('./updateHandler')
 var currentMessages = [];
 
 class QueuedMessageIn{
-    constructor(deviceId, requestType, messagesLeft, currentHeader, currentData, ended){
+    constructor(deviceId, requestType, currentHeader, currentData, ended, communicationId, messages){
         this.deviceId = deviceId;
         this.requestType = requestType;
         this.currentHeader = currentHeader;
         this.currentData = currentData;
         this.ended = ended;
+        this.communicationId = communicationId;
+        this.messages = messages;
     }
+}
+
+function handleCheckMessage(){
+
 }
 
 exports.createChannel = function(uuid, loggingName, channelNum){
@@ -56,7 +62,25 @@ exports.createChannel = function(uuid, loggingName, channelNum){
         thischannel.prototype.onWriteRequest = function(data, offset, withoutResponse, callback){
             this._value = data;
             var hextocheck = this._value.toString('hex');
-            notify.emit('metadataTest', hextocheck.substring(0,4), hextocheck.substring(4,12), hextocheck.substring(12,20))
+            var teamIdentifier = hextocheck.substring(0,4)
+            var deviceId = hextocheck.substring(4,12)
+            var protocolId = hextocheck.substring(12,20)
+            var isEnd = hextocheck.substring(20,22) == "ee" ? true : false
+            var messageNumber = hextocheck.substring(22,26);
+            var communicationId = hextocheck.substring(26,34);
+            if(currentMessages.find(msg => msg.communicationId == communicationId) == undefined){
+                currentMessages.push(new QueuedMessageIn(deviceId, protocolId, hextocheck.substring(0,34), hex2a(hextocheck(34)), isEnd, communicationId, 1));
+                handleCheckMessage(currentMessages.find(msg => msg.communicationId == communicationId));
+            }else{
+                var indexToUse = currentMessages.findIndex(currentMessages.find(el => el.communicationId == communicationId));
+                currentMessages[indexToUse].isEnd = isEnd;
+                currentMessages[indexToUse].messages = currentMessages[indexToUse].messages + 1
+                if(currentMessages[indexToUse].messages != messageNumber){
+                    notify.emit('communicationError', currentMessages[indexToUse]);
+                }
+            }
+            handleCheckMessage();
+            notify.emit('metadataTest', currentMessages.find(msg => msg.communicationId == communicationId))
             var rawstring = hex2a(hextocheck)
             notify.emit('channelUpdate', channelNum, 'written', {});
             notify.emit('requestTrack', { 'channelNumber' : channelNum,'addedAt' : new Date(), 'requestType' : 'Not Defined', 'numMessages' : 5, 'successful' : true, 'data' : 'Yeetus oof', 'fromId' : '12345678', 'direction' : 'In'})

@@ -21,8 +21,14 @@ noble.on('stateChange', function(state) {
 noble.on('discover', function(peripheral){
     console.log(peripheral.advertisement)
 //if(peripheral.UUID == accessibleServiceId){
+    peripheral.once('connect', function(err){
+        console.log(err + "B")
+        
+    })
     peripheral.connect(function(err){
+        console.log(err + "A")
         peripheral.discoverServices([accessibleServiceId], function(err, services){
+            console.log("CCC")
             services.forEach(service => {
                 console.log("Discovered service "+ service.name);
                 service.discoverCharacteristics([writingCharacteristicId], function(err, characteristics){

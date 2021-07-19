@@ -9,6 +9,7 @@
     "author": "David Reeves",
     "dependencies": {
         "@abandonware/bleno": "^0.5.1-4",
+        "@abandonware/noble": "^1.9.2-14",
         "bleno": "^0.5.0",
         "bootstrap": "4.2.1",
         "docxtemplater": "^3.16.3",
@@ -25,6 +26,7 @@
         "lowdb": "^2.1.0",
         "memdown": "^6.0.0",
         "nedb": "^1.8.0",
+        "noble": "^1.9.1",
         "node-id3": "^0.2.2",
         "node-machine-id": "^1.1.12",
         "nodemon": "^2.0.2",

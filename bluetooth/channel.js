@@ -25,7 +25,7 @@ function handleCheckMessage(handleObject){
 	notify.emit('channelUpdate', globChannelNum, 'written', {});
             notify.emit('requestTrack', { 'channelNumber' : globChannelNum,'addedAt' : new Date(), 'requestType' : handleObject.requestType, 'numMessages' : handleObject.messages, 'successful' : true, 'data' : handleObject.currentData, 'fromId' : handleObject.deviceId, 'direction' : 'In'})	
 // actually send back request object now
-	channelMessages.splice(channelMessages.find(msg => msg.communicationId == communicationId), 1);
+	//channelMessages.splice(handleObject, 1);
 	}
 }
 
@@ -76,9 +76,10 @@ exports.createChannel = function(uuid, loggingName, channelNum){
             var isEnd = hextocheck.substring(20,22) == "ee" ? true : false
             var messageNumber = hextocheck.substring(22,26);
             var communicationId = hextocheck.substring(26,34);
+//notify.emit("metadataTest",new QueuedMessageIn(deviceId, protocolId, hextocheck.substring(0,34), hex2a(hextocheck.substring(34)), isEnd, communicationId, 1)) 
             if(currentMessages.find(msg => msg.communicationId == communicationId) == undefined){
                 currentMessages.push(new QueuedMessageIn(deviceId, protocolId, hextocheck.substring(0,34), hex2a(hextocheck.substring(34)), isEnd, communicationId, 1));
-                
+                //console.log(currentMessages)
             }else{
                 var indexToUse = currentMessages.findIndex(msg => msg.communicationId == communicationId);
                 currentMessages[indexToUse].ended = isEnd;

@@ -1,7 +1,7 @@
-var noble = require('noble')
+var noble = require('@abandonware/noble')
 
-var accessibleServiceId = '0000086200001000800000805f9b34fb';
-var writingCharacteristicId = '0000000100001000800000805f9b34fb'
+var accessibleServiceId = '862';
+var writingCharacteristicId = '0000000100001000800000805F9B34FB'
 
 noble.on('stateChange', function(state) {
     if (state === 'poweredOn') {
@@ -11,7 +11,7 @@ noble.on('stateChange', function(state) {
       // scan for all services (uses more time and power).
       //
       console.log('scanning...');
-      noble.startScanning([accessibleServiceId], false);
+      noble.startScanning([accessibleServiceId], true);
     }
     else {
       noble.stopScanning();
@@ -19,7 +19,8 @@ noble.on('stateChange', function(state) {
 });
 
 noble.on('discover', function(peripheral){
-    console.log("Discovered " + peripheral.advertisement)
+    console.log(peripheral.advertisement)
+//if(peripheral.UUID == accessibleServiceId){
     peripheral.connect(function(err){
         peripheral.discoverServices([accessibleServiceId], function(err, services){
             services.forEach(service => {
@@ -46,4 +47,5 @@ noble.on('discover', function(peripheral){
             
         });
     });
+//}
 });

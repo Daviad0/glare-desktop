@@ -1,7 +1,7 @@
 var noble = require('@abandonware/noble')
 
 var accessibleServiceId = '862';
-var writingCharacteristicId = '0000000100001000800000805F9B34FB'
+var writingCharacteristicId = '1'
 
 noble.on('stateChange', function(state) {
     if (state === 'poweredOn') {

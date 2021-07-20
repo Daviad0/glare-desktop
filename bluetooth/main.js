@@ -1,7 +1,7 @@
 var noble = require('@abandonware/noble')
 
-var accessibleServiceId = '862';
-var writingCharacteristicId = '1'
+var accessibleServiceId = '0862';
+var writingCharacteristicId = '0001'
 
 noble.on('stateChange', function(state) {
     if (state === 'poweredOn') {
@@ -25,13 +25,17 @@ noble.on('discover', function(peripheral){
         console.log(err + "B")
         
     })
+    
     peripheral.connect(function(err){
+        noble.stopScanning();
         console.log(err + "A")
         peripheral.discoverServices([accessibleServiceId], function(err, services){
             console.log("CCC")
             services.forEach(service => {
-                console.log("Discovered service "+ service.name);
-                service.discoverCharacteristics([writingCharacteristicId], function(err, characteristics){
+                console.log(service);
+                service.once('characteristicsDiscover', function(characteristics){
+                    console.log("ADDD")
+                    console.log(characteristics)
                     characteristics.forEach(characterisic => {
                         if(characterisic.uuid == writingCharacteristicId){
                             console.log("Found characteristic!!")
@@ -40,15 +44,16 @@ noble.on('discover', function(peripheral){
                                 console.log(isNotification);
                             })
                             characterisic.subscribe(function(err){
-                                
+                                console.log("Subscribed")
                             });
                             
-                            characterisic.write(Buffer.from("08621234567a90000100a100018312830920", "hex"), true, function(err){
+                            characterisic.write(Buffer.from("08621234567a90000100a1000183128309686920", "hex"), true, function(err){
                                 console.log("Wrote Request")
                             });
                         }
                     }); 
                 });
+                service.discoverCharacteristics([], function(err, char){});
             });
             
         });

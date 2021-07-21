@@ -3,6 +3,7 @@ const notify = require('./updateHandler')
 
 var accessibleServiceId = '0862';
 var writingCharacteristicId = '0001'
+var uniqueIdDescriptor = 'a404';
 
 var readyToScan = false;
 
@@ -75,7 +76,7 @@ noble.on('discover', function(peripheral){
         discoveredDevices.push(peripheral);
         console.log(discoveredDevices);
     }
-    /*if(peripheral.advertisement.localName == "Glare" && discovered == 1){
+    if(peripheral.advertisement.localName == "Glare" && discovered == 1){
         currentlyConnected = true;
         noble.stopScanning();
         peripheral.once('connect', function(err){
@@ -91,7 +92,17 @@ noble.on('discover', function(peripheral){
                     characteristicsAlreadyFound = true;
                     characteristics.forEach(characterisic => {
                         if(characterisic.uuid == writingCharacteristicId){
-                            console.log("Found characteristic!!")
+                            characterisic.discoverDescriptors(function(err, descriptors){
+                                console.log("Desc detected!");
+                                descriptors.forEach(desc => {
+                                    if(desc.uuid == uniqueIdDescriptor){
+                                        desc.readValue(function(err, data){
+                                            console.log("Desc data: " + data);
+                                        })
+                                    }
+                                });
+                            })
+                            /*console.log("Found characteristic!!")
                             characterisic.on("data", function(data, isNotification){
                                 console.log("DATAAAA");
                                 console.log(data)
@@ -102,7 +113,7 @@ noble.on('discover', function(peripheral){
                                 characterisic.write(Buffer.from("08621234567a90000100a1000183128309686920", "hex"), true, function(err){
                                     console.log("Wrote Request")
                                 });
-                            });
+                            });*/
                             
                             
                             //setInterval(function(){console.log("A")}, 500);
@@ -115,6 +126,6 @@ noble.on('discover', function(peripheral){
         });
     }else{
         discovered = 0;
-    }*/
+    }
 });
 

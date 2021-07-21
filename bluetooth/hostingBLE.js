@@ -1,34 +1,81 @@
 var noble = require('@abandonware/noble')
+const notify = require('./updateHandler')
 
 var accessibleServiceId = '0862';
 var writingCharacteristicId = '0001'
 
+var readyToScan = false;
+
+/*
+{
+    'MACAddress' : '00:00:00:00:00:00',
+    'protocolOut' : '0000',
+    'protocolExpected' : '0001',
+    'communicationId' : 'ffffffff',
+    'dataSent' : 'Hello there!'
+}
+*/
+var pendingOutRequests = []
+var pendingInRequests = []
+var discoveredDevices = []
+var performingTasks = false;
+
 noble.on('stateChange', function(state) {
     if (state === 'poweredOn') {
+        readyToScan = true;
       //
       // Once the BLE radio has been powered on, it is possible
       // to begin scanning for services. Pass an empty array to
       // scan for all services (uses more time and power).
       //
-      console.log('scanning...');
+      //console.log('scanning...');
       noble.startScanning([accessibleServiceId], true);
     }
     else {
+        readyToScan = false;
       noble.stopScanning();
     }
 });
 
-
-function allCharacteristicsAndServices(error, services, characteristics){
-    
+function isTaskDone(){
+    if(pendingOutRequests.length != 0){
+        noble.startScanning([accessibleServiceId], true);
+    }
 }
+
+notify.on('addToQueue', (request) => {
+    pendingOutRequests.push(request);
+});
+
+notify.on('cancelQueue', ()=> {
+    pendingOutRequests = [];
+})
+
+notify.on('checkQueue', (pendingIn, pendingOut) => {
+    var objToSendBack = {};
+    if(pendingIn){
+        objToSendBack['in'] = pendingInRequests;
+    }
+    if(pendingOut){
+        objToSendBack['out'] = pendingOutRequests;
+    }
+    notify.emit('sendQueue', objToSendBack);
+});
+
+notify.on('checkArea', () => {
+    notify.emit('sendArea', discoveredDevices);
+});
 
 var serviceCheck = 0;
 var discovered = 0;
 noble.on('discover', function(peripheral){
+    console.log(peripheral);
     discovered = discovered + 1;
-    console.log(peripheral.advertisement)
-    if(peripheral.advertisement.localName == "Glare" && discovered == 1){
+    if(discoveredDevices.filter(dev => dev.id == peripheral.id).length == 0){
+        discoveredDevices.push(peripheral);
+        console.log(discoveredDevices);
+    }
+    /*if(peripheral.advertisement.localName == "Glare" && discovered == 1){
         currentlyConnected = true;
         noble.stopScanning();
         peripheral.once('connect', function(err){
@@ -68,6 +115,6 @@ noble.on('discover', function(peripheral){
         });
     }else{
         discovered = 0;
-    }
+    }*/
 });
 

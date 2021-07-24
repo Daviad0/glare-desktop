@@ -18,7 +18,7 @@
         <div data-channel="1" class="bg-main channelarea-parent channelbutton" id="communication_timer_trigger">
           <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:4vh">timer</span>
         </div>
-        <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="communication_manual_trigger">
+        <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="showManualOverlay">
           <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:4vh">reply</span>
         </div>
         
@@ -55,15 +55,46 @@
         <span class="maintext" id="lockScreenLabel" style="font-size: 1vw;pointer-events: none;">Lock System</span>
       </div>
     </div>
-    <div class="overlayBox" id="channelOverlay" style="display: none;">
+    <div class="overlayBox" id="communcationManualOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
         <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
-          <div class="bg-selected" style="text-align: center; padding:20px; width: 100%;border-radius: 16px;" id="overlay_channelStatusContainer">
-            <span class="maintext" style="font-size: 2vw;" id="overlay_channelNum">Channel 1</span></br>
-            <span class="maintext" style="font-size: 1vw;" id="overlay_channelStatus">Connected</span>
+          <div style="margin-bottom: 30px;">
+            <div class="bg-main mainbutton" style="float:left;width:48%" id="requestLogButton">
+              <span class="maintext" style="font-size: 16px;">Request Log</span>
+            </div>
+            <div class="bg-selected mainbutton" style="float:right;width:48%" id="createNewButton">
+              <span class="maintext" style="font-size: 16px;">Create New</span>
+            </div>
           </div>
           <br/>
-          <div style="display:table;clear: both;width:100%;height:40vh">
+          <br/>
+          <div style="height: 40vh;text-align: center;margin-bottom: 20px;" id="createNew">
+            <div style="display: inline-block;margin-top: 10px;">
+              <div class="bg-main" style="padding:10px;display: inline-block;border-radius: 8px;text-align: center;margin-right:20px">
+                <span class="maintext" style="font-size: .8vw;">To Device</span>
+                <br/>
+                <input class="textbox" id="create_protocolTo" type="text" style="width: 12vw;text-align: center;font-size: 3vw;font-weight: bold;display:inline-block;padding-bottom: 0px;margin-bottom: 10px;" value="0000" placeholder="PID-I" maxlength="4"/>
+                <br/>
+                <span class="maintext" id="create_protocolToLabel" style="font-size: 1vw;">Invalid Protocol</span>
+              </div>
+              
+              <div class="bg-main" style="padding:10px;display: inline-block;border-radius: 8px;text-align: center;">
+                <span class="maintext" style="font-size: .8vw;">From Device</span>
+                <br/>
+                <input class="textbox" id="create_protocolFrom" type="text" style="width: 12vw;text-align: center;font-size: 3vw;font-weight: bold;display:inline-block;padding-bottom: 0px;margin-bottom: 10px;" value="0000" placeholder="PID-O" maxlength="4"/>
+                <br/>
+                <span class="maintext" id="create_protocolFromLabel" style="font-size: 1vw;">Invalid Protocol</span>
+              </div>
+            </div>
+            <br/>
+            <br/>
+            <span class="maintext" style="font-size: 1.2vw;margin-top: 20px;">Data</span>
+            <br/>
+            <textarea class="textbox" style="width: 40vw;height: 10vh;resize: none;padding:5px">
+
+            </textarea>
+          </div>
+          <div style="display:none;clear: both;width:100%;height:40vh;" id="requestLog">
             <div class="tablewidthanimation" style="width: 100%;overflow: hidden;display: inline-block;text-align: left;float:left;max-height: 40vh; overflow-y: auto; overflow-x: hidden;" id="requestsCol">
               <span class="maintext" style="font-size: 1.5vw;margin-bottom:10px">Requests</span><br/>
               <div id="overlay_requestsContainer">
@@ -83,16 +114,20 @@
                 <span class="maintext" id="overlay_detailWhen">12:57:04 PM</span><br/>
               </div>
               <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
-                <span class="maintext" style="font-size: 16px;font-weight: 600;"># of Messages</span><br/>
-                <span class="maintext" id="overlay_detailMessages">4</span><br/>
-              </div>
-              <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
                 <span class="maintext" style="font-size: 16px;font-weight: 600;">End Result</span><br/>
                 <span class="maintext" style="color: #00D974" id="overlay_detailSuccessful">Successful</span><br/>
               </div>
               <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
-                <span class="maintext" style="font-size: 16px;font-weight: 600;">Protocol</span><br/>
-                <span class="maintext" id="overlay_detailProtocol">UPDATE (77a729ba)</span><br/>
+                <span class="maintext" style="font-size: 16px;font-weight: 600;">Protocol To</span><br/>
+                <span class="maintext" id="overlay_detailProtocolTo">Ping (0998)</span><br/>
+              </div>
+              <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
+                <span class="maintext" style="font-size: 16px;font-weight: 600;">Protocol From</span><br/>
+                <span class="maintext" id="overlay_detailProtocolFrom">Pong (0998)</span><br/>
+              </div>
+              <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
+                <span class="maintext" style="font-size: 16px;font-weight: 600;">Final Data</span><br/>
+                <span class="maintext" id="overlay_detailData">Pong!!</span><br/>
               </div>
               <div style="display: flex;justify-content: space-evenly;width:95%">
                 <div class="bg-main iconbutton" id="contractOptions">
@@ -107,6 +142,21 @@
               </div>
             </div>
           </div>
+          <br/>
+          <div class="bg-main mainbutton" id="exitManualOverlay">
+            <span class="maintext" style="font-size: 16px;">Exit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="overlayBox" id="channelOverlay" style="display: none;">
+      <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
+        <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
+          <div class="bg-selected" style="text-align: center; padding:20px; width: 100%;border-radius: 16px;" id="overlay_channelStatusContainer">
+            <span class="maintext" style="font-size: 2vw;" id="overlay_channelNum">Channel 1</span></br>
+            <span class="maintext" style="font-size: 1vw;" id="overlay_channelStatus">Connected</span>
+          </div>
+          
           
           <br/>
           <div class="bg-main mainbutton" id="exitChannelOverlay">
@@ -287,7 +337,170 @@
     
   }
 
-  document.getElementById("uwu").addEventListener('click', toggleExpand);
+  //document.getElementById("uwu").addEventListener('click', toggleExpand);
+
+  function showManualOverlay(evt){
+    if(!locked){
+      document.getElementById("communcationManualOverlay").style.opacity = "0";
+      document.getElementById("communcationManualOverlay").style.display = "block";
+      document.getElementById("communcationManualOverlay").animate([
+        { opacity: '0'},
+        { opacity: '100'}
+      ],
+      {
+        duration: 250,
+        iterations: 1
+      });
+      document.getElementById("communcationManualOverlay").style.opacity = "100";
+    }
+  }
+  document.getElementById("showManualOverlay").addEventListener('click', showManualOverlay);
+  document.getElementById("exitManualOverlay").addEventListener('click', function(){
+    document.getElementById("communcationManualOverlay").style.opacity = "0";
+    document.getElementById("communcationManualOverlay").animate([
+      { opacity: '100'},
+      { opacity: '0'}
+    ],
+    {
+      duration: 250,
+      iterations: 1
+    });
+    contractOptions();
+    setTimeout(function(){
+      
+      document.getElementById("communcationManualOverlay").style.display = "none";
+    }, 250);
+    
+    
+  });
+
+
+
+  // have this relayed in by the system
+  var toProtocols = {
+    '0000' : 'No Instructions',
+    '0998' : 'Ping!',
+    '0999' : 'Log This Data',
+    'a101' : 'Lock Device',
+    'a102' : 'Unlock Device',
+    'a111' : 'Show Message',
+    'a201' : 'Compile Diagnostics',
+    'a202' : 'Relay Diagnostics',
+    'a301' : 'Force Competition',
+    'a302' : 'No Competition Force',
+    'a701' : 'Lockdown Mode',
+    'a702' : 'Not Lockdown Mode',
+    'a711' : 'Set Admin Code',
+    'a801' : 'Logging Mode',
+    'a802' : 'No Logging Mode',
+    'a811' : 'Medical Information',
+    'a901' : 'Debug Mode',
+    'a902' : 'No Debug Mode',
+    'c101' : 'Add Schema',
+    'c102' : 'Remove Schema',
+    'c103' : 'Update Schema',
+    'c104' : 'Force Update Schema',
+    'c201' : 'Add Match',
+    'c202' : 'Remove Match',
+    'c203' : 'Force Remove Match',
+    'c204' : 'Update Match',
+    'c205' : 'Force Update Match',
+    'c211' : 'Add Matches',
+    'c212' : 'Remove Matches',
+    'c301' : 'Competition Schema',
+    'c401' : 'Add User',
+    'c402' : 'Remove User',
+    'c403' : 'Update User',
+    'c411' : 'Add Users',
+    'c412' : 'Update Users',
+    'c421' : 'Remove All Users',
+    'c431' : 'Set Announcement',
+    'c501' : 'Create Backup',
+    'c502' : 'Load Backup',
+    'c701' : 'Security Mode',
+    'c702' : 'No Security Mode',
+    'c711' : 'Set Security Key',
+    'e001' : 'Minor Data Emergency',
+    'e002' : 'Major Data Emergency',
+    'e101' : 'Play Detection Noise',
+    'e401' : 'Minor Emergency Popup',
+    'e402' : 'Major Emergency Popup',
+    'e411' : 'Restrict User',
+    'e701' : 'Security Compromised',
+    'e801' : 'Medical Emergency',
+    'e901' : 'Close App',
+  }
+  // have this relayed in by the system
+  var fromProtocols = {
+    '0000' : 'No Instructions',
+    '0998' : 'Pong!',
+    '0999' : 'Log This Data',
+    'a101' : 'Current Lock State',
+    'a111' : 'Any Questions',
+    'a201' : 'Diagnostics Send',
+    'a202' : 'Failed Diagnostics',
+    'a301' : 'Current Forcing State',
+    'a701' : 'Current Lockdown State',
+    'a711' : 'Check Admin Code',
+    'a801' : 'All Logs',
+    'a811' : 'Current Medical Info',
+    'a901' : 'Current Debug State',
+    'c101' : 'All Schemas',
+    'c201' : 'All Empty Matches',
+    'c202' : 'Matches Update',
+    'c301' : 'Current Competition Schema',
+    'c401' : 'All Users',
+    'c501' : 'Last Backup Time',
+    'c701' : 'Current Security State',
+    'e001' : 'Minor Data Emergency',
+    'e002' : 'Major Data Emergency',
+    'e101' : 'Device is Lost',
+    'e401' : 'Minor Emergency Popup',
+    'e402' : 'Major Emergency Popup',
+    'e701' : 'Security Compromised',
+    'e801' : 'Medical Emergency',
+  }
+
+  function switchToRequestLog(){
+    document.getElementById("createNew").style.display = "none";
+    document.getElementById("requestLog").style.display = "table";
+    document.getElementById("createNewButton").classList.replace("bg-selected", "bg-main");
+    document.getElementById("requestLogButton").classList.replace("bg-main", "bg-selected");
+  }
+  document.getElementById("requestLogButton").addEventListener('click', switchToRequestLog);
+  
+  function switchToCreateNew(){
+    document.getElementById("createNew").style.display = "block";
+    document.getElementById("requestLog").style.display = "none";
+    document.getElementById("createNewButton").classList.replace("bg-main", "bg-selected");
+    document.getElementById("requestLogButton").classList.replace("bg-selected", "bg-main");
+  }
+  document.getElementById("createNewButton").addEventListener('click', switchToCreateNew);
+  function checkIfValidToProtocol(evt){
+    var element = document.getElementById("create_protocolTo");
+    element.value = element.value.toLowerCase();
+    if(toProtocols[element.value] == undefined){
+      // protocol not valid
+      document.getElementById("create_protocolToLabel").innerHTML = "Invalid Protocol"
+    }else{
+      // protocol valid
+      document.getElementById("create_protocolToLabel").innerHTML = toProtocols[element.value]
+    }
+  }
+  document.getElementById("create_protocolTo").addEventListener('change', checkIfValidToProtocol);
+  function checkIfValidFromProtocol(evt){
+    var element = document.getElementById("create_protocolFrom");
+    element.value = element.value.toLowerCase();
+    if(fromProtocols[element.value] == undefined){
+      // protocol not valid
+      document.getElementById("create_protocolFromLabel").innerHTML = "Invalid Protocol"
+    }else{
+      // protocol valid
+      document.getElementById("create_protocolFromLabel").innerHTML = fromProtocols[element.value]
+    }
+  }
+  document.getElementById("create_protocolFrom").addEventListener('change', checkIfValidFromProtocol);
+
 
   function showChannelOverlay(evt){
     // use data attribute
@@ -445,10 +658,6 @@
   }
 
   document.getElementById("lockScreen").addEventListener('click', toggleLock);
-
-  Array.from(document.getElementsByClassName("channelarea-parent")).forEach(element => {
-    element.addEventListener('click', showChannelOverlay);
-  });
 
   
 

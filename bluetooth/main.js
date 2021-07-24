@@ -53,7 +53,9 @@ noble.on('discover', function(peripheral){
                         }
                     }); 
                 });
-                service.discoverCharacteristics([], function(err, char){});
+                service.discoverCharacteristics([], function(err, char){
+                    
+                });
             });
             
         });

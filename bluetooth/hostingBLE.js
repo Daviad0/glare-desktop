@@ -92,7 +92,7 @@ noble.on('discover', function(peripheral){
                     characteristicsAlreadyFound = true;
                     characteristics.forEach(characterisic => {
                         if(characterisic.uuid == writingCharacteristicId){
-                            characterisic.discoverDescriptors(function(err, descriptors){
+                            /*characterisic.discoverDescriptors(function(err, descriptors){
                                 console.log("Desc detected!");
                                 descriptors.forEach(desc => {
                                     if(desc.uuid == uniqueIdDescriptor){
@@ -101,19 +101,17 @@ noble.on('discover', function(peripheral){
                                         })
                                     }
                                 });
-                            })
-                            /*console.log("Found characteristic!!")
+                            })*/
+                            console.log("Found characteristic!!")
                             characterisic.on("data", function(data, isNotification){
-                                console.log("DATAAAA");
-                                console.log(data)
-                                console.log(isNotification);
+                                console.log("Data received: " + data);
                             })
                             characterisic.subscribe(function(err){
                                 console.log("Subscribed")
-                                characterisic.write(Buffer.from("08621234567a90000100a1000183128309686920", "hex"), true, function(err){
+                                characterisic.write(Buffer.from("08621234567890aba1110998e1000183128309446176696421", "hex"), true, function(err){
                                     console.log("Wrote Request")
                                 });
-                            });*/
+                            });
                             
                             
                             //setInterval(function(){console.log("A")}, 500);

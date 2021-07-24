@@ -179,7 +179,7 @@ function createWindow () {
     //mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
     
   });
-  var btpath = path.join(__dirname, "EXBS.js")
+  var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
   var options = {
     name: "God Awful Workaround"
   }

@@ -171,6 +171,19 @@ const machineId = require('node-machine-id');
 const { data } = require('jquery');
 
 
+var btpath = path.join(__dirname, "EXBS.js")
+  console.log(btpath);
+  var options = {
+    name: "Glare Bluetooth Service"
+  }
+  sudo.exec('node ' + btpath, options, 
+    function(err, stdout, stderr){
+      if(err) throw err;
+      console.log('stdout: ' + stdout)
+    }
+  );
+
+
 // main window that actually allows the user to interact with the show
 function createWindow () {
   mainWindow = new BrowserWindow({
@@ -197,16 +210,7 @@ function createWindow () {
     //mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
     
   });
-  var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
-  var options = {
-    name: "God Awful Workaround"
-  }
-  sudo.exec('node ' + btpath, options, 
-    function(err, stdout, stderr){
-      if(err) throw err;
-      console.log('stdout: ' + stdout)
-    }
-  );
+  
   
 }
 

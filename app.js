@@ -115,14 +115,13 @@ io.on('connection', (socket) => {
     console.log(object);
   });
   socket.on('sendArea', (discoveredDevices) => {
-discoveredDevices = JSON.parse(discoveredDevices);   
  discoveredDevices.forEach((dev) => {
       db.devices.findOne({ _id: dev.id }, function(err, res){
         if(res == null){
           // need to create
           var newDbObject = {
             _id : dev.id,
-            deviceName : dev.advertisement.localName == "Glare" ? "Glare Ready Device" : "Unnamed Device",
+            deviceName : dev.name == "Glare" ? "Glare Ready Device" : "Unnamed Device",
             lastCommunicated : new Date(),
             onLineup : false
           }

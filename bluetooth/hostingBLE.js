@@ -85,7 +85,14 @@ debug("READ")
     });
     
     socket.on('checkArea', () => {
-        socket.emit('sendArea', JSON.stringify(discoveredDevices));
+        var toSendDevices = []
+        discoveredDevices.forEach((dev) => {
+            toSendDevices.push({
+                id: dev.id,
+                name: dev.advertisement.localName
+            });
+        })
+        socket.emit('sendArea', toSendDevices);
     });
     
     var serviceCheck = 0;

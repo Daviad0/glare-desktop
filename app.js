@@ -115,7 +115,8 @@ io.on('connection', (socket) => {
     console.log(object);
   });
   socket.on('sendArea', (discoveredDevices) => {
-    discoveredDevices.forEach((dev) => {
+discoveredDevices = JSON.parse(discoveredDevices);   
+ discoveredDevices.forEach((dev) => {
       db.devices.findOne({ _id: dev.id }, function(err, res){
         if(res == null){
           // need to create
@@ -171,17 +172,6 @@ const machineId = require('node-machine-id');
 const { data } = require('jquery');
 
 
-var btpath = path.join(__dirname, "EXBS.js")
-  console.log(btpath);
-  var options = {
-    name: "Glare Bluetooth Service"
-  }
-  sudo.exec('node ' + btpath, options, 
-    function(err, stdout, stderr){
-      if(err) throw err;
-      console.log('stdout: ' + stdout)
-    }
-  );
 
 
 // main window that actually allows the user to interact with the show
@@ -209,6 +199,17 @@ function createWindow () {
     mainWindow.show();
     //mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
     
+var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
+  console.log(btpath);
+  var options = {
+    name: "Glare Bluetooth Service"
+  }
+  sudo.exec('node ' + btpath, options, 
+    function(err, stdout, stderr){
+      if(err) throw err;
+      console.log('stdout: ' + stdout)
+    }
+  );
   });
   
   
@@ -257,3 +258,8 @@ app.on('activate', function () {
     letUserSelectRole()
   }
 })
+
+setTimeout(function(){
+console.log("Checking for discovered devices");
+	io.emit("checkArea")
+}, 15000)

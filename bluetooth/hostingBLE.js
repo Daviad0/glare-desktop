@@ -1,8 +1,8 @@
 var noble = require('@abandonware/noble')
 const notify = require('./updateHandler')
 
-var accessibleServiceId = '0862';
-var writingCharacteristicId = '0001'
+var accessibleServiceId = '862';
+var writingCharacteristicId = '1'
 var uniqueIdDescriptor = 'a404';
 
 var readyToScan = false;
@@ -14,12 +14,31 @@ socket.on("connect", function(instance){
 
 function debug(object){
     socket.emit("externalDebug", object);
+console.log(object);
 }
 
 socket.on('Pong', () => {
   //console.log('pong')
   socket.emit('Ping');
 })
+
+noble.on('stateChange', function(state) {
+	debug(state);
+        if (state === 'poweredOn') {
+            readyToScan = true;
+          //
+          // Once the BLE radio has been powered on, it is possible
+          // to begin scanning for services. Pass an empty array to
+          // scan for all services (uses more time and power).
+          //
+          //console.log('scanning...');
+          noble.startScanning([accessibleServiceId], true);
+        }
+        else {
+            readyToScan = false;
+          noble.stopScanning();
+        }
+    })
 
 /*
 {
@@ -36,23 +55,9 @@ var currentRequests = []
 var discoveredDevices = []
 var existingDevices = []
 var performingTasks = false;
-exports.startScanning = function(alreadyExisted){
-    noble.on('stateChange', function(state) {
-        if (state === 'poweredOn') {
-            readyToScan = true;
-          //
-          // Once the BLE radio has been powered on, it is possible
-          // to begin scanning for services. Pass an empty array to
-          // scan for all services (uses more time and power).
-          //
-          //console.log('scanning...');
-          noble.startScanning([accessibleServiceId], true);
-        }
-        else {
-            readyToScan = false;
-          noble.stopScanning();
-        }
-    });
+//exports.startScanning = function(alreadyExisted){
+debug("READ")
+    
     
     function isTaskDone(){
         if(pendingOutRequests.length != 0){
@@ -80,12 +85,14 @@ exports.startScanning = function(alreadyExisted){
     });
     
     socket.on('checkArea', () => {
-        socket.emit('sendArea', discoveredDevices);
+        socket.emit('sendArea', JSON.stringify(discoveredDevices));
     });
     
     var serviceCheck = 0;
     var discovered = 0;
+debug("DISCOVERING")
     noble.on('discover', function(peripheral){
+	debug("DISCOVERED")
         if(discoveredDevices.findIndex((el) => el.id == peripheral.id) == -1 && existingDevices.findIndex((el) => el._id == peripheral.id) == -1){
             discoveredDevices.push(peripheral);
             debug("Adding new device to discovered!");
@@ -155,4 +162,4 @@ exports.startScanning = function(alreadyExisted){
     });
     
     
-}
+//}

@@ -68,7 +68,7 @@
           </div>
           <br/>
           <br/>
-          <div style="height: 40vh;text-align: center;margin-bottom: 20px;" id="createNew">
+          <div style="max-height: 40vh;text-align: center;margin-bottom: 20px;overflow-y: auto;" id="createNew">
             <div style="display: inline-block;margin-top: 10px;">
               <div class="bg-main" style="padding:10px;display: inline-block;border-radius: 8px;text-align: center;margin-right:20px">
                 <span class="maintext" style="font-size: .8vw;">To Device</span>
@@ -90,9 +90,17 @@
             <br/>
             <span class="maintext" style="font-size: 1.2vw;margin-top: 20px;">Data</span>
             <br/>
-            <textarea class="textbox" style="width: 40vw;height: 10vh;resize: none;padding:5px">
-
-            </textarea>
+            <textarea class="textbox" style="width: 40vw;height: 10vh;resize: none;padding:5px" id="create_data"></textarea>
+            <br/>
+            <br/>
+            <span class="maintext" style="font-size: 1.2vw;margin-top: 20px;">Device ID (dep?)</span>
+            <br/>
+            <input class="textbox" style="width: 40vw;padding:5px;text-align: center;" id="create_deviceId"/>
+            <br/>
+            <br/>
+            <span class="maintext" style="font-size: 1.2vw;margin-top: 20px;">Communication ID</span>
+            <br/>
+            <input class="textbox" style="width: 40vw;padding:5px;text-align: center;" id="create_communicationId"/>
           </div>
           <div style="display:none;clear: both;width:100%;height:40vh;" id="requestLog">
             <div class="tablewidthanimation" style="width: 100%;overflow: hidden;display: inline-block;text-align: left;float:left;max-height: 40vh; overflow-y: auto; overflow-x: hidden;" id="requestsCol">
@@ -145,6 +153,9 @@
           <br/>
           <div class="bg-main mainbutton" id="exitManualOverlay">
             <span class="maintext" style="font-size: 16px;">Exit</span>
+          </div>
+          <div class="bg-error mainbutton" id="saveManualSending">
+            <span class="maintext" style="font-size: 16px;">Save</span>
           </div>
         </div>
       </div>
@@ -374,8 +385,9 @@
     
   });
 
-
-
+  var inputsValid = false;
+  var validToProtocol = true;
+  var validFromProtocol = true;
   // have this relayed in by the system
   var toProtocols = {
     '0000' : 'No Instructions',
@@ -433,6 +445,7 @@
   // have this relayed in by the system
   var fromProtocols = {
     '0000' : 'No Instructions',
+    '0001' : 'Any Response',
     '0998' : 'Pong!',
     '0999' : 'Log This Data',
     'a101' : 'Current Lock State',
@@ -466,6 +479,7 @@
     document.getElementById("requestLog").style.display = "table";
     document.getElementById("createNewButton").classList.replace("bg-selected", "bg-main");
     document.getElementById("requestLogButton").classList.replace("bg-main", "bg-selected");
+    document.getElementById("saveManualSending").style.display = "none";
   }
   document.getElementById("requestLogButton").addEventListener('click', switchToRequestLog);
   
@@ -474,18 +488,46 @@
     document.getElementById("requestLog").style.display = "none";
     document.getElementById("createNewButton").classList.replace("bg-main", "bg-selected");
     document.getElementById("requestLogButton").classList.replace("bg-selected", "bg-main");
+    document.getElementById("saveManualSending").style.display = "inline-block";
   }
   document.getElementById("createNewButton").addEventListener('click', switchToCreateNew);
+  function checkIfOtherInputsValid(evt){
+    if(document.getElementById("create_deviceId").value.length == 12 && document.getElementById("create_communicationId").value.length == 8 && isHex(document.getElementById("create_communicationId").value) && isHex(document.getElementById("create_deviceId").value)){
+      if(validFromProtocol && validToProtocol){
+        document.getElementById("saveManualSending").classList.replace("bg-error", "bg-success");
+      }else{
+        document.getElementById("saveManualSending").classList.replace("bg-success", "bg-error");
+      }
+      
+      inputsValid = true;
+    }else{
+      document.getElementById("saveManualSending").classList.replace("bg-success", "bg-error");
+      inputsValid = false;
+    }
+  }
+  function isHex(h) {
+    var a = parseInt(h,16);
+    return (a.toString(16) ===h.toLowerCase())
+  }
   function checkIfValidToProtocol(evt){
     var element = document.getElementById("create_protocolTo");
     element.value = element.value.toLowerCase();
     if(toProtocols[element.value] == undefined){
       // protocol not valid
       document.getElementById("create_protocolToLabel").innerHTML = "Invalid Protocol"
+      validToProtocol = false;
+      document.getElementById("saveManualSending").classList.replace("bg-success", "bg-error");
     }else{
       // protocol valid
       document.getElementById("create_protocolToLabel").innerHTML = toProtocols[element.value]
+      validToProtocol = true;
+      if(validFromProtocol && inputsValid){
+        document.getElementById("saveManualSending").classList.replace("bg-error", "bg-success");
+      }else{
+        document.getElementById("saveManualSending").classList.replace("bg-success", "bg-error");
+      }
     }
+    
   }
   document.getElementById("create_protocolTo").addEventListener('change', checkIfValidToProtocol);
   function checkIfValidFromProtocol(evt){
@@ -494,12 +536,23 @@
     if(fromProtocols[element.value] == undefined){
       // protocol not valid
       document.getElementById("create_protocolFromLabel").innerHTML = "Invalid Protocol"
+      validFromProtocol = false;
+      document.getElementById("saveManualSending").classList.replace("bg-success", "bg-error");
     }else{
       // protocol valid
       document.getElementById("create_protocolFromLabel").innerHTML = fromProtocols[element.value]
+      validFromProtocol = true;
+      if(validToProtocol && inputsValid){
+        document.getElementById("saveManualSending").classList.replace("bg-error", "bg-success");
+      }else{
+        document.getElementById("saveManualSending").classList.replace("bg-success", "bg-error");
+      }
     }
   }
   document.getElementById("create_protocolFrom").addEventListener('change', checkIfValidFromProtocol);
+  document.getElementById("create_data").addEventListener('change', checkIfOtherInputsValid);
+  document.getElementById("create_deviceId").addEventListener('change', checkIfOtherInputsValid);
+  document.getElementById("create_communicationId").addEventListener('change', checkIfOtherInputsValid);
 
 
   function showChannelOverlay(evt){
@@ -779,18 +832,7 @@
     }
   });
   ipcRenderer.send('getChannelStatus', {'all' : true});
-  setInterval(function(){
-    channelList.forEach(chan => {
-      if(chan.status != "Failure" && chan.status != "Connected"){
-        if((new Date() - chan.update)/1000 > 5){
-          document.querySelector("[data-channel='" + chan.number + "']").classList.replace("bg-" + chan.statusClass, "bg-main");
-          channelList[channelList.indexOf(channelList.find(schan => schan.number == chan.number))].status = "Ready";
-          channelList[channelList.indexOf(channelList.find(schan => schan.number == chan.number))].statusClass = "main";
-        }
-      }
-    });
-
-  }, 500);
+  
 
 </script>
 </html>

@@ -14,7 +14,6 @@ const sudo = require('sudo-prompt');
 // "this is so gonna work"
 // said David Reeves, July 3rd 2021
 
-
 var channelList = []
 class Channel{
   constructor(number, status, update){
@@ -113,6 +112,25 @@ io.on('connection', (socket) => {
     })
   });
   socket.on('metadataTest', (object) => {
+    console.log(object);
+  });
+  socket.on('sendArea', (discoveredDevices) => {
+    discoveredDevices.forEach((dev) => {
+      db.devices.findOne({ _id: dev.id }, function(err, res){
+        if(res == null){
+          // need to create
+          var newDbObject = {
+            _id : dev.id,
+            deviceName : dev.advertisement.localName == "Glare" ? "Glare Ready Device" : "Unnamed Device",
+            lastCommunicated : new Date(),
+            onLineup : false
+          }
+          db.devices.insert(newDbObject, function(err, newDoc){});
+        }
+      })
+    });
+  })
+  socket.on("externalDebug", (object) => {
     console.log(object);
   });
 });

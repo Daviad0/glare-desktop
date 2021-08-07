@@ -832,7 +832,18 @@
     }
   });
   ipcRenderer.send('getChannelStatus', {'all' : true});
-  
+  document.getElementById("saveManualSending").addEventListener('click', function(evt){
+    if(validToProtocol && validFromProtocol && inputsValid){
+      ipcRenderer.send('newRequest', {
+        'deviceId' : document.getElementById("create_deviceId").value,
+        'protocolTo' : document.getElementById('create_protocolTo').value,
+        'protocolFrom' : document.getElementById('create_protocolFrom').value,
+        'communicationId' : document.getElementById('create_communicationId').value,
+        'data' : document.getElementById('create_data').value,
+      })
+    }
+    
+  })
 
 </script>
 </html>

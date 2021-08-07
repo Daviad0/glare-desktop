@@ -64,7 +64,6 @@ debug("READ")
             noble.startScanning([accessibleServiceId], true);
         }
     }
-    
     socket.on('addToQueue', (request) => {
         pendingOutRequests.push(request);
     });
@@ -100,16 +99,18 @@ debug("READ")
     var discovered = 0;
 debug("DISCOVERING")
     noble.on('discover', function(peripheral){
-	debug("DISCOVERED")
-        if(discoveredDevices.findIndex((el) => el.id == peripheral.id) == -1 && existingDevices.findIndex((el) => el._id == peripheral.id) == -1){
+    debug("DISCOVERED")
+    var deviceId = peripheral.advertisement.localName.substring(3);
+        if(discoveredDevices.findIndex((el) => el.id == deviceId) == -1 && existingDevices.findIndex((el) => el._id == deviceId) == -1){
             discoveredDevices.push(peripheral);
             socket.emit("newDevice", { name: peripheral.advertisement.localName });
             debug("Adding new device to discovered!");
             debug(peripheral);
         }
-        if(pendingOutRequests.findIndex((el) => el.id == peripheral.id) != -1){
+        
+        if(pendingOutRequests.findIndex((el) => el.id == deviceId) != -1){
             // something in the queue exists
-            var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == peripheral.id), 1);
+            var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == deviceId), 1);
             debug("Connecting to queue item");
             
             debug(requestToHandle)
@@ -139,11 +140,10 @@ debug("DISCOVERING")
                                 characterisic.subscribe(function(err){
                                     debug("Subscribed")
                                     var teamIdentifier = "0862";
-                                    var deviceId = "123456";
                                     var protocolTo = requestToHandle.protocolTo;
                                     var protocolFrom = requestToHandle.protocolFrom;
                                     var responseExpected = "1"
-                                    var communicationId = "83128309";
+                                    var communicationId = requestToHandle.communicationId;
                                     var bufferedData = Buffer.from(requestToHandle.data)
                                     var numberOfMessages = Math.ceil(bufferedData/450)
                                     for(var i = 0; i < numberOfMessages; i++){

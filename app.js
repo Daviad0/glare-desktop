@@ -229,6 +229,18 @@ var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
   
 }
 
+ipcMain.on('newRequest', (event, args) => {
+  console.log(args);
+  io.emit('addToQueue', {
+    deviceId : args["deviceId"],
+    protocolTo : args["protocolTo"],
+    protocolFrom : args["protocolFrom"],
+    communicationId : args["communicationId"],
+    data : args["data"],
+    sentAt : args["sentAt"]
+  });
+});
+
 ipcMain.on('getChannelStatus', (event, args) => {
   db.requests.find({}, function(err, docs){
     mainWindow.webContents.send('bulkAddRequest', {'bulkContents' : docs})

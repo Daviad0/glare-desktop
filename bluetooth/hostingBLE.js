@@ -101,14 +101,14 @@ debug("DISCOVERING")
     noble.on('discover', function(peripheral){
     debug("DISCOVERED")
     var deviceId = peripheral.advertisement.localName.substring(3);
-        if(discoveredDevices.findIndex((el) => el.id == deviceId) == -1 && existingDevices.findIndex((el) => el._id == deviceId) == -1){
+        if(discoveredDevices.findIndex((el) => el.advertisement.localName.substring(3) == deviceId) == -1 && existingDevices.findIndex((el) => el._id == deviceId) == -1){
             discoveredDevices.push(peripheral);
             socket.emit("newDevice", { name: peripheral.advertisement.localName });
             debug("Adding new device to discovered!");
             debug(peripheral);
         }
         
-        if(pendingOutRequests.findIndex((el) => el.id == deviceId) != -1){
+        if(pendingOutRequests.findIndex((el) => el.deviceId == deviceId) != -1){
             // something in the queue exists
             var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == deviceId), 1);
             debug("Connecting to queue item");

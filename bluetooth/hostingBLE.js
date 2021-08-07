@@ -87,6 +87,7 @@ debug("READ")
     socket.on('checkArea', () => {
         var toSendDevices = []
         discoveredDevices.forEach((dev) => {
+            // NEED TO EDIT PROTOCOL SO DEVICE GIVES OFF SPECIAL ID
             toSendDevices.push({
                 id: dev.id,
                 name: dev.advertisement.localName
@@ -102,6 +103,7 @@ debug("DISCOVERING")
 	debug("DISCOVERED")
         if(discoveredDevices.findIndex((el) => el.id == peripheral.id) == -1 && existingDevices.findIndex((el) => el._id == peripheral.id) == -1){
             discoveredDevices.push(peripheral);
+            socket.emit("newDevice", { name: peripheral.advertisement.localName });
             debug("Adding new device to discovered!");
             debug(peripheral);
         }
@@ -137,16 +139,16 @@ debug("DISCOVERING")
                                 characterisic.subscribe(function(err){
                                     debug("Subscribed")
                                     var teamIdentifier = "0862";
-                                    var deviceId = "1234567890ab";
+                                    var deviceId = "123456";
                                     var protocolTo = requestToHandle.protocolTo;
                                     var protocolFrom = requestToHandle.protocolFrom;
                                     var responseExpected = "1"
                                     var communicationId = "83128309";
                                     var bufferedData = Buffer.from(requestToHandle.data)
-                                    var numberOfMessages = Math.ceil(bufferedData/480)
+                                    var numberOfMessages = Math.ceil(bufferedData/450)
                                     for(var i = 0; i < numberOfMessages; i++){
                                         var headerBuffer = Buffer.from(teamIdentifier + deviceId + protocolTo + protocolFrom + (i == (numberOfMessages-1) ? "e" : "a") + i.toString().padStart(4, "0") + responseExpected + communicationId, "hex")
-                                        var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((480*i), (480*(i+1)))]);
+                                        var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((450*i), (450*(i+1)))]);
                                         characterisic.write(sendBuffer, true, function(err){
                                             debug("Wrote Message " + (i + 1));
                                         });

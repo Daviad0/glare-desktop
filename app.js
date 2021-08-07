@@ -130,6 +130,21 @@ io.on('connection', (socket) => {
       })
     });
   })
+  socket.on("newDevice", (device) => {
+    db.devices.findOne({ _id : device.name.substring(3)}, function(err,res){
+      if(res == null){
+        var newDbObject = {
+          _id : device.name.substring(3),
+          deviceName : "Glare Ready Device (" + device.name + ")",
+          lastCommunicated : new Date(),
+          onLineup : false
+        }
+        db.devices.insert(newDbObject, function(err, newDoc){
+          console.log(newDoc);
+        });
+      }
+    })
+  })
   socket.on("externalDebug", (object) => {
     console.log(object);
   });
@@ -257,8 +272,3 @@ app.on('activate', function () {
     letUserSelectRole()
   }
 })
-
-setTimeout(function(){
-console.log("Checking for discovered devices");
-	io.emit("checkArea")
-}, 15000)

@@ -492,7 +492,7 @@
   }
   document.getElementById("createNewButton").addEventListener('click', switchToCreateNew);
   function checkIfOtherInputsValid(evt){
-    if(document.getElementById("create_deviceId").value.length == 12 && document.getElementById("create_communicationId").value.length == 8 && isHex(document.getElementById("create_communicationId").value) && isHex(document.getElementById("create_deviceId").value)){
+    if(document.getElementById("create_deviceId").value.length == 6 && document.getElementById("create_communicationId").value.length == 8 && isHex(document.getElementById("create_communicationId").value)){
       if(validFromProtocol && validToProtocol){
         document.getElementById("saveManualSending").classList.replace("bg-error", "bg-success");
       }else{

@@ -50,13 +50,22 @@ fs.readFile('./testSchema.json', 'utf8' , (err, data) => {
     _id: '76628abc',
     prettyName: 'Infinite Recharge',
     usedFor: '2020 - 2021 Season',
-    createdAt: new Date(),
+    createdAt: Date.now(),
     dataHash: 'aaaabbbb',
     finalDataJSON: data
   }, function(err, newDoc){
     console.log(newDoc)
     console.log("Document added!");
   })
+})
+
+db.requests.insert({
+  deviceId : "A00000",
+  protocolTo : "A111",
+  protocolFrom : "0998",
+  communicationId : "12345678",
+  data : "Hello world!",
+  sentAt : Date.now()
 })
 
 db.competitions.insert({
@@ -95,7 +104,7 @@ io.on('connection', (socket) => {
     console.log("Channel " + channelNumber + " had its status changed to " + status);
     var chanIndex = channelList.findIndex(ch => ch.number == channelNumber);
     channelList[chanIndex].status = status;
-    channelList[chanIndex].update = new Date();
+    channelList[chanIndex].update = Date.now();
     mainWindow.webContents.send('channelUpdate', {"status" : status, "details" : details, "channelNumber" : channelNumber});
   });
 
@@ -122,7 +131,7 @@ io.on('connection', (socket) => {
           var newDbObject = {
             _id : dev.id,
             deviceName : dev.name == "Glare" ? "Glare Ready Device" : "Unnamed Device",
-            lastCommunicated : new Date(),
+            lastCommunicated : Date.now(),
             onLineup : false
           }
           db.devices.insert(newDbObject, function(err, newDoc){});
@@ -136,7 +145,7 @@ io.on('connection', (socket) => {
         var newDbObject = {
           _id : device.name.substring(3),
           deviceName : "Glare Ready Device (" + device.name + ")",
-          lastCommunicated : new Date(),
+          lastCommunicated : new Date().toTimeString(),
           onLineup : false
         }
         db.devices.insert(newDbObject, function(err, newDoc){
@@ -240,6 +249,18 @@ ipcMain.on('newRequest', (event, args) => {
     communicationId : args["communicationId"],
     data : args["data"],
     sentAt : args["sentAt"]
+  });
+  db.requests.insert({
+    deviceId : args["deviceId"],
+    protocolTo : args["protocolTo"],
+    protocolFrom : args["protocolFrom"],
+    communicationId : args["communicationId"],
+    data : args["data"],
+    sentAt : args["sentAt"]
+  }, function(err, doc) {
+    console.log("New document added to requests with id " + newDoc._id + " at " + new Date().toTimeString());
+    mainWindow.webContents.send('addRequest', newDoc);
+    
   });
 });
 

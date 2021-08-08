@@ -21,6 +21,9 @@
         <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="showManualOverlay">
           <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:4vh">reply</span>
         </div>
+        <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="showDeviceOverlay">
+          <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:3vh">tablet_android</span>
+        </div>
         
         
       </div>
@@ -114,16 +117,12 @@
             <div class="tablewidthanimation" style="width: 0%;overflow: hidden;display: none;text-align: left;float:left;margin-left:10px;max-height: 40vh; overflow-y: auto;opacity:0" id="optionsCol">
               <span class="maintext" style="font-size: 1.5vw;margin-bottom:10px">Details</span><br/>
               <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
-                <span class="maintext" style="font-size: 16px;font-weight: 600;">From</span><br/>
-                <span class="maintext" id="overlay_detailFrom">Tablet 12345678</span><br/>
+                <span class="maintext" style="font-size: 16px;font-weight: 600;">To</span><br/>
+                <span class="maintext" id="overlay_detailTo">Device 12345678</span><br/>
               </div>
               <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
                 <span class="maintext" style="font-size: 16px;font-weight: 600;">When?</span><br/>
                 <span class="maintext" id="overlay_detailWhen">12:57:04 PM</span><br/>
-              </div>
-              <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
-                <span class="maintext" style="font-size: 16px;font-weight: 600;">End Result</span><br/>
-                <span class="maintext" style="color: #00D974" id="overlay_detailSuccessful">Successful</span><br/>
               </div>
               <div class="bg-main" style="width: 95%;border-radius: 8px;margin-top:5px;padding:10px;padding-top: 12px;">
                 <span class="maintext" style="font-size: 16px;font-weight: 600;">Protocol To</span><br/>
@@ -158,6 +157,18 @@
             <span class="maintext" style="font-size: 16px;">Save</span>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="overlayBox" id="deviceOverlay" style="display: none;">
+      <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
+        <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
+          <span class="maintext" style="font-size: 2vw;">Active Devices</span></br>
+          <span class="maintext" style="font-size: 1.5vw;">Inactive Devices</span></br></br>
+          <div class="bg-main mainbutton" id="exitDeviceOverlay">
+            <span class="maintext" style="font-size: 16px;">Exit</span>
+          </div>
+        </div>
+        
       </div>
     </div>
     <div class="overlayBox" id="channelOverlay" style="display: none;">
@@ -246,6 +257,8 @@
   var allSchemas = [];
   var selectedSchemas = [];
 
+  var allRequests = [];
+
   class Schema{
     constructor(_id, prettyName){
       this._id = _id;
@@ -264,14 +277,14 @@
   }
 
   class Request{
-    constructor(_id, addedAt, direction, requestType, successful, numMessages, fromId){
+    constructor(_id, deviceId, protocolTo, protocolFrom, data, sentAt, communicationId){
       this._id = _id;
-      this.addedAt = addedAt;
-      this.direction = direction;
-      this.requestType = requestType;
-      this.successful = successful;
-      this.numMessages = numMessages;
-      this.fromId = fromId;
+      this.deviceId = deviceId.toLowerCase();
+      this.protocolTo = protocolTo.toLowerCase();
+      this.protocolFrom = protocolFrom.toLowerCase();
+      this.data = data; 
+      this.sentAt = sentAt;
+      this.communicationId = communicationId.toLowerCase();
     }
   }
 
@@ -352,6 +365,7 @@
 
   function showManualOverlay(evt){
     if(!locked){
+      document.getElementById("showManualOverlay").classList.replace("bg-main", "bg-selected")
       document.getElementById("communcationManualOverlay").style.opacity = "0";
       document.getElementById("communcationManualOverlay").style.display = "block";
       document.getElementById("communcationManualOverlay").animate([
@@ -367,6 +381,7 @@
   }
   document.getElementById("showManualOverlay").addEventListener('click', showManualOverlay);
   document.getElementById("exitManualOverlay").addEventListener('click', function(){
+    document.getElementById("showManualOverlay").classList.replace("bg-selected", "bg-main")
     document.getElementById("communcationManualOverlay").style.opacity = "0";
     document.getElementById("communcationManualOverlay").animate([
       { opacity: '100'},
@@ -566,16 +581,7 @@
       document.getElementById("overlay_channelStatusContainer").classList.replace(document.getElementById("overlay_channelStatusContainer").classList[0], "bg-" + channelList.find(ch => ch.number == channelNum).statusClass)
       
       document.getElementById("overlay_requestsContainer").innerHTML = channelList.find(ch => ch.number == channelNum).requests.length > 0 ? "" : `<span class="maintext" style="font-size: 1vw;margin-top:10px;opacity: 0.6;width:100%;text-align: center;">Why don't you make a request?</span>`;
-      channelList.find(ch => ch.number == channelNum).requests.forEach(el => {
-        document.getElementById("overlay_requestsContainer").innerHTML = document.getElementById("overlay_requestsContainer").innerHTML + `
-        <div class="bg-main requestToSelect" style="width: 95%;display: table;padding:10px;border-radius: 8px;margin-top:5px;padding-top: 12px;" data-request="` + el._id + `">
-          <span style="display:table-cell;text-align: left;pointer-events: none;width:15%" class="maintext"><span style="display: inline;border-radius: 4px;padding-left: 8px;padding-right:8px;" class="bg-` + (el.direction == "In" ? "success" : "warning") + `">` + el.direction +`</span></span>
-          <span style="display:table-cell;text-align: left;pointer-events: none;" class="maintext">` + new Date(el.addedAt).toLocaleTimeString() + `</span>
-          <span style="display:table-cell;text-align: right;padding-right: 10px;pointer-events: none;" class="maintext">` + (el.successful ? "OK" : "BAD") + `</span>
-        </div>
-        
-        `
-      });
+      
       Array.from(document.getElementsByClassName("requestToSelect")).forEach(el => {
         el.addEventListener('click', expandOptions);
       });
@@ -595,6 +601,7 @@
     
   }
   function showCompetitionOverlay(evt){
+    document.getElementById("showCompetitionOverlay").classList.replace("bg-main", "bg-selected")
     selectedSchemas = []
     document.getElementById("competition_code").value = ""
     document.getElementById("competition_name").value = ""
@@ -616,6 +623,7 @@
   }
   document.getElementById("showCompetitionOverlay").addEventListener('click', showCompetitionOverlay);
   document.getElementById("exitCompetitionOverlay").addEventListener('click', function(){
+    document.getElementById("showCompetitionOverlay").classList.replace("bg-selected", "bg-main")
     document.getElementById("competitionOverlay").style.opacity = "0";
     document.getElementById("competitionOverlay").animate([
       { opacity: '100'},
@@ -633,6 +641,48 @@
     
     
   });
+
+
+  function showDeviceOverlay(evt){
+    
+    //selectedSchemas = []
+    if(!locked){
+      document.getElementById("showDeviceOverlay").classList.replace("bg-main", "bg-selected")
+      document.getElementById("deviceOverlay").style.opacity = "0";
+      document.getElementById("deviceOverlay").style.display = "block";
+      document.getElementById("deviceOverlay").animate([
+        { opacity: '0'},
+        { opacity: '100'}
+      ],
+      {
+        duration: 250,
+        iterations: 1
+      });
+      document.getElementById("deviceOverlay").style.opacity = "100";
+    }
+  }
+  document.getElementById("showDeviceOverlay").addEventListener('click', showDeviceOverlay);
+  document.getElementById("exitDeviceOverlay").addEventListener('click', function(){
+    document.getElementById("showDeviceOverlay").classList.replace("bg-selected", "bg-main")
+    document.getElementById("deviceOverlay").style.opacity = "0";
+    document.getElementById("deviceOverlay").animate([
+      { opacity: '100'},
+      { opacity: '0'}
+    ],
+    {
+      duration: 250,
+      iterations: 1
+    });
+    contractOptions();
+    setTimeout(function(){
+      
+      document.getElementById("deviceOverlay").style.display = "none";
+    }, 250);
+    
+    
+  });
+
+
 
   function sendCompetition(evt){
     // check if edit or no
@@ -689,10 +739,6 @@
         element.style.display = "inline-block";
       });
       locked = false;
-      if(!expanded){
-        toggleExpand(undefined);
-        document.getElementById("uwu").style.opacity = "100";
-      }
       document.getElementById("lockScreen").classList.replace("bg-error", "bg-error-dull");
       document.getElementById("lockScreenLabel").innerHTML = "Lock System";
       
@@ -700,10 +746,6 @@
       Array.from(document.getElementsByClassName("selectableMenuItem")).forEach(element => {
         element.style.display = "none";
       });
-      if(expanded){
-        toggleExpand(undefined);
-        document.getElementById("uwu").style.opacity = "0";
-      }
       document.getElementById("lockScreen").classList.replace("bg-error-dull", "bg-error");
       document.getElementById("lockScreenLabel").innerHTML = "Unlock System";
       locked = true;
@@ -730,15 +772,13 @@
   }
 
   function expandOptions(evt){
-    var requestToChoose = channelList.find(ch => ch.number == currentlySelectedChannel).requests.find(rq => rq._id == evt.srcElement.dataset.request)
+    var requestToChoose = allRequests.find(rq => rq._id == evt.srcElement.dataset.request)
     
-    document.getElementById('overlay_detailFrom').innerHTML = requestToChoose.fromId;
-    document.getElementById('overlay_detailWhen').innerHTML = new Date(requestToChoose.addedAt).toLocaleTimeString();
-    document.getElementById('overlay_detailMessages').innerHTML = requestToChoose.numMessages;
-    document.getElementById('overlay_detailSuccessful').innerHTML = requestToChoose.successful ? "Successful" : "Failed";
-    document.getElementById('overlay_detailSuccessful').style.color = requestToChoose.successful ? "#00D974" : "#EB264A";
-    document.getElementById('overlay_detailProtocol').innerHTML = requestToChoose.requestType+"<span style='display: inline;border-radius: 4px;padding-left: 8px;padding-right:8px;margin-left:7px' class='bg-" + (requestToChoose.direction == "In" ? "success" : "warning") + "'>"+ (requestToChoose.direction == "In" ? "I" : "O") +"</span>";
-
+    document.getElementById('overlay_detailTo').innerHTML = "Device " + requestToChoose.deviceId;
+    document.getElementById('overlay_detailProtocolTo').innerHTML = requestToChoose.protocolTo + " (" + toProtocols[requestToChoose.protocolTo] + ")"
+    document.getElementById('overlay_detailProtocolFrom').innerHTML = requestToChoose.protocolFrom + " (" + toProtocols[requestToChoose.protocolFrom] + ")"
+    document.getElementById('overlay_detailData').innerHTML = requestToChoose.data;
+    document.getElementById('overlay_detailWhen').innerHTML = new Date(requestToChoose.sentAt).toLocaleDateString() + " @ " + new Date(requestToChoose.sentAt).toLocaleTimeString();
 
 
 
@@ -783,54 +823,40 @@
     
     
   });
-  ipcRenderer.on('channelUpdate', (event, args) => {
-    var elementToChange = document.querySelector("[data-channel='" + args["channelNumber"] + "']")
-    var currentTypeClass = "bg-" + channelList.find(chan => chan.number == args["channelNumber"]).statusClass;
-    console.log(args)
-	console.log(currentTypeClass)
-	if(args["status"] == "failed"){
-      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Failure";
-      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "error";
-      elementToChange.classList.replace(currentTypeClass, "bg-error")
-    }else if(args["status"] == "subscribed"){
-      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Connected";
-      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "selected";
-      elementToChange.classList.replace(currentTypeClass, "bg-selected")
-    }
-    else if(args["status"] == "unsubscribed"){
-      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Ready";
-      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "main";
-      elementToChange.classList.replace(currentTypeClass, "bg-main")
-    }
-    else if(args["status"] == "read" || args["status"] == "written"){
-      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].status = "Communicating";
-      channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].statusClass = "success";
-      elementToChange.classList.replace(currentTypeClass, "bg-success")
-    }
-    channelList[channelList.indexOf(channelList.find(chan => chan.number == args["channelNumber"]))].update = new Date();
-  });
+
 
   ipcRenderer.on('addRequest', (event, args) => {
-    var channelIndex = channelList.findIndex(ch => ch.number == args["channelNumber"])
-    if(channelList[channelIndex].requests.length > 20){
-      channelList[channelIndex].requests.shift();
-    }
-    channelList[channelIndex].requests.push(new Request(args["_id"], args["addedAt"], args["direction"], args["requestType"], args["successful"], args["numMessages"], args["fromId"]))
-    channelList[channelIndex].requests.sort((a,b) => (new Date(a.addedAt).getTime()-new Date(b.addedAt).getTime())*-1)
+    allRequests.push(new Request(args["_id"], args["deviceId"], args["protocolTo"], args["protocolFrom"], args["data"], args["sentAt"], args["communicationId"]));
+    allRequests.sort((a,b) => (new Date(a.sentAt).getTime()-new Date(b.sentAt).getTime())*-1)
+    updateRequestsList();
   });
   ipcRenderer.on('bulkAddRequest', (event, args) => {
     args['bulkContents'].forEach(el => {
-      var channelIndex = channelList.findIndex(ch => ch.number == el["channelNumber"])
-      if(channelList[channelIndex].requests.length > 20){
-        channelList[channelIndex].requests.shift();
-      }
-      channelList[channelIndex].requests.push(new Request(el["_id"], el["addedAt"], el["direction"], el["requestType"], el["successful"], el["numMessages"], el["fromId"]))
+      allRequests.push(new Request(el["_id"], el["deviceId"], el["protocolTo"], el["protocolFrom"], el["data"], el["sentAt"], el["communicationId"]));
     });
-    var i = 0
-    while(i < channelList.length){
-      channelList[i].requests.sort((a,b) => (new Date(a.addedAt).getTime()-new Date(b.addedAt).getTime())*-1)
-    }
+    allRequests.sort((a,b) => (new Date(a.sentAt).getTime()-new Date(b.sentAt).getTime())*-1)
+    updateRequestsList();
   });
+
+  function updateRequestsList(){
+    document.getElementById("overlay_requestsContainer").innerHTML = "";
+    allRequests.forEach(el => {
+        document.getElementById("overlay_requestsContainer").innerHTML = document.getElementById("overlay_requestsContainer").innerHTML + `
+        <div class="bg-main requestToSelect" style="width: 95%;display: table;padding:10px;border-radius: 8px;margin-top:5px;padding-top: 12px;" data-request="` + el._id + `">
+          
+          <span style="display:table-cell;text-align: left;pointer-events: none;width:40%" class="maintext"><span style="display: inline;border-radius: 4px;padding-left: 8px;padding-right:8px;" class="bg-selected">` + el.protocolTo +` ></span><span style="display: inline;border-radius: 4px;padding-left: 8px;padding-right:8px;margin-left:5px" class="bg-selected">< ` + el.protocolFrom +`</span></span>
+          <span style="display:table-cell;text-align: left;pointer-events: none;width:20%" class="maintext">` + el.deviceId + `</span>
+          <span style="display:table-cell;text-align: left;pointer-events: none;" class="maintext">` +new Date(el.sentAt).toLocaleTimeString() + `</span>
+          
+        </div>
+        
+        `
+      });
+    Array.from(document.getElementsByClassName("requestToSelect")).forEach((el) => {
+      el.addEventListener('click', expandOptions);
+    });
+  }
+
   ipcRenderer.send('getChannelStatus', {'all' : true});
   document.getElementById("saveManualSending").addEventListener('click', function(evt){
     if(validToProtocol && validFromProtocol && inputsValid){

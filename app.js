@@ -220,7 +220,9 @@ var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
   }
   sudo.exec('node ' + btpath, options, 
     function(err, stdout, stderr){
-      if(err) throw err;
+      if(err){
+console.log(err);
+}
       console.log('stdout: ' + stdout)
     }
   );

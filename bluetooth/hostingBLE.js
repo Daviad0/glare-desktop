@@ -139,16 +139,17 @@ debug("DISCOVERING")
                                 })
                                 characterisic.subscribe(function(err){
                                     debug("Subscribed")
+                                    var dataLength = 100;
                                     var teamIdentifier = "0862";
                                     var protocolTo = requestToHandle.protocolTo;
                                     var protocolFrom = requestToHandle.protocolFrom;
                                     var responseExpected = "1"
                                     var communicationId = requestToHandle.communicationId;
                                     var bufferedData = Buffer.from(requestToHandle.data)
-                                    var numberOfMessages = Math.ceil(bufferedData/450)
+                                    var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
                                     for(var i = 0; i < numberOfMessages; i++){
                                         var headerBuffer = Buffer.from(teamIdentifier + deviceId + protocolTo + protocolFrom + (i == (numberOfMessages-1) ? "e" : "a") + i.toString().padStart(4, "0") + responseExpected + communicationId, "hex")
-                                        var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((450*i), (450*(i+1)))]);
+                                        var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*i), (dataLength*(i+1)))]);
                                         characterisic.write(sendBuffer, true, function(err){
                                             debug("Wrote Message " + (i + 1));
                                         });

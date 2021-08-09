@@ -258,8 +258,8 @@ ipcMain.on('newRequest', (event, args) => {
     data : args["data"],
     sentAt : args["sentAt"]
   }, function(err, doc) {
-    console.log("New document added to requests with id " + newDoc._id + " at " + new Date().toTimeString());
-    mainWindow.webContents.send('addRequest', newDoc);
+    console.log("New document added to requests with id " + doc._id + " at " + new Date().toTimeString());
+    mainWindow.webContents.send('addRequest', doc);
     
   });
 });

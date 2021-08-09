@@ -148,9 +148,11 @@ debug("DISCOVERING")
                                         var communicationId = requestToHandle["communicationId"];
                                         var bufferedData = Buffer.from(requestToHandle["data"])                                   
                                         var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
+					debug(numberOfMessages)
                                         for(var i = 0; i < numberOfMessages; i++){
                                             var headerBuffer = Buffer.from(teamIdentifier + deviceId + protocolTo + protocolFrom + (i == (numberOfMessages-1) ? "e" : "a") + i.toString().padStart(4, "0") + responseExpected + communicationId, "hex")
-                                            var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*i), (dataLength*(i+1)))]);
+					debug(i)                                            
+var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*i), (dataLength*(i+1)))]);
                                             characterisic.write(sendBuffer, true, function(err){
                                                 debug("Wrote Message " + (i + 1));
                                             });
@@ -165,7 +167,7 @@ debug("DISCOVERING")
                     
                     }
                 })}, 1000);
-            }
+            })
                     
         }
         

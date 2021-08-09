@@ -399,6 +399,25 @@
     
     
   });
+  document.getElementById("saveManualOverlay").addEventListener('click', function(){
+    document.getElementById("showManualOverlay").classList.replace("bg-selected", "bg-main")
+    document.getElementById("communcationManualOverlay").style.opacity = "0";
+    document.getElementById("communcationManualOverlay").animate([
+      { opacity: '100'},
+      { opacity: '0'}
+    ],
+    {
+      duration: 250,
+      iterations: 1
+    });
+    contractOptions();
+    setTimeout(function(){
+      
+      document.getElementById("communcationManualOverlay").style.display = "none";
+    }, 250);
+    
+    
+  });
 
   var inputsValid = false;
   var validToProtocol = true;

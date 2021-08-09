@@ -55,6 +55,28 @@ var currentRequests = []
 var discoveredDevices = []
 var existingDevices = []
 var performingTasks = false;
+
+function sendMessageAndCheck(requestInstance){
+    var dataLength = 450;
+    var teamIdentifier = "0862";
+    var protocolTo = requestInstance["protocolTo"];
+    var protocolFrom = requestInstance["protocolFrom"];
+    var responseExpected = "1"
+    var communicationId = requestInstance["communicationId"];
+    var bufferedData = Buffer.from(requestInstance["data"])
+    var headerBuffer = Buffer.from(teamIdentifier + deviceId + protocolTo + protocolFrom + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + i.toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
+    var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*requestInstance["currentMessage"]), (dataLength*(requestInstance["currentMessage"]+1)))]);
+    characterisic.write(sendBuffer, true, function(err){
+        debug("Wrote Message " + requestInstance["currentMessage"]);
+        if(requestInstance["currentMessage"] != requestInstance["totalMessages"]){
+            // can go to next message
+            currentRequests[currentRequests.findIndex(el => el.deviceId == requestInstance["deviceId"])].currentMessage = requestInstance["currentMessage"] + 1;
+            sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestInstance["deviceId"]));
+        }
+    });
+}
+
+
 //exports.startScanning = function(alreadyExisted){
 debug("READ")
     
@@ -140,23 +162,13 @@ debug("DISCOVERING")
                                     })
                                     characterisic.subscribe(function(err){
                                         debug("Subscribed")
-                                        var dataLength = 450;
-                                        var teamIdentifier = "0862";
-                                        var protocolTo = requestToHandle["protocolTo"];
-                                        var protocolFrom = requestToHandle["protocolFrom"];
-                                        var responseExpected = "1"
-                                        var communicationId = requestToHandle["communicationId"];
-                                        var bufferedData = Buffer.from(requestToHandle["data"])                                   
+                                                                           
                                         var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
-					debug(numberOfMessages)
-                                        for(var i = 0; i < numberOfMessages; i++){
-                                            var headerBuffer = Buffer.from(teamIdentifier + deviceId + protocolTo + protocolFrom + (i == (numberOfMessages-1) ? "e" : "a") + i.toString().padStart(4, "0") + responseExpected + communicationId, "hex")
-					debug(i)                                            
-var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*i), (dataLength*(i+1)))]);
-                                            characterisic.write(sendBuffer, true, function(err){
-                                                debug("Wrote Message " + (i + 1));
-                                            });
-                                        }                          
+                                        debug(numberOfMessages)
+                                        currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].totalMessages = numberOfMessages;
+                                        currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = 1;
+                                        sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestInstance["deviceId"]));
+                                                                 
                                     });
                                     
                                     
@@ -176,5 +188,6 @@ var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*i),
         debug(peripheral);
     });
     
+
     
 //}

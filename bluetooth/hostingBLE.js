@@ -56,7 +56,8 @@ var discoveredDevices = []
 var existingDevices = []
 var performingTasks = false;
 
-function sendMessageAndCheck(requestInstance){
+function sendMessageAndCheck(requestInstance, characterisic){
+	debug("Writing?")
     var dataLength = 450;
     var teamIdentifier = "0862";
     var protocolTo = requestInstance["protocolTo"];
@@ -66,12 +67,13 @@ function sendMessageAndCheck(requestInstance){
     var bufferedData = Buffer.from(requestInstance["data"])
     var headerBuffer = Buffer.from(teamIdentifier + deviceId + protocolTo + protocolFrom + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + i.toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
     var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*requestInstance["currentMessage"]), (dataLength*(requestInstance["currentMessage"]+1)))]);
-    characterisic.write(sendBuffer, true, function(err){
+	debug("Trying more writing")    
+characterisic.write(sendBuffer, true, function(err){
         debug("Wrote Message " + requestInstance["currentMessage"]);
         if(requestInstance["currentMessage"] != requestInstance["totalMessages"]){
             // can go to next message
             currentRequests[currentRequests.findIndex(el => el.deviceId == requestInstance["deviceId"])].currentMessage = requestInstance["currentMessage"] + 1;
-            sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestInstance["deviceId"]));
+            sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestInstance["deviceId"]), characterisic);
         }
     });
 }
@@ -162,12 +164,13 @@ debug("DISCOVERING")
                                     })
                                     characterisic.subscribe(function(err){
                                         debug("Subscribed")
-                                                                           
+ var dataLength = 450;
+                                         var bufferedData = Buffer.from(requestToHandle["data"])                                   
                                         var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
                                         debug(numberOfMessages)
                                         currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].totalMessages = numberOfMessages;
                                         currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = 1;
-                                        sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestInstance["deviceId"]));
+                                        sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic);
                                                                  
                                     });
                                     

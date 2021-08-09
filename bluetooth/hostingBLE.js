@@ -120,55 +120,56 @@ debug("DISCOVERING")
                 serviceId = setInterval(function(){peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
                     if(characteristics != undefined && characteristics != []){
                         clearInterval(serviceId);
-                    if(!characteristicsAlreadyFound){
-                        characteristicsAlreadyFound = true;
-                        characteristics.forEach(characterisic => {
-                            if(characterisic.uuid == writingCharacteristicId){
-                                /*characterisic.discoverDescriptors(function(err, descriptors){
-                                    console.log("Desc detected!");
-                                    descriptors.forEach(desc => {
-                                        if(desc.uuid == uniqueIdDescriptor){
-                                            desc.readValue(function(err, data){
-                                                console.log("Desc data: " + data);
-                                            })
-                                        }
-                                    });
-                                })*/
-                                debug("Found characteristic!!")
-                                characterisic.on("data", function(data, isNotification){
-                                    debug("Data received: " + data + " " + isNotification);
-                                })
-                                characterisic.subscribe(function(err){
-                                    debug("Subscribed")
-                                    var dataLength = 450;
-                                    var teamIdentifier = "0862";
-                                    var protocolTo = requestToHandle["protocolTo"];
-                                    var protocolFrom = requestToHandle["protocolFrom"];
-                                    var responseExpected = "1"
-                                    var communicationId = requestToHandle["communicationId"];
-                                    var bufferedData = Buffer.from(requestToHandle["data"])                                   
-                                    var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
-                                    for(var i = 0; i < numberOfMessages; i++){
-                                        var headerBuffer = Buffer.from(teamIdentifier + deviceId + protocolTo + protocolFrom + (i == (numberOfMessages-1) ? "e" : "a") + i.toString().padStart(4, "0") + responseExpected + communicationId, "hex")
-                                        var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*i), (dataLength*(i+1)))]);
-                                        characterisic.write(sendBuffer, true, function(err){
-                                            debug("Wrote Message " + (i + 1));
+                        if(!characteristicsAlreadyFound){
+                            characteristicsAlreadyFound = true;
+                            characteristics.forEach(characterisic => {
+                                if(characterisic.uuid == writingCharacteristicId){
+                                    /*characterisic.discoverDescriptors(function(err, descriptors){
+                                        console.log("Desc detected!");
+                                        descriptors.forEach(desc => {
+                                            if(desc.uuid == uniqueIdDescriptor){
+                                                desc.readValue(function(err, data){
+                                                    console.log("Desc data: " + data);
+                                                })
+                                            }
                                         });
-                                    }                          
-                                });
-                                
-                                
-                                //setInterval(function(){console.log("A")}, 500);
-                            }
-                        }); 
-                    }
+                                    })*/
+                                    debug("Found characteristic!!")
+                                    characterisic.on("data", function(data, isNotification){
+                                        debug("Data received: " + data + " " + isNotification);
+                                    })
+                                    characterisic.subscribe(function(err){
+                                        debug("Subscribed")
+                                        var dataLength = 450;
+                                        var teamIdentifier = "0862";
+                                        var protocolTo = requestToHandle["protocolTo"];
+                                        var protocolFrom = requestToHandle["protocolFrom"];
+                                        var responseExpected = "1"
+                                        var communicationId = requestToHandle["communicationId"];
+                                        var bufferedData = Buffer.from(requestToHandle["data"])                                   
+                                        var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
+                                        for(var i = 0; i < numberOfMessages; i++){
+                                            var headerBuffer = Buffer.from(teamIdentifier + deviceId + protocolTo + protocolFrom + (i == (numberOfMessages-1) ? "e" : "a") + i.toString().padStart(4, "0") + responseExpected + communicationId, "hex")
+                                            var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*i), (dataLength*(i+1)))]);
+                                            characterisic.write(sendBuffer, true, function(err){
+                                                debug("Wrote Message " + (i + 1));
+                                            });
+                                        }                          
+                                    });
+                                    
+                                    
+                                    //setInterval(function(){console.log("A")}, 500);
+                                }
+                            }); 
+                        }
                     
+                    }
                 })}, 1000);
-                    }
+            }
                     
-                
-            });
         }
+        
+        
     
         debug(peripheral);
     });

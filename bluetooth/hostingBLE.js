@@ -65,15 +65,16 @@ function sendMessageAndCheck(requestInstance, characterisic){
     var responseExpected = "1"
     var communicationId = requestInstance["communicationId"];
     var bufferedData = Buffer.from(requestInstance["data"])
-    var headerBuffer = Buffer.from(teamIdentifier + deviceId + protocolTo + protocolFrom + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + i.toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
-    var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*requestInstance["currentMessage"]), (dataLength*(requestInstance["currentMessage"]+1)))]);
+    var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "e") + requestInstance["currentMessage"].toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
+    //var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*(requestInstance["currentMessage"]-1)), (dataLength*(requestInstance["currentMessage"])))]);
+var sendBuffer = Buffer.concat([headerBuffer, bufferedData])
 	debug("Trying more writing")    
-characterisic.write(sendBuffer, true, function(err){
+characterisic.write(sendBuffer, false, function(err){
         debug("Wrote Message " + requestInstance["currentMessage"]);
         if(requestInstance["currentMessage"] != requestInstance["totalMessages"]){
             // can go to next message
             currentRequests[currentRequests.findIndex(el => el.deviceId == requestInstance["deviceId"])].currentMessage = requestInstance["currentMessage"] + 1;
-            sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestInstance["deviceId"]), characterisic);
+            //setTimeout(function(){sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestInstance["deviceId"]), characterisic)}, 2000);
         }
     });
 }

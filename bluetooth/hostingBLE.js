@@ -166,15 +166,25 @@ debug("DISCOVERING")
                                             sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic)
                                         }else{
                                             debug("Response NOT expected (proper response): " + Buffer.from(data).toString('hex').substring(18, 19))
-						peripheral.disconnect(function(err){
-debug("Successfully disconnected")
-});
+                                            var rawHexData = Buffer.from(data).toString('hex');
+                                            var teamIdentifier = rawHexData.substring(0,4)
+                                            var deviceId = rawHexData.substring(4, 10)
+                                            var protocolTo = rawHexData.substring(10, 14)
+                                            var protocolFrom = rawHexData.substring(14, 18)
+                                            var expectedResponse = rawHexData.substring(18,19);
+                                            var endOfMessage = rawHexData.substring(19,20)
+                                            var messageNumber = rawHexData.substring(20, 24)
+                                            var communicationId = rawHexData.substring(24,32)
+                                            var totalData = Buffer.from(rawHexData.substring(32), 'hex').toString()
+                                            peripheral.disconnect(function(err){
+                                                debug("Successfully disconnected")
+                                            });
                                         }
                                     })
                                     characterisic.subscribe(function(err){
                                         debug("Subscribed")
- var dataLength = 200;
-                                         var bufferedData = Buffer.from(requestToHandle["data"])                                   
+                                        var dataLength = 200;
+                                        var bufferedData = Buffer.from(requestToHandle["data"])                                   
                                         var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
                                         debug(numberOfMessages)
                                         currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].totalMessages = numberOfMessages;

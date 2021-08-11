@@ -157,20 +157,23 @@ debug("DISCOVERING")
                                     debug("Found characteristic!!")
                                     characterisic.on("data", function(data, isNotification){
                                         debug("Data received: " + data + " " + isNotification);
-                                        debug("HEX: " + data.toString(16))
-                                        if(data.toString(16).substring(18, 19) == "1"){
-                                            console.log("Response expected (send next message): " + data.toString(16).substring(18, 19))
+                                        debug("HEX: " + Buffer.from(data).toString('hex'))
+                                        if(Buffer.from(data).toString('hex').substring(18, 19) == "1"){
+                                            debug("Response expected (send next message): " + Buffer.from(data).toString('hex').substring(18, 19))
 
                                             //tablet should handle if it is the end or not, but not wrong to add redundancy 
                                             currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage + 1;
                                             sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic)
                                         }else{
-                                            console.log("Response NOT expected (proper response): " + data.toString(16).substring(18, 19))
+                                            debug("Response NOT expected (proper response): " + Buffer.from(data).toString('hex').substring(18, 19))
+						peripheral.disconnect(function(err){
+debug("Successfully disconnected")
+});
                                         }
                                     })
                                     characterisic.subscribe(function(err){
                                         debug("Subscribed")
- var dataLength = 450;
+ var dataLength = 200;
                                          var bufferedData = Buffer.from(requestToHandle["data"])                                   
                                         var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
                                         debug(numberOfMessages)

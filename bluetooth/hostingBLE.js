@@ -58,24 +58,19 @@ var performingTasks = false;
 
 function sendMessageAndCheck(requestInstance, characterisic){
 	debug("Writing?")
-    var dataLength = 450;
+    var dataLength = 200;
     var teamIdentifier = "0862";
     var protocolTo = requestInstance["protocolTo"];
     var protocolFrom = requestInstance["protocolFrom"];
     var responseExpected = "1"
     var communicationId = requestInstance["communicationId"];
     var bufferedData = Buffer.from(requestInstance["data"])
-    var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "e") + requestInstance["currentMessage"].toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
-    //var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*(requestInstance["currentMessage"]-1)), (dataLength*(requestInstance["currentMessage"])))]);
-var sendBuffer = Buffer.concat([headerBuffer, bufferedData])
+    var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + requestInstance["currentMessage"].toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
+    var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*(requestInstance["currentMessage"]-1)), (dataLength*(requestInstance["currentMessage"])))]);
+    //var sendBuffer = Buffer.concat([headerBuffer, bufferedData])
 	debug("Trying more writing")    
-characterisic.write(sendBuffer, false, function(err){
+    characterisic.write(sendBuffer, false, function(err){
         debug("Wrote Message " + requestInstance["currentMessage"]);
-        if(requestInstance["currentMessage"] != requestInstance["totalMessages"]){
-            // can go to next message
-            currentRequests[currentRequests.findIndex(el => el.deviceId == requestInstance["deviceId"])].currentMessage = requestInstance["currentMessage"] + 1;
-            //setTimeout(function(){sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestInstance["deviceId"]), characterisic)}, 2000);
-        }
     });
 }
 
@@ -162,6 +157,16 @@ debug("DISCOVERING")
                                     debug("Found characteristic!!")
                                     characterisic.on("data", function(data, isNotification){
                                         debug("Data received: " + data + " " + isNotification);
+                                        debug("HEX: " + data.toString(16))
+                                        if(data.toString(16).substring(18, 19) == "1"){
+                                            console.log("Response expected (send next message): " + data.toString(16).substring(18, 19))
+
+                                            //tablet should handle if it is the end or not, but not wrong to add redundancy 
+                                            currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage + 1;
+                                            sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic)
+                                        }else{
+                                            console.log("Response NOT expected (proper response): " + data.toString(16).substring(18, 19))
+                                        }
                                     })
                                     characterisic.subscribe(function(err){
                                         debug("Subscribed")

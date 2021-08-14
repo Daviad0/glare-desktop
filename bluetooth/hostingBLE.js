@@ -74,6 +74,18 @@ function sendMessageAndCheck(requestInstance, characterisic){
     });
 }
 
+function checkIfFinished(message, peripheral){
+    if(message.isEnded){
+        // handle action here
+
+        peripheral.disconnect(function(err){
+            debug("Successfully disconnected")
+        });
+
+        socket.emit('newRequestIn', message);
+        
+    }
+}
 
 //exports.startScanning = function(alreadyExisted){
 debug("READ")
@@ -176,9 +188,26 @@ debug("DISCOVERING")
                                             var messageNumber = rawHexData.substring(20, 24)
                                             var communicationId = rawHexData.substring(24,32)
                                             var totalData = Buffer.from(rawHexData.substring(32), 'hex').toString()
-                                            peripheral.disconnect(function(err){
-                                                debug("Successfully disconnected")
-                                            });
+                                            if(pendingInRequests.findIndex(el => el.communicationId == communicationId) == -1){
+                                                pendingInRequests.push({
+                                                    deviceId : deviceId,
+                                                    protocolTo : protocolTo,
+                                                    protocolFrom : protocolFrom,
+                                                    communicationId : communicationId,
+                                                    data : totalData,
+                                                    sentAt : Date.now(),
+                                                    numMessages : 1,
+                                                    isEnded = endOfMessage
+                                                });
+                                            }else{
+                                                pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].numMessages = pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].numMessages + 1
+                                                pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].data = pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].data + totalData
+                                                pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].isEnded = endOfMessage;
+                                            }
+                                            checkIfFinished(pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)], peripheral);
+
+
+                                            
                                         }
                                     })
                                     characterisic.subscribe(function(err){

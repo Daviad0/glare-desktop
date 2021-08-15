@@ -187,10 +187,10 @@ function connectAndHandle(peripheral, requestToHandle){
             if(!characteristicsAlreadyFound){
                 debug("Took too long!")
                 concurrency = concurrency + 1
-                /*peripheral.disconnect(function(err){
+                peripheral.disconnect(function(err){
                     debug("Successfully disconnected")
                     
-                });*/
+                });
                 noble.stopScanning();
                 noble.startScanning([accessibleServiceId], true);
             }

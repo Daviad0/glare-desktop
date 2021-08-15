@@ -95,7 +95,7 @@ function connectAndHandle(peripheral, requestToHandle){
     currentRequests.push(requestToHandle);
     peripheral.connect(function(err){
         var characteristicsAlreadyFound = false;
-        serviceId = setInterval(function(){peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
+        peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
             debug("Requesting Characteristics: " + characteristics.length);
             if(characteristics != undefined && characteristics != []){
                 clearInterval(serviceId);
@@ -174,7 +174,7 @@ function connectAndHandle(peripheral, requestToHandle){
                 }
             
             }
-        })}, 1000);
+        });
         setTimeout(function(){
             
             if(!characteristicsAlreadyFound){

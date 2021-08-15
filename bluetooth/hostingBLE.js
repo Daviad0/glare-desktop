@@ -186,8 +186,9 @@ debug("READ")
         if(discoveredDevices.findIndex((el) => el.advertisement.localName.substring(3) == request.deviceId) == -1){
             pendingOutRequests.push(request);
         }else{
-            debug("Already found; connecting...")
-            connectAndHandle(request, discoveredDevices.find((el) => el.advertisement.localName.substring(3) == request.deviceId));
+            /*debug("Already found; connecting...")
+            connectAndHandle(request, discoveredDevices.find((el) => el.advertisement.localName.substring(3) == request.deviceId));*/
+            pendingOutRequests.push(request);
         }
         
         

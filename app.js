@@ -286,6 +286,12 @@ ipcMain.on('addCompetition', (event, args) => {
   });
 });
 
+ipcMain.on('getDevices', (event, args) => {
+  db.devices.find({}, function(err, allDocs){
+    mainWindow.webContents.send("allDevices", {"devices" : allDocs})
+  });
+});
+
 // when ElectronJS is ready, start up the role selection window
 app.on('ready', createWindow)
 

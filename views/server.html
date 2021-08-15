@@ -916,8 +916,8 @@
     }
     
   })
-
-  ipcRenderer.send("allDevices", (evt, args) => {
+  ipcRenderer.send("getDevices")
+  ipcRenderer.on("allDevices", (evt, args) => {
     document.getElementById("activeDeviceContainer").innerHTML = "";
     document.getElementById("inactiveDeviceContainer").innerHTML = "";
     args["devices"].forEach(device => {

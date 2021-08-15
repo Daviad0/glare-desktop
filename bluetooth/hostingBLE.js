@@ -80,7 +80,8 @@ function checkIfFinished(message, peripheral){
 
         peripheral.disconnect(function(err){
             debug("Successfully disconnected")
-            noble._peripherals = []
+            noble.stopScanning();
+            noble.startScanning([accessibleServiceId], true);
         });
 
         socket.emit('requestFinished', message);

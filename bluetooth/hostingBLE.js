@@ -99,7 +99,8 @@ function connectAndHandle(peripheral, requestToHandle){
         var characteristicsAlreadyFound = false;
         var myConcurrency = concurrency;
         peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
-            if(myConcurrency != concurrency){
+            debug(error)
+            if(myConcurrency == concurrency){
                 debug("Requesting Characteristics: " + characteristics.length);
                 if(characteristics != undefined && characteristics != []){
                     clearInterval(serviceId);

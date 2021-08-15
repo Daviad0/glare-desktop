@@ -15,7 +15,7 @@
         <span class="maintext" style="font-size:2vh;font-weight:300">Licensed to 862</span>
       </div>
       <div class="channels" style="margin-top:20px;" id="channelsMax">
-        <div data-channel="1" class="bg-main channelarea-parent channelbutton" id="communication_timer_trigger">
+        <div data-channel="1" class="bg-main channelarea-parent channelbutton" id="showAutomaticOverlay">
           <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:4vh">timer</span>
         </div>
         <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="showManualOverlay">
@@ -198,6 +198,19 @@
         
       </div>
     </div>
+
+    <div class="overlayBox" id="automaticOverlay" style="display: none;">
+      <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
+        <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%;max-height: 20vh;overflow-y: auto;">
+          
+          <div class="bg-main mainbutton" id="exitAutomaticOverlay">
+            <span class="maintext" style="font-size: 16px;">Exit</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
     <div class="overlayBox" id="channelOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
         <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
@@ -688,6 +701,45 @@
     
   });
 
+
+  function showAutomaticOverlay(evt){
+    
+    //selectedSchemas = []
+    if(!locked){
+      document.getElementById("showAutomaticOverlay").classList.replace("bg-main", "bg-selected")
+      document.getElementById("automaticOverlay").style.opacity = "0";
+      document.getElementById("automaticOverlay").style.display = "block";
+      document.getElementById("automaticOverlay").animate([
+        { opacity: '0'},
+        { opacity: '100'}
+      ],
+      {
+        duration: 250,
+        iterations: 1
+      });
+      document.getElementById("deviceOverlay").style.opacity = "100";
+    }
+  }
+  document.getElementById("showAutomaticOverlay").addEventListener('click', showAutomaticOverlay);
+  document.getElementById("exitAutomaticOverlay").addEventListener('click', function(){
+    document.getElementById("showAutomaticOverlay").classList.replace("bg-selected", "bg-main")
+    document.getElementById("automaticOverlay").style.opacity = "0";
+    document.getElementById("automaticOverlay").animate([
+      { opacity: '100'},
+      { opacity: '0'}
+    ],
+    {
+      duration: 250,
+      iterations: 1
+    });
+    contractOptions();
+    setTimeout(function(){
+      
+      document.getElementById("automaticOverlay").style.display = "none";
+    }, 250);
+    
+    
+  });
 
   function showDeviceOverlay(evt){
     

@@ -82,13 +82,96 @@ function checkIfFinished(message, peripheral){
             debug("Successfully disconnected")
         });
 
-        socket.emit('newRequestIn', message);
-        debug("Successfully finished: " + message.data)
-    }
-    else{
-        debug("Not finished: " + message.data)
+        socket.emit('requestFinished', message);
     }
 }
+
+function connectAndHandle(peripheral, requestToHandle){
+    currentRequests.push(requestToHandle);
+    peripheral.connect(function(err){
+        var characteristicsAlreadyFound = false;
+        serviceId = setInterval(function(){peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
+            if(characteristics != undefined && characteristics != []){
+                clearInterval(serviceId);
+                if(!characteristicsAlreadyFound){
+                    characteristicsAlreadyFound = true;
+                    characteristics.forEach(characterisic => {
+                        if(characterisic.uuid == writingCharacteristicId){
+                            /*characterisic.discoverDescriptors(function(err, descriptors){
+                                console.log("Desc detected!");
+                                descriptors.forEach(desc => {
+                                    if(desc.uuid == uniqueIdDescriptor){
+                                        desc.readValue(function(err, data){
+                                            console.log("Desc data: " + data);
+                                        })
+                                    }
+                                });
+                            })*/
+                            debug("Found characteristic!!")
+                            characterisic.on("data", function(data, isNotification){
+                                if(Buffer.from(data).toString('hex').substring(18, 19) == "1"){
+                                    debug("Response expected (send next message): " + Buffer.from(data).toString('hex').substring(18, 19))
+
+                                    //tablet should handle if it is the end or not, but not wrong to add redundancy 
+                                    currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage + 1;
+                                    sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic)
+                                }else{
+                                    debug("Response NOT expected (proper response): " + Buffer.from(data).toString('hex').substring(18, 19))
+                                    var rawHexData = Buffer.from(data).toString('hex');
+                                    var teamIdentifier = rawHexData.substring(0,4)
+                                    var deviceId = rawHexData.substring(4, 10)
+                                    var protocolTo = rawHexData.substring(10, 14)
+                                    var protocolFrom = rawHexData.substring(14, 18)
+                                    var expectedResponse = rawHexData.substring(18,19);
+                                    var endOfMessage = rawHexData.substring(19,20)
+                                    var messageNumber = rawHexData.substring(20, 24)
+                                    var communicationId = rawHexData.substring(24,32)
+                                    var totalData = Buffer.from(rawHexData.substring(32), 'hex').toString()
+                                    if(pendingInRequests.findIndex(el => el.communicationId == communicationId) == -1){
+                                        pendingInRequests.push({
+                                            deviceId : deviceId,
+                                            protocolTo : protocolTo,
+                                            protocolFrom : protocolFrom,
+                                            communicationId : communicationId,
+                                            data : totalData,
+                                            sentAt : Date.now(),
+                                            numMessages : 1,
+                                            isEnded : endOfMessage
+                                        });
+                                    }else{
+                                        pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].numMessages = pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].numMessages + 1
+                                        pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].data = pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].data + totalData
+                                        pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].isEnded = endOfMessage;
+                                    }
+                                    checkIfFinished(pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)], peripheral);
+
+
+                                    
+                                }
+                            })
+                            characterisic.subscribe(function(err){
+                                debug("Subscribed")
+                                var dataLength = 200;
+                                var bufferedData = Buffer.from(requestToHandle["data"])                                   
+                                var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
+                                debug(numberOfMessages)
+                                currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].totalMessages = numberOfMessages;
+                                currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = 1;
+                                sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic);
+                                                            
+                            });
+                            
+                            
+                            //setInterval(function(){console.log("A")}, 500);
+                        }
+                    }); 
+                }
+            
+            }
+        })}, 1000);
+    })
+}
+
 
 //exports.startScanning = function(alreadyExisted){
 debug("READ")
@@ -100,9 +183,18 @@ debug("READ")
         }
     }
     socket.on('addToQueue', (request) => {
-        pendingOutRequests.push(request);
+        if(discoveredDevices.findIndex((el) => el.advertisement.localName.substring(3) == request.deviceId) == -1){
+            pendingOutRequests.push(request);
+        }else{
+            debug("Already found; connecting...")
+            connectAndHandle(request, discoveredDevices.find((el) => el.advertisement.localName.substring(3) == request.deviceId));
+        }
+        
+        
     });
     
+
+
     socket.on('cancelQueue', ()=> {
         pendingOutRequests = [];
     })
@@ -149,91 +241,7 @@ debug("DISCOVERING")
             debug("Connecting to queue item");
             
             debug(requestToHandle)
-            currentRequests.push(requestToHandle);
-            peripheral.connect(function(err){
-                var characteristicsAlreadyFound = false;
-                serviceId = setInterval(function(){peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
-                    if(characteristics != undefined && characteristics != []){
-                        clearInterval(serviceId);
-                        if(!characteristicsAlreadyFound){
-                            characteristicsAlreadyFound = true;
-                            characteristics.forEach(characterisic => {
-                                if(characterisic.uuid == writingCharacteristicId){
-                                    /*characterisic.discoverDescriptors(function(err, descriptors){
-                                        console.log("Desc detected!");
-                                        descriptors.forEach(desc => {
-                                            if(desc.uuid == uniqueIdDescriptor){
-                                                desc.readValue(function(err, data){
-                                                    console.log("Desc data: " + data);
-                                                })
-                                            }
-                                        });
-                                    })*/
-                                    debug("Found characteristic!!")
-                                    characterisic.on("data", function(data, isNotification){
-                                        debug("Data received: " + data + " " + isNotification);
-                                        debug("HEX: " + Buffer.from(data).toString('hex'))
-                                        if(Buffer.from(data).toString('hex').substring(18, 19) == "1"){
-                                            debug("Response expected (send next message): " + Buffer.from(data).toString('hex').substring(18, 19))
-
-                                            //tablet should handle if it is the end or not, but not wrong to add redundancy 
-                                            currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage + 1;
-                                            sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic)
-                                        }else{
-                                            debug("Response NOT expected (proper response): " + Buffer.from(data).toString('hex').substring(18, 19))
-                                            var rawHexData = Buffer.from(data).toString('hex');
-                                            var teamIdentifier = rawHexData.substring(0,4)
-                                            var deviceId = rawHexData.substring(4, 10)
-                                            var protocolTo = rawHexData.substring(10, 14)
-                                            var protocolFrom = rawHexData.substring(14, 18)
-                                            var expectedResponse = rawHexData.substring(18,19);
-                                            var endOfMessage = rawHexData.substring(19,20)
-                                            var messageNumber = rawHexData.substring(20, 24)
-                                            var communicationId = rawHexData.substring(24,32)
-                                            var totalData = Buffer.from(rawHexData.substring(32), 'hex').toString()
-                                            if(pendingInRequests.findIndex(el => el.communicationId == communicationId) == -1){
-                                                pendingInRequests.push({
-                                                    deviceId : deviceId,
-                                                    protocolTo : protocolTo,
-                                                    protocolFrom : protocolFrom,
-                                                    communicationId : communicationId,
-                                                    data : totalData,
-                                                    sentAt : Date.now(),
-                                                    numMessages : 1,
-                                                    isEnded : endOfMessage
-                                                });
-                                            }else{
-                                                pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].numMessages = pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].numMessages + 1
-                                                pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].data = pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].data + totalData
-                                                pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].isEnded = endOfMessage;
-                                            }
-                                            checkIfFinished(pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)], peripheral);
-
-
-                                            
-                                        }
-                                    })
-                                    characterisic.subscribe(function(err){
-                                        debug("Subscribed")
-                                        var dataLength = 200;
-                                        var bufferedData = Buffer.from(requestToHandle["data"])                                   
-                                        var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
-                                        debug(numberOfMessages)
-                                        currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].totalMessages = numberOfMessages;
-                                        currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = 1;
-                                        sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic);
-                                                                 
-                                    });
-                                    
-                                    
-                                    //setInterval(function(){console.log("A")}, 500);
-                                }
-                            }); 
-                        }
-                    
-                    }
-                })}, 1000);
-            })
+            connectAndHandle(peripheral, requestToHandle);
                     
         }
         

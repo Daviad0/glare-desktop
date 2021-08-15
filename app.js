@@ -157,6 +157,9 @@ io.on('connection', (socket) => {
   socket.on("externalDebug", (object) => {
     console.log(object);
   });
+  socket.on("requestFinished", (message) => {
+    console.log(message.data)
+  });
 });
 
 

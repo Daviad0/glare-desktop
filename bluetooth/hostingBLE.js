@@ -83,7 +83,10 @@ function checkIfFinished(message, peripheral){
         });
 
         socket.emit('newRequestIn', message);
-        
+        debug("Successfully finished: " + message.data)
+    }
+    else{
+        debug("Not finished: " + message.data)
     }
 }
 

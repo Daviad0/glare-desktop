@@ -100,6 +100,7 @@ function connectAndHandle(peripheral, requestToHandle){
         var myConcurrency = concurrency;
         peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
             debug(error)
+            debug("MyC = " + myConcurrency + ", C = " + concurrency);
             if(myConcurrency == concurrency){
                 debug("Requesting Characteristics: " + characteristics.length);
                 if(characteristics != undefined && characteristics != []){

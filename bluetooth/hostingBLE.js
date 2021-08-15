@@ -102,7 +102,7 @@ function connectAndHandle(peripheral, requestToHandle){
             if(myConcurrency != concurrency){
                 debug("Requesting Characteristics: " + characteristics.length);
                 if(characteristics != undefined && characteristics != []){
-                    clearInterval(serviceId);
+                    //clearInterval(serviceId);
                     if(!characteristicsAlreadyFound){
                         characteristicsAlreadyFound = true;
                         characteristics.forEach(characterisic => {

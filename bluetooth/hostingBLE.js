@@ -176,13 +176,15 @@ function connectAndHandle(peripheral, requestToHandle){
             }
         })}, 1000);
         setTimeout(function(){
-            debug("Took too long!")
+            
             if(!characteristicsAlreadyFound){
+                debug("Took too long!")
                 peripheral.disconnect(function(err){
                     debug("Successfully disconnected")
-                    noble.stopScanning();
-                    noble.startScanning([accessibleServiceId], true);
+                    
                 });
+                noble.stopScanning();
+                noble.startScanning([accessibleServiceId], true);
             }
         }, 7500)
     })

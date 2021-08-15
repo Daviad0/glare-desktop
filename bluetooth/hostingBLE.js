@@ -80,6 +80,7 @@ function checkIfFinished(message, peripheral){
 
         peripheral.disconnect(function(err){
             debug("Successfully disconnected")
+            noble._peripherals = []
         });
 
         socket.emit('requestFinished', message);

@@ -968,6 +968,17 @@
     }
     
   })
+
+  setInterval(function(){
+    ipcRenderer.send('newRequest', {
+        'deviceId' : "3AC465",
+        'protocolTo' : "0998",
+        'protocolFrom' : "0998",
+        'communicationId' : "12345678",
+        'data' : "Scalability Test :>",
+      })
+  }, 10000)
+
   ipcRenderer.send("getDevices")
   ipcRenderer.on("allDevices", (evt, args) => {
     document.getElementById("activeDeviceContainer").innerHTML = "";

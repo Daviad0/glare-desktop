@@ -75,7 +75,7 @@ function sendMessageAndCheck(requestInstance, characterisic){
 }
 
 function checkIfFinished(message, peripheral){
-    if(message.isEnded){
+    if(message.isEnded == "e"){
         // handle action here
 
         peripheral.disconnect(function(err){
@@ -200,7 +200,7 @@ debug("DISCOVERING")
                                                     data : totalData,
                                                     sentAt : Date.now(),
                                                     numMessages : 1,
-                                                    isEnded = endOfMessage
+                                                    isEnded : endOfMessage
                                                 });
                                             }else{
                                                 pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].numMessages = pendingInRequests[pendingInRequests.findIndex(el => el.communicationId == communicationId)].numMessages + 1

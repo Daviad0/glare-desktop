@@ -56,6 +56,8 @@ var discoveredDevices = []
 var existingDevices = []
 var performingTasks = false;
 
+var totalConnections = 0;
+
 function sendMessageAndCheck(requestInstance, characterisic){
 	debug("Writing?")
     var dataLength = 200;
@@ -83,7 +85,8 @@ function checkIfFinished(message, peripheral){
             noble.stopScanning();
             noble.startScanning([accessibleServiceId], true);
         });
-
+        totalConnections = totalConnections + 1;
+        debug(totalConnections)
         socket.emit('requestFinished', message);
     }
 }
@@ -93,6 +96,7 @@ function connectAndHandle(peripheral, requestToHandle){
     peripheral.connect(function(err){
         var characteristicsAlreadyFound = false;
         serviceId = setInterval(function(){peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
+            debug("Requesting Characteristics: " + characteristics.length);
             if(characteristics != undefined && characteristics != []){
                 clearInterval(serviceId);
                 if(!characteristicsAlreadyFound){

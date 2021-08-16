@@ -106,7 +106,7 @@ function connectAndHandle(peripheral, requestToHandle){
                 if(characteristics != undefined && characteristics != []){
                     //clearInterval(serviceId);
                     if(!characteristicsAlreadyFound){
-                        characteristicsAlreadyFound = true;
+                       
                         characteristics.forEach(characterisic => {
                             if(characterisic.uuid == writingCharacteristicId){
                                 /*characterisic.discoverDescriptors(function(err, descriptors){
@@ -115,7 +115,7 @@ function connectAndHandle(peripheral, requestToHandle){
                                         if(desc.uuid == uniqueIdDescriptor){
                                             desc.readValue(function(err, data){
                                                 console.log("Desc data: " + data);
-                                            })
+                                           })
                                         }
                                     });
                                 })*/
@@ -162,6 +162,7 @@ function connectAndHandle(peripheral, requestToHandle){
                                     }
                                 })
                                 characterisic.subscribe(function(err){
+					 characteristicsAlreadyFound = true;
                                     debug("Subscribed")
                                     var dataLength = 200;
                                     var bufferedData = Buffer.from(requestToHandle["data"])                                   

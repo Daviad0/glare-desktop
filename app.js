@@ -246,7 +246,7 @@ console.log(err);
 
 
 ipcMain.on('newRequest', (event, args) => {
-  console.log(args);
+  //console.log(args);
   io.emit('addToQueue', {
     deviceId : args["deviceId"],
     protocolTo : args["protocolTo"],
@@ -263,7 +263,7 @@ ipcMain.on('newRequest', (event, args) => {
     data : args["data"],
     sentAt : args["sentAt"]
   }, function(err, doc) {
-    console.log("New document added to requests with id " + doc._id + " at " + new Date().toTimeString());
+    //console.log("New document added to requests with id " + doc._id + " at " + new Date().toTimeString());
     mainWindow.webContents.send('addRequest', doc);
     
   });

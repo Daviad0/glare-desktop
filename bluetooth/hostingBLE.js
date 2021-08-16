@@ -70,9 +70,9 @@ function sendMessageAndCheck(requestInstance, characterisic){
     var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + requestInstance["currentMessage"].toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
     var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*(requestInstance["currentMessage"]-1)), (dataLength*(requestInstance["currentMessage"])))]);
     //var sendBuffer = Buffer.concat([headerBuffer, bufferedData])
-	debug("Trying more writing")    
+	//debug("Trying more writing")    
     characterisic.write(sendBuffer, false, function(err){
-        debug("Wrote Message " + requestInstance["currentMessage"]);
+        //debug("Wrote Message " + requestInstance["currentMessage"]);
     });
 }
 
@@ -86,6 +86,7 @@ function checkIfFinished(message, peripheral){
             noble.startScanning([accessibleServiceId], true);
         });
         totalConnections = totalConnections + 1;
+        debug(totalConnections + " / " + (totalConnections + concurrency))
         debug(totalConnections)
         socket.emit('requestFinished', message);
     }
@@ -99,10 +100,10 @@ function connectAndHandle(peripheral, requestToHandle){
         var characteristicsAlreadyFound = false;
         var myConcurrency = concurrency;
         peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
-            debug(error)
-            debug("MyC = " + myConcurrency + ", C = " + concurrency);
+            //debug(error)
+            //debug("MyC = " + myConcurrency + ", C = " + concurrency);
             if(myConcurrency == concurrency){
-                debug("Requesting Characteristics: " + characteristics.length);
+                //debug("Requesting Characteristics: " + characteristics.length);
                 if(characteristics != undefined && characteristics != []){
                     //clearInterval(serviceId);
                     if(!characteristicsAlreadyFound){
@@ -119,16 +120,16 @@ function connectAndHandle(peripheral, requestToHandle){
                                         }
                                     });
                                 })*/
-                                debug("Found characteristic!!")
+                                //debug("Found characteristic!!")
                                 characterisic.on("data", function(data, isNotification){
                                     if(Buffer.from(data).toString('hex').substring(18, 19) == "1"){
-                                        debug("Response expected (send next message): " + Buffer.from(data).toString('hex').substring(18, 19))
+                                        //debug("Response expected (send next message): " + Buffer.from(data).toString('hex').substring(18, 19))
 
                                         //tablet should handle if it is the end or not, but not wrong to add redundancy 
                                         currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage + 1;
                                         sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic)
                                     }else{
-                                        debug("Response NOT expected (proper response): " + Buffer.from(data).toString('hex').substring(18, 19))
+                                        //debug("Response NOT expected (proper response): " + Buffer.from(data).toString('hex').substring(18, 19))
                                         var rawHexData = Buffer.from(data).toString('hex');
                                         var teamIdentifier = rawHexData.substring(0,4)
                                         var deviceId = rawHexData.substring(4, 10)
@@ -163,11 +164,11 @@ function connectAndHandle(peripheral, requestToHandle){
                                 })
                                 characterisic.subscribe(function(err){
 					 characteristicsAlreadyFound = true;
-                                    debug("Subscribed")
+                                    //debug("Subscribed")
                                     var dataLength = 200;
                                     var bufferedData = Buffer.from(requestToHandle["data"])                                   
                                     var numberOfMessages = Math.ceil(bufferedData.length/dataLength)
-                                    debug(numberOfMessages)
+                                    //debug(numberOfMessages)
                                     currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].totalMessages = numberOfMessages;
                                     currentRequests[currentRequests.findIndex(el => el.deviceId == requestToHandle.deviceId)].currentMessage = 1;
                                     sendMessageAndCheck(currentRequests.find(el => el.deviceId == requestToHandle["deviceId"]), characterisic);
@@ -187,10 +188,10 @@ function connectAndHandle(peripheral, requestToHandle){
         setTimeout(function(){
             
             if(!characteristicsAlreadyFound){
-                debug("Took too long!")
+                //debug("Took too long!")
                 concurrency = concurrency + 1
                 peripheral.disconnect(function(err){
-                    debug("Successfully disconnected")
+                    //debug("Successfully disconnected")
                     
                 });
                 noble.stopScanning();
@@ -253,23 +254,23 @@ debug("READ")
     
     var serviceCheck = 0;
     var discovered = 0;
-debug("DISCOVERING")
+//debug("DISCOVERING")
     noble.on('discover', function(peripheral){
-    debug("DISCOVERED")
+    //debug("DISCOVERED")
     var deviceId = peripheral.advertisement.localName.substring(3);
         if(discoveredDevices.findIndex((el) => el.advertisement.localName.substring(3) == deviceId) == -1 && existingDevices.findIndex((el) => el._id == deviceId) == -1){
             discoveredDevices.push(peripheral);
             socket.emit("newDevice", { name: peripheral.advertisement.localName });
-            debug("Adding new device to discovered!");
-            debug(peripheral);
+            //debug("Adding new device to discovered!");
+            //debug(peripheral);
         }
         
         if(pendingOutRequests.findIndex((el) => el.deviceId == deviceId) != -1){
             // something in the queue exists
             var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == deviceId), 1)[0];
-            debug("Connecting to queue item");
+            //debug("Connecting to queue item");
             
-            debug(requestToHandle)
+            //debug(requestToHandle)
             connectAndHandle(peripheral, requestToHandle);
                     
         }

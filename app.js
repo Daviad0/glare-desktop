@@ -216,6 +216,11 @@ io.on('connection', (socket) => {
               db.entries.insert(match, function(err, newDoc){
                 console.log("New entry added")
               })
+            }else{
+              match["_id"] = match.Id;
+              db.entries.update({_id: match.Id}, match, function(err, newDoc){
+                console.log("Entry updated!")
+              })
             }
           })
         })

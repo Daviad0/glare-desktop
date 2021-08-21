@@ -96,6 +96,7 @@ var concurrency = 0;
 
 function connectAndHandle(peripheral, requestToHandle){
     currentRequests.push(requestToHandle);
+    debug("Requests left: " + pendingOutRequests.length)
     peripheral.connect(function(err){
         var characteristicsAlreadyFound = false;
         var myConcurrency = concurrency;

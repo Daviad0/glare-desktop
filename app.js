@@ -207,6 +207,8 @@ io.on('connection', (socket) => {
         break;
       case "c202":
         console.log("[BLE] Updated matches: " + message.data);
+        var matches = JSON.parse(message.data);
+        console.log(matches[0])
         break;
       case "c301":
         console.log("[BLE] Forced competition schema: " + message.data);

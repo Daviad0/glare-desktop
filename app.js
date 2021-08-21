@@ -208,7 +208,17 @@ io.on('connection', (socket) => {
       case "c202":
         console.log("[BLE] Updated matches: " + message.data);
         var matches = JSON.parse(message.data);
-        console.log(matches[0])
+        matches.forEach(match => {
+          db.entries.findOne({_id: match.Id}, function(err, doc){
+            if(doc == null){
+              // need to create
+              match["_id"] = match.Id;
+              db.entries.insert(match, function(err, newDoc){
+                console.log("New entry added")
+              })
+            }
+          })
+        })
         break;
       case "c301":
         console.log("[BLE] Forced competition schema: " + message.data);

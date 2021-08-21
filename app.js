@@ -158,7 +158,69 @@ io.on('connection', (socket) => {
     console.log(object);
   });
   socket.on("requestFinished", (message) => {
-    console.log(message.data)
+    
+    switch(message.protocolFrom){
+      case "0001":
+        console.log("[BLE] Well SOMEONE didn't read the instructions")
+        break;
+      case "0998":
+        console.log("[BLE] Pong!")
+        break;
+      case "0999":
+        console.log(message.data);
+        break;
+      case "a101":
+        console.log("[BLE] Locking state: " + message.data)
+        break;
+      case "a111":
+        console.log("[BLE] HR has to deal with the following complaints: " + message.data)
+        break;
+      case "a201":
+        console.log("[BLE] Diagnostics: " + message.data)
+        break;
+      case "a202":
+        console.log("[BLE] Failed to compile diagnostic data")
+        break;
+      case "a301":
+        console.log("[BLE] Current locking state: " + message.data)
+        break;
+      case "a701":
+        console.log("[BLE] LockDOWN state: " + message.data)
+        break;
+      case "a711":
+        console.log("[BLE] Your code provided was... " + message.data)
+        break;
+      case "a801":
+        console.log("[BLE] Logs: " + message.data)
+        break;
+      case "a811":
+        console.log("[BLE] Emergency medical information: " + message.data)
+        break;
+      case "a901":
+        console.log("[BLE] Current debugging state: " + message.data)
+        break;
+      case "c101":
+        console.log("[BLE] All schemas: " + message.data);
+        break;
+      case "c201":
+        console.log("[BLE] All matches W/O data: " + message.data);
+        break;
+      case "c202":
+        console.log("[BLE] Updated matches: " + message.data);
+        break;
+      case "c301":
+        console.log("[BLE] Forced competition schema: " + message.data);
+        break;
+      case "c401":
+        console.log("[BLE] All users: " + message.data);
+        break;
+      case "c501":
+        console.log("[BLE] Last backup time: " + message.data);
+        break;
+      case "c701":
+        console.log("[BLE] Competition security state mode: " + message.data);
+        break;
+    }
   });
 });
 

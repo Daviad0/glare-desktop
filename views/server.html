@@ -990,13 +990,13 @@
   }, 10000)*/
   var lastSend = new Date()
   setInterval(function checkIfDevice(){
-    if(Math.abs(new Date() - lastSend) / 1000 > 10){
+    if(Math.abs(new Date() - lastSend) / 1000 > 90){
       ipcRenderer.send('newRequest', {
         'deviceId' : "3AC465",
         'protocolTo' : "0998",
         'protocolFrom' : "0998",
         'communicationId' : "12345678",
-        'data' : "Scalability Test :>",
+        'data' : "Durability test",
       })
       lastSend = new Date();
     }

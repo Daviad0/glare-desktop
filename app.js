@@ -334,7 +334,7 @@ console.log(err);
 
 
 ipcMain.on('newRequest', (event, args) => {
-  //console.log(args);
+  console.log(args);
   io.emit('addToQueue', {
     deviceId : args["deviceId"],
     protocolTo : args["protocolTo"],

@@ -29,10 +29,91 @@
       </div>
     </div>
     <div class="contentcontainer">
-      <div class="bg-main mainbutton" id="showCompetitionOverlay" style="width: 500px;">
+      <div id="matches" style="display: none;width:100%;text-align: center;">
+        <div class="bg-main mainbutton" id="createNewMatch" style="width: 300px;display: inline-block;text-align: center;">
+          <span class="maintext" style="font-size: 16px;">Create New Match</span>
+        </div>
+        <div class="bg-error-dull mainbutton" id="replaceMissingMatches" style="width: 300px;display: inline-block;text-align: center;">
+          <span class="maintext" style="font-size: 16px;">Replace Missing Matches</span>
+        </div>
+        <br/>
+        <br/>
+        <div id="matchesToShow" style="max-height: 50vh;overflow-y: auto;">
+          <div class="bg-main" style="display: table;width:100%;padding:10px 20px;border-radius: 8px;line-height: 20px;">
+            <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;">Match 1</span>
+            <span style="text-align:right;display:table-cell">
+              <span class="maintext material-icons-round bg-selected" style="font-size: 24px;padding:5px;border-radius: 8px;">star</span>
+              <span class="maintext material-icons-round bg-success" style="font-size: 24px;padding:5px;border-radius: 8px;">verified</span>
+              <span class="maintext material-icons-round bg-warning" style="font-size: 24px;padding:5px;border-radius: 8px;">flag</span>
+            </span>
+            
+          </div>
+        </div>
+        
+      </div>
+      <div id="competitions" style="display:none;width: 100%;max-height: 60vh;overflow-y: auto;">
+        <div class="bg-main" style="padding:20px;border-radius: 12px;text-align: center;">
+          <span class="maintext" style="font-size: 24px;display:block">Welcome to Jackson, MI</span>
+          <span class="maintext" style="font-size: 16px;display:block">August 21st - August 22nd, 2021</span>
+          <br/>
+          <div style="padding:20px 10px 10px 10px;width: 300px;border-radius: 12px;background-color: #213452;display:inline-block;margin:5px">
+            <span class="maintext" style="font-size: 24px;display:block">Matches Done</span>
+            <span class="maintext" style="font-size: 48px;display:block;margin:0px;font-weight: 600;">94%</span>
+          </div>
+          <div style="padding:20px 10px 10px 10px;width: 300px;border-radius: 12px;background-color: #213452;display:inline-block;margin:5px">
+            <span class="maintext" style="font-size: 24px;display:block">Matches to Audit</span>
+            <span class="maintext" style="font-size: 48px;display:block;margin:0px;font-weight: 600;">4</span>
+          </div>
+          <br/>
+          <br/>
+          <div class="bg-main mainbutton" id="initializeAllMatches" style="width: 300px;background-color: #213452">
+            <span class="maintext" style="font-size: 16px;">Initialize All Matches</span>
+          </div>
+          <div class="bg-main mainbutton" id="performMatchAudit" style="width: 300px;background-color: #213452">
+            <span class="maintext" style="font-size: 16px;">Perform Match Audit</span>
+          </div>
+
+        </div>
+      </div>
+      <div id="tablets" style="display:none;width: 100%;text-align: center;">
+        <span class="maintext" style="font-size: 2vw;text-align: center;">Active Devices</span></br>
+          <div id="activeDeviceContainer" style="text-align:center;">
+            <div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
+              <span class="maintext" style="font-size: 20px;display:block">3AC465</span>
+              <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
+              <div class="bg-selected mainbutton">
+                <span class="maintext" style="font-size: 14px;">Demote</span>
+              </div>
+            </div>
+            <div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
+              <span class="maintext" style="font-size: 20px;display:block">3AC465</span>
+              <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
+              <div class="bg-selected mainbutton">
+                <span class="maintext" style="font-size: 14px;">Demote</span>
+              </div>
+            </div>
+          </div>
+          <span class="maintext" style="font-size: 1.5vw;text-align: center;">Inactive Devices</span></br>
+          <div id="inactiveDeviceContainer" style="text-align:center;">
+            <div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
+              <span class="maintext" style="font-size: 20px;display:block">3AC465</span>
+              <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
+              <div class="bg-selected mainbutton">
+                <span class="maintext" style="font-size: 14px;">Promote</span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="myteam">
+
+      </div>
+      <div id="settings">
+
+      </div>
+      <div class="bg-main mainbutton" id="showCompetitionOverlay" style="width: 500px;display:none">
         <span class="maintext" style="font-size: 16px;">Show Competition Overlay</span>
       </div>
-      <div class="bg-main mainbutton" id="addToQueueExample" style="width: 500px;">
+      <div class="bg-main mainbutton" id="addToQueueExample" style="width: 500px;display:none">
         <span class="maintext" style="font-size: 16px;">Add Example to Queue</span>
       </div>
     </div>
@@ -42,17 +123,17 @@
       </div>
     </div>
     <div class="menus" style="text-align: right;">
-      <div data-menuItem="currentmatch" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
-        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Current Match</span>
+      <div data-menuItem="matches" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Matches</span>
       </div>
-      <div data-menuItem="dataanalysis" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
-        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Team Analysis</span>
+      <div data-menuItem="competitions" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Competitions</span>
       </div>
-      <div data-menuItem="allmatches" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
-        <span class="maintext" style="font-size: 1vw;pointer-events: none;">All Matches</span>
+      <div data-menuItem="myteam" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">My Team</span>
       </div>
-      <div data-menuItem="teamanalysis" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
-        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Data Analysis</span>
+      <div data-menuItem="tablets" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Tablets</span>
       </div>
       <div data-menuItem="settings" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
         <span class="maintext" style="font-size: 1vw;pointer-events: none;">Settings</span>
@@ -165,33 +246,7 @@
     <div class="overlayBox" id="deviceOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
         <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%;max-height: 60vh;overflow-y: auto;">
-          <span class="maintext" style="font-size: 2vw;">Active Devices</span></br>
-          <div id="activeDeviceContainer" style="text-align:center;">
-            <div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
-              <span class="maintext" style="font-size: 20px;display:block">3AC465</span>
-              <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
-              <div class="bg-selected mainbutton">
-                <span class="maintext" style="font-size: 14px;">Demote</span>
-              </div>
-            </div>
-            <div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
-              <span class="maintext" style="font-size: 20px;display:block">3AC465</span>
-              <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
-              <div class="bg-selected mainbutton">
-                <span class="maintext" style="font-size: 14px;">Demote</span>
-              </div>
-            </div>
-          </div>
-          <span class="maintext" style="font-size: 1.5vw;">Inactive Devices</span></br>
-          <div id="inactiveDeviceContainer" style="text-align:center;">
-            <div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
-              <span class="maintext" style="font-size: 20px;display:block">3AC465</span>
-              <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
-              <div class="bg-selected mainbutton">
-                <span class="maintext" style="font-size: 14px;">Promote</span>
-              </div>
-            </div>
-          </div>
+          
           
         </br>
           <div class="bg-main mainbutton" id="exitDeviceOverlay">
@@ -823,9 +878,11 @@
   function changeMenu(evt){
     var selectedMenuItem = evt.srcElement;
     if(currentMenuSelection != "" && currentMenuSelection != undefined){
+      document.getElementById(currentMenuSelection).style.display = "none";
       document.querySelector("[data-menuItem='" + currentMenuSelection + "']").classList.replace("bg-selected", "bg-main");
       document.querySelector("[data-menuItem='" + currentMenuSelection + "']").style.width = "12vw";
     }
+    document.getElementById(selectedMenuItem.dataset.menuitem).style.display = "block";
     selectedMenuItem.classList.replace("bg-main", "bg-selected");
     selectedMenuItem.style.width = "13vw";
     currentMenuSelection = selectedMenuItem.dataset.menuitem;
@@ -1018,7 +1075,7 @@
     document.getElementById("inactiveDeviceContainer").innerHTML = "";
     args["devices"].forEach(device => {
       if(device.onLineup){
-        document.getElementById("activeDeviceContainer").innerHTML = document.getElementById("activeDeviceContainer").innerHTML + `<div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
+        document.getElementById("activeDeviceContainer").innerHTML = document.getElementById("activeDeviceContainer").innerHTML + `<div class="bg-main" style="padding:20px; border-radius:12px; height:160px; width:240px;display:inline-block;margin: 10px;">
               <span class="maintext" style="font-size: 20px;display:block">` + device._id + `</span>
               <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
               <div class="bg-selected mainbutton">
@@ -1026,7 +1083,7 @@
               </div>
             </div>`
       }else{
-        document.getElementById("inactiveDeviceContainer").innerHTML = document.getElementById("inactiveDeviceContainer").innerHTML + `<div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
+        document.getElementById("inactiveDeviceContainer").innerHTML = document.getElementById("inactiveDeviceContainer").innerHTML + `<div class="bg-main" style="padding:20px; border-radius:12px; height:160px; width:240px;display:inline-block;margin: 10px;">
               <span class="maintext" style="font-size: 20px;display:block">` + device._id + `</span>
               <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
               <div class="bg-selected mainbutton">
@@ -1036,6 +1093,48 @@
       }
     });
   });
+  ipcRenderer.on("allMatches", (evt, args) => {
+    document.getElementById("matchesToShow").innerHTML = "";
+    var matchNumbersDisplayed = [];
+    var matches = args["matches"].sort(function(a,b){return a.Number-b.Number});
+    var lastNumber = 0;
+    var hasMissing = false;
+    args["matches"].forEach(match => {
+      if(!matchNumbersDisplayed.includes(match.Number)){
+        if(lastNumber+1 < match.Number){
+          document.getElementById("replaceMissingMatches").style.display = "inline-block";
+          hasMissing = true;
+          if(lastNumber+1 == match.Number-1){
+            document.getElementById("matchesToShow").innerHTML += `<div class="bg-error-dull" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px">
+            <span class="maintext" style="font-size: 16px;text-align: center;display:table-cell;vertical-align: middle;padding-top:5px;">Match ` + (lastNumber+1) + ` missing!</span>
+            
+          </div>`
+          }else{
+            document.getElementById("matchesToShow").innerHTML += `<div class="bg-error-dull" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px">
+            <span class="maintext" style="font-size: 16px;text-align: center;display:table-cell;vertical-align: middle;padding-top:5px;">Matches ` + (lastNumber+1) + "-" + (match.Number-1) + ` missing!</span>
+            
+          </div>`
+          }
+          
+        }
+        document.getElementById("matchesToShow").innerHTML += `<div class="bg-main" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px">
+            <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;">Match ` + match.Number + `</span>
+            <span style="text-align:right;display:table-cell">
+              <span class="maintext material-icons-round bg-selected" style="font-size: 24px;padding:5px;border-radius: 8px;">star</span>
+              <span class="maintext material-icons-round bg-success" style="font-size: 24px;padding:5px;border-radius: 8px;">verified</span>
+              <span class="maintext material-icons-round bg-warning" style="font-size: 24px;padding:5px;border-radius: 8px;">flag</span>
+            </span>
+            
+          </div>`
+        matchNumbersDisplayed.push(match.Number)
+        lastNumber = match.Number;
+      }
+      
+    });
+    if(!hasMissing){
+      document.getElementById("replaceMissingMatches").style.display = "none";
+    }
+  })
 
 </script>
 </html>

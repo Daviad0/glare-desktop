@@ -223,6 +223,11 @@ io.on('connection', (socket) => {
               })
             }
           })
+          setTimeout(function(){
+            db.entries.find({}, function(err, docs){
+              mainWindow.webContents.send("allMatches", {"matches" : docs});
+            })
+          }, 5000);
         })
         break;
       case "c301":
@@ -303,6 +308,10 @@ function createWindow () {
   mainWindow.webContents.on('did-finish-load', function() {
     mainWindow.show();
     //mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
+    db.entries.find({}, function(err, docs){
+      mainWindow.webContents.send("allMatches", {"matches" : docs});
+    })
+    
     
 var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
   console.log(btpath);

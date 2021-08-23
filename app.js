@@ -311,6 +311,9 @@ function createWindow () {
     db.entries.find({}, function(err, docs){
       mainWindow.webContents.send("allMatches", {"matches" : docs});
     })
+    db.schemas.find({}, function(err, docs){
+      mainWindow.webContents.send("allSchemas", {"schemas" : docs});
+    })
     
     
 var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")

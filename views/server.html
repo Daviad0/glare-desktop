@@ -84,7 +84,7 @@
               </div>
               <br/>
               <br/>
-              <div style="max-height: 30vh;overflow-y: auto;">
+              <div style="max-height: 30vh;overflow-y: auto;" id="matchStatement">
                 <!--Generate form content here-->
                 <div style="display: inline-block;margin:10px">
                   <span class="maintext" style="font-size: 16px;display: block;">Is Parked</span>
@@ -428,13 +428,15 @@
   var currentlySelectedChannel = 0;
   var allSchemas = [];
   var selectedSchemas = [];
+  
 
   var allRequests = [];
 
   class Schema{
-    constructor(_id, prettyName){
+    constructor(_id, prettyName, data){
       this._id = _id;
       this.prettyName = prettyName;
+      this.data = data;
     }
   }
 
@@ -466,11 +468,6 @@
     channelList.push(newChannel);
   });
 
-  allSchemas.push(new Schema("12345678", "Infinite Recharge"));
-  allSchemas.push(new Schema("22345678", "Infinite Recharge 2"));
-  allSchemas.push(new Schema("32345678", "Infinite Recharge 3"));
-  allSchemas.push(new Schema("42345678", "Infinite Recharge 4"));
-
   function repopulateDropdown(evt){
     document.getElementById("competition_allowedSchemas").innerHTML = "";
     document.getElementById("competition_selectedSchemas").innerHTML = "";
@@ -499,7 +496,7 @@
     selectedSchemas.push(evt.srcElement.options[evt.srcElement.selectedIndex].value);
     repopulateDropdown();
   });
-  repopulateDropdown();
+  
   function toggleExpand(evt){
     if(!locked){
       var expansionarrow = document.getElementById("uwu");
@@ -1183,7 +1180,40 @@
     
   });
 
-  
+  function addUIElement(obj){
+    if(obj.type == "parent"){
+      obj.contents.forEach(c => {
+        addUIElement(c)
+      });
+      // need to handle the other generation also
+    }
+    else{
+      document.getElementById("matchStatement").innerHTML += `<div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 16px;display: block;">` + obj.prettyName + `</span>
+                </div>`
+    }
+  }
+
+  function generateMatchStatement(schema){
+    document.getElementById("matchStatement").innerHTML = "";
+    var finalObject = JSON.parse(schema.data);
+    console.log(finalObject);
+    finalObject.categories.forEach(c => {
+      c.contents.forEach(c2 => {
+        addUIElement(c2)
+      })
+      
+    })
+  }
+
+  ipcRenderer.on('allSchemas', (evt, args) => {
+    args["schemas"].forEach(s => {
+      var newObject = new Schema(s._id, s.prettyName, s.finalDataJSON)
+      allSchemas.push(newObject);
+    });
+    repopulateDropdown();
+    generateMatchStatement(allSchemas[0])
+  });
 
   ipcRenderer.on("allMatches", (evt, args) => {
     document.getElementById("matchesToShow").innerHTML = "";

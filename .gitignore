@@ -1,6 +1,5 @@
 
 node_modules/.bin/asar
 **/node_modules
-glaredb*/
 storage/*
 *.db

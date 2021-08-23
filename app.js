@@ -331,7 +331,21 @@ console.log(err);
   
 }
 
-
+ipcMain.on('promoteDevice', (event, args) => {
+  db.devices.update({_id : args["id"]}, {onLineup : true}, function(err, newDoc){
+    db.devices.find({}, function(err, allDocs){
+      mainWindow.webContents.send("allDevices", {"devices" : allDocs})
+    })
+    
+  });
+});
+ipcMain.on('demoteDevice', (event, args) => {
+  db.devices.update({_id : args["id"]}, {onLineup : false}, function(err, newDoc){
+    db.devices.find({}, function(err, allDocs){
+      mainWindow.webContents.send("allDevices", {"devices" : allDocs})
+    })
+  });
+});
 
 ipcMain.on('newRequest', (event, args) => {
   console.log(args);

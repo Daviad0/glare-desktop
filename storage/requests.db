@@ -5,6 +5,8 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"08nHIyyHpg0fKqRD"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"0EFi1Prud6DnKose"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"0GDxUFrA44q7U711"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"0GzNeK3qhk8LAKCJ"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"0HeubpSxhBBvXmL3"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"0IvDZyYPs5qZRQKo"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628477242290,"_id":"0J0SBrqvEhhXN0Bx"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"0NTMbSXmB1u5JixR"}
@@ -23,8 +25,12 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"0yKM7BHNw0R7ZYob"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1AGli8UoJSLEbavv"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1APoruqEV9RU2Amr"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1D9tnzcb0bt4UMm3"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1DjzFydmXmvjOrhG"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1EKGRdxh7YwN1EtR"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1HkAKDzhcrQokm0j"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1Nxch0Xeoyd3K2KG"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1NyiPqwQR85wji8p"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1WEUreMrkJmAmVsZ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1YSPKdxzNDZApczU"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1cAlbHuSvEzeCWej"}
@@ -32,9 +38,11 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1nNAC0zah3FD7RAK"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1qCpFGziw6RQNDts"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1qNMXaDuQQW4wRxB"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1qhEhJylyJi9Yf9F"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1qr59mhHCn3FYvsl"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1sFqz0VKPnRCBqQg"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"1wMaZxdkGqD01GP7"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"20sQsrUR9N2ZLjJb"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"21cGVKEqmFo77s8b"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"22PJgEse7nklFOCj"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628570117818,"_id":"23LxDn82g8pLmuzy"}
@@ -58,12 +66,16 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"32rkLDLbT38w7jYR"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"37K8RfJKuOc48QGa"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"3FFOoGAa49NolGEt"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"3MUfxg6zRTZ01NXh"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"3NmSeYpxN6u1DJ8E"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"3bmL8LUtLkg6bApE"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"3cYXA2BLjjOB53Ri"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"3cjkSe2Ph7kK0zYl"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"3iAcirWr4IOWOR5T"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"3j9kFlgQZurUPem9"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"3lJolKMiGWIoajN8"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"3ns7TPNa6Vi1w1tj"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"3o2Wt7ZB114GiiAm"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"3ohNIQzvMl6iwzCp"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"12366712","data":"AHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDDAHHDHASDJHASDDDDD","_id":"3p1I3WFHAe4HoRHM"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"3v8K2oS5TNKPvOEd"}
@@ -78,18 +90,25 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4DreyYw48NaQQzpB"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4R3PaJdBBbyBf0YL"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628569153467,"_id":"4Vfsvl7jzq6RBueI"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"4dIGXuNfOAKwUiVM"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4eDD51rnrWuyPG0z"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4gIM1lEpOACz7XuL"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4igxBqJYotGjzbUw"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4mCXHlXGJ3wwxZ2A"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4mPscsC2MIi0p6Bc"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4pyqvExcr7N2mjid"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"4r0zbjezZbJO7jEm"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4rMXEsCi7LgIz8UL"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628457076785,"_id":"4sP4OlqXQS7yteqI"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"4sTzhLCsbyqGs0tY"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628994566784,"_id":"4t5aNsTYHSbBdbNP"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"4wzJvB8I7XB54cjE"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"4xTRoJkNVugwqnIT"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"50cwrGwdoe3Fi50B"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"56E2gbs3NmPAcSVr"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"570h9gW5EyR8D26w"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"5BXEtHfnK6MRvUyU"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"5CKukbMb1c7rHMpr"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5GeH0gKT1a8TmpZH"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"28991888","data":"IUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjhIUQWQWnJNDAJSDJAJDSjh","_id":"5NPssHqkjctRaBFM"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5RkuQAY0NO2Y5i4D"}
@@ -102,9 +121,11 @@
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"27837821","data":"^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D^D^AS^D","_id":"5hylrj5w4yXUS789"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5lAuxREx5uKSjIPl"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5m4yVaSDhgkKRYxn"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"5mBDDOJFgrSJTb8v"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5pOUeP5YqvOGyaIp"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5szzYCB3NlnWeSun"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5uwrVOyxAtEDJnLn"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"5vJUL5GFd0xEotmW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5vwhMVLIKUGyt5WM"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5xfTNU888DalN7lJ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"5yg3TsA5iD1Ogvo3"}
@@ -112,9 +133,11 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"695r1Cc3z7aAbFk1"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"6BHjsYb9VJC1YqV3"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628647466332,"_id":"6BSYfM2Vjb2nldnm"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"6CBVl4EfpT3mUdD1"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"6G5TSGla7TEiETmf"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"6Mr5AxrAPwnsIBpg"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"6SEDRgw2BbZMjsKn"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"6SoPJCnS8WTHJVYL"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628992115972,"_id":"6VMZGkIx1D4VET9o"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"6ay9sAJaB0BkAOn8"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"6dwd6YMVxdmHN4qe"}
@@ -131,6 +154,8 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"6x1DFSh5l4oxE9EU"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"6zVK50gGXYGq0jjv"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"6zoJsLYu4f9lcVAr"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"710wa9UmpUEm9fJd"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"76Fecgh6Gyjx9aX5"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"77iIbzd3P2077qJ6"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"7Abv2nZ5msh2zjQl"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"7B2oIQRoVYdUa0LC"}
@@ -140,9 +165,13 @@
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628474109170,"_id":"7Nerh3P2eRhUP9bs"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"7NzXjqfHzI3gfMHk"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"7Oe0v6Itz9NswpTG"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"7SPXinfWLzwVQa5w"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"7U9b3LfElJLryu0B"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"7VIPoRmti6sZ0nfc"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628646253122,"_id":"7Vc3QTPhMDWMaYhl"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"67123677","data":"ADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDuiADJKSJHASUHASDui","_id":"7Vqer6tP8ZIPkwTM"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"7ZjBz5mDthf5UxoC"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"7j0b8qYWMQxPYxJ0"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"7loLgXQqcDjpfZa3"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"7sV2sUEwB5sMkTx6"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"7tir1G78UDerOPsk"}
@@ -152,7 +181,9 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"87GqvFQJVWJzoD2c"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"88SZA6U1cXCMlqsQ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"89bZMemTxC4GbCcP"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"8A3sfmqNAkPeQWYC"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"8DvUMFv7T3ESBiSk"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"8EA5X76R944WBvrD"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"8H8SQtPyxzT0k2JI"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628566782173,"_id":"8JJQsGGcTjSkIk24"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"78281399","data":"HJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSDHJHASDASJDASDJHASDJHASDASDSD","_id":"8MkbtFS5NEb9YcNL"}
@@ -164,6 +195,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"8fXF9ZSBvbmWBjGt"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"8pR6oBYM901E3RvW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"8s0xZwahHynbcNQl"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"8s6NScR39Xo5FVa9"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"8z8pXv95bxG8grWx"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"90Z2XIifmD3B6WaB"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629077843681,"_id":"96ofx513JYUwJoFY"}
@@ -176,11 +208,16 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9QnJQeNo7Gn6lkrG"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9QzvHv7RNDp5GnHF"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9TOm6K0JMpfsiRbO"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9VcVVVHu6GAP3wFN"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9WJbueU6943b8kmK"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9aNOsLzDgp142UxN"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9d6rwkDtu5OfdrVs"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9eH1x7xbzLNbsZki"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9ea1FzZGc2aEarN3"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9frEKZmOKQNiWDOz"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9gEW5BiNejQ5J2Wm"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9gbf2w1eLECN3xMF"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9htmH8WVUotduxDS"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9lEnyCz7Tfjkq3yV"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9pQSkE532WkNWjvb"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"9qeYQIckTWexl7nE"}
@@ -199,6 +236,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"AJUVC6TMHyfd3vLs"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"AJuoINf01iuknRHr"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"AStspJEpdiVuQpgB"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"AhxBYwZF6jzj6pD4"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"AmZ6V5kJWLMWgKDh"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629077070658,"_id":"AmvfvpO3cM3M24gb"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"An83y7w029CYAL8s"}
@@ -210,6 +248,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"B3UhUVH3HWapJ47m"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"B571KSyUTwzzy4nt"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"B6O9qxawt8wjMGaH"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"B8hWw1IPeRFqP7Fv"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"BBSk7MASAWe7ASgP"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"BEKaYLsF9tzQkh2D"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"BHTf54WIozKOqR8o"}
@@ -225,18 +264,24 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Bs76OCTxGjyU4ZO5"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"But5kqbfsgfs5msA"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"C2FL1ermuhnZOZjL"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"C75YayYlSaemxqwm"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"CDEucYOY3xYjmxvq"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"CKO8fUbeNa8JypVU"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"CR6brbg23LefSPen"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Cg5LOTAyV215UiQk"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Ck2VBMGUQk6zGmz2"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"CkWQjieM0ZlfarEp"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Clp9GHiin96f3gEZ"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"78123788","data":"uhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduhuhDASDGYASYDYASDUAGYSDG&*O&DASHduh","_id":"CodHUyEoozduQDBf"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Cr83ui1gwfYYR7Nb"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"34345667","data":"stttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhhstttttrhhhhhhhhhhhhhhhhhhhhhhhhhh","_id":"CsBJN4tSgG8XFbbG"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"CsO7uah8MlZsiWMX"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"CvDxHQKxx8FARAr2"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628473766869,"_id":"CxDIJ2wyyqtIUTZt"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"CxHuWnFMj3j1Ubxg"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"CyWeZjHYXISUpMY9"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"CzcSdOxAba02ndoP"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"D0c5a0cIu1os5T8t"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"DE4f0T4O6zfW2D7Y"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"DGJg3dQHOMnnTFjL"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"DHAThOXU8a6I9gFA"}
@@ -267,15 +312,20 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"EaSlEpBo34elVwCv"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"EcpBZhSPFMmcVPjq"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Ed2lWxgAR85bz9cD"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"EdPoanTpP7JPPmfl"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"EfNZFMwLDG6xtyMV"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"EgFXXR6x3sEJvWgr"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"EgSToXQqq8zSlBkQ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"EhoOKaW2lUodH5aj"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Eny5TtSYe8Sq9Y6t"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628994054117,"_id":"EvUp6hZSHoY0PPoN"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"EwadjaHFUudh9zBo"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"EwlJ0wZE0S2kVDgO"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"EyrHPcGMJZ41z9zf"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"F3V9rxqRyt6R8IRv"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"F5YDODtBurGxH7L0"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"F6coqnYS29Vm6gx1"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"FBt0tLBZH3cWQqeL"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"FDLFylCoY6D4WCR4"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"FFWcjYG0GtULhqe1"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"FLrKAkMuCgLqmr7U"}
@@ -287,6 +337,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"FdWIHcq3E4byJP4K"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"FiM2VlnTOYysr6dn"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"FnTHT546IsBQPXjQ"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"FwulNyQ6mNS3LlLS"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Fx3XbaMSELV3RroH"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629077274537,"_id":"FyHkmSUBQEEp226z"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"G3W3brWrCxAAP5O9"}
@@ -303,6 +354,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"GYM7Zas5kAHLzeA4"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"c202","communicationId":"47128348","data":"DHKUHADSADSHUHAKUSD","_id":"GcWu3D8ySzY0zB6s"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"GgSLE3iSba2FSbhE"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Gh5A7fkSaM5uo8Fk"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"GlfGYPyYGvuQ7ie3"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"GneWF992gAzi3U07"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"12889128","data":"uyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDUuyhkDUASUDUASDYASDUILSDHASDU","_id":"GozC8Z6oZwMAFiDZ"}
@@ -312,6 +364,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"GzaM63koXs2gYhH8"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"H3FfBGtp7U8Rr6iJ"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628476565224,"_id":"H6nrGn2otjDpxkgQ"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"H88s6C5jzm4z2XTA"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628569594067,"_id":"HC2oDyyGNGGgPuL9"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629078120857,"_id":"HGCh8YT7KayVsoj9"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"37718928","data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC","_id":"HHs8ABL1kZhQiocH"}
@@ -330,6 +383,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"HuxrpZPYWi1uFnBc"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"76898096","data":"Hello Raj!","_id":"HviuzRntr8ZSBzWf"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"c202","communicationId":"83289999","data":"jnSjnJSDASDJHASDsd","_id":"HxVDosp0tWhApz3d"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"I0PStgJhuVBGYY7s"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"I1PB40ciDp7coZzT"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"I4Ttzo9WPbB54QuY"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"I4aL7CP7pomvndq3"}
@@ -381,6 +435,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"KCuRzyD5PJxLfrpp"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"KIIrJuVPgRWEVH0A"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629078917232,"_id":"KKemP1SdjVqjLOOb"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"KNEJlD77Cyqw2Mbx"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"KNVwRvS6spVDxtQ7"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"c202","communicationId":"abcdef56","data":"Ready","_id":"KTtTEf8NT4sg80gp"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"KZW7yTmCctrubfK7"}
@@ -408,10 +463,12 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"LppYzIwzm0TcBAql"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Lr3oOgb4X2WEbd2A"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"M9tXb7L78pL1kGfI"}
+{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629667928365,"_id":"MCLNIMsTTc4OpxrY"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"MCTwUvfHZqpuccKP"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"MLJLvJ8aVpEQ1f4Q"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"MLMENXJ76MBWiJJc"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"MO4Dr9VFTXgTGUUQ"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"MhtV2zhoXGWSh4eh"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Mj10aKSJUfTPiHEk"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628568355618,"_id":"MncM2a904dUa2AAw"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628565608509,"_id":"MxYS3KIxkhRw1YC6"}
@@ -438,6 +495,8 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"NpoTNfuL2jr9RdhB"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"O0mfzGKwNqT4TVjb"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"O8lt0iaISuXs29Je"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"OAlyekdx0wPQ8rVe"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"OFaXHtKf8oHelBlS"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"OMSgw6RFvgBgJEl9"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"OOkRn1Fiq7J5bY95"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"OQwpgGkWqZ6qT4pB"}
@@ -448,10 +507,13 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"OgUMyvcsWOjiaT4y"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"OodNtPuXJB5ps9EM"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"P0BPDZBfhvhywUsK"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"P3mLhYN6YxECRUJl"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"P5EEXHyWzZkyQLS3"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"P5rCHAHbTAgy997r"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"P6sAdqSDoQ7U3OhD"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"68678677","data":"rtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyjrtyj6ru6yf6yrdftyhnddd ggggggggg hntdtyj","_id":"PNEOISZVHpC0vAxz"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"PNp1DbIGjRKOghYL"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"PT2atgkMXqPUXcy7"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"PV5E4sEx0V41UZZY"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628569374940,"_id":"PYJBI91q7I5NLfMW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Pc9Y05FnL3fTwqFC"}
@@ -467,19 +529,23 @@
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628569714606,"_id":"Q2OHC2f4NWxy4uGJ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Q4TlIrcu0blNFrcp"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Q6nGKELugtpRUg00"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Q6ypxrTZWVXWCeeu"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629586613657,"_id":"Q9BHWbKEhI05f6PX"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Q9PlJ0HMI6clMULH"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QByoRAWzlj7kVLeW"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629585167228,"_id":"QCTgFUkN6cmwPeLT"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QGD2cow4LUexKTtV"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"QIz7Bds7tZr3Ny1V"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QJi7YyzFEE4cH0Vk"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QKlpTbm9uGu7MUae"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QTAu5QZSVuk8uL9k"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"QTiM034dvJ4zRznv"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QXQ0CEHtYFOveKa1"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QYDJ0q7HlTvOYQhW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Qaasl6objFDQb8EJ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QbrdWYXOXcV36Mfk"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QfTxzpTU2ajQQXUj"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"QinckbKzOMt0wdpV"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QjnM5ejvA91xd9KV"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QjrCu3k3dgcoYsE2"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Qlv4LyGlleSqsCKN"}
@@ -487,6 +553,8 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QnVGU18kopPesKvx"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"QoYQ5vmsgEVsNSp0"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"78786767","data":"guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6guyyyur5yjev56iv97vbk6o96to87v6","_id":"QuRZE0mpGe4JH3Dg"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"R57xBB83Frn48K5S"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"RBhV0mTTOBuNtW03"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"RBnHqUf9SiLNfUjX"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"RFtrDS2znOIw6nts"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"54545666","data":"lol","_id":"RKnMHjgGXjkzk2JW"}
@@ -494,6 +562,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"RSRltwnNQ2SC0O1q"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"RTFLRGpI4Lchaqjc"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"RWKrHWlJeO3Mkf8i"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"RXK2O9EEiMTtl7pJ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"RXjXI70bYdmUVFxT"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Rrti8dvs7NxxVH0I"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"S6M7AaGk4XDexhVi"}
@@ -504,20 +573,24 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SKkEEKI2gXQqOz69"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SOz4IqJl55RLNnUs"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SS2LgozPCIalqfuu"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"SSAR2sSyWE3tkdKf"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"STFfHOl2ncMaM0Wv"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"STGzyIM01HGNpc3i"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SUCNNFSxT51w5GHp"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SWl8CgYKUC0HBbOt"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SX1q1nOo4ooxkLlG"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ScnBWmvBlaEFo6cj"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SejTM6iZAoiltVDb"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SiZ9nE6GOT4LH6Im"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SjIOMfvpMGyvCaUq"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Svd2mGfRoCZh48ed"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SviflFIJkiP5W4Hg"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"SvwRhxxIlFHEiyWx"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"SxE4GxTWyNjxshQV"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Sz7UKa4F1opt4Egk"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"T0V1sG1I8hhYpMU1"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"T3SHa137A1kyvFfM"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"T4ACaK0zxAoF3eUI"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"T6E5Ie0zxSnf5Vuz"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628994431372,"_id":"T7VlUVfjTsuGJrPf"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"T8l9AU00jQW4ysVo"}
@@ -531,10 +604,13 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"TNrMkgvOpENzbQlD"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"TVB9O7ufEHHUjiDs"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"TdK4IXBJvgqs5RYq"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"TeYAJUiVGmqNHNTJ"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"72783888","data":"HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH","_id":"Tiy0daPhcLpN0VAf"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Tokqw4H5mQUqDVWe"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"74189249","data":"This is a message that will be sent almost instantaniously to the tablet that says \"Hi Nats\"","_id":"TpCSuahZ7QWYINVp"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Txn5GWKGLnTUrIGY"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"TyqpMrtD9lIaPC9d"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"UCv7HUIeL9JEKLfg"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"UGvzcLQNHUEYyodu"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ULReQnwTYrQ4JZFJ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"UQulU2fNHQDkBlZj"}
@@ -552,6 +628,8 @@
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"67778787","data":"iaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainiaminconstantpainvv","_id":"UwgGWb6xqJNEpyPF"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Ux39M6P2D7XEH0Xc"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"V4QefwSxPxgLBqo9"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"V8CD6CU96vv4B3O2"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"VB4TX5L5myxr9UoW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"VCGkBAkUDQUadv8J"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"VEahOmtvhM2sQjSz"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"VFFvkRchErw5QOxO"}
@@ -566,10 +644,12 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"VX2P0ERkybFGaQ6t"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Vb8tmSkthbFMtQm0"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Vb9i9O5kS7DMVGbr"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"VlDJfJZE8O4OMEoH"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"VlboeE2PzpjJJZnj"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"VlwmEP0mOHILyIMq"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"VnYw5ZSxjWSQW9f8"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"VtvZl3chMiXCRCIp"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"VwwohRuMSoxjT7nR"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"VzhNGy0e2EFYM9rz"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"W5iIe8Lo7Vk3xPRn"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"W9lxMXgPcO36xdfK"}
@@ -580,6 +660,8 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"WSi25C6Sdo0ONm6D"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"WU0XmnqJ6LiDihRN"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"WUddPfJR7pajZpLq"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"WYLul4XWH5LOUQOa"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"WdPHUVXvMC0xDEH4"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"WfPjwBwPET1Bp7tT"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"WfR5z7yjK6AiHzBr"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"WghQfuw1rJHgWUbe"}
@@ -608,12 +690,15 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"XzPj33HLSMYtmoG4"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YAP1EOhpSwJa6Jxi"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YCH53S0qlChbIo1q"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"YDwP3jlnh6KeFnxK"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YEbTri9iKB6cMicQ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YFDAT8qYpJGF1nn7"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YFDwRchbRf9ZWRVN"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YFPWg1bOI0ZCaIgL"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YQTmCCh7Ldq3uvod"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"YeucUCNDOt2DXBbe"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YhVcht764iIKka0b"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"YiYLc4AWBi9pcGDl"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YisARJcZ3Uv6hhPu"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Yn6QDlwBuovqVQVG"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YnYgoGrG5swTsyo3"}
@@ -624,6 +709,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YyjfryrnXEZeqZw7"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"YzUUpGS7MqBed8MQ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Z2NbPzCFLFKPKszL"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Z3L6n3ipl2Colt4p"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Z9oD2X1Vg0GHkRnm"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ZDhc6qwIoGUvGMRe"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ZE8PqTHtXcrDbPyi"}
@@ -636,6 +722,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ZZ26EvqXN3tTj9y6"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Zd8mSDSV9fjHo0dz"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"Zf057XeQov0zPq7I"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ZfiP6xX1dTahm9Pa"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ZgjBLZBs04kvSHXD"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ZnzzTiG265eYkzkq"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ZqOqvjIuWn7POxgq"}
@@ -650,15 +737,19 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"aFDlj9SaLVY0OnlV"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"aLctewAHGxN14ZpY"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"aM3nZ0kETXK6g8SU"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"aVEw8PUeHj2LVNWE"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"aXXYzWxqzCtrSvIX"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"aYG9zQKTf0Z9byde"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"aZpiclIwQfwYnvEU"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"adaZBaiRJ1EvFYE5"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"aiyjzPu9EZ3FxocM"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"asbR1nLv5VBixIlH"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"auUjCYeXQETIXanv"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"awNDgL9bOf5Lc3bZ"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628456845529,"_id":"axilhoQqAf9WTjtS"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ayg06TCly5ixfXAO"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"aygyUHkFjRnYZ43I"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"bJiKFBHAiGyWv4EE"}
 {"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"bKqhgVZ9Z5GvonKm"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"bM3fGrm7oo9lh5Oa"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"bNT5mtgQ0zAVgAqj"}
@@ -666,6 +757,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"bWdf2gqJMzAxLCLY"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"bfxRzbIAtZ80Zfbd"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"bgG7n4x6NJDT1oTB"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"bkr1Ikt7Udw58g5t"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"blZetZcK9VerbYgr"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"bn3TasTd1zlt325O"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"76776887","data":"mtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttmtftdmtfdtttttttttttttttttttttttttttttttttttttv","_id":"bqC3KRTaWPtK9qHo"}
@@ -674,6 +766,7 @@
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628993920921,"_id":"c2IBdahfLrbuO2jV"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"c5w5xqh7bZPXDamW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cDCfR1AIYtwuVTxY"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"cEqDpk5c50NShasn"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cFTMRX7HrBWbdYTj"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cFsXa95C8eCPUnyl"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cG0gMc3mNBsLxWZA"}
@@ -683,6 +776,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cR1NS2ZmI8l0DsLq"}
 {"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"cV8JhzqDyIuDU1ZL"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628474826965,"_id":"cXv3SrqyVRhxHpC9"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"cYXoaPvCxXdFn344"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cefU4EWUK89leWD2"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cfTeQhLMAEU2Ad2X"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cfwkVKH6k7gdqYI9"}
@@ -691,11 +785,13 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cqOd0C5JsuV6cJ2m"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"cr4yTxdYnYwRqp6m"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"d7xNuYbkAofeRIWx"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"dBSfS3lYmEFB5ZKl"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"dD0Iu9Vj5pZlMvBS"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628568889918,"_id":"dLEwBAFVILtaV15q"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"dLvq2KkTUjsBKKJg"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628995649690,"_id":"dSIDU2Ks6VFQ2a6N"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"dVw1Z3hIsvGXNmbh"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"dW5stPsSbCAYYIrZ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"dbq6N0oQVkqxVhhr"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ddPHAYKavnnIdJoW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"diN8GftelGieSHzQ"}
@@ -710,6 +806,7 @@
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"c202","communicationId":"41247888","data":"Another message test","_id":"e5IqCxx82jWjBNyh"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"eA4d0ik67wzpoeJD"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"eAoeiwo36VlGUs1k"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"eBbUSWWap7EgebUy"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628647410542,"_id":"eFKPui6nE8LDNaoI"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"eFnZGn3oUWbinuRz"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"eG4e15Rdvxi4mR2A"}
@@ -737,8 +834,10 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"fJuzIcUgvtK0mumi"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628563218907,"_id":"fJvS1Vj0mTQKHAj1"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"72348899","data":"What will I do in life?","_id":"fNCtDrjD2AYvjz7n"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"fSwM3JCi4hzyEq9J"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"fT7HmPUMnCWWFkUD"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"fUesHXZTlaZyRBGe"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"fZHJ9hH4oRcyDZGM"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"fei6YD3knWA2375r"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ffPVFLu4RWaPx5z0"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ffU13LiGug5ZL93o"}
@@ -746,6 +845,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"fkGY11cuXJSF6YUC"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628569045046,"_id":"fkJzDrXZ9ibLY87G"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628473604109,"_id":"fnpDTtNMXAoKhWG6"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"friqxn0gRCFDAP8O"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"fxHxF7ACT3x0XKPg"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"fytqBOjd3QfeaHPB"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"g2BjtHfivHNXxPaS"}
@@ -757,20 +857,28 @@
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628647250510,"_id":"gHgUg1JdFWp1ouzn"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628564114267,"_id":"gLo9ERVcowx1LZYP"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"gM10FoBmi9ivPjgn"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"gdrTIdG8k5Ds7ZoS"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"geVtaa0cy6vnn1ZP"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"geYa8FfkEwLwPMFq"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"23478878","data":"JHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASDJHASD","_id":"gjhLtMEsVsSIBZNp"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"goW3qCoCp2NFtZcv"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"goZzYvh6qdW56o1x"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"grfpAqL2DCoH0B1J"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"gtKLPegedhdeScrU"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"h0F2kClcRRRQTwhw"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"h1P6XnwNktiNCpCc"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"h1s1fKIbYjMufXV5"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"h2evwBctvmT1i0fZ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"h74dS10dTpSigMC8"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"67234167","data":"DYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASdDYSUASDASGYDGYASd","_id":"hDcIKMazlzzjKzd2"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629586643925,"_id":"hJdnu8WjvqTjTslZ"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629586276762,"_id":"hNZWuBb2uhOxjQIh"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"hOLJccFm7hxtV3Iy"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"hP37QG427Ebqx83n"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"93482398","data":"JHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWHJHDJHASDHUQUIWEUIUsdahksdhkUHWH","_id":"hQ48nSbxdqrLCqCb"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"hRt9OVbYiqf2TI4Q"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"hVVnDZ9NAwSOMIzO"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"hWHWJXXfsHW2WXqa"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"hbc2IO3C6MvecMUA"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"61236788","data":"AUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguyAUHDGHASGYDGASGUDGASDguy","_id":"hhKurtIb9nkexYDe"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"hhUj4StQgfbhJBza"}
@@ -778,9 +886,14 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"hpe6S0Pg9uTC8adI"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"hqdWqZInOAehqDs9"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"hrj5wCwaM3IJs7Wt"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"hwdiXbItAIdXp4A3"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"hzJ1OJw3YltFUTT8"}
 {"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"i2rq2e5AuhVUymxc"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"i3WXdUspHgtBAJVo"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628477131254,"_id":"i8SFUFLLcNEs4EJJ"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"iHjyi83NL2T6ZDZ5"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628997776265,"_id":"iOnven0yyS5Qs2fy"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"iPn1roZfqSk8Hh39"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"iQaSe1VvClHvwBc4"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"iQjSeYiIbPULrvhh"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"iSx6ipeKcmKpy2b0"}
@@ -789,6 +902,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"iVZzKji0FQ6sBNuv"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"iVepL30aBQvRxvCP"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"iWVaIQABTjtzMmUk"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"iYRWdUf8cRs5k0dL"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"iYrK150ZL3bA8TG6"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629054219046,"_id":"iZklODqSTDQfeZD7"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ia8I7A99KKoQLV5C"}
@@ -801,6 +915,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jOSRHbUMGt8FxSpQ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jPGgkFHrf5X4HNJU"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jUZTDjMX6F2RVyeA"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"jZqTuMYvzVjJZcvk"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628995195474,"_id":"jeSSoL9HndxOyPhk"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jhJErn0P0c9bMdv2"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jhW7Ck3ZFyxBMBJL"}
@@ -809,6 +924,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jlNNDrJiIi6m6rs8"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jlfFRP6nhEu2DZlq"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"joGXkwP4avqTM62G"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"joGsuHJpsMgauD6d"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jsPkuqjSEojRL9X5"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"juYFz8CaCkRNTA85"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jveoxzGovbA1Wr4Y"}
@@ -816,7 +932,9 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"jzt6QUPsTDPRY4bE"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"k0Ai1g1usB7tLZyb"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"k5fGQSHbRRVSY7NK"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"k6MXIP2P5bcXNYXe"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"k6ecoYNdn7BAsTpa"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"k80issRKzXP0Z1fh"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"k8k2anQ4QYS89Mu3"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"kAm21GlF9hrtWWCN"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"kMKrE6cTEMPaJg2A"}
@@ -830,6 +948,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"kwrPIxg0PldPJxAt"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628457174784,"_id":"l12pjXAlkMGiTVfW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"l4f09Mo7FLIQQeYu"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"l4zA5tsXj5IZCjMa"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"l6LqAVWG9bl4sL4k"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"l92AoMWWPTppdlyE"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"73178238","data":"JKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASDJKDJKASJKDJASDJKJASDUASD","_id":"lCa4jyplSiiKuCI6"}
@@ -847,6 +966,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ldsNd1tIrpiWZ5NK"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"leOp09eNCNe1Ibp8"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"lgWpte7BbWgq4OXa"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"lguQg9oekk4OkSlc"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628997415560,"_id":"lkcWajjD9dOvc9is"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"lpvVBgodAfQCBrux"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"83289888","data":"cghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHAcghHSGHAGHGHASJSGAJSJASSAGHA","_id":"lsYUBAoNiBjN5m9q"}
@@ -856,6 +976,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"m2dPj6vJ5p9bzzqE"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"m5i28w5j3zhKkxgG"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"mCtFzsKVRVOKNPsK"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"mDRzbGRzBLfYLBKQ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"mDjFgLzIBx4iTkhe"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"mH7QBBIcsxPo0E9g"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"90324999","data":"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA","_id":"mHPEZoJ2TKRb72OL"}
@@ -880,6 +1001,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"nJK6adbtk0mYH1Ke"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628476333573,"_id":"nP1y1m6nC3ZoEock"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"nRaLQhTQqXqmJZty"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"nTNQXtdx36HOHxVH"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"nZ1ixD0OneNuMnzt"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"nZQDv3rA1qW14wOy"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"nZR6w5Se9QBPTWTb"}
@@ -890,6 +1012,8 @@
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"73128999","data":"ADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSDADASDHASJDASDJHASDASDJHADSD","_id":"nevpgjGWQFLPdL2a"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"nfT8gGcOfhjkOYs5"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ngambEmo7biB9Khr"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"noQCFH1z6oZxOHxB"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"nqbzkJIjCCYatsaW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"nrCfnNrqG0JCezcr"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"nsSkJxfp6gqIE2Kz"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ny05r4uVBPgyLS63"}
@@ -907,6 +1031,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"oXECzjkPNd5Yr1iS"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"odaSGrbmcSpnF4WN"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ogI563JzQEKdK6cK"}
+{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629587206724,"_id":"oheysibJ6OxWj5z3"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"oizRLUVrUYJiqscY"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ojGSviJG13awCPDe"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"oqBQYsHy4EQNevqh"}
@@ -920,12 +1045,15 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"p1aAFaIz17G8pueM"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"p2KmOGXlV86VNp2a"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"p3A83Owz4LGqI5ns"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"p76ma0CrUf6yI6Zs"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"p9VZipFCGM6l1cBX"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"pCUy4q9TK6SUBmXt"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"pDJuX7402lhbhEUz"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"pDZbrhJm9HY8a1FF"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"pFjAuOn3qT0ToSnL"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"pM1vuIMcdFQl68pW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"pOrAbJ9fAoLgXRan"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"pPVMwWcqrQO12wJR"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"pUZOVOvYCJeLhcBK"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628566438107,"_id":"pYDkmIS4Z0G0p6Oo"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"pYu8lV5OmMl3R7bk"}
@@ -943,6 +1071,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"q7nBwIbVICBiQ27q"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"q844le1e1bqMyvVg"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"qNNXXWLImWfxhk7o"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"qO1IiqxRVw354Eue"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"qPn1JSSv93h79hG6"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"qQ1dAmuQGKPE55NV"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"qR0CBS2X0LMPe8Yq"}
@@ -954,6 +1083,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"qicBZMMemZz3MRLg"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"qk2Z1E0qAREp2PAA"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628991453910,"_id":"qlxugFMbFUek8TDu"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"qntyfyd2GQ9DGalZ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"qstedO6nx1f3LS3N"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"qtnA27SpSKXrK4Sy"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"qw18vpB0uZpVXpRq"}
@@ -973,6 +1103,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"rlkyk5wmKJl8L6vi"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"rntqVt6PfbupdAy5"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"romyDHfqu92G727L"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"rufwwISanbE0WGci"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628646371580,"_id":"s6p26pIizX4B7s9N"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"s7TeBN6rUMUS60UY"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"sB9QfYlwU2EEIA5E"}
@@ -987,18 +1118,23 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"sffmQXFxucJQA3zW"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"sm3o7L4saG6aGZcO"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"smTtqbdR44YrzgDK"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"sovb38pcpJ2VmMoq"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"sr7atrYdbFzTeoxJ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"su5vSf4KIxXUh9DD"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"t5JQz3LTXj5siUsr"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"t74hfwdOZOohyuT0"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"tArEFQjCe4U0zj2D"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"71234888","data":"AAAAAAAAAAAA","_id":"tBrmWPCUg1kLoZaY"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"tBzGfkKW2KqrbtID"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"tFOsdSIr3sU8MCcL"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"tHqTJLvFegRkjnIE"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"tI8MxYvAHYxGbV93"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628563662949,"_id":"tNLDn1qGaepofEfJ"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"tO5wQIIr92R5GEnB"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"tQPamt0HXVaNjFrk"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"tRyifzFWqLVMB9bw"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"tWkLA22TYhkOyQKn"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"tWo5mAPdhMEFvSh0"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"tdozlBIEn9YbPiih"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"tepi2xSBT9PhePU4"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ti7zNxGrPV4s7TMK"}
@@ -1023,6 +1159,7 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"uS28nQhaVAjcbmFF"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628645676938,"_id":"uTPxZBD4AA621NCe"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"uWpx8sBGrf1ItVN9"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"uYbdtPlxyOKuGbqN"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628805028615,"_id":"uZ4Av8TCu2aHUeiI"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"uZiL6JwSPrgKihuH"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"84882888","data":"If this works I will literally offer Nats a smoothie tomorrow","_id":"uasATBp58Pc6egAk"}
@@ -1032,17 +1169,23 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"uh8mztPnYPfCSw6Z"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ui17acfCS2ajAzTa"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ulWSe9UA4uwiYKHs"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ulsN9zsg5sb7FGyu"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"78123788","data":"ASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUHASDJHASDJHASDJHASDUHSDUIASDSDASDUHSDAUH","_id":"umHDmSToYSMGUpt8"}
 {"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"uqfQyiuXYGZdASk3"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"urLivPVk9BatmJ2h"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628993758229,"_id":"v3lyQonDumduF9QV"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"v7KZ4n1QKAPkIMYj"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"v8y8IiSET66AAzBB"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"v9eyPJepNIHSoZuw"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"vB1dAeOYPNrKNAgY"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"13411232","data":"AUUASDUAUSDJASDJS","_id":"vCSPQOmEivdAY5pe"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"vNaoSMAYYkZ6sGN8"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"72138123","data":"boop :>","_id":"vS33YVPxobDC2bpd"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"vUtMElZHBdUdt1IO"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"vVUUSD3rEXBuoqXw"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"vYcB3lPZSmgxp1LI"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"vZz2KjHIMe7mK7L8"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"vg6yICi1uBnsbtcR"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"vhK2s3H8zccw7n6f"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"videgPTOSWWjQISf"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"vijFZ05sND11fmLt"}
@@ -1054,7 +1197,9 @@
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628456483871,"_id":"vvmJbv7kLo5sVBTP"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"w3QIAlZ3L7gxFid5"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"w8jubExm0fn0zYBA"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"wBTwwFmyetJ1E4Yt"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628473834694,"_id":"wETY2iRAKKzi8S4z"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"wKg2fkiHShy3IVKd"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"wKkfnKsRfWorXNaz"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"wOVT8AsmhWsAX9ju"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"0998","communicationId":"89389129","data":"ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789ASDJHSDHHASUDUIASDUI89128973789","_id":"wQKX9oA8vEbeerd6"}
@@ -1074,7 +1219,9 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"xAwLYt1bPR5IjLRM"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"xEul4IzQewIVjtwN"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"xFTMCH9ZpfVV9e6m"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"xMXHZBDRBHWcEADj"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"xPi0F2xYLNn37W2G"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"xSOCzeAMF8YB2VXq"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"xa4gL7nRIm6OpZEz"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"xeEegXfostq9qGCY"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"xhjiPl1JdyEeQL9z"}
@@ -1085,16 +1232,19 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"xmZQDYMpfNQYZ0XC"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"xoGuFWXzZUi9epME"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"y5GCfsUmDfGjDr1Z"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"y6GnTqY91J8I5vb2"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"y72tO5GIPtn2n9yz"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"y7URwsLRpRSMMeQR"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"yC1a1Z7oLTkUx5P5"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"yOoIjiZUo9Epjsd7"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"yR9OGMVWXhiljzJ3"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629076951529,"_id":"yVMadJlJYrdiEUkK"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628570044162,"_id":"yabJjlfwxFbwUASG"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ybmBcJKKjPTEuPvv"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"yfAHux6CHnJvjCS6"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"yg9fwUaeQdqpdXq2"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1628477040484,"_id":"yjDfNt3CHLVr0x3I"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ykKYaSPUqjxqLxlR"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"yoPunRyYuV8FyFq6"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"yoyMT42nj4rvC0Ul"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"ypRsRSIAEVvtO7ql"}
@@ -1117,158 +1267,15 @@
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"zYOwX9hkiFcLSzdU"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"zcLu6mc89wSQlT6K"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"zcOAheywpHzbINtA"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"zcOkAsJ3KSoX0O3I"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"zmO60LINa0iNAHgN"}
 {"deviceId":"3AC465","protocolTo":"a111","protocolFrom":"c202","communicationId":"73812788","data":"3891283","_id":"znnMQKFG9iR6bEf8"}
 {"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"zplFxEMSBdUoh4Rw"}
-{"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"zvnybaTNpSUv7anZ"}
-{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629587206724,"_id":"oheysibJ6OxWj5z3"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"bJiKFBHAiGyWv4EE"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"fSwM3JCi4hzyEq9J"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Z3L6n3ipl2Colt4p"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"iYRWdUf8cRs5k0dL"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"nTNQXtdx36HOHxVH"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"KNEJlD77Cyqw2Mbx"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"v9eyPJepNIHSoZuw"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"76Fecgh6Gyjx9aX5"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"B8hWw1IPeRFqP7Fv"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"nqbzkJIjCCYatsaW"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"7j0b8qYWMQxPYxJ0"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"FBt0tLBZH3cWQqeL"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"i3WXdUspHgtBAJVo"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"SvwRhxxIlFHEiyWx"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"SSAR2sSyWE3tkdKf"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"TeYAJUiVGmqNHNTJ"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"cYXoaPvCxXdFn344"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"3cYXA2BLjjOB53Ri"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"noQCFH1z6oZxOHxB"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"YeucUCNDOt2DXBbe"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"5BXEtHfnK6MRvUyU"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"hzJ1OJw3YltFUTT8"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"yR9OGMVWXhiljzJ3"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"RBhV0mTTOBuNtW03"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"hwdiXbItAIdXp4A3"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"4r0zbjezZbJO7jEm"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"TyqpMrtD9lIaPC9d"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"0HeubpSxhBBvXmL3"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"tRyifzFWqLVMB9bw"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ayg06TCly5ixfXAO"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"h1s1fKIbYjMufXV5"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"tBzGfkKW2KqrbtID"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"VlDJfJZE8O4OMEoH"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"gtKLPegedhdeScrU"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"AhxBYwZF6jzj6pD4"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"hOLJccFm7hxtV3Iy"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"EdPoanTpP7JPPmfl"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9gbf2w1eLECN3xMF"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"5mBDDOJFgrSJTb8v"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"goZzYvh6qdW56o1x"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"k6MXIP2P5bcXNYXe"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"C75YayYlSaemxqwm"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"VwwohRuMSoxjT7nR"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"zcOkAsJ3KSoX0O3I"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"l4zA5tsXj5IZCjMa"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"3MUfxg6zRTZ01NXh"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"pPVMwWcqrQO12wJR"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ScnBWmvBlaEFo6cj"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"T4ACaK0zxAoF3eUI"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"CvDxHQKxx8FARAr2"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"8EA5X76R944WBvrD"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Clp9GHiin96f3gEZ"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ZfiP6xX1dTahm9Pa"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"wBTwwFmyetJ1E4Yt"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"bkr1Ikt7Udw58g5t"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"FwulNyQ6mNS3LlLS"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"fZHJ9hH4oRcyDZGM"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"YDwP3jlnh6KeFnxK"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"qO1IiqxRVw354Eue"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"4sTzhLCsbyqGs0tY"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"3o2Wt7ZB114GiiAm"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"k80issRKzXP0Z1fh"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"6CBVl4EfpT3mUdD1"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9gEW5BiNejQ5J2Wm"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"PT2atgkMXqPUXcy7"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"vNaoSMAYYkZ6sGN8"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"OAlyekdx0wPQ8rVe"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Gh5A7fkSaM5uo8Fk"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1Nxch0Xeoyd3K2KG"}
 {"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"zqSttHsW8SIXvF2a"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"8A3sfmqNAkPeQWYC"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"dBSfS3lYmEFB5ZKl"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"CR6brbg23LefSPen"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"V8CD6CU96vv4B3O2"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"joGsuHJpsMgauD6d"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"p76ma0CrUf6yI6Zs"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"pM1vuIMcdFQl68pW"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Q6ypxrTZWVXWCeeu"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"iPn1roZfqSk8Hh39"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"WYLul4XWH5LOUQOa"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"qntyfyd2GQ9DGalZ"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"QTiM034dvJ4zRznv"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"tWo5mAPdhMEFvSh0"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"5vJUL5GFd0xEotmW"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"CzcSdOxAba02ndoP"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ykKYaSPUqjxqLxlR"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9ea1FzZGc2aEarN3"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"t5JQz3LTXj5siUsr"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"VB4TX5L5myxr9UoW"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"570h9gW5EyR8D26w"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1EKGRdxh7YwN1EtR"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1qhEhJylyJi9Yf9F"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1D9tnzcb0bt4UMm3"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"RXK2O9EEiMTtl7pJ"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"Eny5TtSYe8Sq9Y6t"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"lguQg9oekk4OkSlc"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"jZqTuMYvzVjJZcvk"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"vg6yICi1uBnsbtcR"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"uYbdtPlxyOKuGbqN"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"YiYLc4AWBi9pcGDl"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"7SPXinfWLzwVQa5w"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"geVtaa0cy6vnn1ZP"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"ulsN9zsg5sb7FGyu"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"7VIPoRmti6sZ0nfc"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"4wzJvB8I7XB54cjE"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"MhtV2zhoXGWSh4eh"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"I0PStgJhuVBGYY7s"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"gdrTIdG8k5Ds7ZoS"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"QinckbKzOMt0wdpV"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"asbR1nLv5VBixIlH"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"vZz2KjHIMe7mK7L8"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"0GzNeK3qhk8LAKCJ"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"rufwwISanbE0WGci"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"6SoPJCnS8WTHJVYL"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"QIz7Bds7tZr3Ny1V"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"dW5stPsSbCAYYIrZ"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"PNp1DbIGjRKOghYL"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"P3mLhYN6YxECRUJl"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9VcVVVHu6GAP3wFN"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"H88s6C5jzm4z2XTA"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"y6GnTqY91J8I5vb2"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"9htmH8WVUotduxDS"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"eBbUSWWap7EgebUy"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"iHjyi83NL2T6ZDZ5"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"xMXHZBDRBHWcEADj"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"R57xBB83Frn48K5S"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"20sQsrUR9N2ZLjJb"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"5CKukbMb1c7rHMpr"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"WdPHUVXvMC0xDEH4"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"urLivPVk9BatmJ2h"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"sovb38pcpJ2VmMoq"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"cEqDpk5c50NShasn"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"3bmL8LUtLkg6bApE"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"h2evwBctvmT1i0fZ"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"F6coqnYS29Vm6gx1"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"1NyiPqwQR85wji8p"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"F5YDODtBurGxH7L0"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"OFaXHtKf8oHelBlS"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"710wa9UmpUEm9fJd"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"hWHWJXXfsHW2WXqa"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"7U9b3LfElJLryu0B"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"mDRzbGRzBLfYLBKQ"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"UCv7HUIeL9JEKLfg"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"friqxn0gRCFDAP8O"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"aVEw8PUeHj2LVNWE"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"wKg2fkiHShy3IVKd"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"D0c5a0cIu1os5T8t"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"8s6NScR39Xo5FVa9"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"xSOCzeAMF8YB2VXq"}
-{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"4dIGXuNfOAKwUiVM"}
+{"deviceId":"3AC465","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Scalability Test :>","_id":"zvnybaTNpSUv7anZ"}
+{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629667980247,"_id":"YZs6zWyP1ZD13PGD"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"JJQGAppfMZFXsAXe"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"JKY5lyJSt45EhzOZ"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"bHnFE2Dbrtoc04Q2"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"fmavnffD2K9OjRyK"}
+{"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","_id":"TBowNbcQV4vvyafI"}

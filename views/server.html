@@ -78,30 +78,11 @@
       <div id="tablets" style="display:none;width: 100%;text-align: center;">
         <span class="maintext" style="font-size: 2vw;text-align: center;">Active Devices</span></br>
           <div id="activeDeviceContainer" style="text-align:center;">
-            <div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
-              <span class="maintext" style="font-size: 20px;display:block">3AC465</span>
-              <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
-              <div class="bg-selected mainbutton">
-                <span class="maintext" style="font-size: 14px;">Demote</span>
-              </div>
-            </div>
-            <div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
-              <span class="maintext" style="font-size: 20px;display:block">3AC465</span>
-              <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
-              <div class="bg-selected mainbutton">
-                <span class="maintext" style="font-size: 14px;">Demote</span>
-              </div>
-            </div>
+            
           </div>
           <span class="maintext" style="font-size: 1.5vw;text-align: center;">Inactive Devices</span></br>
           <div id="inactiveDeviceContainer" style="text-align:center;">
-            <div class="bg-main" style="padding:20px; border-radius:8px; height:160px; width:240px;display:inline-block;margin-bottom: 10px;">
-              <span class="maintext" style="font-size: 20px;display:block">3AC465</span>
-              <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
-              <div class="bg-selected mainbutton">
-                <span class="maintext" style="font-size: 14px;">Promote</span>
-              </div>
-            </div>
+            
           </div>
       </div>
       <div id="myteam">
@@ -874,15 +855,17 @@
       console.log("There was an error loading the competition!")
     }
   });
-
+  var page = 1;
   function changeMenu(evt){
+    
     var selectedMenuItem = evt.srcElement;
     if(currentMenuSelection != "" && currentMenuSelection != undefined){
-      document.getElementById(currentMenuSelection).style.display = "none";
+      document.getElementById(currentMenuSelection + page).style.display = "none";
       document.querySelector("[data-menuItem='" + currentMenuSelection + "']").classList.replace("bg-selected", "bg-main");
       document.querySelector("[data-menuItem='" + currentMenuSelection + "']").style.width = "12vw";
     }
-    document.getElementById(selectedMenuItem.dataset.menuitem).style.display = "block";
+    page = 1;
+    document.getElementById(selectedMenuItem.dataset.menuitem + page).style.display = "block";
     selectedMenuItem.classList.replace("bg-main", "bg-selected");
     selectedMenuItem.style.width = "13vw";
     currentMenuSelection = selectedMenuItem.dataset.menuitem;
@@ -996,6 +979,7 @@
     updateRequestsList();
   });
 
+
   function updateRequestsList(){
     document.getElementById("overlay_requestsContainer").innerHTML = "";
     var usableList = []
@@ -1078,8 +1062,9 @@
         document.getElementById("activeDeviceContainer").innerHTML = document.getElementById("activeDeviceContainer").innerHTML + `<div class="bg-main" style="padding:20px; border-radius:12px; height:160px; width:240px;display:inline-block;margin: 10px;">
               <span class="maintext" style="font-size: 20px;display:block">` + device._id + `</span>
               <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
+              
               <div class="bg-selected mainbutton">
-                <span class="maintext" style="font-size: 14px;">Demote</span>
+                <span class="maintext demotedevice" style="font-size: 14px;" data-id="` + device._id + `">Demote</span>
               </div>
             </div>`
       }else{
@@ -1087,12 +1072,26 @@
               <span class="maintext" style="font-size: 20px;display:block">` + device._id + `</span>
               <span class="maintext" style="font-size: 14px;display:block">Last Comm: 12:45 PM</span>
               <div class="bg-selected mainbutton">
-                <span class="maintext" style="font-size: 14px;">Promote</span>
+                <span class="maintext promotedevice" style="font-size: 14px;" data-id="` + device._id + `">Promote</span>
               </div>
             </div>`
       }
+      Array.from(document.getElementsByClassName("promotedevice")).forEach(el => {
+        el.addEventListener("click", function(evt){
+          ipcRenderer.send("promoteDevice", {"id" : evt.srcElement.dataset.id});
+        });
+      });
+      Array.from(document.getElementsByClassName("demotedevice")).forEach(el => {
+        el.addEventListener("click", function(evt){
+          ipcRenderer.send("demoteDevice", {"id" : evt.srcElement.dataset.id});
+        });
+      });
     });
+    
   });
+
+  
+
   ipcRenderer.on("allMatches", (evt, args) => {
     document.getElementById("matchesToShow").innerHTML = "";
     var matchNumbersDisplayed = [];

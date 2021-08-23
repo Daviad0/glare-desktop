@@ -7,7 +7,7 @@
   Notes: This is the library that brings the HTML page to life in a new window instead of the Chrome browser. All content that shows up inside the window is not within Electron's control, and is completely coded by this project's author
 */
 var path = require('path');
-const {app, BrowserWindow, dialog} = require('electron')
+const {app, BrowserWindow, dialog, ipcRenderer} = require('electron')
 const {ipcMain} = require('electron')
 const sudo = require('sudo-prompt');
 // ok so BLE is in sudo-prompt
@@ -283,7 +283,6 @@ const { data } = require('jquery');
 
 
 
-
 // main window that actually allows the user to interact with the show
 function createWindow () {
   mainWindow = new BrowserWindow({
@@ -333,6 +332,42 @@ console.log(err);
   
   
 }
+
+ipcMain.on('newMatch', (event, args) => {
+  db.entries.insert(args["match"], function(err, newDoc){
+    db.entries.find({}, function(err, allDocs){
+      mainWindow.webContents.send("allMatches", {"matches" : allDocs});
+      /*var docsToSend = []
+      allDocs.forEach(docToSend => {
+        docToSend["Id"] = docToSend._id;
+        delete docToSend._id;
+        docsToSend.push(docToSend);
+      });
+
+      io.emit('addToQueue', {
+        deviceId : "BF8613",
+        protocolTo : "c211",
+        protocolFrom : "0998",
+        communicationId : "ABCDEF42",
+        data : JSON.stringify(docsToSend),
+        sentAt : new Date()
+      });
+      db.requests.insert({
+        deviceId : "BF8613",
+        protocolTo : "c211",
+        protocolFrom : "0998",
+        communicationId : "ABCDEF42",
+        data : JSON.stringify(docsToSend),
+        sentAt : new Date()
+      }, function(err, doc) {
+        //console.log("New document added to requests with id " + doc._id + " at " + new Date().toTimeString());
+        mainWindow.webContents.send('addRequest', doc);
+        
+      });*/
+
+    });
+  })
+});
 
 ipcMain.on('promoteDevice', (event, args) => {
   db.devices.update({_id : args["id"]}, {onLineup : true}, function(err, newDoc){

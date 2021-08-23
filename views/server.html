@@ -84,7 +84,7 @@
               </div>
               <br/>
               <br/>
-              <div style="max-height: 30vh;overflow-y: auto;" id="matchStatement">
+              <div style="max-height: 35vh;overflow-y: auto;" id="matchStatement">
                 <!--Generate form content here-->
                 <div style="display: inline-block;margin:10px">
                   <span class="maintext" style="font-size: 16px;display: block;">Is Parked</span>
@@ -1182,15 +1182,57 @@
 
   function addUIElement(obj){
     if(obj.type == "parent"){
+      document.getElementById("matchStatement").innerHTML += `<br/><span class="maintext" style="font-size: 16px;">` + obj.prettyName + `</span><br/>`
       obj.contents.forEach(c => {
         addUIElement(c)
       });
       // need to handle the other generation also
     }
     else{
-      document.getElementById("matchStatement").innerHTML += `<div style="display: inline-block;margin:10px">
-                  <span class="maintext" style="font-size: 16px;display: block;">` + obj.prettyName + `</span>
+      var stringToAdd = "";
+      switch(obj.type){
+        case "stepper":
+          stringToAdd += `<div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>
+                  <input class="textbox" type="number" value="0" style="display:inline-block:font-size:10px"/>
                 </div>`
+          break;
+        case "timer":
+          stringToAdd += `<div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>
+                  <input class="textbox" type="number" value="0" style="display:inline-block;font-size:10px"/><span style="display:inline-block">s</span>
+                </div>`
+          break;
+        case "toggle":
+          stringToAdd += `<div style="display: inline-block;margin:10px">
+            <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>`
+          obj.conditions.options.forEach(el => {
+            stringToAdd += `<div class="bg-main mainbutton" style="width: 100px;background-color: #213452;margin:5px">
+                    <span class="maintext" style="font-size: 10px;">` + el + `</span>
+                  </div>`
+          });
+          stringToAdd += `</div>`
+          break;
+        case "choices":
+          stringToAdd += `<div style="display: inline-block;margin:10px">
+            <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>`
+          obj.conditions.options.forEach(el => {
+            stringToAdd += `<div class="bg-main mainbutton" style="width: 100px;background-color: #213452;margin:5px">
+                    <span class="maintext" style="font-size: 10px;">` + el + `</span>
+                  </div>`
+          });
+          stringToAdd += `</div>`
+          break;
+        case "dropdown":
+          stringToAdd += `<div style="display: inline-block;margin:10px">
+            <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>
+            <select class="textbox" style="font-size:10px">`
+          obj.conditions.options.forEach(el => {
+            stringToAdd += `<option style="font-size:10px" value="` + el + `">` + el + `</option>`
+          });
+              stringToAdd += `</select></div>`
+      }
+      document.getElementById("matchStatement").innerHTML += stringToAdd
     }
   }
 
@@ -1199,12 +1241,62 @@
     var finalObject = JSON.parse(schema.data);
     console.log(finalObject);
     finalObject.categories.forEach(c => {
+      document.getElementById("matchStatement").innerHTML += `<br/><span class="maintext" style="font-size: 20px;">` + c.prettyName + `</span><br/>`
       c.contents.forEach(c2 => {
         addUIElement(c2)
       })
       
     })
+    document.getElementById("matchStatement").innerHTML += `<hr style="border-top:2px solid #223554;margin: 5px"/>
+    <div class="bg-main mainbutton" style="width: 200px;background-color: #213452;margin:5px">
+            <span class="maintext" style="font-size: 16px;">Audit This Match</span>
+          </div><div class="bg-error-dull mainbutton" style="width: 200px;background-color: #223554;margin:5px">
+            <span class="maintext" style="font-size: 16px;">Clear This Match</span>
+          </div><div class="bg-error-dull mainbutton" style="width: 200px;background-color: #EB264A;margin:5px">
+            <span class="maintext" style="font-size: 16px;">Delete This Match</span>
+          </div>`
   }
+  var allMatches = [];
+  function newMatches(){
+    for(var i = 0; i < 50; i++){
+      ipcRenderer.send("newMatch", {"match" : {
+      "Competition" : "davEnv4004",
+      "Schema" : allSchemas[0]._id,
+      "Number" : i+1,
+      "Position" : "Red 1",
+      "Data" : null,
+      "LastEdited" : new Date(),
+      "TeamIdentifier" : "0862",
+      "TeamName" : "Lightning Robotics",
+      "Completed" : false,
+      "Audited" : false,
+      "AssistedBy" : [],
+      }});
+    }
+  }
+
+  document.getElementById("initializeAllMatches").addEventListener('click', function(){
+    document.getElementById("initializeAllMatches").style.backgroundColor = "#2a7afa";
+    newMatches();
+    
+    setTimeout(function(){
+      document.getElementById("initializeAllMatches").style.backgroundColor = "#213452";
+      var docsToSend = []
+      allMatches.forEach(docToSend => {
+        docToSend["Id"] = docToSend._id;
+        delete docToSend._id;
+        docsToSend.push(docToSend);
+      });
+      ipcRenderer.send('newRequest', {
+        'deviceId' : "BF8613",
+        'protocolTo' : "c211",
+        'protocolFrom' : "0998",
+        'communicationId' : "12345678",
+        'data' : JSON.stringify(docsToSend)
+      })
+    }, 4000);
+    
+  });
 
   ipcRenderer.on('allSchemas', (evt, args) => {
     args["schemas"].forEach(s => {
@@ -1218,6 +1310,7 @@
   ipcRenderer.on("allMatches", (evt, args) => {
     document.getElementById("matchesToShow").innerHTML = "";
     var matchNumbersDisplayed = [];
+    allMatches = args["matches"];
     var matches = args["matches"].sort(function(a,b){return a.Number-b.Number});
     var lastNumber = 0;
     var hasMissing = false;

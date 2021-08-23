@@ -51,8 +51,98 @@
         </div>
         
       </div>
-      <div id="matches2">
-        
+      <div id="matches2" style="display: none;width:100%;text-align: center;">
+        <span class="maintext" style="font-size: 40px;display: block;">Match 22</span>
+        <!--<div class="bg-error" style="padding:5px 20px;border-radius:20px;display: inline-block;">
+          <span class="maintext" style="font-size: 16px;display: block;">Not Yet All Completed</span>
+        </div>
+        <div class="bg-success" style="padding:5px 20px;border-radius:20px;display: inline-block;">
+          <span class="maintext" style="font-size: 16px;display: block;">All Teams Completed</span>
+        </div>-->
+        <div class="bg-selected" style="padding:5px 20px;border-radius:20px;display: inline-block;">
+          <span class="maintext" style="font-size: 16px;display: block;">Already Audited</span>
+        </div>
+        <br/>
+        <br/>
+        <div style="display: table;width: 100%;">
+          <div style="display:table-cell;width: 30%;border-right: 4px solid #192436;border-radius: 4px;padding:10px">
+            <div class="bg-selected" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
+              <span class="maintext" style="font-size: 16px;">Red 1 (862)</span>
+            </div>
+            <div class="bg-main" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
+              <span class="maintext" style="font-size: 16px;">Red 2 (1023)</span>
+            </div>
+            <div class="bg-main" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
+              <span class="maintext" style="font-size: 16px;">Red 3 (8832)</span>
+            </div>
+          </div>
+          <div style="display:table-cell;padding:10px">
+            <div class="bg-main" style="border-radius: 12px;padding:12px 20px;text-align: center;margin: 5px;display: block;">
+              <span class="maintext" style="font-size: 24px;display: block;">Team 862</span>
+              <div class="bg-error" style="padding:3px 15px;border-radius:20px;display: inline-block;">
+                <span class="maintext" style="font-size: 12px;display: block;">Not Completed</span>
+              </div>
+              <br/>
+              <br/>
+              <div style="max-height: 30vh;overflow-y: auto;">
+                <!--Generate form content here-->
+                <div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 16px;display: block;">Is Parked</span>
+                  <div class="bg-main mainbutton" style="width: 100px;background-color: #213452">
+                    <span class="maintext" style="font-size: 12px;">Parked</span>
+                  </div>
+                  <div class="bg-selected mainbutton" style="width: 100px;background-color: #2A7AFA">
+                    <span class="maintext" style="font-size: 12px;">Not Parked</span>
+                  </div>
+                </div>
+                <div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 16px;display: block;">Initiation Line</span>
+                  <div class="bg-selected mainbutton" style="width: 100px;background-color: #2A7AFA">
+                    <span class="maintext" style="font-size: 12px;">Completed</span>
+                  </div>
+                  <div class="bg-main mainbutton" style="width: 100px;background-color: #213452">
+                    <span class="maintext" style="font-size: 12px;">Failed</span>
+                  </div>
+                </div>
+                <div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 16px;display: block;">Is Parked</span>
+                  <div class="bg-main mainbutton" style="width: 100px;background-color: #213452">
+                    <span class="maintext" style="font-size: 12px;">Parked</span>
+                  </div>
+                  <div class="bg-selected mainbutton" style="width: 100px;background-color: #2A7AFA">
+                    <span class="maintext" style="font-size: 12px;">Not Parked</span>
+                  </div>
+                </div>
+                <div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 16px;display: block;">Initiation Line</span>
+                  <div class="bg-selected mainbutton" style="width: 100px;background-color: #2A7AFA">
+                    <span class="maintext" style="font-size: 12px;">Completed</span>
+                  </div>
+                  <div class="bg-main mainbutton" style="width: 100px;background-color: #213452">
+                    <span class="maintext" style="font-size: 12px;">Failed</span>
+                  </div>
+                </div>
+                <div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 16px;display: block;">PC I (A)</span>
+                  <input class="textbox" type="number" value="0"/>
+                </div>
+                <div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 16px;display: block;">PC O (A)</span>
+                  <input class="textbox" type="number" value="0"/>
+                </div>
+                <div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 16px;display: block;">PC L (A)</span>
+                  <input class="textbox" type="number" value="0"/>
+                </div>
+                <div style="display: inline-block;margin:10px">
+                  <span class="maintext" style="font-size: 16px;display: block;">PC M (A)</span>
+                  <input class="textbox" type="number" value="0"/>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
       <div id="competitions1" style="display:none;width: 100%;max-height: 60vh;overflow-y: auto;">
         <div class="bg-main" style="padding:20px;border-radius: 12px;text-align: center;">
@@ -1119,7 +1209,7 @@
           }
           
         }
-        document.getElementById("matchesToShow").innerHTML += `<div class="bg-main" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px">
+        document.getElementById("matchesToShow").innerHTML += `<div class="bg-main matchtoselect" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px" data-number="` + match.Number + `">
             <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;">Match ` + match.Number + `</span>
             <span style="text-align:right;display:table-cell">
               <span class="maintext material-icons-round bg-selected" style="font-size: 24px;padding:5px;border-radius: 8px;">star</span>
@@ -1132,6 +1222,13 @@
         lastNumber = match.Number;
       }
       
+    });
+    Array.from(document.getElementsByClassName("matchtoselect")).forEach(matchel => {
+      matchel.addEventListener('click', function(evt){
+        page = 2;
+        document.getElementById("matches1").style.display = "none";
+        document.getElementById("matches2").style.display = "block";
+      });
     });
     if(!hasMissing){
       document.getElementById("replaceMissingMatches").style.display = "none";

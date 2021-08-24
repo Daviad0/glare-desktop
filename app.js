@@ -71,7 +71,9 @@ db.requests.insert({
 db.competitions.insert({
   _id: 'davEnv4004',
   prettyName: "David's Test Environment",
-  acceptedSchemas: ['17823788']
+  acceptedSchemas: ['17823788'],
+  location: "David's Basement",
+  datespan: "August 23rd to August 40th"
 }, function(err, newDoc){
   console.log(newDoc)
   console.log("Document added!");
@@ -282,6 +284,8 @@ const machineId = require('node-machine-id');
 const { data } = require('jquery');
 
 
+var selectedCompetition = "";
+
 
 // main window that actually allows the user to interact with the show
 function createWindow () {
@@ -307,11 +311,12 @@ function createWindow () {
   mainWindow.webContents.on('did-finish-load', function() {
     mainWindow.show();
     //mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
-    db.entries.find({}, function(err, docs){
-      mainWindow.webContents.send("allMatches", {"matches" : docs});
-    })
+    
     db.schemas.find({}, function(err, docs){
       mainWindow.webContents.send("allSchemas", {"schemas" : docs});
+    })
+    db.competitions.find({}, function(err, docs){
+      mainWindow.webContents.send("allCompetitions", {"competitions" : docs});
     })
     
     
@@ -332,6 +337,17 @@ console.log(err);
   
   
 }
+
+ipcMain.on("setCompetition", (event, args) => {
+  selectedCompetition = args["competition"];
+});
+
+ipcMain.on("getMatches", (event, args) => {
+  selectedCompetition = args["competition"];
+  db.entries.find({"Competition" : selectedCompetition}, function(err, docs){
+    mainWindow.webContents.send("allMatches", {"matches" : docs});
+  })
+});
 
 ipcMain.on('newMatch', (event, args) => {
   db.entries.insert(args["match"], function(err, newDoc){
@@ -426,6 +442,9 @@ ipcMain.on('getChannelStatus', (event, args) => {
 ipcMain.on('addCompetition', (event, args) => {
   db.competitions.insert(args["competition"], function(err, newDoc){
     mainWindow.webContents.send('competitionStatus', {"success" : (err ? false : true), "instance" : newDoc})
+    db.competitions.find({}, function(err, docs){
+      mainWindow.webContents.send("allCompetitions", {"competitions" : docs});
+    })
   });
 });
 

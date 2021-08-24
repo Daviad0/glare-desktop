@@ -144,18 +144,24 @@
           </div>
         </div>
       </div>
-      <div id="competitions1" style="display:none;width: 100%;max-height: 60vh;overflow-y: auto;">
+      <div id="competitions1" style="display:none;width: 100%;max-height: 60vh;overflow-y: auto;text-align: center;">
+        <div class="bg-main mainbutton" id="showCompetitionOverlay" style="width: 500px;display:inline-block;margin:5px">
+          <span class="maintext" style="font-size: 16px;">Show Competition Overlay</span>
+        </div>
+        <div class="bg-main mainbutton" id="addToQueueExample" style="width: 500px;display:inline-block;margin:5px">
+          <span class="maintext" style="font-size: 16px;">Add Example to Queue</span>
+        </div>
         <div class="bg-main" style="padding:20px;border-radius: 12px;text-align: center;">
-          <span class="maintext" style="font-size: 24px;display:block">Welcome to Jackson, MI</span>
-          <span class="maintext" style="font-size: 16px;display:block">August 21st - August 22nd, 2021</span>
+          <span class="maintext" style="font-size: 24px;display:block" id="competition_welcome">Welcome to Jackson, MI</span>
+          <span class="maintext" style="font-size: 16px;display:block" id="competition_date">August 21st - August 22nd, 2021</span>
           <br/>
           <div style="padding:20px 10px 10px 10px;width: 300px;border-radius: 12px;background-color: #213452;display:inline-block;margin:5px">
             <span class="maintext" style="font-size: 24px;display:block">Matches Done</span>
-            <span class="maintext" style="font-size: 48px;display:block;margin:0px;font-weight: 600;">94%</span>
+            <span class="maintext" style="font-size: 48px;display:block;margin:0px;font-weight: 600;" id="competition_matchesDone">94%</span>
           </div>
           <div style="padding:20px 10px 10px 10px;width: 300px;border-radius: 12px;background-color: #213452;display:inline-block;margin:5px">
             <span class="maintext" style="font-size: 24px;display:block">Matches to Audit</span>
-            <span class="maintext" style="font-size: 48px;display:block;margin:0px;font-weight: 600;">4</span>
+            <span class="maintext" style="font-size: 48px;display:block;margin:0px;font-weight: 600;" id="competition_matchesAudit">4</span>
           </div>
           <br/>
           <br/>
@@ -166,6 +172,9 @@
             <span class="maintext" style="font-size: 16px;">Perform Match Audit</span>
           </div>
 
+        </div>
+        <div id="unselectedCompetitions">
+          
         </div>
       </div>
       <div id="tablets1" style="display:none;width: 100%;text-align: center;">
@@ -184,12 +193,7 @@
       <div id="settings1">
 
       </div>
-      <div class="bg-main mainbutton" id="showCompetitionOverlay" style="width: 500px;display:none">
-        <span class="maintext" style="font-size: 16px;">Show Competition Overlay</span>
-      </div>
-      <div class="bg-main mainbutton" id="addToQueueExample" style="width: 500px;display:none">
-        <span class="maintext" style="font-size: 16px;">Add Example to Queue</span>
-      </div>
+      
     </div>
     <div class="additionalcontainer">
       <div class="bg-main" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:140px">
@@ -428,7 +432,8 @@
   var currentlySelectedChannel = 0;
   var allSchemas = [];
   var selectedSchemas = [];
-  
+  var allCompetitions = [];
+  var currentCompetition;
 
   var allRequests = [];
 
@@ -1307,6 +1312,68 @@
     generateMatchStatement(allSchemas[0])
   });
 
+  function updateCompetitions(){
+    var selectedObject = allCompetitions.find((el) => el._id == currentCompetition)
+    document.getElementById("competition_welcome").innerHTML = "Welcome to " + selectedObject.location;
+    document.getElementById("competition_date").innerHTML = selectedObject.datespan;
+    document.getElementById("competition_matchesDone").innerHTML = "0%"
+    document.getElementById("competition_matchesAudit").innerHTML = "0";
+    document.getElementById("unselectedCompetitions").innerHTML = "";
+    allCompetitions.forEach(comp => {
+      if(comp._id != currentCompetition){
+        document.getElementById("unselectedCompetitions").innerHTML += `<div class="bg-main" style="display: table;width:100%;padding:10px 20px;border-radius: 8px;line-height: 20px;margin-top:10px">
+            <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;">` + comp.prettyName + `</span>
+            <span style="text-align:right;display:table-cell">
+              <div class="bg-main mainbutton selectCompetition" id="initializeAllMatches" style="width: 100px;background-color: #213452" data-id="` + comp._id + `">
+                <span class="maintext" style="font-size: 16px;pointer-events:none">Select</span>
+              </div>
+            </span>
+            
+          </div>`
+      }
+    });
+    Array.from(document.getElementsByClassName("selectCompetition")).forEach(el => {
+      el.addEventListener('click', function(element){
+        currentCompetition = element.srcElement.dataset.id;
+        updateCompetitions(element.srcElement.dataset.id);
+      });
+    });
+    ipcRenderer.send("getMatches", {"competition" : currentCompetition});
+  }
+
+  ipcRenderer.on("allCompetitions", (evt, args) => {
+    allCompetitions = args["competitions"];
+    if(!allCompetitions.includes(currentCompetition)){
+      currentCompetition = allCompetitions[0]._id;
+    }
+    var selectedObject = allCompetitions.find((el) => el._id == currentCompetition)
+    document.getElementById("competition_welcome").innerHTML = "Welcome to " + selectedObject.location;
+    document.getElementById("competition_date").innerHTML = selectedObject.datespan;
+    document.getElementById("competition_matchesDone").innerHTML = "0%"
+    document.getElementById("competition_matchesAudit").innerHTML = "0";
+    document.getElementById("unselectedCompetitions").innerHTML = "";
+    allCompetitions.forEach(comp => {
+      if(comp._id != currentCompetition){
+        document.getElementById("unselectedCompetitions").innerHTML += `<div class="bg-main" style="display: table;width:100%;padding:10px 20px;border-radius: 8px;line-height: 20px;margin-top:10px">
+            <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;">` + comp.prettyName + `</span>
+            <span style="text-align:right;display:table-cell">
+              <div class="bg-main mainbutton selectCompetition" id="initializeAllMatches" style="width: 100px;background-color: #213452" data-id="` + comp._id + `">
+                <span class="maintext" style="font-size: 16px;pointer-events:none">Select</span>
+              </div>
+            </span>
+            
+          </div>`
+      }
+    });
+    Array.from(document.getElementsByClassName("selectCompetition")).forEach(el => {
+      el.addEventListener('click', function(element){
+        currentCompetition = element.srcElement.dataset.id;
+        updateCompetitions(element.srcElement.dataset.id);
+      });
+    });
+    ipcRenderer.send("getMatches", {"competition" : currentCompetition});
+  });
+
   ipcRenderer.on("allMatches", (evt, args) => {
     document.getElementById("matchesToShow").innerHTML = "";
     var matchNumbersDisplayed = [];
@@ -1356,6 +1423,7 @@
     if(!hasMissing){
       document.getElementById("replaceMissingMatches").style.display = "none";
     }
+    
   })
 
 </script>

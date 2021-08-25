@@ -95,6 +95,7 @@ function checkIfFinished(message, peripheral){
 var concurrency = 0;
 
 function connectAndHandle(peripheral, requestToHandle){
+    debug("Checkpoint C: " + requestToHandle.protocolTo)
     currentRequests.push(requestToHandle);
     debug("Requests left: " + pendingOutRequests.length)
     peripheral.connect(function(err){
@@ -213,6 +214,7 @@ debug("READ")
         }
     }
     socket.on('addToQueue', (request) => {
+        debug("Checkpoint A: " + request.protocolTo)
         if(discoveredDevices.findIndex((el) => el.advertisement.localName.substring(3) == request.deviceId) == -1){
             pendingOutRequests.push(request);
         }else{
@@ -270,7 +272,7 @@ debug("READ")
             // something in the queue exists
             var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == deviceId), 1)[0];
             //debug("Connecting to queue item");
-            
+            debug("Checkpoint B: " + requestToHandle.protocolTo)
             //debug(requestToHandle)
             connectAndHandle(peripheral, requestToHandle);
                     

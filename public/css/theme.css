@@ -157,6 +157,10 @@
     border-bottom: 2px solid #2A7AFA;
     padding-left:10px;
 }
+.textbox:disabled{
+    border-bottom: 2px solid #EB264A;
+    background-color: #223554;
+}
 .textbox::placeholder{
     color:#6382B7;
 }

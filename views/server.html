@@ -255,6 +255,26 @@
             <br/>
             <span class="maintext" style="font-size: 1.2vw;margin-top: 20px;">Data</span>
             <br/>
+            <div style="display: flex;justify-content: space-around;">
+              <select class="textbox" id="data_option1" style="display: inline-flex;width:30%">
+                <option value="customdata">Custom Data</option>
+                <option value="schemas">Schemas</option>
+                <option value="entries">Entries</option>
+                <option value="competitions">Competitions</option>
+                <option value="users">Users</option>
+              </select>
+              <select class="textbox" id="data_option2" style="display: inline-flex;width:30%">
+                <option value="single">Single</option>
+                <option value="all">All</option>
+                <option value="custom">Custom</option>
+              </select>
+              <select class="textbox" id="data_option3" style="display: inline-flex;width:30%">
+                <option value="single">Single</option>
+                <option value="all">All</option>
+                <option value="custom">Custom</option>
+              </select>
+            </div>
+            <br/>
             <textarea class="textbox" style="width: 40vw;height: 10vh;resize: none;padding:5px" id="create_data"></textarea>
             <br/>
             <br/>
@@ -761,8 +781,58 @@
   document.getElementById("create_data").addEventListener('change', checkIfOtherInputsValid);
   document.getElementById("create_deviceId").addEventListener('change', checkIfOtherInputsValid);
   document.getElementById("create_communicationId").addEventListener('change', checkIfOtherInputsValid);
-
-
+  document.getElementById("data_option2").value = "";
+  document.getElementById("data_option2").disabled = true;
+  document.getElementById("data_option3").value = "";
+  document.getElementById("data_option3").disabled = true;
+  var allObjectsToUseInData = [];
+  function handleDataOption1(){
+    if(document.getElementById("data_option1").value == "customdata"){
+      document.getElementById("create_data").value = "";
+      document.getElementById("create_data").disabled = false;
+      document.getElementById("data_option2").value = "";
+      document.getElementById("data_option2").disabled = true;
+      document.getElementById("data_option3").value = "";
+      document.getElementById("data_option3").disabled = true;
+    }else{
+      document.getElementById("create_data").value = "";
+      document.getElementById("create_data").disabled = true;
+      document.getElementById("data_option2").disabled = false;
+      if(document.getElementById("data_option1").value == "schemas"){
+        allObjectsToUseInData = allSchemas;
+      }
+      else if(document.getElementById("data_option1").value == "entries"){
+        allObjectsToUseInData = allMatches;
+      }
+    }
+  }
+  var addedValues = [];
+  document.getElementById("data_option1").addEventListener('change', handleDataOption1);
+  function handleDataOption2(){
+    if(document.getElementById("data_option2").value == "all"){
+      document.getElementById("data_option3").disabled = true;
+      document.getElementById("data_option3").value = "";
+      
+    }else{
+      document.getElementById("data_option3").disabled = false;
+      document.getElementById("data_option3").innerHTML = "";
+      allObjectsToUseInData.forEach(whee => {
+        document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">` + whee._id + `</option>`
+      });
+      document.getElementById("data_option3").value = "";
+    }
+    
+  }
+  document.getElementById("data_option2").addEventListener('change', handleDataOption2);
+  function handleDataOption3(){
+    if(document.getElementById("data_option2").value == "single"){
+      document.getElementById("create_data").value = JSON.stringify(allObjectsToUseInData.find(el => el._id == document.getElementById("data_option3").value))
+    }else{
+      
+    }
+    
+  }
+  document.getElementById("data_option3").addEventListener('change', handleDataOption3);
   function showChannelOverlay(evt){
     // use data attribute
     if(!locked){

@@ -1539,8 +1539,6 @@
       
       var docsToSend = []
       allMatches.forEach(docToSend => {
-        docToSend["Id"] = docToSend._id;
-        delete docToSend._id;
         docsToSend.push(docToSend);
       });
       ipcRenderer.send('newRequest', {

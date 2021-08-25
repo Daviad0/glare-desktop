@@ -152,6 +152,9 @@ io.on('connection', (socket) => {
         }
         db.devices.insert(newDbObject, function(err, newDoc){
           console.log(newDoc);
+          db.devices.find({}, function(err, docs){
+            mainWindow.webContents.send("allDevices", {"devices" : docs});
+          })
         });
       }
     })

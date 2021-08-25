@@ -65,7 +65,7 @@
         <br/>
         <br/>
         <div style="display: table;width: 100%;">
-          <div style="display:table-cell;width: 30%;border-right: 4px solid #192436;border-radius: 4px;padding:10px">
+          <div style="display:table-cell;width: 30%;border-right: 4px solid #192436;border-radius: 4px;padding:10px" id="differentEntries">
             <div class="bg-selected" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
               <span class="maintext" style="font-size: 16px;">Red 1 (862)</span>
             </div>
@@ -151,6 +151,8 @@
         <div class="bg-main mainbutton" id="addToQueueExample" style="width: 500px;display:inline-block;margin:5px">
           <span class="maintext" style="font-size: 16px;">Add Example to Queue</span>
         </div>
+        <br/>
+        <br/>
         <div class="bg-main" style="padding:20px;border-radius: 12px;text-align: center;">
           <span class="maintext" style="font-size: 24px;display:block" id="competition_welcome">Welcome to Jackson, MI</span>
           <span class="maintext" style="font-size: 16px;display:block" id="competition_date">August 21st - August 22nd, 2021</span>
@@ -165,7 +167,7 @@
           </div>
           <br/>
           <br/>
-          <div class="bg-main mainbutton" id="initializeAllMatches" style="width: 300px;background-color: #213452">
+          <div class="bg-main mainbutton" id="showMatchOverlay" style="width: 300px;background-color: #213452">
             <span class="maintext" style="font-size: 16px;">Initialize All Matches</span>
           </div>
           <div class="bg-main mainbutton" id="performMatchAudit" style="width: 300px;background-color: #213452">
@@ -280,7 +282,7 @@
             <br/>
             <span class="maintext" style="font-size: 1.2vw;margin-top: 20px;">Device ID (dep?)</span>
             <br/>
-            <input class="textbox" style="width: 40vw;padding:5px;text-align: center;" id="create_deviceId"/>
+            <select class="textbox" style="width: 40vw;padding:5px;text-align: center;" id="create_deviceId"></select>
             <br/>
             <br/>
             <span class="maintext" style="font-size: 1.2vw;margin-top: 20px;">Communication ID</span>
@@ -384,6 +386,67 @@
         
       </div>
     </div>
+    <div class="overlayBox" id="matchOverlay" style="display: none;">
+      <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
+        <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
+          <span class="maintext" style="font-size: 2vw;">Add Matches</span></br>
+          <table style="width:100%;margin-bottom:10px">
+            <tr>
+              <td style="text-align:right;padding:5px;width:40%;vertical-align: middle;padding-top:12px">
+                <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Competition   </span>
+              </td>
+              <td style="text-align:left;padding:5px;width:60%;vertical-align: middle;">
+                <select class="textbox" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;" id="match_competition"></select>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:right;padding:5px;width:40%;vertical-align: middle;padding-top:12px">
+                <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Schema   </span>
+              </td>
+              <td style="text-align:left;padding:5px;width:60%;vertical-align: middle;">
+                <select class="textbox" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;" id="match_schema"></select>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:right;padding:5px;width:40%;vertical-align: middle;padding-top:12px">
+                <span style="color: white;font-size:12px;font-weight:600;margin-right:5px"># of Matches   </span>
+              </td>
+              <td style="text-align:left;padding:5px;width:60%;vertical-align: middle;">
+                <input class="textbox" type="number" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;" id="match_amount" placeholder="A #"/>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:right;padding:5px;width:40%;vertical-align: middle;padding-top:12px">
+                <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Method   </span>
+              </td>
+              <td style="text-align:left;padding:5px;width:60%;vertical-align: middle;">
+                <select class="textbox" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;" id="match_method">
+                  <option value="import">The Blue Alliance</option>
+                  <option value="random">Random Generation</option>
+                  <option value="practice">Team Practice</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:right;padding:5px;width:40%;vertical-align: middle;padding-top:12px">
+                <span style="color: white;font-size:12px;font-weight:600;margin-right:5px" id="match_detailsLabel">Details   </span>
+              </td>
+              <td style="text-align:left;padding:5px;width:60%;vertical-align: middle;">
+                <input class="textbox" type="text" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;" id="match_details"/>
+              </td>
+            </tr>
+            
+          </table>
+          <div class="bg-main mainbutton" id="exitMatchOverlay">
+            <span class="maintext" style="font-size: 16px;">Exit</span>
+          </div>
+          <div class="bg-main mainbutton" id="saveMatchOverlay">
+            <span class="maintext" style="font-size: 16px;color:#00D974">Save</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
     <div class="overlayBox" id="competitionOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
         <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
@@ -454,7 +517,7 @@
   var selectedSchemas = [];
   var allCompetitions = [];
   var currentCompetition;
-
+  var allDevices = [];
   var allRequests = [];
 
   class Schema{
@@ -612,6 +675,56 @@
     
     
   });
+
+
+  function showMatchOverlay(evt){
+    if(!locked){
+      document.getElementById("showMatchOverlay").classList.replace("bg-main", "bg-selected")
+      document.getElementById("matchOverlay").style.opacity = "0";
+      document.getElementById("matchOverlay").style.display = "block";
+      document.getElementById("matchOverlay").animate([
+        { opacity: '0'},
+        { opacity: '100'}
+      ],
+      {
+        duration: 250,
+        iterations: 1
+      });
+      document.getElementById("matchOverlay").style.opacity = "100";
+    }
+  }
+  document.getElementById("showMatchOverlay").addEventListener('click', showMatchOverlay);
+  document.getElementById("exitMatchOverlay").addEventListener('click', function(){
+    document.getElementById("showMatchOverlay").classList.replace("bg-selected", "bg-main")
+    document.getElementById("matchOverlay").style.opacity = "0";
+    document.getElementById("matchOverlay").animate([
+      { opacity: '100'},
+      { opacity: '0'}
+    ],
+    {
+      duration: 250,
+      iterations: 1
+    });
+    contractOptions();
+    setTimeout(function(){
+      
+      document.getElementById("matchOverlay").style.display = "none";
+    }, 250);
+    
+    
+  });
+
+
+  function changeMatchCreateDetails(){
+    if(document.getElementById("match_method").value == "import"){
+      document.getElementById("match_detailsLabel").innerHTML = "Event Key";
+    }else if(document.getElementById("match_method").value == "random"){
+      document.getElementById("match_detailsLabel").innerHTML = "Teams (862;1023)";
+    }else if(document.getElementById("match_method").value == "practice"){
+      document.getElementById("match_detailsLabel").innerHTML = "Team Number";
+    }
+  }
+  document.getElementById("match_method").addEventListener('change', changeMatchCreateDetails);
 
   var inputsValid = false;
   var validToProtocol = true;
@@ -797,12 +910,16 @@
     }else{
       document.getElementById("create_data").value = "";
       document.getElementById("create_data").disabled = true;
+      document.getElementById("data_option2").value = "";
       document.getElementById("data_option2").disabled = false;
       if(document.getElementById("data_option1").value == "schemas"){
         allObjectsToUseInData = allSchemas;
       }
       else if(document.getElementById("data_option1").value == "entries"){
         allObjectsToUseInData = allMatches;
+      }
+      else if(document.getElementById("data_option1").value == "competitions"){
+        allObjectsToUseInData = allCompetitions;
       }
     }
   }
@@ -812,12 +929,24 @@
     if(document.getElementById("data_option2").value == "all"){
       document.getElementById("data_option3").disabled = true;
       document.getElementById("data_option3").value = "";
-      
+      addedValues = [];
+      document.getElementById("create_data").value = JSON.stringify(allObjectsToUseInData)
     }else{
+      document.getElementById("create_data").value = "";
+      addedValues = [];
       document.getElementById("data_option3").disabled = false;
       document.getElementById("data_option3").innerHTML = "";
       allObjectsToUseInData.forEach(whee => {
-        document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">` + whee._id + `</option>`
+        if(document.getElementById("data_option1").value == "schemas"){
+          document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">` + whee.prettyName + `</option>`
+        }
+        else if(document.getElementById("data_option1").value == "entries"){
+          document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">Match ` + whee.Number + `</option>`
+        }
+        else if(document.getElementById("data_option1").value == "competitions"){
+          document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">` + whee._id + `</option>`
+        }
+        
       });
       document.getElementById("data_option3").value = "";
     }
@@ -828,7 +957,13 @@
     if(document.getElementById("data_option2").value == "single"){
       document.getElementById("create_data").value = JSON.stringify(allObjectsToUseInData.find(el => el._id == document.getElementById("data_option3").value))
     }else{
-      
+      if(addedValues.findIndex(el => el._id == document.getElementById("data_option3").value) == -1){
+        addedValues.push(allObjectsToUseInData.find(el => el._id == document.getElementById("data_option3").value));
+      }else{
+        addedValues.splice(addedValues.findIndex(el => el._id == document.getElementById("data_option3").value), 1);
+      }
+      document.getElementById("create_data").value = JSON.stringify(addedValues);
+      document.getElementById("data_option3").value = "";
     }
     
   }
@@ -1179,6 +1314,7 @@
         'protocolFrom' : document.getElementById('create_protocolFrom').value,
         'communicationId' : document.getElementById('create_communicationId').value,
         'data' : document.getElementById('create_data').value,
+        'sentAt' : new Date()
       })
     }
     
@@ -1203,6 +1339,7 @@
         'protocolFrom' : "0998",
         'communicationId' : "12345678",
         'data' : "Durability test",
+        'sentAt' : new Date()
       })
       lastSend = new Date();
     }
@@ -1215,6 +1352,7 @@
         'protocolFrom' : "0998",
         'communicationId' : "12345678",
         'data' : "Scalability Test :>",
+        'sentAt' : new Date()
       })
   })
 
@@ -1222,6 +1360,11 @@
   ipcRenderer.on("allDevices", (evt, args) => {
     document.getElementById("activeDeviceContainer").innerHTML = "";
     document.getElementById("inactiveDeviceContainer").innerHTML = "";
+    allDevices = args["devices"];
+    document.getElementById("create_deviceId").innerHTML = ""
+    allDevices.forEach(dev => {
+      document.getElementById("create_deviceId").innerHTML += `<option value="` + dev._id + `">` + dev.deviceName + ` (` + dev._id + `)</value>`
+    });
     args["devices"].forEach(device => {
       if(device.onLineup){
         document.getElementById("activeDeviceContainer").innerHTML = document.getElementById("activeDeviceContainer").innerHTML + `<div class="bg-main" style="padding:20px; border-radius:12px; height:160px; width:240px;display:inline-block;margin: 10px;">
@@ -1332,30 +1475,66 @@
           </div>`
   }
   var allMatches = [];
-  function newMatches(){
-    for(var i = 0; i < 50; i++){
-      ipcRenderer.send("newMatch", {"match" : {
-      "Competition" : "davEnv4004",
-      "Schema" : allSchemas[0]._id,
-      "Number" : i+1,
-      "Position" : "Red 1",
+  function newMatch(schema, competition, position, team, number){
+    ipcRenderer.send("newMatch", {"match" : {
+      "Competition" : competition,
+      "Schema" : schema,
+      "Number" : number,
+      "Position" : position,
       "Data" : null,
       "LastEdited" : new Date(),
-      "TeamIdentifier" : "0862",
+      "TeamIdentifier" : team,
       "TeamName" : "Lightning Robotics",
       "Completed" : false,
       "Audited" : false,
       "AssistedBy" : [],
       }});
-    }
   }
-
-  document.getElementById("initializeAllMatches").addEventListener('click', function(){
-    document.getElementById("initializeAllMatches").style.backgroundColor = "#2a7afa";
-    newMatches();
-    
+  function shuffleArr (array){
+    var newArray = array;
+        for (var i = newArray.length - 1; i > 0; i--) {
+            var rand = Math.floor(Math.random() * (i + 1));
+            [newArray[i], newArray[rand]] = [newArray[rand], newArray[i]]
+        }
+        return newArray;
+    }
+  document.getElementById("saveMatchOverlay").addEventListener('click', function(){
+    if(document.getElementById("match_method").value == "import"){
+      alert("This hasn't been implemented yet!");
+    }else if(document.getElementById("match_method").value == "random"){
+      var teamsToUse = document.getElementById("match_details").value.split(";");
+      for(var i = 0; i < parseInt(document.getElementById("match_amount").value); i++){
+        var positionsLeft = ["Red 1", "Red 2", "Red 3", "Blue 1", "Blue 2", "Blue 3"];
+        var teamsLeft = shuffleArr(teamsToUse);
+        for(var j = 0; j < (teamsToUse.length > 6 ? teamsToUse.length : 6); j++){
+          
+          newMatch(document.getElementById("match_schema").value, document.getElementById("match_competition").value, positionsLeft[j], teamsLeft[j].padStart(4, "0"), i+1);
+        }
+        
+      }
+    }else if(document.getElementById("match_method").value == "practice"){
+      var teamToUse = document.getElementById("match_details").value;
+      for(var i = 0; i < parseInt(document.getElementById("match_amount").value); i++){
+        newMatch(document.getElementById("match_schema").value, document.getElementById("match_competition").value, "Match", teamToUse.padStart(4, "0"), i+1);
+      }
+    }
+    document.getElementById("showMatchOverlay").classList.replace("bg-selected", "bg-main")
+      document.getElementById("matchOverlay").style.opacity = "0";
+      document.getElementById("matchOverlay").animate([
+        { opacity: '100'},
+        { opacity: '0'}
+      ],
+      {
+        duration: 250,
+        iterations: 1
+      });
+      contractOptions();
+      setTimeout(function(){
+        
+        document.getElementById("matchOverlay").style.display = "none";
+      }, 250);
     setTimeout(function(){
-      document.getElementById("initializeAllMatches").style.backgroundColor = "#213452";
+      
       var docsToSend = []
       allMatches.forEach(docToSend => {
         docToSend["Id"] = docToSend._id;
@@ -1367,15 +1546,20 @@
         'protocolTo' : "c211",
         'protocolFrom' : "0998",
         'communicationId' : "12345678",
-        'data' : JSON.stringify(docsToSend)
+        'data' : JSON.stringify(docsToSend),
+        'sentAt' : new Date()
       })
     }, 4000);
     
+    
   });
 
+
   ipcRenderer.on('allSchemas', (evt, args) => {
+    document.getElementById("match_schema").innerHTML = "";
     args["schemas"].forEach(s => {
       var newObject = new Schema(s._id, s.prettyName, s.finalDataJSON)
+      document.getElementById("match_schema").innerHTML += `<option value="` + s._id + `">` + s.prettyName + `</option>`
       allSchemas.push(newObject);
     });
     repopulateDropdown();
@@ -1422,7 +1606,9 @@
     document.getElementById("competition_matchesDone").innerHTML = "0%"
     document.getElementById("competition_matchesAudit").innerHTML = "0";
     document.getElementById("unselectedCompetitions").innerHTML = "";
+    document.getElementById("match_competition").innerHTML = "";
     allCompetitions.forEach(comp => {
+      document.getElementById("match_competition").innerHTML += `<option value="` + comp._id + `">` + comp.prettyName + `</option>`
       if(comp._id != currentCompetition){
         document.getElementById("unselectedCompetitions").innerHTML += `<div class="bg-main" style="display: table;width:100%;padding:10px 20px;border-radius: 8px;line-height: 20px;margin-top:10px">
             <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;">` + comp.prettyName + `</span>
@@ -1470,11 +1656,11 @@
           
         }
         document.getElementById("matchesToShow").innerHTML += `<div class="bg-main matchtoselect" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px" data-number="` + match.Number + `">
-            <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;">Match ` + match.Number + `</span>
-            <span style="text-align:right;display:table-cell">
-              <span class="maintext material-icons-round bg-selected" style="font-size: 24px;padding:5px;border-radius: 8px;">star</span>
-              <span class="maintext material-icons-round bg-success" style="font-size: 24px;padding:5px;border-radius: 8px;">verified</span>
-              <span class="maintext material-icons-round bg-warning" style="font-size: 24px;padding:5px;border-radius: 8px;">flag</span>
+            <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;pointer-events:none">Match ` + match.Number + `</span>
+            <span style="text-align:right;display:table-cell;pointer-events:none">
+              <span class="maintext material-icons-round bg-selected" style="font-size: 24px;padding:5px;border-radius: 8px;pointer-events:none">star</span>
+              <span class="maintext material-icons-round bg-success" style="font-size: 24px;padding:5px;border-radius: 8px;pointer-events:none">verified</span>
+              <span class="maintext material-icons-round bg-warning" style="font-size: 24px;padding:5px;border-radius: 8px;pointer-events:none">flag</span>
             </span>
             
           </div>`
@@ -1485,9 +1671,18 @@
     });
     Array.from(document.getElementsByClassName("matchtoselect")).forEach(matchel => {
       matchel.addEventListener('click', function(evt){
+        document.getElementById("differentEntries").innerHTML = "";
+        allMatches.filter(el => el.Number == evt.srcElement.dataset.number).sort((a,b) => (a.Position > b.Position) ? 1 : ((b.Position > a.Position) ? -1 : 0)).forEach(entry => {
+          document.getElementById("differentEntries").innerHTML += `<div class="bg-main" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
+              <span class="maintext" style="font-size: 16px;">` + entry.Position +` (` + parseInt(entry.TeamIdentifier) + `)</span>
+            </div>`
+        });
         page = 2;
         document.getElementById("matches1").style.display = "none";
         document.getElementById("matches2").style.display = "block";
+        
+        
+        
       });
     });
     if(!hasMissing){

@@ -259,8 +259,9 @@ debug("READ")
     var discovered = 0;
 //debug("DISCOVERING")
     noble.on('discover', function(peripheral){
-    //debug("DISCOVERED")
+    
     var deviceId = peripheral.advertisement.localName.substring(3);
+    debug("DISCOVERED " + deviceId);
         if(discoveredDevices.findIndex((el) => el.advertisement.localName.substring(3) == deviceId) == -1 && existingDevices.findIndex((el) => el._id == deviceId) == -1){
             discoveredDevices.push(peripheral);
             socket.emit("newDevice", { name: peripheral.advertisement.localName });

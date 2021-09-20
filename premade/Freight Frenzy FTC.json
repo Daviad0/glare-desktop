@@ -1,0 +1,222 @@
+{
+    "categories":[
+       {
+          "prettyName":"Autonomous",
+          "autoStart?":true,
+          "expectedStart":null,
+          "type":"category",
+          "uniqueId":"autonomous",
+          "contents":[
+             {
+                "type":"parent",
+                "prettyName":"Freight",
+                "uniqueId":"freightA_parent",
+                "conditions":{
+                   "max":25,
+                   "min":0
+                },
+                "contents":[
+                   {
+                      "type":"text",
+                      "prettyName":"Please mark where the freight from Autonomous ended up! Storage Unit gains 2 points each, while a Shipping Unit gains 6 points each!",
+                      "uniqueId":"freightA_label"
+                   },
+                   {
+                      "type":"stepper",
+                      "prettyName":"Storage Unit",
+                      "uniqueId":"freightA_store",
+                      "conditions":{
+                         "min":0,
+                         "groupLock":"freightA_parent"
+                      }
+                   },
+                   {
+                     "type":"stepper",
+                     "prettyName":"Shipping Hub",
+                     "uniqueId":"freightA_ship",
+                     "conditions":{
+                        "min":0,
+                        "groupLock":"freightA_parent"
+                     }
+                  }
+                ]
+             },
+             {
+                "type":"parent",
+                "prettyName":"Robot Tasks",
+                "uniqueId":"tasksA_parent",
+                "contents":[
+                   {
+                      "type":"toggle",
+                      "prettyName":"Rubber Ducky",
+                      "uniqueId":"duck",
+                      "conditions":{
+                         "options":[
+                            "Delivered",
+                            "Not Delivered"
+                         ]
+                      }
+                   },
+                   {
+                     "type":"dropdown",
+                     "prettyName":"Ending Location",
+                     "uniqueId":"endLoc",
+                     "conditions":{
+                        "options":[
+                           "Nowhere Special",
+                           "Storage Unit (Partial)",
+                           "Storage Unit (Complete)",
+                           "Warehouse (Partial)",
+                           "Warehouse (Complete)"
+                        ]
+                     }
+                  },
+                  {
+                     "type":"dropdown",
+                     "prettyName":"Bonus",
+                     "uniqueId":"bonusA",
+                     "conditions":{
+                        "options":[
+                           "Attempted",
+                           "Used Rubber Duck",
+                           "Used Shipping Element"
+                        ]
+                     }
+                  }
+                ]
+             }
+          ]
+       },
+       {
+          "prettyName":"Tele-Op",
+          "autoStart?":false,
+          "expectedStart":31,
+          "type":"category",
+          "uniqueId":"teleop",
+          "contents":[
+            {
+               "type":"parent",
+               "prettyName":"Freight",
+               "uniqueId":"freightT_parent",
+               "conditions":{
+                  "max":25,
+                  "min":0
+               },
+               "contents":[
+                  
+                  {
+                     "type":"text",
+                     "prettyName":"Please mark where the freight from Autonomous ended up! Storage Unit gains 1 point each, Shipping Unit gains 2 points each!",
+                     "uniqueId":"freightT_label"
+                  },
+                  {
+                     "type":"stepper",
+                     "prettyName":"Storage Unit",
+                     "uniqueId":"freightA_store",
+                     "conditions":{
+                        "min":0
+                     }
+                  },
+                  {
+                     "type" : "parent",
+                     "prettyName" : "Alliance's Shipping Hub",
+                     "uniqueId":"shippingHubT_parent",
+                     "contents" : [
+                        {
+                           "type":"stepper",
+                           "prettyName":"Level #1",
+                           "uniqueId":"level1T_store",
+                           "conditions":{
+                              "min":0
+                           }
+                        },
+                        {
+                           "type":"stepper",
+                           "prettyName":"Level #2",
+                           "uniqueId":"level2T_store",
+                           "conditions":{
+                              "min":0
+                           }
+                        },
+                        {
+                           "type":"stepper",
+                           "prettyName":"Level #3",
+                           "uniqueId":"level3T_store",
+                           "conditions":{
+                              "min":0
+                           }
+                        }
+                     ]
+                  },
+                  {
+                    "type":"stepper",
+                    "prettyName":"Shared Hub",
+                    "uniqueId":"sharedT_ship",
+                    "conditions":{
+                       "min":0
+                    }
+                 }
+               ]
+            }
+          ]
+       },
+       {
+          "prettyName":"Endgame",
+          "autoStart?":false,
+          "expectedStart":135,
+          "type":"category",
+          "uniqueId":"endgame",
+          "contents":[
+             {
+                "type":"toggle",
+                "prettyName":"Duck to Floor",
+                "uniqueId":"duckE",
+                "conditions":{
+                   "options":[
+                      "Not Delivered",
+                      "Delivered"
+                   ]
+                }
+             },
+             {
+               "type":"parent",
+               "prettyName": "Hub Status",
+               "uniqueId" : "hubStatusE_balanced",
+               "contents" : [
+                  {
+                     "type" : "toggle",
+                     "prettyName" : "Shipping Hub Balanced",
+                     "uniqueId" : "shipHubE",
+                     "conditions":{
+                        "options":[
+                           "No",
+                           "Yes"
+                        ]
+                     }
+                  },
+                  {
+                     "type" : "dropdown",
+                     "prettyName" : "Shared Hub",
+                     "uniqueId" : "sharedHubE",
+                     "conditions":{
+                        "options":[
+                           "Not Unbalanced",
+                           "Unbalanced For",
+                           "Unbalanced Against"
+                        ]
+                     }
+                  }
+               ]
+             },
+             {
+               "type":"stepper",
+               "prettyName":"Capped Above #3",
+               "uniqueId":"cappingE",
+               "conditions":{
+                  "min":0
+               }
+            }
+          ]
+       }
+    ]
+ }

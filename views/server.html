@@ -21,7 +21,7 @@
         <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="showManualOverlay">
           <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:4vh">reply</span>
         </div>
-        <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="showDeviceOverlay">
+        <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="showDeviceOverlay" style="display: none;">
           <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:3vh">tablet_android</span>
         </div>
         
@@ -78,9 +78,9 @@
           </div>
           <div style="display:table-cell;padding:10px">
             <div class="bg-main" style="border-radius: 12px;padding:12px 20px;text-align: center;margin: 5px;display: block;">
-              <span class="maintext" style="font-size: 24px;display: block;">Team 862</span>
-              <div class="bg-error" style="padding:3px 15px;border-radius:20px;display: inline-block;">
-                <span class="maintext" style="font-size: 12px;display: block;">Not Completed</span>
+              <span class="maintext" style="font-size: 24px;display: block;" id="viewingmatch_team">Team 862</span>
+              <div class="bg-error" style="padding:3px 15px;border-radius:20px;display: inline-block;" id="viewingmatch_completedContainer">
+                <span class="maintext" style="font-size: 12px;display: block;" id="viewingmatch_completed">Not Completed</span>
               </div>
               <br/>
               <br/>
@@ -519,7 +519,7 @@
   var currentCompetition;
   var allDevices = [];
   var allRequests = [];
-
+  var allScouters = [];
   class Schema{
     constructor(_id, prettyName, data){
       this._id = _id;
@@ -922,6 +922,8 @@
       }
       else if(document.getElementById("data_option1").value == "competitions"){
         allObjectsToUseInData = allCompetitions;
+      }else if(document.getElementById("data_option1").value == "users"){
+        allObjectsToUseInData = allScouters;
       }
     }
   }
@@ -948,7 +950,9 @@
         else if(document.getElementById("data_option1").value == "competitions"){
           document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">` + whee._id + `</option>`
         }
-        
+        else if(document.getElementById("data_option1").value == "users"){
+          document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">` + whee.Name + `</option>`
+        }
       });
       document.getElementById("data_option3").value = "";
     }
@@ -1399,35 +1403,40 @@
     });
     
   });
-
-  function addUIElement(obj){
+  var itemIndex = 0;
+  function addUIElement(obj, etr){
     if(obj.type == "parent"){
       document.getElementById("matchStatement").innerHTML += `<br/><span class="maintext" style="font-size: 16px;">` + obj.prettyName + `</span><br/>`
       obj.contents.forEach(c => {
-        addUIElement(c)
+        addUIElement(c, etr)
       });
       // need to handle the other generation also
     }
     else{
+      var valueToUse = undefined
+      if(etr.Data != null && etr.Data != undefined && obj.type != "text"){
+        valueToUse = etr.Data[itemIndex];
+        itemIndex += 1;
+      }
       var stringToAdd = "";
       switch(obj.type){
         case "stepper":
           stringToAdd += `<div style="display: inline-block;margin:10px">
                   <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>
-                  <input class="textbox" type="number" value="0" style="display:inline-block:font-size:10px"/>
+                  <input class="textbox" type="number" value="` + (valueToUse == undefined ? 0 : valueToUse) + `" style="display:inline-block:font-size:10px"/>
                 </div>`
           break;
         case "timer":
           stringToAdd += `<div style="display: inline-block;margin:10px">
                   <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>
-                  <input class="textbox" type="number" value="0" style="display:inline-block;font-size:10px"/><span style="display:inline-block">s</span>
+                  <input class="textbox" type="number" value="` + (valueToUse == undefined ? 0 : valueToUse) + `" style="display:inline-block;font-size:10px"/><span style="display:inline-block">s</span>
                 </div>`
           break;
         case "toggle":
           stringToAdd += `<div style="display: inline-block;margin:10px">
             <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>`
           obj.conditions.options.forEach(el => {
-            stringToAdd += `<div class="bg-main mainbutton" style="width: 100px;background-color: #213452;margin:5px">
+            stringToAdd += `<div class="bg-main mainbutton" style="width: 100px;background-color: ` + (valueToUse == el ? "#2a7afa" : "#213452") + `;margin:5px">
                     <span class="maintext" style="font-size: 10px;">` + el + `</span>
                   </div>`
           });
@@ -1437,7 +1446,7 @@
           stringToAdd += `<div style="display: inline-block;margin:10px">
             <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>`
           obj.conditions.options.forEach(el => {
-            stringToAdd += `<div class="bg-main mainbutton" style="width: 100px;background-color: #213452;margin:5px">
+            stringToAdd += `<div class="bg-main mainbutton" style="width: 100px;background-color: ` + (valueToUse == el ? "#2a7afa" : "#213452") + `;margin:5px">
                     <span class="maintext" style="font-size: 10px;">` + el + `</span>
                   </div>`
           });
@@ -1448,7 +1457,7 @@
             <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>
             <select class="textbox" style="font-size:10px">`
           obj.conditions.options.forEach(el => {
-            stringToAdd += `<option style="font-size:10px" value="` + el + `">` + el + `</option>`
+            stringToAdd += `<option style="font-size:10px" value="` + el + `"` + (valueToUse == el ? " selected" : "") + `>` + el + `</option>`
           });
               stringToAdd += `</select></div>`
       }
@@ -1456,14 +1465,15 @@
     }
   }
 
-  function generateMatchStatement(schema){
+  function generateMatchStatement(schema, entry){
     document.getElementById("matchStatement").innerHTML = "";
     var finalObject = JSON.parse(schema.data);
     console.log(finalObject);
+    itemIndex = 0;
     finalObject.categories.forEach(c => {
       document.getElementById("matchStatement").innerHTML += `<br/><span class="maintext" style="font-size: 20px;">` + c.prettyName + `</span><br/>`
       c.contents.forEach(c2 => {
-        addUIElement(c2)
+        addUIElement(c2, entry)
       })
       
     })
@@ -1486,7 +1496,7 @@
       "Data" : null,
       "LastEdited" : new Date(),
       "TeamIdentifier" : team,
-      "TeamName" : "Lightning Robotics",
+      "TeamName" : parseInt(team) == 862 ? "Lightning Robotics" : "Some Team...",
       "Completed" : false,
       "Audited" : false,
       "AssistedBy" : [],
@@ -1563,13 +1573,13 @@
       allSchemas.push(newObject);
     });
     repopulateDropdown();
-    generateMatchStatement(allSchemas[0])
+    document.getElementById("matchStatement").innerHTML = "";
   });
 
   function updateCompetitions(){
     var selectedObject = allCompetitions.find((el) => el._id == currentCompetition)
-    document.getElementById("competition_welcome").innerHTML = "Welcome to " + selectedObject.location;
-    document.getElementById("competition_date").innerHTML = selectedObject.datespan;
+    document.getElementById("competition_welcome").innerHTML = "Welcome to " + selectedObject.location == undefined ? selectedObject.prettyName : selectedObject.location;
+    document.getElementById("competition_date").innerHTML = selectedObject.datespan == undefined ? "It'll End Sometime..." : selectedObject.datespan;
     document.getElementById("competition_matchesDone").innerHTML = "0%"
     document.getElementById("competition_matchesAudit").innerHTML = "0";
     document.getElementById("unselectedCompetitions").innerHTML = "";
@@ -1594,7 +1604,9 @@
     });
     ipcRenderer.send("getMatches", {"competition" : currentCompetition});
   }
-
+  ipcRenderer.on("allScouters", (evt, args) => {
+    allScouters = args["scouters"];
+  });
   ipcRenderer.on("allCompetitions", (evt, args) => {
     allCompetitions = args["competitions"];
     if(!allCompetitions.includes(currentCompetition)){
@@ -1673,15 +1685,30 @@
       matchel.addEventListener('click', function(evt){
         document.getElementById("differentEntries").innerHTML = "";
         allMatches.filter(el => el.Number == evt.srcElement.dataset.number).sort((a,b) => (a.Position > b.Position) ? 1 : ((b.Position > a.Position) ? -1 : 0)).forEach(entry => {
-          document.getElementById("differentEntries").innerHTML += `<div class="bg-main" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
-              <span class="maintext" style="font-size: 16px;">` + entry.Position +` (` + parseInt(entry.TeamIdentifier) + `)</span>
+          document.getElementById("differentEntries").innerHTML += `<div class="bg-main selectthisentry" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;" data-id="` + entry._id +`">
+              <span class="maintext" style="font-size: 16px;" data-id="` + entry._id +`">` + entry.Position +` (` + parseInt(entry.TeamIdentifier) + `)` + (entry.Data == null ? "" : " (C)") + `</span>
             </div>`
         });
         page = 2;
+        document.getElementById("matchStatement").innerHTML = ""
+        document.getElementById("viewingmatch_team").innerHTML = "Select an Entry";
+        document.getElementById("viewingmatch_completedContainer").style.display = "none";
         document.getElementById("matches1").style.display = "none";
         document.getElementById("matches2").style.display = "block";
         
-        
+        Array.from(document.getElementsByClassName("selectthisentry")).forEach(ent => {
+          ent.addEventListener('click', function(evt){
+            var idToUse = evt.srcElement.dataset.id
+            var entryToUse = allMatches.find(el => el._id == idToUse);
+            document.getElementById("viewingmatch_team").innerHTML = "Team " + parseInt(entryToUse.TeamIdentifier);
+            document.getElementById("viewingmatch_completed").innerHTML = entryToUse.Completed ? "Completed" : "Not Completed";
+            document.getElementById("viewingmatch_completedContainer").style.display = "inline-block";
+            document.getElementById("viewingmatch_completedContainer").style.backgroundColor = entryToUse.Completed ? "#00D974" : "#EB264A";
+            
+            generateMatchStatement(allSchemas.find(el => el._id == entryToUse.Schema), entryToUse);
+          })
+          
+        });
         
       });
     });

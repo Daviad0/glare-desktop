@@ -38,18 +38,20 @@ db.devices = new Datastore({ filename: 'storage/devices.db', autoload: true });
 db.requests = new Datastore({ filename: 'storage/requests.db', autoload: true });
 db.schemas = new Datastore({ filename: 'storage/schemas.db', autoload: true });
 db.competitions = new Datastore({ filename: 'storage/competitions.db', autoload: true });
+db.scouters = new Datastore({ filename: 'storage/scouters.db', autoload: true });
 db.entries.loadDatabase();
 db.devices.loadDatabase();
 db.requests.loadDatabase();
 db.schemas.loadDatabase();
 db.competitions.loadDatabase();
+db.scouters.loadDatabase();
 
 const fs = require('fs')
-fs.readFile('./testSchema.json', 'utf8' , (err, data) => {
+fs.readFile('./premade/Freight Frenzy FTC.json', 'utf8' , (err, data) => {
   db.schemas.insert({
-    _id: '76628abc',
-    prettyName: 'Infinite Recharge',
-    usedFor: '2020 - 2021 Season',
+    _id: 'ffff1111',
+    prettyName: 'FTC New Game',
+    usedFor: '2021 - 2022 Season',
     createdAt: Date.now(),
     dataHash: 'aaaabbbb',
     finalDataJSON: data
@@ -66,6 +68,13 @@ db.requests.insert({
   communicationId : "12345678",
   data : "Hello world!",
   sentAt : Date.now()
+})
+
+db.scouters.insert({
+  Name : "David Reeves",
+  Score : 0,
+  LastUsed : Date.now(),
+  Banned : false
 })
 
 db.competitions.insert({
@@ -320,6 +329,9 @@ function createWindow () {
     })
     db.competitions.find({}, function(err, docs){
       mainWindow.webContents.send("allCompetitions", {"competitions" : docs});
+    })
+    db.scouters.find({}, function(err, docs){
+      mainWindow.webContents.send("allScouters", {"scouters" : docs});
     })
     
     

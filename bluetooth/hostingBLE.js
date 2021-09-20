@@ -66,6 +66,7 @@ function sendMessageAndCheck(requestInstance, characterisic){
     var protocolFrom = requestInstance["protocolFrom"];
     var responseExpected = "1"
     var communicationId = requestInstance["communicationId"];
+debug(requestInstance["data"])
     var bufferedData = Buffer.from(requestInstance["data"])
     var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + requestInstance["currentMessage"].toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
     var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*(requestInstance["currentMessage"]-1)), (dataLength*(requestInstance["currentMessage"])))]);
@@ -85,6 +86,7 @@ function checkIfFinished(message, peripheral){
             noble.stopScanning();
             noble.startScanning([accessibleServiceId], true);
         });
+currentRequests.splice(currentRequests.findIndex(el => el.deviceId == message.deviceId), 1);
         totalConnections = totalConnections + 1;
         debug(totalConnections + " / " + (totalConnections + concurrency))
         debug(totalConnections)
@@ -273,6 +275,7 @@ debug("READ")
             // something in the queue exists
             var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == deviceId), 1)[0];
             //debug("Connecting to queue item");
+debug(pendingOutRequests.length);
             debug("Checkpoint B: " + requestToHandle.protocolTo)
             //debug(requestToHandle)
             connectAndHandle(peripheral, requestToHandle);

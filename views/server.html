@@ -1415,7 +1415,7 @@
     else{
       var valueToUse = undefined
       if(etr.Data != null && etr.Data != undefined && obj.type != "text"){
-        valueToUse = etr.Data[itemIndex];
+        valueToUse = etr.Data.DataValues[itemIndex];
         itemIndex += 1;
       }
       var stringToAdd = "";

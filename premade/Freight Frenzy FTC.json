@@ -112,7 +112,7 @@
                   {
                      "type":"stepper",
                      "prettyName":"Storage Unit",
-                     "uniqueId":"freightA_store",
+                     "uniqueId":"freightT_store",
                      "conditions":{
                         "min":0
                      }

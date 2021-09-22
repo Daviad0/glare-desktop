@@ -1343,14 +1343,26 @@
   var lastSend = new Date()
   setInterval(function checkIfDevice(){
     if(Math.abs(new Date() - lastSend) / 1000 > 90){
-      ipcRenderer.send('newRequest', {
-        'deviceId' : "BF8613",
-        'protocolTo' : "0998",
-        'protocolFrom' : "0998",
-        'communicationId' : "12345678",
-        'data' : "Durability test",
-        'sentAt' : new Date()
-      })
+      var requestToUse = "";
+      if(document.getElementById("automaticSendingType").value == "ping"){
+        requestToUse = "0998";
+      }else if(document.getElementById("automaticSendingType").value == "matchdata"){
+        requestToUse = "c202";
+      }else if(document.getElementById("automaticSendingType").value == "users"){
+        requestToUse = "c401";
+      }
+      allDevices.forEach(device => {
+        if(device.onLineup){
+          ipcRenderer.send('newRequest', {
+            'deviceId' : device._id,
+            'protocolTo' : "0998",
+            'protocolFrom' : requestToUse,
+            'communicationId' : "12345678",
+            'data' : "Helo :>",
+            'sentAt' : new Date()
+          })
+        }
+      });
       lastSend = new Date();
     }
   }, 50)

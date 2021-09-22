@@ -360,7 +360,11 @@
     <div class="overlayBox" id="automaticOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
         <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%;max-height: 20vh;overflow-y: auto;">
-          
+          <select class="textbox" id="automaticSendingType" style="display: inline-flex;width:30%">
+            <option value="ping" selected>Ping</option>
+            <option value="matchdata">Get Match Data</option>
+            <option value="users">Get Users</option>
+          </select>
           <div class="bg-main mainbutton" id="exitAutomaticOverlay">
             <span class="maintext" style="font-size: 16px;">Exit</span>
           </div>
@@ -1551,14 +1555,27 @@
       allMatches.forEach(docToSend => {
         docsToSend.push(docToSend);
       });
-      ipcRenderer.send('newRequest', {
-        'deviceId' : "BF8613",
-        'protocolTo' : "c211",
-        'protocolFrom' : "0998",
-        'communicationId' : "12345678",
-        'data' : JSON.stringify(docsToSend),
-        'sentAt' : new Date()
-      })
+      var requestToUse = "";
+      if(document.getElementById("automaticSendingType").value == "ping"){
+        requestToUse = "0998";
+      }else if(document.getElementById("automaticSendingType").value == "matchdata"){
+        requestToUse = "c202";
+      }else if(document.getElementById("automaticSendingType").value == "users"){
+        requestToUse = "c401";
+      }
+      allDevices.forEach(device => {
+        if(device.onLineup){
+          ipcRenderer.send('newRequest', {
+            'deviceId' : device._id,
+            'protocolTo' : "0998",
+            'protocolFrom' : requestToUse,
+            'communicationId' : "12345678",
+            'data' : "Helo :>",
+            'sentAt' : new Date()
+          })
+        }
+      });
+      
     }, 4000);
     
     

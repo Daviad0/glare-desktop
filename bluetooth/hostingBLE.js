@@ -80,9 +80,10 @@ debug(requestInstance["data"])
 function checkIfFinished(message, peripheral){
     if(message.isEnded == "e"){
         // handle action here
-
+        
         peripheral.disconnect(function(err){
             debug("Successfully disconnected")
+            currentlyWorking = false;
             noble.stopScanning();
             noble.startScanning([accessibleServiceId], true);
         });
@@ -95,8 +96,9 @@ currentRequests.splice(currentRequests.findIndex(el => el.deviceId == message.de
 }
 
 var concurrency = 0;
-
+var currentlyWorking = false;
 function connectAndHandle(peripheral, requestToHandle){
+    currentlyWorking = true;
     debug("Checkpoint C: " + requestToHandle.protocolTo)
     currentRequests.push(requestToHandle);
     debug("Requests left: " + pendingOutRequests.length)
@@ -194,6 +196,7 @@ function connectAndHandle(peripheral, requestToHandle){
             if(!characteristicsAlreadyFound){
                 //debug("Took too long!")
                 concurrency = concurrency + 1
+                currentlyWorking = false;
                 peripheral.disconnect(function(err){
                     //debug("Successfully disconnected")
                     
@@ -278,7 +281,10 @@ debug("READ")
 debug(pendingOutRequests.length);
             debug("Checkpoint B: " + requestToHandle.protocolTo)
             //debug(requestToHandle)
-            connectAndHandle(peripheral, requestToHandle);
+            if(!currentlyWorking){
+                connectAndHandle(peripheral, requestToHandle);
+            }
+            
                     
         }
         

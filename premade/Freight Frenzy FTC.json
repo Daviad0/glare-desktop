@@ -9,7 +9,7 @@
           "contents":[
              {
                 "type":"parent",
-                "prettyName":"Freight",
+                "prettyName":"Freight (Autonomous)",
                 "uniqueId":"freightA_parent",
                 "conditions":{
                    "max":25,

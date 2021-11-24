@@ -357,6 +357,14 @@ ipcMain.on("setCompetition", (event, args) => {
   selectedCompetition = args["competition"];
 });
 
+ipcMain.on("exportedData", (event, args) => {
+  fs.writeFile("exports/DataExport.json", args["data"], { flag: "w+"}, err => {
+    if(err){
+      console.log(err);
+    }
+  });
+});
+
 ipcMain.on("getMatches", (event, args) => {
   selectedCompetition = args["competition"];
   db.entries.find({"Competition" : selectedCompetition}, function(err, docs){

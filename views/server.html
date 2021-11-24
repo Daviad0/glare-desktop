@@ -30,11 +30,11 @@
     </div>
     <div class="contentcontainer">
       <div id="matches1" style="display: none;width:100%;text-align: center;">
-        <div class="bg-main mainbutton" id="createNewMatch" style="width: 300px;display: inline-block;text-align: center;">
-          <span class="maintext" style="font-size: 16px;">Create New Match</span>
-        </div>
         <div class="bg-error-dull mainbutton" id="replaceMissingMatches" style="width: 300px;display: inline-block;text-align: center;">
           <span class="maintext" style="font-size: 16px;">Replace Missing Matches</span>
+        </div>
+        <div class="bg-success mainbutton" id="exportMatches" style="width: 300px;display: inline-block;text-align: center;">
+          <span class="maintext" style="font-size: 16px;">Export These Matches</span>
         </div>
         <br/>
         <br/>
@@ -189,8 +189,13 @@
             
           </div>
       </div>
-      <div id="myteam1">
+      <div id="myteam1" style="display:none;width: 100%;max-height: 60vh;overflow-y: auto;text-align: center;">
+        <span class="maintext" style="font-size: 2vw;text-align: center;">All Teams</span></br>
 
+        <div id="teamsToShow" style="max-height: 50vh;overflow-y: auto;">
+          
+        </div>
+        
       </div>
       <div id="settings1">
 
@@ -199,7 +204,7 @@
     </div>
     <div class="additionalcontainer">
       <div class="bg-main" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:140px">
-        <span class="maintext" style="font-size: 16px;">Match 22</span>
+        <span class="maintext" style="font-size: 16px;" id="currentTime">12:00 PM</span>
       </div>
     </div>
     <div class="menus" style="text-align: right;">
@@ -210,7 +215,7 @@
         <span class="maintext" style="font-size: 1vw;pointer-events: none;">Competitions</span>
       </div>
       <div data-menuItem="myteam" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
-        <span class="maintext" style="font-size: 1vw;pointer-events: none;">My Team</span>
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Teams</span>
       </div>
       <div data-menuItem="tablets" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
         <span class="maintext" style="font-size: 1vw;pointer-events: none;">Tablets</span>
@@ -360,6 +365,7 @@
     <div class="overlayBox" id="automaticOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
         <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%;max-height: 20vh;overflow-y: auto;">
+          <span class="maintext" style="font-size: 4vh;" id="automaticTimer">0:00</span><br/>
           <select class="textbox" id="automaticSendingType" style="display: inline-flex;width:30%">
             <option value="ping" selected>Ping</option>
             <option value="matchdata">Get Match Data</option>
@@ -1342,7 +1348,17 @@
   }, 10000)*/
   var lastSend = new Date()
   setInterval(function checkIfDevice(){
-    if(Math.abs(new Date() - lastSend) / 1000 > 90){
+
+    // also get now :>
+
+    var now = new Date();
+    document.getElementById("currentTime").innerHTML = now.getHours().toString().padStart(2,"0") + ":" + now.getMinutes().toString().padStart(2,"0") + ":" + now.getSeconds().toString().padStart(2,"0");
+
+    var sec = 90-((new Date() - lastSend)/1000);
+    var min = Math.floor(sec/60);
+    sec = Math.floor(sec%60);
+    document.getElementById("automaticTimer").innerHTML = min.toString().padStart(2, "0") + ":" + sec.toString().padStart(2, "0");
+    if(sec + (min*60) > 90){
       var requestToUse = "";
       if(document.getElementById("automaticSendingType").value == "ping"){
         requestToUse = "0998";
@@ -1439,13 +1455,13 @@
         case "stepper":
           stringToAdd += `<div style="display: inline-block;margin:10px">
                   <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>
-                  <input class="textbox" type="number" value="` + (valueToUse == undefined ? 0 : valueToUse) + `" style="display:inline-block:font-size:10px"/>
+                  <input class="textbox" type="number" value="` + (valueToUse == undefined ? 0 : valueToUse) + `" style="display:inline-block:font-size:10px" disabled/>
                 </div>`
           break;
         case "timer":
           stringToAdd += `<div style="display: inline-block;margin:10px">
                   <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>
-                  <input class="textbox" type="number" value="` + (valueToUse == undefined ? 0 : valueToUse) + `" style="display:inline-block;font-size:10px"/><span style="display:inline-block">s</span>
+                  <input class="textbox" type="number" value="` + (valueToUse == undefined ? 0 : valueToUse) + `" style="display:inline-block;font-size:10px" disabled/><span style="display:inline-block">s</span>
                 </div>`
           break;
         case "toggle":
@@ -1473,7 +1489,7 @@
             <span class="maintext" style="font-size: 12px;display: block;">` + obj.prettyName + `</span>
             <select class="textbox" style="font-size:10px">`
           obj.conditions.options.forEach(el => {
-            stringToAdd += `<option style="font-size:10px" value="` + el + `"` + (valueToUse == el ? " selected" : "") + `>` + el + `</option>`
+            stringToAdd += `<option style="font-size:10px" value="` + el + `"` + (valueToUse == el ? " selected" : "") + ` disabled>` + el + `</option>`
           });
               stringToAdd += `</select></div>`
       }
@@ -1518,6 +1534,59 @@
       "AssistedBy" : [],
       }});
   }
+
+  var nameMatchup = {};
+  var indexToHold = 0;
+  function addNewEntry(part, prefix){
+    if(part.type == "category" || part.type == "parent"){
+      part.contents.forEach(c => {
+        addNewEntry(c, prefix)
+      });
+    }else{
+      if(part.type != "text"){
+        nameMatchup[indexToHold] = prefix + part.prettyName;
+        indexToHold += 1;
+      }
+      
+    }
+  }
+
+  function exportMatchData(schema, matches){
+    var masterObject = [];
+    var finalObject = JSON.parse(schema.data);
+    nameMatchup = {};
+    indexToHold = 0;
+    finalObject.categories.forEach(c => {
+      addNewEntry(c, "(" + c.prettyName.substring(0,1) + ") ");
+    });
+    matches.forEach(m => {
+      var thisEntryObject = {};
+      thisEntryObject["Team"] = m.TeamIdentifier;
+      thisEntryObject["Match Number"] = m.Number;
+      thisEntryObject["Position"] = m.Position;
+      thisEntryObject["Competition"] = m.Competition;
+      thisEntryObject["Schema"] = m.Schema;
+      thisEntryObject["Latest Version"] = m.LastEdited;
+      thisEntryObject["Team Name"] = m.TeamName;
+      thisEntryObject["Completed"] = m.Completed;
+      thisEntryObject["Audited"] = m.Audited;
+      var index = 0
+      if(m.Data != null){
+        m.Data.DataValues.forEach(dV => {
+          thisEntryObject[nameMatchup[index]] = dV;
+          index += 1;
+        });
+      }
+      
+      masterObject.push(thisEntryObject);
+    });
+    ipcRenderer.send("exportedData", {"data":JSON.stringify(masterObject)});
+  }
+
+  document.getElementById("exportMatches").addEventListener("click", () => {
+    exportMatchData(allSchemas.find(el => el._id == allCompetitions.find(el => el._id == currentCompetition).acceptedSchemas[0]), allMatches);
+  });
+
   function shuffleArr (array){
     var newArray = array;
         for (var i = newArray.length - 1; i > 0; i--) {
@@ -1543,7 +1612,7 @@
     }else if(document.getElementById("match_method").value == "practice"){
       var teamToUse = document.getElementById("match_details").value;
       for(var i = 0; i < parseInt(document.getElementById("match_amount").value); i++){
-        newMatch(document.getElementById("match_schema").value, document.getElementById("match_competition").value, "Match", teamToUse.padStart(4, "0"), i+1);
+        newMatch(document.getElementById("match_schema").value, document.getElementById("match_competition").value, "Practice", teamToUse.padStart(4, "0"), i+1);
       }
     }
     document.getElementById("showMatchOverlay").classList.replace("bg-selected", "bg-main")
@@ -1670,16 +1739,24 @@
     });
     ipcRenderer.send("getMatches", {"competition" : currentCompetition});
   });
-
+  var teamMatchSet = {};
   ipcRenderer.on("allMatches", (evt, args) => {
     document.getElementById("matchesToShow").innerHTML = "";
     var matchNumbersDisplayed = [];
+    teamMatchSet = {};
     allMatches = args["matches"];
     var matches = args["matches"].sort(function(a,b){return a.Number-b.Number});
     var lastNumber = 0;
     var hasMissing = false;
     args["matches"].forEach(match => {
       if(!matchNumbersDisplayed.includes(match.Number)){
+
+        if(teamMatchSet[match.TeamIdentifier] == undefined){
+          teamMatchSet[match.TeamIdentifier] = [match.Number];
+        }else{
+          teamMatchSet[match.TeamIdentifier].push(match.Number);
+        }
+
         if(lastNumber+1 < match.Number){
           document.getElementById("replaceMissingMatches").style.display = "inline-block";
           hasMissing = true;
@@ -1710,6 +1787,30 @@
       }
       
     });
+
+    var teamsToSort = Object.keys(teamMatchSet);
+
+    teamsToSort.sort((a,b) => {
+      return parseInt(a) - parseInt(b);
+    });
+
+
+    document.getElementById("teamsToShow").innerHTML = "";
+
+    for(var t = 0; t < teamsToSort.length; t+=1){
+      var team = teamsToSort[t];
+      var values = teamMatchSet[team];
+      document.getElementById("teamsToShow").innerHTML += `<div class="bg-main teamtoselect" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px" data-number="` + team + `">
+          <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;pointer-events:none;width:40%">Team ` + team + `</span>
+          <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;pointer-events:none">` + values.length + ` Matches</span>
+          <span style="text-align:right;display:table-cell;pointer-events:none">
+            <span class="maintext material-icons-round bg-selected" style="font-size: 24px;padding:5px;border-radius: 8px;pointer-events:none">star</span>
+            <span class="maintext material-icons-round bg-warning" style="font-size: 24px;padding:5px;border-radius: 8px;pointer-events:none">flag</span>
+          </span>
+          
+        </div>`;
+    }
+
     Array.from(document.getElementsByClassName("matchtoselect")).forEach(matchel => {
       matchel.addEventListener('click', function(evt){
         document.getElementById("differentEntries").innerHTML = "";

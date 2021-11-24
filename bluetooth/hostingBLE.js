@@ -98,6 +98,7 @@ currentRequests.splice(currentRequests.findIndex(el => el.deviceId == message.de
 var concurrency = 0;
 var currentlyWorking = false;
 function connectAndHandle(peripheral, requestToHandle){
+    debug("AHHHHHHHHHHHHHHHHHHH")
     currentlyWorking = true;
     debug("Checkpoint C: " + requestToHandle.protocolTo)
     currentRequests.push(requestToHandle);
@@ -296,3 +297,6 @@ debug(pendingOutRequests.length);
 
     
 //}
+
+
+

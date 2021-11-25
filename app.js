@@ -339,6 +339,9 @@ function createWindow () {
     db.scouters.find({}, function(err, docs){
       mainWindow.webContents.send("allScouters", {"scouters" : docs});
     })
+    db.notes.find({}, function(err, allDocs){
+      mainWindow.webContents.send("allNotes", {"notes" : allDocs});
+    });
     
     
 var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
@@ -410,6 +413,30 @@ ipcMain.on('newMatch', (event, args) => {
         
       });*/
 
+    });
+  })
+});
+
+ipcMain.on('newNote', (event, args) => {
+  db.notes.insert(args["data"], function(err, newDoc){
+    db.notes.find({}, function(err, allDocs){
+      mainWindow.webContents.send("allNotes", {"notes" : allDocs});
+    });
+  })
+});
+
+ipcMain.on('removeNote', (event, args) => {
+  db.notes.remove({_id : args["id"]}, function(err, numRemoved){
+    db.notes.find({}, function(err, allDocs){
+      mainWindow.webContents.send("allNotes", {"notes" : allDocs});
+    });
+  })
+});
+
+ipcMain.on('editNote', (event, args) => {
+  db.notes.update({_id : args["data"]._id}, {subject : args["data"].subject, content: args["data"].content, author: args["data"].content, date: args["data"].date}, function(err, newDoc){
+    db.notes.find({}, function(err, allDocs){
+      mainWindow.webContents.send("allNotes", {"notes" : allDocs});
     });
   })
 });

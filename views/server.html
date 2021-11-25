@@ -21,6 +21,9 @@
         <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="showManualOverlay">
           <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:4vh">reply</span>
         </div>
+        <div data-channel="3" class="bg-main channelarea-parent channelbutton" id="showNotesOverlay">
+          <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:4vh">text_snippet</span>
+        </div>
         <div data-channel="2" class="bg-main channelarea-parent channelbutton" id="showDeviceOverlay" style="display: none;">
           <span data-channel="1" class="maintext channelnum material-icons-round" style="margin-top:-.1vh;font-size:3vh">tablet_android</span>
         </div>
@@ -147,12 +150,9 @@
           </div>
         </div>
       </div>
-      <div id="competitions1" style="display:none;width: 100%;max-height: 60vh;overflow-y: auto;text-align: center;">
+      <div id="competitions1" style="display:none;width: 100%;max-height: 60vh;overflow-y: auto;text-align: center;padding-right:10px">
         <div class="bg-main mainbutton" id="showCompetitionOverlay" style="width: 500px;display:inline-block;margin:5px">
-          <span class="maintext" style="font-size: 16px;">Show Competition Overlay</span>
-        </div>
-        <div class="bg-main mainbutton" id="addToQueueExample" style="width: 500px;display:inline-block;margin:5px">
-          <span class="maintext" style="font-size: 16px;">Add Example to Queue</span>
+          <span class="maintext" style="font-size: 16px;">Create Competition</span>
         </div>
         <br/>
         <br/>
@@ -171,7 +171,7 @@
           <br/>
           <br/>
           <div class="bg-main mainbutton" id="showMatchOverlay" style="width: 300px;background-color: #213452">
-            <span class="maintext" style="font-size: 16px;">Initialize All Matches</span>
+            <span class="maintext" style="font-size: 16px;">Create Matches</span>
           </div>
           <div class="bg-main mainbutton" id="performMatchAudit" style="width: 300px;background-color: #213452">
             <span class="maintext" style="font-size: 16px;">Perform Match Audit</span>
@@ -387,6 +387,74 @@
       </div>
     </div>
 
+    <div class="overlayBox" id="notesOverlay" style="display: none;">
+      <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
+        <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:70%;max-height: 60vh;overflow-y: auto;">
+          <div id="notesOverlayArea1">
+            <span class="maintext" style="font-size: 4vh;">Notes</span><br/>
+            <div class="bg-main mainbutton" id="notes_new">
+              <span class="maintext" style="font-size: 16px;">New Note</span>
+            </div>
+            <div class="bg-main mainbutton" id="notes_get">
+              <span class="maintext" style="font-size: 16px;">Get Notes</span>
+            </div>
+            <hr/>
+            <div style="max-height: 40vh;overflow-y:auto" id="notesToAdd">
+              
+              
+            </div>
+            
+            
+          </div>
+          <div id="notesOverlayArea2" style="display: none;">
+            <span class="maintext" style="font-size: 4vh;" id="note_action">New Note</span><br/>
+            <table style="width:100%;margin-bottom:10px">
+              <tr>
+                <td style="text-align:right;padding:5px;width:20%;vertical-align: middle;padding-top:12px">
+                  <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Author   </span>
+                </td>
+                <td style="text-align:left;padding:5px;width:80%;vertical-align: middle;">
+                  <input class="textbox" type="text" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;" id="note_author"></select>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align:right;padding:5px;width:20%;vertical-align: middle;padding-top:12px">
+                  <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Subject   </span>
+                </td>
+                <td style="text-align:left;padding:5px;width:80%;vertical-align: middle;">
+                  <input class="textbox" type="text" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;" id="note_subject"/>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align:right;padding:5px;width:20%;vertical-align: middle;padding-top:12px">
+                  <span style="color: white;font-size:12px;font-weight:600;margin-right:5px">Content   </span>
+                </td>
+                <td style="text-align:left;padding:5px;width:80%;vertical-align: middle;">
+                  <textarea class="textbox" style="display:inline-block;font-size:14px;width:90%;margin-top: 4px;min-height:100px;max-width:90%;min-width:90%" id="note_content"></textarea>
+                </td>
+              </tr>
+              
+            </table>
+            <div class="bg-main mainbutton" id="notes_back">
+              <span class="maintext" style="font-size: 16px;">Back</span>
+            </div>
+            <div class="bg-main mainbutton" id="notes_remove">
+              <span class="maintext" style="font-size: 16px;">Remove</span>
+            </div>
+            <div class="bg-main mainbutton" id="notes_save" data-currentnote="">
+              <span class="maintext" style="font-size: 16px;">Save</span>
+            </div>
+            <br/>
+          </div>
+          
+          <div class="bg-main mainbutton" id="exitNotesOverlay">
+            <span class="maintext" style="font-size: 16px;">Exit</span>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
     <div class="overlayBox" id="channelOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
         <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
@@ -538,6 +606,7 @@
   var allDevices = [];
   var allRequests = [];
   var allScouters = [];
+  var allNotes = [];
   class Schema{
     constructor(_id, prettyName, data){
       this._id = _id;
@@ -576,6 +645,16 @@
   ctx.fillStyle = "#FF0000";
   ctx.fillRect(0,0,150,75);
 
+
+
+  function buttonPressAnim(button){
+    var originalBackground = button.classList.filter((el) => el.includes("bg"))[0];
+    document.getElementById("showManualOverlay").classList.replace(originalBackground, "bg-selected")
+    setTimeout(function(){
+      
+      document.getElementById("showManualOverlay").classList.replace("bg-selected", originalBackground)
+    }, 1000);
+  }
 
 
   var channelArray = [1,2,3,4,5,6,7,8]
@@ -684,6 +763,46 @@
     
     
   });
+
+
+  function showNotesOverlay(evt){
+    if(!locked){
+      document.getElementById("showNotesOverlay").classList.replace("bg-main", "bg-selected")
+      document.getElementById("notesOverlay").style.opacity = "0";
+      document.getElementById("notesOverlay").style.display = "block";
+      document.getElementById("notesOverlay").animate([
+        { opacity: '0'},
+        { opacity: '100'}
+      ],
+      {
+        duration: 250,
+        iterations: 1
+      });
+      document.getElementById("notesOverlay").style.opacity = "100";
+    }
+  }
+
+  document.getElementById("showNotesOverlay").addEventListener('click', showNotesOverlay);
+  document.getElementById("exitNotesOverlay").addEventListener('click', function(){
+    document.getElementById("showNotesOverlay").classList.replace("bg-selected", "bg-main")
+    document.getElementById("notesOverlay").style.opacity = "0";
+    document.getElementById("notesOverlay").animate([
+      { opacity: '100'},
+      { opacity: '0'}
+    ],
+    {
+      duration: 250,
+      iterations: 1
+    });
+    contractOptions();
+    setTimeout(function(){
+      
+      document.getElementById("notesOverlay").style.display = "none";
+    }, 250);
+    
+    
+  });
+
   document.getElementById("saveManualSending").addEventListener('click', function(){
     document.getElementById("showManualOverlay").classList.replace("bg-selected", "bg-main")
     document.getElementById("communcationManualOverlay").style.opacity = "0";
@@ -1401,17 +1520,6 @@
     }
   }, 50)
 
-  document.getElementById("addToQueueExample").addEventListener('click', function(evt){
-    ipcRenderer.send('newRequest', {
-        'deviceId' : "3AC465",
-        'protocolTo' : "0998",
-        'protocolFrom' : "0998",
-        'communicationId' : "12345678",
-        'data' : "Scalability Test :>",
-        'sentAt' : new Date()
-      })
-  })
-
   ipcRenderer.send("getDevices")
   ipcRenderer.on("allDevices", (evt, args) => {
     document.getElementById("activeDeviceContainer").innerHTML = "";
@@ -1453,6 +1561,96 @@
     });
     
   });
+
+
+
+  ipcRenderer.on("allNotes", (evt, args) => {
+    allNotes = args["notes"];
+    document.getElementById("notesToAdd").innerHTML = "";
+    allNotes.sort(function(a, b){
+      return new Date(b.date) - new Date(a.date);
+    });
+    allNotes.forEach(note => {
+      var date = new Date(note.date);
+      
+      document.getElementById("notesToAdd").innerHTML += `<div class="bg-main noteToSelect" style="width: 95%;display: table;padding:10px;border-radius: 8px;margin-top:5px;padding-top: 12px;" data-note="` + note._id +`">
+            
+              
+        <span style="display:table-cell;text-align: left;pointer-events: none;width:40%;text-overflow: ellipsis;" class="maintext">` + note.subject + `</span>
+        <span style="display:table-cell;text-align: left;pointer-events: none;width:30%;text-overflow: ellipsis;" class="maintext">` + note.author + `</span>
+        <span style="display:table-cell;text-align: left;pointer-events: none;text-overflow: ellipsis;" class="maintext">Updated ` + date.getHours().toString().padStart(2, "0") + `:` + date.getMinutes().toString().padStart(2, "0") + `</span>
+        
+      </div>`
+    });
+    Array.from(document.getElementsByClassName("noteToSelect")).forEach(el => {
+      el.addEventListener("click", function(evt){
+        var note = allNotes.find(note => note._id == evt.srcElement.dataset.note);
+        document.getElementById("note_action").innerHTML = "Edit Note";
+        document.getElementById("note_author").value = note.author;
+        document.getElementById("note_subject").value = note.subject;
+        document.getElementById("note_content").value = note.content;
+        document.getElementById("notes_save").dataset.currentnote = note._id;
+        document.getElementById("notesOverlayArea1").style.display = "none";
+        document.getElementById("notesOverlayArea2").style.display = "unset";
+      });
+    });
+  });
+
+  document.getElementById("notes_new").addEventListener("click", function(evt){
+    document.getElementById("notesOverlayArea1").style.display = "none";
+    document.getElementById("notesOverlayArea2").style.display = "unset";
+    document.getElementById("note_author").value = "";
+    document.getElementById("note_subject").value = "";
+    document.getElementById("note_content").value = "";
+    document.getElementById("note_action").innerHTML = "New Note";
+
+    //buttonPressAnim(evt.srcElement);
+  });
+
+  document.getElementById("notes_back").addEventListener("click", function(evt){
+    document.getElementById("notesOverlayArea2").style.display = "none";
+    document.getElementById("notesOverlayArea1").style.display = "unset";
+    //uttonPressAnim(evt.srcElement);
+  });
+  document.getElementById("notes_remove").addEventListener("click", function(evt){
+    document.getElementById("notesOverlayArea2").style.display = "none";
+    document.getElementById("notesOverlayArea1").style.display = "unset";
+    if(document.getElementById("notes_save").dataset.currentnote != ""){
+      ipcRenderer.send("removeNote", {"id" : document.getElementById("notes_save").dataset.currentnote});
+
+    }
+    //uttonPressAnim(evt.srcElement);
+  });
+
+  document.getElementById("notes_save").addEventListener("click", function(evt){
+    document.getElementById("notesOverlayArea2").style.display = "none";
+    document.getElementById("notesOverlayArea1").style.display = "unset";
+    if(document.getElementById("note_author").value != "" && document.getElementById("note_subject").value != "" && document.getElementById("notes_save").dataset.currentnote == ""){
+      var noteObject = {
+        author: document.getElementById("note_author").value,
+        subject: document.getElementById("note_subject").value,
+        content: document.getElementById("note_content").value,
+        date: new Date()
+      };
+  
+      ipcRenderer.send("newNote", {"data" : noteObject});
+    }
+    else if(document.getElementById("note_author").value != "" && document.getElementById("note_subject").value != ""){
+      var noteObject = {
+        author: document.getElementById("note_author").value,
+        subject: document.getElementById("note_subject").value,
+        content: document.getElementById("note_content").value,
+        date: new Date(),
+        _id: document.getElementById("notes_save").dataset.currentnote
+      };
+  
+      ipcRenderer.send("editNote", {"data" : noteObject});
+    }
+    
+    //uttonPressAnim(evt.srcElement);
+  });
+
+
   var itemIndex = 0;
   function addUIElement(obj, etr){
     if(obj.type == "parent"){
@@ -1818,9 +2016,15 @@
       matchNumbersDisplayed.push(match.Number)
       
     });
+
+    if(args["matches"].length > 0){
+      var percent = (completedMatches.length / args["matches"].length) * 100;
+      document.getElementById("competition_matchesDone").innerHTML = Math.round(percent)+"%"
+    }
+    
     
     for(var i = minMatch; i <= maxMatch; i++){
-      if(completedMatches.filter((num) => num == i).length > 1){
+      if(completedMatches.filter((num) => num == i).length > 0){
         document.getElementById("MATCH" + i + "_DONE").style.display = "unset";
       }
     }

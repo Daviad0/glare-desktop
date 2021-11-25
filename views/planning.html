@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Glare Desktop</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+        <link rel='stylesheet' href='../public/css/planning.css' />
+        <link rel='stylesheet' href='../public/globalfont/fontsheet.css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+      </head>
+</html>
+<body>
+    <canvas id="map" style="position:absolute;left:0;top:0;background: url('https://docs.wpilib.org/en/stable/_images/infinite-recharge.jpg');background-position: center;background-repeat:no-repeat;background-size:contain">
+      
+    </canvas>
+    
+    <!--base = 64 (+14)-->
+    <div id="redo" class="option redo">
+      <span id="t1" class="text" style="color:white;text-align:center;user-select:none">862</span>
+    </div>
+    <div id="blueo" class="option blueo" style="left:90px">
+      <span id="t2" class="text" style="color:white;text-align:center;user-select:none">1023</span>
+    </div>
+    
+    <div id="greeno" class="option greeno" style="left:180px">
+      <span id="t3" class="text" style="color:white;text-align:center;user-select:none">254</span>
+    </div>
+    <div id="yellowo" class="option yellowo" style="left:270px">
+      <span class="text" style="color:white;text-align:center;user-select:none">Temp</span>
+    </div>
+    <div id="eraseo" class="option eraseo" style="left:360px">
+      <span class="text" style="color:white;text-align:center;user-select:none">Erase</span>
+    </div>
+    <div id="copy" class="option eraseo" style="left:490px">
+      <span class="text" style="color:white;text-align:center;user-select:none">Done</span>
+    </div>
+    <div id="import" class="option blueo" style="left:580px">
+      <span class="text" style="color:white;text-align:center;user-select:none">Load</span>
+    </div>
+    <div id="toolbar" class="toolbar">
+      <div class="tool" id="tool1" style="background-color:red;text-align:center;padding:4px">
+        <span class="text tooltext" style="color:white;text-align:center;user-select:none;font-size:10px;overflow:hidden">START</span>
+      </div>
+      <div class="tool" id="tool2" style="background-color:green;text-align:center;padding:4px">
+        <span class="text tooltext" style="color:white;text-align:center;user-select:none;font-size:10px;overflow:hidden">END</span>
+      </div>
+      <div class="tool" id="tool3" style="background-color:blue;text-align:center;padding:4px">
+        <span class="text tooltext" style="color:white;text-align:center;user-select:none;font-size:10px;overflow:hidden">DRAW</span>
+      </div>
+    </div>
+    <div class="overlay" id="selectTeams">
+      <div class="overlaybox">
+        <input id="s1" class="input" type="text" value="862" style="border-left: 6px solid #E74C3C"/>
+        <input id="s2" class="input" type="text" value="862" style="border-left: 6px solid #3498DB"/>
+        <input id="s3" class="input" type="text" value="862" style="border-left: 6px solid #2ECC71"/>
+        <div style="width:100%;display:inline-block;text-align:center;margin-top:10px">
+          <input id="submitTeams" type="button" class="button" style="background-color:black;color:white;text-align:center;display:inline-block" value="OK"/>
+        </div>
+        
+      </div>
+    </div>
+    <div class="overlay" id="saveTo" style="display:none">
+        <div class="overlaybox">
+          <input id="whereToSave" class="input" type="text" placeholder="Where to Save" style="border-left: 6px solid black"/>
+
+          <div style="width:100%;display:inline-block;text-align:center;margin-top:10px">
+            <input id="submitSave" type="button" class="button" style="background-color:black;color:white;text-align:center;display:inline-block" value="Save"/>
+          </div>
+          <div style="width:100%;display:inline-block;text-align:center;margin-top:10px">
+            <input id="cancelSave" type="button" class="button" style="background-color:black;color:white;text-align:center;display:inline-block" value="Cancel"/>
+          </div>
+        </div>
+      </div>
+      <div class="overlay" id="loadAt" style="display:none">
+        <div class="overlaybox">
+          <input id="whereToLoad" class="input" type="text" placeholder="Load From..." style="border-left: 6px solid black"/>
+
+          <div style="width:100%;display:inline-block;text-align:center;margin-top:10px">
+            <input id="submitLoad" type="button" class="button" style="background-color:black;color:white;text-align:center;display:inline-block" value="Save"/>
+          </div>
+          <div style="width:100%;display:inline-block;text-align:center;margin-top:10px">
+            <input id="cancelLoad" type="button" class="button" style="background-color:black;color:white;text-align:center;display:inline-block" value="Cancel"/>
+          </div>
+        </div>
+      </div>
+    <script src="../public/scripts/draw.js"></script>
+</body>

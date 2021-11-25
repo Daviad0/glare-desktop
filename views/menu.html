@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Glare Desktop</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+        <link rel='stylesheet' href='../public/css/theme.css' />
+        <link rel='stylesheet' href='../public/globalfont/fontsheet.css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    </head>
+    <body class="bg" style="font-family:'Poppins';font-weight:400">
+        <div class="topcontainer" style="text-align: center;">
+            <span class="maintext" style="font-size:5vh;font-weight:500">Welcome to Glare</span><br/>
+            <span class="maintext" style="font-size:2vh;font-weight:300">Please Choose an Option</span>
+          </div>
+        <div class="contentcontainer" style="width:80%;max-height:60vh;text-align:center">
+            <div class="bg-main mainbutton" id="GOTOPLANNING" style="width:80%;height:68px">
+                <span class="maintext" style="font-size: 40px;">Planning</span>
+            </div>
+            <div class="bg-main mainbutton" id="GOTOSERVER" style="width:80%;height:68px">
+                <span class="maintext" style="font-size: 40px;">Server</span>
+              </div>
+        </div>
+        <script>
+            const {ipcRenderer} = require('electron');
+            document.getElementById("GOTOPLANNING").addEventListener("click", function(){
+                ipcRenderer.send("GOTOPAGE", {page:"planning"});
+            });
+            document.getElementById("GOTOSERVER").addEventListener("click", function(){
+                ipcRenderer.send("GOTOPAGE", {page:"server"});
+            });
+        </script>
+    </body>
+</html>

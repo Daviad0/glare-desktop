@@ -41,6 +41,7 @@ db.competitions = new Datastore({ filename: 'storage/competitions.db', autoload:
 db.scouters = new Datastore({ filename: 'storage/scouters.db', autoload: true });
 db.notes = new Datastore({ filename: 'storage/notes.db', autoload: true });
 db.flags = new Datastore({ filename: 'storage/flags.db', autoload: true });
+db.plans = new Datastore({ filename: 'storage/plans.db', autoload: true });
 db.entries.loadDatabase();
 db.devices.loadDatabase();
 db.requests.loadDatabase();
@@ -49,6 +50,7 @@ db.competitions.loadDatabase();
 db.scouters.loadDatabase();
 db.notes.loadDatabase();
 db.flags.loadDatabase();
+db.plans.loadDatabase();
 
 const fs = require('fs')
 fs.readFile('./premade/Freight Frenzy FTC.json', 'utf8' , (err, data) => {
@@ -303,6 +305,62 @@ const { data } = require('jquery');
 var selectedCompetition = "";
 
 
+function showOptions(){
+  mainWindow = new BrowserWindow({
+
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true
+    }, 
+    title : 'Glare Desktop',
+    show: false,
+  });
+  app.dock.setIcon("icons/Logo.png");
+  var fileToLoad = "views/menu.html"
+  mainWindow.loadFile(fileToLoad)
+  mainWindow.isMenuBarVisible(false)
+  
+  mainWindow.on('closed', function () {
+    mainWindow = null
+    app.quit();
+  });
+  mainWindow.webContents.on('did-finish-load', function() {
+    mainWindow.show();
+    //mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
+    
+    
+  });
+}
+
+function showPlanning(){
+  mainWindow = new BrowserWindow({
+
+    width: 1000,
+    height: 800,
+    webPreferences: {
+      nodeIntegration: true
+    }, 
+    title : 'Glare Desktop',
+    show: false,
+  });
+  app.dock.setIcon("icons/Logo.png");
+  var fileToLoad = "views/planning.html"
+  mainWindow.loadFile(fileToLoad)
+  mainWindow.isMenuBarVisible(false)
+  
+  mainWindow.on('closed', function () {
+    mainWindow = null
+    app.quit();
+  });
+  mainWindow.webContents.on('did-finish-load', function() {
+    mainWindow.show();
+    //mainWindow.webContents.send("addRequest", {"channelNumber" : 1,"idCode" : "12345678", "timestamp" : "12:57:05 PM", "direction": "In", "requestType" : "UPDATE (12345678)", "successful" : true})
+    
+    
+  });
+}
+
 // main window that actually allows the user to interact with the show
 function createWindow () {
 
@@ -325,6 +383,7 @@ function createWindow () {
   
   mainWindow.on('closed', function () {
     mainWindow = null
+    app.quit();
   });
   mainWindow.webContents.on('did-finish-load', function() {
     mainWindow.show();
@@ -417,11 +476,39 @@ ipcMain.on('newMatch', (event, args) => {
   })
 });
 
+
+ipcMain.on("GOTOPAGE", (event, args) => {
+  if(args["page"] == "server"){
+    mainWindow.hide();
+    createWindow();
+  }else if(args["page"] == "planning"){
+    mainWindow.hide();
+    showPlanning();
+  }
+});
+
 ipcMain.on('newNote', (event, args) => {
   db.notes.insert(args["data"], function(err, newDoc){
     db.notes.find({}, function(err, allDocs){
       mainWindow.webContents.send("allNotes", {"notes" : allDocs});
     });
+  })
+});
+
+ipcMain.on('loadPlan', (event, args) => {
+  db.plans.findOne({ name : args["name"]}, function(err, theDoc){
+    if(err){
+      mainWindow.webContents.send("getPlan", {"data" : undefined, "error" : true});
+    }else{
+      mainWindow.webContents.send("getPlan", {"data" : theDoc, "error" : false});
+    }
+    
+  })
+});
+
+ipcMain.on('savePlan', (event, args) => {
+  db.plans.update({ name : args["name"]}, {name : args["name"], data : args["data"]}, {upsert:true}, function(err, theDoc){
+    
   })
 });
 
@@ -511,7 +598,7 @@ ipcMain.on('getDevices', (event, args) => {
 });
 
 // when ElectronJS is ready, start up the role selection window
-app.on('ready', createWindow)
+app.on('ready', showOptions)
 
 // event for user resize (if allowed by the window definition)
 app.on('resize', function(e,x,y){

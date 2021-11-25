@@ -316,7 +316,7 @@ function createWindow () {
     show: false,
     
   })
-  app.dock.setIcon("Logo.png");
+  app.dock.setIcon("icons/Logo.png");
   //mainWindow.setFullScreen(true)
 
   var fileToLoad = "views/server.html"

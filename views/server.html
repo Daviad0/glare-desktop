@@ -52,7 +52,7 @@
         
       </div>
       <div id="matches2" style="display: none;width:100%;text-align: center;">
-        <span class="maintext" style="font-size: 4vh;display: block;">Match 22</span>
+        <span class="maintext" style="font-size: 4vh;display: block;" id="displayMatchOrTeam">Match 22</span>
         <!--<div class="bg-error" style="padding:5px 20px;border-radius:20px;display: inline-block;">
           <span class="maintext" style="font-size: 16px;display: block;">Not Yet All Completed</span>
         </div>
@@ -65,16 +65,19 @@
         <br/>
         <br/>
         <div style="display: table;width: 100%;">
-          <div style="display:table-cell;width: 30%;border-right: 4px solid #192436;border-radius: 4px;padding:10px" id="differentEntries">
-            <div class="bg-selected" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
-              <span class="maintext" style="font-size: 16px;">Red 1 (862)</span>
+          <div style="display:table-cell;width: 30%;border-right: 4px solid #192436;border-radius: 4px;padding:10px;height:60vh;overflow-y:hidden">
+            <div id="differentEntries" style="max-height: 60vh;overflow-y:auto">
+              <div class="bg-selected" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
+                <span class="maintext" style="font-size: 16px;">Red 1 (862)</span>
+              </div>
+              <div class="bg-main" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
+                <span class="maintext" style="font-size: 16px;">Red 2 (1023)</span>
+              </div>
+              <div class="bg-main" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
+                <span class="maintext" style="font-size: 16px;">Red 3 (8832)</span>
+              </div>
             </div>
-            <div class="bg-main" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
-              <span class="maintext" style="font-size: 16px;">Red 2 (1023)</span>
-            </div>
-            <div class="bg-main" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;">
-              <span class="maintext" style="font-size: 16px;">Red 3 (8832)</span>
-            </div>
+            
           </div>
           <div style="display:table-cell;padding:10px">
             <div class="bg-main" style="border-radius: 12px;padding:12px 20px;text-align: center;margin: 5px;display: block;">
@@ -179,7 +182,7 @@
           
         </div>
       </div>
-      <div id="tablets1" style="display:none;width: 100%;text-align: center;overflow-y:auto;max-height:40vh">
+      <div id="tablets1" style="display:none;width: 100%;text-align: center;overflow-y:auto;max-height:60vh">
         <span class="maintext" style="font-size: 2vw;text-align: center;">Active Devices</span></br>
           <div id="activeDeviceContainer" style="text-align:center;">
             
@@ -201,14 +204,13 @@
 
       </div>
       <div id="planning1">
-        <canvas id="fieldMap">
+        <canvas id="fieldMap" style="display:none">
           
         </canvas>
       </div>
       
     </div>
     <div class="additionalcontainer">
-<<<<<<< Updated upstream
       <div class="bg-main" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:140px">
         <span class="maintext" style="font-size: 16px;" id="currentTime">12:00 PM</span>
       </div>
@@ -235,7 +237,7 @@
     </div>
     <div class="overlayBox" id="communcationManualOverlay" style="display: none;">
       <div style="width:100%;height:100%;display: flex;align-items:center;justify-content:center">
-        <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%">
+        <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:70%">
           <div style="margin-bottom: 30px;">
             <div class="bg-main mainbutton" style="float:left;width:48%" id="requestLogButton">
               <span class="maintext" style="font-size: 16px;">Request Log</span>
@@ -359,7 +361,7 @@
         <div class="bg-overlay" style="padding:4vh;border-radius: 16px;text-align: center;width:50%;max-height: 60vh;overflow-y: auto;">
           
           
-        </br>
+        <br/>
           <div class="bg-main mainbutton" id="exitDeviceOverlay">
             <span class="maintext" style="font-size: 16px;">Exit</span>
           </div>
@@ -1763,16 +1765,28 @@
     allMatches = args["matches"];
     var matches = args["matches"].sort(function(a,b){return a.Number-b.Number});
     var lastNumber = 0;
+    var minMatch = 99999;
+    var maxMatch = 0;
     var hasMissing = false;
+    var completedMatches = [];
     args["matches"].forEach(match => {
+      if(match.Completed){
+        completedMatches.push(match.Number);
+      }
+      if(teamMatchSet[match.TeamIdentifier] == undefined){
+        teamMatchSet[match.TeamIdentifier] = [match.Number];
+      }else{
+        teamMatchSet[match.TeamIdentifier].push(match.Number);
+      }
       if(!matchNumbersDisplayed.includes(match.Number)){
-
-        if(teamMatchSet[match.TeamIdentifier] == undefined){
-          teamMatchSet[match.TeamIdentifier] = [match.Number];
-        }else{
-          teamMatchSet[match.TeamIdentifier].push(match.Number);
+        if(match.Number < minMatch){
+          minMatch = match.Number;
         }
-
+        if(match.Number > maxMatch){
+          maxMatch = match.Number;
+        }
+        
+        
         if(lastNumber+1 < match.Number){
           document.getElementById("replaceMissingMatches").style.display = "inline-block";
           hasMissing = true;
@@ -1792,17 +1806,24 @@
         document.getElementById("matchesToShow").innerHTML += `<div class="bg-main matchtoselect" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px" data-number="` + match.Number + `">
             <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;pointer-events:none">Match ` + match.Number + `</span>
             <span style="text-align:right;display:table-cell;pointer-events:none">
-              <span class="maintext material-icons-round bg-selected" style="font-size: 24px;padding:5px;border-radius: 8px;pointer-events:none">star</span>
-              <span class="maintext material-icons-round bg-success" style="font-size: 24px;padding:5px;border-radius: 8px;pointer-events:none">verified</span>
-              <span class="maintext material-icons-round bg-warning" style="font-size: 24px;padding:5px;border-radius: 8px;pointer-events:none">flag</span>
+              <span class="maintext material-icons-round bg-selected" style="font-size: 20px;padding:5px;border-radius: 8px;pointer-events:none;display:none" id="MATCH` + match.Number + `_WATCHED">star</span>
+              <span class="maintext material-icons-round bg-success" style="font-size: 20px;padding:5px;border-radius: 8px;pointer-events:none;display:none" id="MATCH` + match.Number + `_DONE">verified</span>
+              <span class="maintext material-icons-round bg-warning" style="font-size: 20px;padding:5px;border-radius: 8px;pointer-events:none;display:none" id="MATCH` + match.Number + `_FLAGGED">flag</span>
             </span>
             
           </div>`
-        matchNumbersDisplayed.push(match.Number)
+        
         lastNumber = match.Number;
       }
+      matchNumbersDisplayed.push(match.Number)
       
     });
+    
+    for(var i = minMatch; i <= maxMatch; i++){
+      if(completedMatches.filter((num) => num == i).length > 1){
+        document.getElementById("MATCH" + i + "_DONE").style.display = "unset";
+      }
+    }
 
     var teamsToSort = Object.keys(teamMatchSet);
 
@@ -1827,9 +1848,46 @@
         </div>`;
     }
 
+    Array.from(document.getElementsByClassName("teamtoselect")).forEach(teamel => {
+      teamel.addEventListener('click', function(evt){
+        document.getElementById("differentEntries").innerHTML = "";
+        document.getElementById("displayMatchOrTeam").innerHTML = "Team " + evt.srcElement.dataset.number;
+        allMatches.filter(el => el.TeamIdentifier == evt.srcElement.dataset.number.toString() && el.Competition == currentCompetition).sort((a,b) => (a.Position > b.Position) ? 1 : ((b.Position > a.Position) ? -1 : 0)).forEach(entry => {
+          document.getElementById("differentEntries").innerHTML += `<div class="bg-main selectthisentry" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;" data-id="` + entry._id +`">
+              <span class="maintext" style="font-size: 16px;" data-id="` + entry._id +`"> Match ` + entry.Number + ": " + entry.Position +` (` + parseInt(entry.TeamIdentifier) + `)` + (entry.Data == null ? "" : " (C)") + `</span>
+            </div>`
+        });
+        document.querySelector("[data-menuItem='" + currentMenuSelection + "']").classList.replace("bg-selected", "bg-main");
+        document.querySelector("[data-menuItem='" + currentMenuSelection + "']").style.width = "12vw";
+        page = 2;
+        currentMenuSelection = "matches";
+        document.getElementById("matchStatement").innerHTML = ""
+        document.getElementById("viewingmatch_team").innerHTML = "Select an Entry";
+        document.getElementById("viewingmatch_completedContainer").style.display = "none";
+        document.getElementById("myteam1").style.display = "none";
+        document.getElementById("matches2").style.display = "block";
+        
+        Array.from(document.getElementsByClassName("selectthisentry")).forEach(ent => {
+          ent.addEventListener('click', function(evt){
+            var idToUse = evt.srcElement.dataset.id
+            var entryToUse = allMatches.find(el => el._id == idToUse);
+            document.getElementById("viewingmatch_team").innerHTML = "Team " + parseInt(entryToUse.TeamIdentifier) + " / Match " + entryToUse.Number + " / Position " + entryToUse.Position;
+            document.getElementById("viewingmatch_completed").innerHTML = entryToUse.Completed ? "Completed" : "Not Completed";
+            document.getElementById("viewingmatch_completedContainer").style.display = "inline-block";
+            document.getElementById("viewingmatch_completedContainer").style.backgroundColor = entryToUse.Completed ? "#00D974" : "#EB264A";
+            
+            generateMatchStatement(allSchemas.find(el => el._id == entryToUse.Schema), entryToUse);
+          })
+          
+        });
+      });
+    });
+
+
     Array.from(document.getElementsByClassName("matchtoselect")).forEach(matchel => {
       matchel.addEventListener('click', function(evt){
         document.getElementById("differentEntries").innerHTML = "";
+        document.getElementById("displayMatchOrTeam").innerHTML = "Match " + evt.srcElement.dataset.number;
         allMatches.filter(el => el.Number == evt.srcElement.dataset.number && el.Competition == currentCompetition).sort((a,b) => (a.Position > b.Position) ? 1 : ((b.Position > a.Position) ? -1 : 0)).forEach(entry => {
           document.getElementById("differentEntries").innerHTML += `<div class="bg-main selectthisentry" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;" data-id="` + entry._id +`">
               <span class="maintext" style="font-size: 16px;" data-id="` + entry._id +`">` + entry.Position +` (` + parseInt(entry.TeamIdentifier) + `)` + (entry.Data == null ? "" : " (C)") + `</span>
@@ -1846,7 +1904,7 @@
           ent.addEventListener('click', function(evt){
             var idToUse = evt.srcElement.dataset.id
             var entryToUse = allMatches.find(el => el._id == idToUse);
-            document.getElementById("viewingmatch_team").innerHTML = "Team " + parseInt(entryToUse.TeamIdentifier);
+            document.getElementById("viewingmatch_team").innerHTML = "Team " + parseInt(entryToUse.TeamIdentifier) + " / Position " + entryToUse.Position;
             document.getElementById("viewingmatch_completed").innerHTML = entryToUse.Completed ? "Completed" : "Not Completed";
             document.getElementById("viewingmatch_completedContainer").style.display = "inline-block";
             document.getElementById("viewingmatch_completedContainer").style.backgroundColor = entryToUse.Completed ? "#00D974" : "#EB264A";

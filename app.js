@@ -39,12 +39,16 @@ db.requests = new Datastore({ filename: 'storage/requests.db', autoload: true })
 db.schemas = new Datastore({ filename: 'storage/schemas.db', autoload: true });
 db.competitions = new Datastore({ filename: 'storage/competitions.db', autoload: true });
 db.scouters = new Datastore({ filename: 'storage/scouters.db', autoload: true });
+db.notes = new Datastore({ filename: 'storage/notes.db', autoload: true });
+db.flags = new Datastore({ filename: 'storage/flags.db', autoload: true });
 db.entries.loadDatabase();
 db.devices.loadDatabase();
 db.requests.loadDatabase();
 db.schemas.loadDatabase();
 db.competitions.loadDatabase();
 db.scouters.loadDatabase();
+db.notes.loadDatabase();
+db.flags.loadDatabase();
 
 const fs = require('fs')
 fs.readFile('./premade/Freight Frenzy FTC.json', 'utf8' , (err, data) => {
@@ -301,6 +305,7 @@ var selectedCompetition = "";
 
 // main window that actually allows the user to interact with the show
 function createWindow () {
+
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
@@ -308,9 +313,10 @@ function createWindow () {
       nodeIntegration: true
     }, 
     title : 'Glare Desktop',
-    show: false
+    show: false,
     
   })
+  app.dock.setIcon("Logo.png");
   //mainWindow.setFullScreen(true)
 
   var fileToLoad = "views/server.html"

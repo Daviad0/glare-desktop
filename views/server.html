@@ -228,7 +228,7 @@
       <div data-menuItem="tablets" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
         <span class="maintext" style="font-size: 1vw;pointer-events: none;">Tablets</span>
       </div>
-      <div data-menuItem="planning" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+      <div data-menuItem="planning" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px;display:none">
         <span class="maintext" style="font-size: 1vw;pointer-events: none;">Planning</span>
       </div>
       <div class="bg-error-dull mainbutton" id="lockScreen" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
@@ -1713,6 +1713,64 @@
     }
   }
 
+  var perspective = "MATCH";
+
+
+  function updateDiffEntries(teamnum, matchnum){
+    document.getElementById("viewingmatch_team").innerHTML = "Select an Entry";
+    document.getElementById("viewingmatch_completedContainer").style.display = "none";
+
+    setTimeout(function(){
+
+      document.getElementById("differentEntries").innerHTML = "";
+      if(perspective == "TEAM"){
+        allMatches.filter(el => el.TeamIdentifier == teamnum && el.Competition == currentCompetition).sort((a,b) => (a.Position > b.Position) ? 1 : ((b.Position > a.Position) ? -1 : 0)).forEach(entry => {
+          document.getElementById("differentEntries").innerHTML += `<div class="bg-main selectthisentry" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;" data-id="` + entry._id +`">
+              <span class="maintext" style="font-size: 16px;" data-id="` + entry._id +`"> Match ` + entry.Number + ": " + entry.Position +` (` + parseInt(entry.TeamIdentifier) + `)` + (entry.Data == null ? "" : " (C)") + `</span>
+            </div>`
+        });
+        
+        
+        Array.from(document.getElementsByClassName("selectthisentry")).forEach(ent => {
+          ent.addEventListener('click', function(evt){
+            var idToUse = evt.srcElement.dataset.id
+            var entryToUse = allMatches.find(el => el._id == idToUse);
+            document.getElementById("viewingmatch_team").innerHTML = "Team " + parseInt(entryToUse.TeamIdentifier) + " / Match " + entryToUse.Number + " / Position " + entryToUse.Position;
+            document.getElementById("viewingmatch_completed").innerHTML = entryToUse.Completed ? "Completed" : "Not Completed";
+            document.getElementById("viewingmatch_completedContainer").style.display = "inline-block";
+            document.getElementById("viewingmatch_completedContainer").style.backgroundColor = entryToUse.Completed ? "#00D974" : "#EB264A";
+            
+            generateMatchStatement(allSchemas.find(el => el._id == entryToUse.Schema), entryToUse);
+          })
+          
+        });
+      }else{
+        allMatches.filter(el => el.Number == matchnum && el.Competition == currentCompetition).sort((a,b) => (a.Position > b.Position) ? 1 : ((b.Position > a.Position) ? -1 : 0)).forEach(entry => {
+          document.getElementById("differentEntries").innerHTML += `<div class="bg-main selectthisentry" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;" data-id="` + entry._id +`">
+              <span class="maintext" style="font-size: 16px;" data-id="` + entry._id +`">` + entry.Position +` (` + parseInt(entry.TeamIdentifier) + `)` + (entry.Data == null ? "" : " (C)") + `</span>
+            </div>`
+        });
+        
+        
+        Array.from(document.getElementsByClassName("selectthisentry")).forEach(ent => {
+          ent.addEventListener('click', function(evt){
+            var idToUse = evt.srcElement.dataset.id
+            var entryToUse = allMatches.find(el => el._id == idToUse);
+            document.getElementById("viewingmatch_team").innerHTML = "Team " + parseInt(entryToUse.TeamIdentifier) + " / Position " + entryToUse.Position;
+            document.getElementById("viewingmatch_completed").innerHTML = entryToUse.Completed ? "Completed" : "Not Completed";
+            document.getElementById("viewingmatch_completedContainer").style.display = "inline-block";
+            document.getElementById("viewingmatch_completedContainer").style.backgroundColor = entryToUse.Completed ? "#00D974" : "#EB264A";
+            
+            generateMatchStatement(allSchemas.find(el => el._id == entryToUse.Schema), entryToUse);
+          })
+          
+        });
+      }
+      
+
+    }, 200);
+  }
+
   function generateMatchStatement(schema, entry){
     document.getElementById("matchStatement").innerHTML = "";
     var finalObject = JSON.parse(schema.data);
@@ -1725,15 +1783,33 @@
       })
       
     })
+    
     document.getElementById("matchStatement").innerHTML += `<hr style="border-top:2px solid #223554;margin: 5px"/>
     <div class="bg-main mainbutton" style="width: 200px;background-color: #213452;margin:5px">
             <span class="maintext" style="font-size: 16px;">Audit This Match</span>
-          </div><div class="bg-error-dull mainbutton" style="width: 200px;background-color: #223554;margin:5px">
+          </div><div class="bg-error-dull mainbutton" style="width: 200px;background-color: #223554;margin:5px" id="clearThisMatch">
             <span class="maintext" style="font-size: 16px;">Clear This Match</span>
-          </div><div class="bg-error-dull mainbutton" style="width: 200px;background-color: #EB264A;margin:5px">
+          </div><div class="bg-error-dull mainbutton" style="width: 200px;background-color: #EB264A;margin:5px" id="deleteThisMatch" data-match="` + entry._id + `">
             <span class="maintext" style="font-size: 16px;">Delete This Match</span>
           </div>`
+    document.getElementById("deleteThisMatch").addEventListener("click", function(evt){
+      
+      ipcRenderer.send("deleteMatch", {"id" : entry._id, "competition" : entry.Competition});
+      updateDiffEntries(entry.TeamIdentifier, entry.Number);
+      document.getElementById("matchStatement").innerHTML = "";
+      document.getElementById("viewingmatch_team").innerHTML = "Select an Entry";
+    });
+    document.getElementById("clearThisMatch").addEventListener("click", function(evt){
+      ipcRenderer.send("clearMatch", {"id" : entry._id, "competition" : entry.Competition});
+      updateDiffEntries(entry.TeamIdentifier, entry.Number);
+      document.getElementById("matchStatement").innerHTML = "";
+      document.getElementById("viewingmatch_team").innerHTML = "Select an Entry";
+    });
+    
+
+
   }
+
   var allMatches = [];
   function newMatch(schema, competition, position, team, number){
     ipcRenderer.send("newMatch", {"match" : {
@@ -2065,6 +2141,7 @@
         document.querySelector("[data-menuItem='" + currentMenuSelection + "']").style.width = "12vw";
         page = 2;
         currentMenuSelection = "matches";
+        perspective = "TEAM";
         document.getElementById("matchStatement").innerHTML = ""
         document.getElementById("viewingmatch_team").innerHTML = "Select an Entry";
         document.getElementById("viewingmatch_completedContainer").style.display = "none";
@@ -2098,6 +2175,7 @@
             </div>`
         });
         page = 2;
+        perspective = "MATCH";
         document.getElementById("matchStatement").innerHTML = ""
         document.getElementById("viewingmatch_team").innerHTML = "Select an Entry";
         document.getElementById("viewingmatch_completedContainer").style.display = "none";

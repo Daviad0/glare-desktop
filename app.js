@@ -440,6 +440,28 @@ ipcMain.on("getMatches", (event, args) => {
   })
 });
 
+ipcMain.on("deleteMatch", (event, args) => {
+  selectedCompetition = args["competition"];
+  db.entries.remove({"_id" : args["id"]},{}, function(err, docs){
+    if(err){
+      console.log(err);
+    }
+    db.entries.find({"Competition" : selectedCompetition}, function(err, docs){
+      mainWindow.webContents.send("allMatches", {"matches" : docs});
+    })
+  })
+});
+
+ipcMain.on("clearMatch", (event, args) => {
+  selectedCompetition = args["competition"];
+  db.entries.update({_id : args["id"]}, { $set: {Completed: false, Data : null} },{}, function(err, docs){
+    console.log(err);
+    db.entries.find({"Competition" : selectedCompetition}, function(err, docs){
+      mainWindow.webContents.send("allMatches", {"matches" : docs});
+    })
+  });
+});
+
 ipcMain.on('newMatch', (event, args) => {
   db.entries.insert(args["match"], function(err, newDoc){
     db.entries.find({}, function(err, allDocs){

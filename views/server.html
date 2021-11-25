@@ -52,15 +52,15 @@
         
       </div>
       <div id="matches2" style="display: none;width:100%;text-align: center;">
-        <span class="maintext" style="font-size: 40px;display: block;">Match 22</span>
+        <span class="maintext" style="font-size: 4vh;display: block;">Match 22</span>
         <!--<div class="bg-error" style="padding:5px 20px;border-radius:20px;display: inline-block;">
           <span class="maintext" style="font-size: 16px;display: block;">Not Yet All Completed</span>
         </div>
         <div class="bg-success" style="padding:5px 20px;border-radius:20px;display: inline-block;">
           <span class="maintext" style="font-size: 16px;display: block;">All Teams Completed</span>
         </div>-->
-        <div class="bg-selected" style="padding:5px 20px;border-radius:20px;display: inline-block;">
-          <span class="maintext" style="font-size: 16px;display: block;">Already Audited</span>
+        <div class="bg-selected" style="padding:3px 10px;border-radius:20px;display: inline-block;">
+          <span class="maintext" style="font-size: 2vh;display: block;">Already Audited</span>
         </div>
         <br/>
         <br/>
@@ -200,9 +200,15 @@
       <div id="settings1">
 
       </div>
+      <div id="planning1">
+        <canvas id="fieldMap">
+          
+        </canvas>
+      </div>
       
     </div>
     <div class="additionalcontainer">
+<<<<<<< Updated upstream
       <div class="bg-main" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:140px">
         <span class="maintext" style="font-size: 16px;" id="currentTime">12:00 PM</span>
       </div>
@@ -220,8 +226,8 @@
       <div data-menuItem="tablets" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
         <span class="maintext" style="font-size: 1vw;pointer-events: none;">Tablets</span>
       </div>
-      <div data-menuItem="settings" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
-        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Settings</span>
+      <div data-menuItem="planning" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Planning</span>
       </div>
       <div class="bg-error-dull mainbutton" id="lockScreen" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
         <span class="maintext" id="lockScreenLabel" style="font-size: 1vw;pointer-events: none;">Lock System</span>
@@ -559,6 +565,16 @@
       this.communicationId = communicationId.toLowerCase();
     }
   }
+
+
+  // CANVAS
+
+  var canvas = document.getElementById("fieldMap");
+  var ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#FF0000";
+  ctx.fillRect(0,0,150,75);
+
+
 
   var channelArray = [1,2,3,4,5,6,7,8]
   channelArray.forEach(el => {
@@ -1401,7 +1417,7 @@
     allDevices = args["devices"];
     document.getElementById("create_deviceId").innerHTML = ""
     allDevices.forEach(dev => {
-      document.getElementById("create_deviceId").innerHTML += `<option value="` + dev._id + `">` + dev.deviceName + ` (` + dev._id + `)</value>`
+      document.getElementById("create_deviceId").innerHTML += `<option value="` + dev._id + `">` + (dev.deviceName == undefined ? "Unnamed Device" : dev.deviceName) + ` (` + dev._id + `)</value>`
     });
     args["devices"].forEach(device => {
       if(device.onLineup){
@@ -1676,7 +1692,7 @@
 
   function updateCompetitions(){
     var selectedObject = allCompetitions.find((el) => el._id == currentCompetition)
-    document.getElementById("competition_welcome").innerHTML = "Welcome to " + selectedObject.location == undefined ? selectedObject.prettyName : selectedObject.location;
+    document.getElementById("competition_welcome").innerHTML = "Welcome to " + selectedObject.prettyName;
     document.getElementById("competition_date").innerHTML = selectedObject.datespan == undefined ? "It'll End Sometime..." : selectedObject.datespan;
     document.getElementById("competition_matchesDone").innerHTML = "0%"
     document.getElementById("competition_matchesAudit").innerHTML = "0";
@@ -1711,8 +1727,8 @@
       currentCompetition = allCompetitions[0]._id;
     }
     var selectedObject = allCompetitions.find((el) => el._id == currentCompetition)
-    document.getElementById("competition_welcome").innerHTML = "Welcome to " + selectedObject.location;
-    document.getElementById("competition_date").innerHTML = selectedObject.datespan;
+    document.getElementById("competition_welcome").innerHTML = "Welcome to " + selectedObject.prettyName;
+    document.getElementById("competition_date").innerHTML = selectedObject.datespan == undefined ? "It'll End Sometime..." : selectedObject.datespan;
     document.getElementById("competition_matchesDone").innerHTML = "0%"
     document.getElementById("competition_matchesAudit").innerHTML = "0";
     document.getElementById("unselectedCompetitions").innerHTML = "";
@@ -1814,7 +1830,7 @@
     Array.from(document.getElementsByClassName("matchtoselect")).forEach(matchel => {
       matchel.addEventListener('click', function(evt){
         document.getElementById("differentEntries").innerHTML = "";
-        allMatches.filter(el => el.Number == evt.srcElement.dataset.number).sort((a,b) => (a.Position > b.Position) ? 1 : ((b.Position > a.Position) ? -1 : 0)).forEach(entry => {
+        allMatches.filter(el => el.Number == evt.srcElement.dataset.number && el.Competition == currentCompetition).sort((a,b) => (a.Position > b.Position) ? 1 : ((b.Position > a.Position) ? -1 : 0)).forEach(entry => {
           document.getElementById("differentEntries").innerHTML += `<div class="bg-main selectthisentry" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;" data-id="` + entry._id +`">
               <span class="maintext" style="font-size: 16px;" data-id="` + entry._id +`">` + entry.Position +` (` + parseInt(entry.TeamIdentifier) + `)` + (entry.Data == null ? "" : " (C)") + `</span>
             </div>`

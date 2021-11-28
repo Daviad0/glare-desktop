@@ -316,7 +316,7 @@ function showOptions(){
     title : 'Glare Desktop',
     show: false,
   });
-  app.dock.setIcon("icons/Logo.png");
+  //app.dock.setIcon("icons/Logo.png");
   var fileToLoad = "views/menu.html"
   mainWindow.loadFile(fileToLoad)
   mainWindow.isMenuBarVisible(false)
@@ -344,7 +344,7 @@ function showPlanning(){
     title : 'Glare Desktop',
     show: false,
   });
-  app.dock.setIcon("icons/Logo.png");
+  //app.dock.setIcon("icons/Logo.png");
   var fileToLoad = "views/planning.html"
   mainWindow.loadFile(fileToLoad)
   mainWindow.isMenuBarVisible(false)
@@ -374,7 +374,7 @@ function createWindow () {
     show: false,
     
   })
-  app.dock.setIcon("icons/Logo.png");
+  //app.dock.setIcon("icons/Logo.png");
   //mainWindow.setFullScreen(true)
 
   var fileToLoad = "views/server.html"

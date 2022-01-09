@@ -53,10 +53,10 @@ db.flags.loadDatabase();
 db.plans.loadDatabase();
 
 const fs = require('fs')
-fs.readFile('./premade/Freight Frenzy FTC.json', 'utf8' , (err, data) => {
+fs.readFile('./premade/Rapid React.json', 'utf8' , (err, data) => {
   db.schemas.insert({
-    _id: 'ffff1111',
-    prettyName: 'FTC New Game',
+    _id: '20220862',
+    prettyName: 'Rapid React (2022)',
     usedFor: '2021 - 2022 Season',
     createdAt: Date.now(),
     dataHash: 'aaaabbbb',
@@ -463,6 +463,7 @@ ipcMain.on("clearMatch", (event, args) => {
 });
 
 ipcMain.on('newMatch', (event, args) => {
+  console.log(args['match']);
   db.entries.insert(args["match"], function(err, newDoc){
     db.entries.find({}, function(err, allDocs){
       mainWindow.webContents.send("allMatches", {"matches" : allDocs});

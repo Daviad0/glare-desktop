@@ -1,256 +1,256 @@
 {
-    "categories":[
-       {
-          "prettyName":"Autonomous",
-          "autoStart?":true,
-          "expectedStart":null,
-          "type":"category",
-          "uniqueId":"autonomous",
-          "contents":[
-            {
-               "type":"parent",
-               "prettyName":"Alliance Human Player",
-               "uniqueId":"allianceHumanPlayer_parent",
-               "contents":[
-                  {
-                     "type":"text",
-                     "prettyName":"The Alliance Human Player is on the same side as the Alliance Station.",
-                     "uniqueId":"allianceHumanPlayer_Label"
-                  },
-                  {
-                     "type":"stepper",
-                     "prettyName":"Successful Shots",
-                     "uniqueId":"allianceHumanPlayer_success",
-                     "conditions":{
-                        "min":0,
-                        "max":3,
-                     }
-                  },
-                  {
-                     "type":"stepper",
-                     "prettyName":"Failed Shots",
-                     "uniqueId":"allianceHumanPlayer_fail",
-                     "conditions":{
-                        "min":0,
-                        "max":3,
-                     }
-                  }
-               ]
-            },
-             {
-                "type":"parent",
-                "prettyName":"Cargo Balls Low",
-                "uniqueId":"cargoBallsALow_parent",
-                "contents":[
-                   {
-                      "type":"text",
-                      "prettyName":"Please select the number of successes and fails of the Cargo Balls LOWER",
-                      "uniqueId":"cargoBallsALow_Label"
-                   },
-                   {
-                      "type":"stepper",
-                      "prettyName":"Successful",
-                      "uniqueId":"cargoBallsALow_success",
-                      "conditions":{
-                         "min":0,
-                      }
-                   },
-                   {
-                      "type":"stepper",
-                      "prettyName":"Failure",
-                      "uniqueId":"cargoBallsALow_fail",
-                      "conditions":{
-                         "min":0,
-                      }
-                   }
-                ]
-             },
-             {
-               "type":"parent",
-               "prettyName":"Cargo Balls High",
-               "uniqueId":"cargoBallsAHigh_parent",
-               "contents":[
-                  {
-                     "type":"text",
-                     "prettyName":"Please select the number of successes and fails of the Cargo Balls HIGH",
-                     "uniqueId":"cargoBallsAHigh_Label"
-                  },
-                  {
-                     "type":"stepper",
-                     "prettyName":"Successful",
-                     "uniqueId":"cargoBallsAHigh_success",
-                     "conditions":{
-                        "min":0,
-                     }
-                  },
-                  {
-                     "type":"stepper",
-                     "prettyName":"Failure",
-                     "uniqueId":"cargoBallsAHigh_fail",
-                     "conditions":{
-                        "min":0,
-                     }
-                  }
-               ]
-            },
-             {
-                "type":"parent",
-                "prettyName":"Robot Tasks",
-                "uniqueId":"taxiLine_parent",
-                "contents":[
-                   {
-                      "type":"choices",
-                      "prettyName":"Fully Outside Tarmac?",
-                      "uniqueId":"taxiLine",
-                      "conditions":{
-                         "options":[
-                            "Yes",
-                            "No"
-                         ]
-                      }
-                   }
-                ]
-             }
-          ]
-       },
-       {
-          "prettyName":"Tele-Op",
-          "autoStart?":false,
-          "expectedStart":16,
-          "type":"category",
-          "uniqueId":"teleop",
-          "contents":[
-            {
-               "type":"parent",
-               "prettyName":"Cargo Balls Low",
-               "uniqueId":"cargoBallsTLow_parent",
-               "contents":[
-                  {
-                     "type":"text",
-                     "prettyName":"Please select the number of successes and fails of the Cargo Balls LOWER",
-                     "uniqueId":"cargoBallsTLow_Label"
-                  },
-                  {
-                     "type":"stepper",
-                     "prettyName":"Successful",
-                     "uniqueId":"cargoBallsTLow_success",
-                     "conditions":{
-                        "min":0,
-                     }
-                  },
-                  {
-                     "type":"stepper",
-                     "prettyName":"Failure",
-                     "uniqueId":"cargoBallsTLow_fail",
-                     "conditions":{
-                        "min":0,
-                     }
-                  }
-               ]
-            },
-            {
-              "type":"parent",
-              "prettyName":"Cargo Balls High",
-              "uniqueId":"cargoBallsAHigh_parent",
-              "contents":[
+   'categories':[
+      {
+         'prettyName':'Autonomous',
+         'autoStart?':true,
+         'expectedStart':null,
+         'type':'category',
+         'uniqueId':'autonomous',
+         'contents':[
+           {
+              'type':'parent',
+              'prettyName':'Alliance Human Player',
+              'uniqueId':'allianceHumanPlayer_parent',
+              'contents':[
                  {
-                    "type":"text",
-                    "prettyName":"Please select the number of successes and fails of the Cargo Balls HIGH",
-                    "uniqueId":"cargoBallsTHigh_Label"
+                    'type':'text',
+                    'prettyName':'The Alliance Human Player is on the same side as the Alliance Station.',
+                    'uniqueId':'allianceHumanPlayer_Label'
                  },
                  {
-                    "type":"stepper",
-                    "prettyName":"Successful",
-                    "uniqueId":"cargoBallsTHigh_success",
-                    "conditions":{
-                       "min":0,
+                    'type':'stepper',
+                    'prettyName':'Successful Shots',
+                    'uniqueId':'allianceHumanPlayer_success',
+                    'conditions':{
+                       'min':0,
+                       'max':3
                     }
                  },
                  {
-                    "type":"stepper",
-                    "prettyName":"Failure",
-                    "uniqueId":"cargoBallsTHigh_fail",
-                    "conditions":{
-                       "min":0,
+                    'type':'stepper',
+                    'prettyName':'Failed Shots',
+                    'uniqueId':'allianceHumanPlayer_fail',
+                    'conditions':{
+                       'min':0,
+                       'max':3
                     }
                  }
               ]
            },
-             {
-                "type":"parent",
-                "prettyName":"Defense",
-                "uniqueId":"defense_parent",
-                "contents":[
-                   {
-                      "type":"choices",
-                      "prettyName":"Blocking Defense?",
-                      "uniqueId":"blocking",
-                      "conditions":{
-                         "options":[
-                            "Yes",
-                            "No"
-                         ]
-                      }
-                   },
-                   {
-                      "type":"choices",
-                      "prettyName":"Hoarding Defense?",
-                      "uniqueId":"hoarding",
-                      "conditions":{
-                         "options":[
-                            "Yes",
-                            "No"
-                         ]
-                      }
+            {
+               'type':'parent',
+               'prettyName':'Cargo Balls Low',
+               'uniqueId':'cargoBallsALow_parent',
+               'contents':[
+                  {
+                     'type':'text',
+                     'prettyName':'Please select the number of successes and fails of the Cargo Balls LOWER',
+                     'uniqueId':'cargoBallsALow_Label'
+                  },
+                  {
+                     'type':'stepper',
+                     'prettyName':'Successful',
+                     'uniqueId':'cargoBallsALow_success',
+                     'conditions':{
+                        'min':0
+                     }
+                  },
+                  {
+                     'type':'stepper',
+                     'prettyName':'Failure',
+                     'uniqueId':'cargoBallsALow_fail',
+                     'conditions':{
+                        'min':0
+                     }
+                  }
+               ]
+            },
+            {
+              'type':'parent',
+              'prettyName':'Cargo Balls High',
+              'uniqueId':'cargoBallsAHigh_parent',
+              'contents':[
+                 {
+                    'type':'text',
+                    'prettyName':'Please select the number of successes and fails of the Cargo Balls HIGH',
+                    'uniqueId':'cargoBallsAHigh_Label'
+                 },
+                 {
+                    'type':'stepper',
+                    'prettyName':'Successful',
+                    'uniqueId':'cargoBallsAHigh_success',
+                    'conditions':{
+                       'min':0
+                    }
+                 },
+                 {
+                    'type':'stepper',
+                    'prettyName':'Failure',
+                    'uniqueId':'cargoBallsAHigh_fail',
+                    'conditions':{
+                       'min':0
+                    }
+                 }
+              ]
+           },
+            {
+               'type':'parent',
+               'prettyName':'Robot Tasks',
+               'uniqueId':'taxiLine_parent',
+               'contents':[
+                  {
+                     'type':'choices',
+                     'prettyName':'Fully Outside Tarmac?',
+                     'uniqueId':'taxiLine',
+                     'conditions':{
+                        'options':[
+                           'Yes',
+                           'No'
+                        ]
+                     }
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         'prettyName':'Tele-Op',
+         'autoStart?':false,
+         'expectedStart':16,
+         'type':'category',
+         'uniqueId':'teleop',
+         'contents':[
+           {
+              'type':'parent',
+              'prettyName':'Cargo Balls Low',
+              'uniqueId':'cargoBallsTLow_parent',
+              'contents':[
+                 {
+                    'type':'text',
+                    'prettyName':'Please select the number of successes and fails of the Cargo Balls LOWER',
+                    'uniqueId':'cargoBallsTLow_Label'
+                 },
+                 {
+                    'type':'stepper',
+                    'prettyName':'Successful',
+                    'uniqueId':'cargoBallsTLow_success',
+                    'conditions':{
+                       'min':0
+                    }
+                 },
+                 {
+                    'type':'stepper',
+                    'prettyName':'Failure',
+                    'uniqueId':'cargoBallsTLow_fail',
+                    'conditions':{
+                       'min':0
+                    }
+                 }
+              ]
+           },
+           {
+             'type':'parent',
+             'prettyName':'Cargo Balls High',
+             'uniqueId':'cargoBallsTHigh_parent',
+             'contents':[
+                {
+                   'type':'text',
+                   'prettyName':'Please select the number of successes and fails of the Cargo Balls HIGH',
+                   'uniqueId':'cargoBallsTHigh_Label'
+                },
+                {
+                   'type':'stepper',
+                   'prettyName':'Successful',
+                   'uniqueId':'cargoBallsTHigh_success',
+                   'conditions':{
+                      'min':0
                    }
-                ]
-             }
-          ]
-       },
-       {
-          "prettyName":"Hangar",
-          "autoStart?":false,
-          "expectedStart":135,
-          "type":"category",
-          "uniqueId":"hangar",
-          "contents":[
+                },
+                {
+                   'type':'stepper',
+                   'prettyName':'Failure',
+                   'uniqueId':'cargoBallsTHigh_fail',
+                   'conditions':{
+                      'min':0
+                   }
+                }
+             ]
+          },
             {
-               "type":"text",
-               "prettyName":"Click the 'Went for Hangar' button once a robot tries for the objective, hold to clear!",
-               "uniqueId":"hangar_Label"
+               'type':'parent',
+               'prettyName':'Defense',
+               'uniqueId':'defense_parent',
+               'contents':[
+                  {
+                     'type':'toggle',
+                     'prettyName':'Blocking Defense?',
+                     'uniqueId':'blocking',
+                     'conditions':{
+                        'options':[
+                           'Didn`t Block',
+                           'Blocked'
+                        ]
+                     }
+                  },
+                  {
+                     'type':'toggle',
+                     'prettyName':'Hoarding Defense?',
+                     'uniqueId':'hoarding',
+                     'conditions':{
+                        'options':[
+                           'Didn`t Hoard',
+                           'Hoarded'
+                        ]
+                     }
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         'prettyName':'Hangar',
+         'autoStart?':false,
+         'expectedStart':135,
+         'type':'category',
+         'uniqueId':'hangar',
+         'contents':[
+           {
+              'type':'text',
+              'prettyName':'Click the `Went for Hangar` button once a robot tries for the objective, hold to clear!',
+              'uniqueId':'hangar_label'
+           },
+           {
+              'type':'timer',
+              'prettyName':'Went for Hangar',
+              'uniqueId':'hangar_tried'
+           },
+            {
+               'type':'toggle',
+               'prettyName':'Completed Rung',
+               'uniqueId':'rungSuccessful',
+               'conditions':{
+                  'options':[
+                     'Not Successful',
+                     'Successful'
+                  ]
+               }
             },
             {
-               "type":"timer",
-               "prettyName":"Went for Hangar",
-               "uniqueId":"hangar_tried"
-            },
-             {
-                "type":"toggle",
-                "prettyName":"Completed Rung",
-                "uniqueId":"rungSuccessful",
-                "conditions":{
-                   "options":[
-                      "Not Successful",
-                      "Successful"
-                   ]
-                }
-             },
-             {
-                "type":"dropdown",
-                "prettyName":"Rung Level",
-                "uniqueId":"rungLevel",
-                "conditions":{
-                   "options":[
-                      "N/A",
-                      "Low",
-                      "Mid",
-                      "High",
-                      "Traversal"
-                   ]
-                }
-             }
-             
-          ]
-       }
-    ]
- }
+               'type':'dropdown',
+               'prettyName':'Rung Level',
+               'uniqueId':'rungLevel',
+               'conditions':{
+                  'options':[
+                     'N/A',
+                     'Low',
+                     'Mid',
+                     'High',
+                     'Traversal'
+                  ]
+               }
+            }
+            
+         ]
+      }
+   ]
+}

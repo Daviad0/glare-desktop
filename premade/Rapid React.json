@@ -24,7 +24,6 @@
                      "conditions":{
                         "min":0,
                         "max":3,
-                        "groupLock":"allianceHumanPlayer_parent"
                      }
                   },
                   {
@@ -34,7 +33,6 @@
                      "conditions":{
                         "min":0,
                         "max":3,
-                        "groupLock":"allianceHumanPlayer_parent"
                      }
                   }
                ]
@@ -55,7 +53,6 @@
                       "uniqueId":"cargoBallsALow_success",
                       "conditions":{
                          "min":0,
-                         "groupLock":"cargoBallsALow_parent"
                       }
                    },
                    {
@@ -64,7 +61,6 @@
                       "uniqueId":"cargoBallsALow_fail",
                       "conditions":{
                          "min":0,
-                         "groupLock":"cargoBallsALow_parent"
                       }
                    }
                 ]
@@ -85,7 +81,6 @@
                      "uniqueId":"cargoBallsAHigh_success",
                      "conditions":{
                         "min":0,
-                        "groupLock":"cargoBallsAHigh_parent"
                      }
                   },
                   {
@@ -94,7 +89,6 @@
                      "uniqueId":"cargoBallsAHigh_fail",
                      "conditions":{
                         "min":0,
-                        "groupLock":"cargoBallsAHigh_parent"
                      }
                   }
                ]
@@ -142,7 +136,6 @@
                      "uniqueId":"cargoBallsTLow_success",
                      "conditions":{
                         "min":0,
-                        "groupLock":"cargoBallsTLow_parent"
                      }
                   },
                   {
@@ -151,7 +144,6 @@
                      "uniqueId":"cargoBallsTLow_fail",
                      "conditions":{
                         "min":0,
-                        "groupLock":"cargoBallsTLow_parent"
                      }
                   }
                ]
@@ -172,7 +164,6 @@
                     "uniqueId":"cargoBallsTHigh_success",
                     "conditions":{
                        "min":0,
-                       "groupLock":"cargoBallsAHigh_parent"
                     }
                  },
                  {
@@ -181,7 +172,6 @@
                     "uniqueId":"cargoBallsTHigh_fail",
                     "conditions":{
                        "min":0,
-                       "groupLock":"cargoBallsAHigh_parent"
                     }
                  }
               ]
@@ -227,7 +217,7 @@
             {
                "type":"text",
                "prettyName":"Click the 'Went for Hangar' button once a robot tries for the objective, hold to clear!",
-               "uniqueId":"cargoBallsTHigh_Label"
+               "uniqueId":"hangar_Label"
             },
             {
                "type":"timer",

@@ -729,6 +729,17 @@
 
   function showManualOverlay(evt){
     if(!locked){
+      document.getElementById("create_protocolFrom").value = "0000";
+      document.getElementById("create_protocolTo").value = "0000";
+      document.getElementById("create_data").value = "";
+      document.getElementById("create_data").disabled = true;
+      document.getElementById("create_deviceId").value = "";
+      document.getElementById("create_communicationId").value = "";
+      document.getElementById("data_option1").value = "";
+      document.getElementById("data_option2").value = "";
+      document.getElementById("data_option2").disabled = true;
+      document.getElementById("data_option3").value = "";
+      document.getElementById("data_option3").disabled = true;
       document.getElementById("showManualOverlay").classList.replace("bg-main", "bg-selected")
       document.getElementById("communcationManualOverlay").style.opacity = "0";
       document.getElementById("communcationManualOverlay").style.display = "block";
@@ -1092,7 +1103,7 @@
           document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">` + whee.prettyName + `</option>`
         }
         else if(document.getElementById("data_option1").value == "entries"){
-          document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">#` + whee.Number + ` (` + whee.Position +`)</option>`
+          document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">#` + whee.Number + ` (` + whee.Position +` - ` + whee.TeamIdentifier + `)</option>`
         }
         else if(document.getElementById("data_option1").value == "competitions"){
           document.getElementById("data_option3").innerHTML += `<option value="` + whee._id + `">` + whee._id + `</option>`
@@ -1495,7 +1506,7 @@
     var min = Math.floor(sec/60);
     sec = Math.floor(sec%60);
     document.getElementById("automaticTimer").innerHTML = min.toString().padStart(2, "0") + ":" + sec.toString().padStart(2, "0");
-    if(sec + (min*60) > 90){
+    if(sec + (min*60) < 0){
       var requestToUse = "";
       if(document.getElementById("automaticSendingType").value == "ping"){
         requestToUse = "0998";
@@ -2044,52 +2055,55 @@
     var hasMissing = false;
     var completedMatches = [];
     args["matches"].forEach(match => {
-      if(match.Completed){
-        completedMatches.push(match.Number);
-      }
-      if(teamMatchSet[match.TeamIdentifier] == undefined){
-        teamMatchSet[match.TeamIdentifier] = [match.Number];
-      }else{
-        teamMatchSet[match.TeamIdentifier].push(match.Number);
-      }
-      if(!matchNumbersDisplayed.includes(match.Number)){
-        if(match.Number < minMatch){
-          minMatch = match.Number;
+      if(match.Competition == currentCompetition){
+        if(match.Completed){  
+          completedMatches.push(match.Number);
         }
-        if(match.Number > maxMatch){
-          maxMatch = match.Number;
+        if(teamMatchSet[match.TeamIdentifier] == undefined){
+          teamMatchSet[match.TeamIdentifier] = [match.Number];
+        }else{
+          teamMatchSet[match.TeamIdentifier].push(match.Number);
         }
-        
-        
-        if(lastNumber+1 < match.Number){
-          document.getElementById("replaceMissingMatches").style.display = "inline-block";
-          hasMissing = true;
-          if(lastNumber+1 == match.Number-1){
-            document.getElementById("matchesToShow").innerHTML += `<div class="bg-error-dull" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px">
-            <span class="maintext" style="font-size: 16px;text-align: center;display:table-cell;vertical-align: middle;padding-top:5px;">Match ` + (lastNumber+1) + ` missing!</span>
-            
-          </div>`
-          }else{
-            document.getElementById("matchesToShow").innerHTML += `<div class="bg-error-dull" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px">
-            <span class="maintext" style="font-size: 16px;text-align: center;display:table-cell;vertical-align: middle;padding-top:5px;">Matches ` + (lastNumber+1) + "-" + (match.Number-1) + ` missing!</span>
-            
-          </div>`
+        if(!matchNumbersDisplayed.includes(match.Number) ){
+          if(match.Number < minMatch){
+            minMatch = match.Number;
+          }
+          if(match.Number > maxMatch){
+            maxMatch = match.Number;
           }
           
-        }
-        document.getElementById("matchesToShow").innerHTML += `<div class="bg-main matchtoselect" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px" data-number="` + match.Number + `">
-            <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;pointer-events:none">Match ` + match.Number + `</span>
-            <span style="text-align:right;display:table-cell;pointer-events:none">
-              <span class="maintext material-icons-round bg-selected" style="font-size: 20px;padding:5px;border-radius: 8px;pointer-events:none;display:none" id="MATCH` + match.Number + `_WATCHED">star</span>
-              <span class="maintext material-icons-round bg-success" style="font-size: 20px;padding:5px;border-radius: 8px;pointer-events:none;display:none" id="MATCH` + match.Number + `_DONE">verified</span>
-              <span class="maintext material-icons-round bg-warning" style="font-size: 20px;padding:5px;border-radius: 8px;pointer-events:none;display:none" id="MATCH` + match.Number + `_FLAGGED">flag</span>
-            </span>
+          
+          if(lastNumber+1 < match.Number){
+            document.getElementById("replaceMissingMatches").style.display = "inline-block";
+            hasMissing = true;
+            if(lastNumber+1 == match.Number-1){
+              document.getElementById("matchesToShow").innerHTML += `<div class="bg-error-dull" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px">
+              <span class="maintext" style="font-size: 16px;text-align: center;display:table-cell;vertical-align: middle;padding-top:5px;">Match ` + (lastNumber+1) + ` missing!</span>
+              
+            </div>`
+            }else{
+              document.getElementById("matchesToShow").innerHTML += `<div class="bg-error-dull" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px">
+              <span class="maintext" style="font-size: 16px;text-align: center;display:table-cell;vertical-align: middle;padding-top:5px;">Matches ` + (lastNumber+1) + "-" + (match.Number-1) + ` missing!</span>
+              
+            </div>`
+            }
             
-          </div>`
-        
-        lastNumber = match.Number;
+          }
+          document.getElementById("matchesToShow").innerHTML += `<div class="bg-main matchtoselect" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px" data-number="` + match.Number + `">
+              <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;pointer-events:none">Match ` + match.Number + `</span>
+              <span style="text-align:right;display:table-cell;pointer-events:none">
+                <span class="maintext material-icons-round bg-selected" style="font-size: 20px;padding:5px;border-radius: 8px;pointer-events:none;display:none" id="MATCH` + match.Number + `_WATCHED">star</span>
+                <span class="maintext material-icons-round bg-success" style="font-size: 20px;padding:5px;border-radius: 8px;pointer-events:none;display:none" id="MATCH` + match.Number + `_DONE">verified</span>
+                <span class="maintext material-icons-round bg-warning" style="font-size: 20px;padding:5px;border-radius: 8px;pointer-events:none;display:none" id="MATCH` + match.Number + `_FLAGGED">flag</span>
+              </span>
+              
+            </div>`
+          
+          lastNumber = match.Number;
+        }
+        matchNumbersDisplayed.push(match.Number)
       }
-      matchNumbersDisplayed.push(match.Number)
+      
       
     });
 

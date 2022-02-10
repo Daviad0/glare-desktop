@@ -148,7 +148,6 @@
                  }
               ]
            },
-         'contents':[
            {
               'type':'parent',
               'prettyName':'Cargo Balls Low',
@@ -231,7 +230,7 @@
                    'uniqueId':'defenseBlock_success',
                    'conditions':{
                       'min':0,
-                      'start':'disabled'
+                      'start':'disable'
                    }
                 },
                 {
@@ -240,7 +239,7 @@
                    'uniqueId':'defenseBlock_fail',
                    'conditions':{
                       'min':0,
-                      'start':'disabled'
+                      'start':'disable'
                    }
                 }
                ]
@@ -262,13 +261,17 @@
            {
               'type':'timer',
               'prettyName':'Went for Hangar',
-              'uniqueId':'hangar_tried'
+              'uniqueId':'hangar_tried',
+                'conditions' : {
+                    'enable': ['rungSuccessful', 'rungLevel']
+                }
            },
             {
                'type':'toggle',
                'prettyName':'Completed Rung',
                'uniqueId':'rungSuccessful',
                'conditions':{
+                    'start' : 'disable',
                   'options':[
                      'Not Successful',
                      'Successful'
@@ -280,6 +283,7 @@
                'prettyName':'Rung Level',
                'uniqueId':'rungLevel',
                'conditions':{
+                    'start' : 'disable',
                   'options':[
                      'N/A',
                      'Low',

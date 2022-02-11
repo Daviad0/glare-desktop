@@ -510,6 +510,7 @@
                   <option value="import">The Blue Alliance</option>
                   <option value="random">Random Generation</option>
                   <option value="practice">Team Practice</option>
+                  <option value="manual">Manual Document Import</option>
                 </select>
               </td>
             </tr>
@@ -880,6 +881,9 @@
       document.getElementById("match_detailsLabel").innerHTML = "Teams (862;1023)";
     }else if(document.getElementById("match_method").value == "practice"){
       document.getElementById("match_detailsLabel").innerHTML = "Team Number";
+    }
+    else if(document.getElementById("match_method").value == "manual"){
+      document.getElementById("match_detailsLabel").innerHTML = "File";
     }
   }
   document.getElementById("match_method").addEventListener('change', changeMatchCreateDetails);
@@ -1917,6 +1921,10 @@
       for(var i = 0; i < parseInt(document.getElementById("match_amount").value); i++){
         newMatch(document.getElementById("match_schema").value, document.getElementById("match_competition").value, "Practice", teamToUse.padStart(4, "0"), i+1);
       }
+    }
+    else if(document.getElementById("match_method").value == "manual"){
+      var fileToUse = document.getElementById("match_details").value;
+      ipcRenderer.send("addManually", {"file" : fileToUse, "competition" : document.getElementById("match_competition").value, "schema" : document.getElementById("match_schema").value});
     }
     document.getElementById("showMatchOverlay").classList.replace("bg-selected", "bg-main")
       document.getElementById("matchOverlay").style.opacity = "0";

@@ -102,7 +102,38 @@ db.competitions.insert({
 */
 
 
-
+function listOfMatchObjects(schema, competition, file, _callback){
+  fs.readFile("./premade/" + file, 'utf8', function(err,data){
+    let matches = data.split("\n");
+    console.log(matches);
+    var matchObjects = [];
+    var matchnum = 1;
+    matches.forEach(el => {
+      let teams = el.split(",");
+      let positions = teams.length == 6 ? ["Red 1", "Red 2", "Red 3", "Blue 1", "Blue 2", "Blue 3"] : ["Practice","Practice","Practice","Practice","Practice","Practice"];
+      for(var i = 0; i < teams.length; i++){
+        let team = teams[i];
+        let position = positions[i];
+        let match = {
+          "AssistedBy" : [],
+          "Audited" : false,
+          "Competition" : competition,
+          "Completed": false,
+          "Data" : null,
+          "LastEdited" : new Date(),
+          "Number" : matchnum,
+          "Position" : position,
+          "Schema" : schema,
+          "TeamIdentifier" : team.toString(),
+          "TeamName" : "A Robotics Team",
+        }
+        matchObjects.push(match);
+      }
+      matchnum+=1;
+    });
+    _callback(matchObjects);
+  });
+}
 
 //resetServerMem();
 
@@ -116,6 +147,8 @@ io.on('connection', (socket) => {
   socket.on('Ping', () => {
     socket.emit("Pong");
   });
+
+  
   
   socket.on('channelUpdate', (channelNumber, status, details) => {
     console.log("Channel " + channelNumber + " had its status changed to " + status);
@@ -439,6 +472,22 @@ ipcMain.on("getMatches", (event, args) => {
     mainWindow.webContents.send("allMatches", {"matches" : docs});
   })
 });
+ipcMain.on('addManually', (event, args) => {
+  console.log("ADDING MATCHES");
+  listOfMatchObjects(args["schema"], args["competition"], args["file"], function(finalObjects){
+    finalObjects.forEach(element => {
+      db.entries.insert(element, function(err, newDoc){
+
+        db.entries.find({"Competition" : args["competition"]}, function(err, docs){
+          mainWindow.webContents.send("allMatches", {"matches" : docs});
+        })
+      });
+    });
+  });
+  
+
+  
+})
 
 ipcMain.on("deleteMatch", (event, args) => {
   selectedCompetition = args["competition"];

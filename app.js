@@ -263,6 +263,7 @@ io.on('connection', (socket) => {
         var matches = JSON.parse(message.data);
         matches.forEach(match => {
           db.entries.findOne({_id: match.Id}, function(err, doc){
+            console.log(err);
             if(doc == null){
               // need to create
               match["_id"] = match.Id;

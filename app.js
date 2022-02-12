@@ -262,17 +262,17 @@ io.on('connection', (socket) => {
         console.log("[BLE] Updated matches: " + message.data);
         var matches = JSON.parse(message.data);
         matches.forEach(match => {
-          db.entries.findOne({_id: match.Id}, function(err, doc){
+          db.entries.findOne({_id: match._id}, function(err, doc){
             console.log(err);
             if(doc == null){
               // need to create
-              match["_id"] = match.Id;
+              //match["_id"] = match._id;
               db.entries.insert(match, function(err, newDoc){
                 console.log("New entry added")
               })
             }else{
-              match["_id"] = match.Id;
-              db.entries.update({_id: match.Id}, match, function(err, newDoc){
+              //match["_id"] = match._id;
+              db.entries.update({_id: match._id}, match, function(err, newDoc){
                 console.log("Entry updated!")
               })
             }

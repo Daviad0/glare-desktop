@@ -13,7 +13,7 @@ var data = {
   "red" : {
     "sets" : []
   },
-  "green" : {
+  "green" : { 
     "sets" : []
   },
   "blue" : {

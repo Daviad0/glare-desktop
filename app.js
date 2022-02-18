@@ -246,6 +246,17 @@ io.on('connection', (socket) => {
         break;
       case "a801":
         console.log("[BLE] Logs: " + message.data)
+        var logs = JSON.parse(message.data);
+        var finalString = "";
+        logs.forEach((log) => {
+          finalString += log.occured + ": " + log.eventType + "\n (CRITICAL: " + log.critical + ")\n";
+        });
+
+        fs.writeFile("exports/latestLog.log", finalString, { flag: "w+"}, err => {
+          if(err){
+            console.log(err);
+          }
+        });
         break;
       case "a811":
         console.log("[BLE] Emergency medical information: " + message.data)

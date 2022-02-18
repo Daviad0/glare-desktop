@@ -126,6 +126,7 @@ function listOfMatchObjects(schema, competition, file, _callback){
           "Schema" : schema,
           "TeamIdentifier" : team.toString(),
           "TeamName" : "A Robotics Team",
+          "ScoutedBy": ""
         }
         matchObjects.push(match);
       }
@@ -454,6 +455,19 @@ console.log(err);
   
   
 }
+
+ipcMain.on('deleteUser', (event, args) => {
+  console.log(args);
+  db.scouters.remove({_id: args["id"]}, function(err, numRemoved){
+    db.scouters.find({}, function(err, docs){
+      mainWindow.webContents.send("allScouters", {"scouters" : docs});
+      db.entries.find({"Competition" : selectedCompetition}, function(err, docs){
+        mainWindow.webContents.send("allMatches", {"matches" : docs});
+      })
+    })
+    
+  });
+});
 
 ipcMain.on("setCompetition", (event, args) => {
   selectedCompetition = args["competition"];

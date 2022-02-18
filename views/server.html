@@ -203,10 +203,17 @@
       <div id="settings1">
 
       </div>
-      <div id="planning1">
-        <canvas id="fieldMap" style="display:none">
-          
-        </canvas>
+      <div id="users1" style="display:none;width: 100%;max-height: 60vh;overflow-y: auto;text-align: center;">
+        <span class="maintext" style="font-size: 2vw;text-align: center;">All Users</span></br>
+        <div id="usersToShow" style="max-height: 50vh;overflow-y: auto;">
+          <div class="bg-main" style="display: table;width:100%;padding:10px 20px;border-radius: 8px;line-height: 20px;">
+            <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;">David Reeves</span>
+            <span style="text-align:right;display:table-cell">
+              <span class="maintext material-icons-round bg-error" style="font-size: 24px;padding:5px;border-radius: 8px;">trash</span>
+              <span class="maintext material-icons-round bg-success" style="font-size: 24px;padding:5px;border-radius: 8px;">pencil</span>
+            </span>
+          </div>
+        </div>
       </div>
       
     </div>
@@ -228,8 +235,8 @@
       <div data-menuItem="tablets" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
         <span class="maintext" style="font-size: 1vw;pointer-events: none;">Tablets</span>
       </div>
-      <div data-menuItem="planning" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px;display:none">
-        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Planning</span>
+      <div data-menuItem="users" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px;">
+        <span class="maintext" style="font-size: 1vw;pointer-events: none;">Users</span>
       </div>
       <div class="bg-error-dull mainbutton" id="lockScreen" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
         <span class="maintext" id="lockScreenLabel" style="font-size: 1vw;pointer-events: none;">Lock System</span>
@@ -640,11 +647,6 @@
 
 
   // CANVAS
-
-  var canvas = document.getElementById("fieldMap");
-  var ctx = canvas.getContext("2d");
-  ctx.fillStyle = "#FF0000";
-  ctx.fillRect(0,0,150,75);
 
 
 
@@ -1887,6 +1889,7 @@
       "Completed" : false,
       "Audited" : false,
       "AssistedBy" : [],
+      "ScoutedBy" : ""
       }});
   }
 
@@ -2063,6 +2066,7 @@
   }
   ipcRenderer.on("allScouters", (evt, args) => {
     allScouters = args["scouters"];
+    ipcRenderer.send("getMatches", {"competition" : currentCompetition});
   });
   ipcRenderer.on("allCompetitions", (evt, args) => {
     allCompetitions = args["competitions"];
@@ -2110,10 +2114,17 @@
     var maxMatch = 0;
     var hasMissing = false;
     var completedMatches = [];
+    var userMatchSet = {};
     args["matches"].forEach(match => {
       if(match.Competition == currentCompetition){
         if(match.Completed){  
           completedMatches.push(match.Number);
+        }
+        if(userMatchSet[match.ScoutedBy] == undefined){
+          userMatchSet[match.ScoutedBy] = [match.Number];
+        }
+        else{
+          userMatchSet[match.ScoutedBy].push(match.Number);
         }
         if(teamMatchSet[match.TeamIdentifier] == undefined){
           teamMatchSet[match.TeamIdentifier] = [match.Number];
@@ -2197,6 +2208,69 @@
           
         </div>`;
     }
+
+    var usersToSort = Object.keys(userMatchSet);
+    document.getElementById("usersToShow").innerHTML = "";
+    for(var t = 0; t < allScouters.length; t+=1){
+      var user = allScouters[t].Name;
+      var id = allScouters[t]._id;
+      var values = userMatchSet[user];
+      if(values == undefined){
+        values = [];
+      }
+      document.getElementById("usersToShow").innerHTML += `<div class="bg-main usertoselect" style="display: table;width:98%;padding:10px 20px;border-radius: 12px;line-height: 20px;margin-bottom:10px" data-name="` + user + `">
+          <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;pointer-events:none;width:40%">` + user + `</span>
+          <span class="maintext" style="font-size: 16px;text-align: left;display:table-cell;vertical-align: middle;padding-top:5px;pointer-events:none">` + values.length + ` Matches</span>
+          <span style="text-align:right;display:table-cell;pointer-events:all">
+            <span class="maintext material-icons-round bg-error deleteuser" style="font-size: 24px;padding:5px;border-radius: 8px;" data-id="` + id + `">delete</span>
+            <span class="maintext material-icons-round bg-warning edituser" style="font-size: 24px;padding:5px;border-radius: 8px;" data-id="` + id + `">edit</span>
+          </span>
+          
+        </div>`;
+    }
+
+    Array.from(document.getElementsByClassName("deleteuser")).forEach(button => {
+      button.addEventListener('click', function(evt){
+        var id = evt.srcElement.dataset.id;
+        ipcRenderer.send('deleteUser', {"id" : id});
+      });
+    });
+
+    Array.from(document.getElementsByClassName("usertoselect")).forEach(teamel => {
+      teamel.addEventListener('click', function(evt){
+        document.getElementById("differentEntries").innerHTML = "";
+        document.getElementById("displayMatchOrTeam").innerHTML = "User " + evt.srcElement.dataset.name;
+        allMatches.filter(el => el.ScoutedBy == evt.srcElement.dataset.name.toString() && el.Competition == currentCompetition).sort((a,b) => (a.Position > b.Position) ? 1 : ((b.Position > a.Position) ? -1 : 0)).forEach(entry => {
+          document.getElementById("differentEntries").innerHTML += `<div class="bg-main selectthisentry" style="border-radius: 12px;padding:8px 20px;text-align: left;margin: 5px;display: block;" data-id="` + entry._id +`">
+              <span class="maintext" style="font-size: 16px;" data-id="` + entry._id +`"> Match ` + entry.Number + ": " + entry.Position +` (` + parseInt(entry.TeamIdentifier) + `)` + (entry.Data == null ? "" : " (C)") + `</span>
+            </div>`
+        });
+        document.querySelector("[data-menuItem='" + currentMenuSelection + "']").classList.replace("bg-selected", "bg-main");
+        document.querySelector("[data-menuItem='" + currentMenuSelection + "']").style.width = "12vw";
+        page = 2;
+        currentMenuSelection = "matches";
+        perspective = "TEAM";
+        document.getElementById("matchStatement").innerHTML = ""
+        document.getElementById("viewingmatch_team").innerHTML = "Select an Entry";
+        document.getElementById("viewingmatch_completedContainer").style.display = "none";
+        document.getElementById("users1").style.display = "none";
+        document.getElementById("matches2").style.display = "block";
+        
+        Array.from(document.getElementsByClassName("selectthisentry")).forEach(ent => {
+          ent.addEventListener('click', function(evt){
+            var idToUse = evt.srcElement.dataset.id
+            var entryToUse = allMatches.find(el => el._id == idToUse);
+            document.getElementById("viewingmatch_team").innerHTML = parseInt(entryToUse.ScoutedBy) + " / Match " + entryToUse.Number + " / Position " + entryToUse.Position;
+            document.getElementById("viewingmatch_completed").innerHTML = entryToUse.Completed ? "Completed" : "Not Completed";
+            document.getElementById("viewingmatch_completedContainer").style.display = "inline-block";
+            document.getElementById("viewingmatch_completedContainer").style.backgroundColor = entryToUse.Completed ? "#00D974" : "#EB264A";
+            
+            generateMatchStatement(allSchemas.find(el => el._id == entryToUse.Schema), entryToUse);
+          })
+          
+        });
+      });
+    });
 
     Array.from(document.getElementsByClassName("teamtoselect")).forEach(teamel => {
       teamel.addEventListener('click', function(evt){

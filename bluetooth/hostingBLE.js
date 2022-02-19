@@ -59,6 +59,7 @@ var performingTasks = false;
 var totalConnections = 0;
 
 function sendMessageAndCheck(requestInstance, characterisic){
+    
 	debug("Writing?")
     var dataLength = 200;
     var teamIdentifier = "0862";
@@ -98,12 +99,13 @@ currentRequests.splice(currentRequests.findIndex(el => el.deviceId == message.de
 var concurrency = 0;
 var currentlyWorking = false;
 function connectAndHandle(peripheral, requestToHandle){
-    debug("AHHHHHHHHHHHHHHHHHHH")
+    
     currentlyWorking = true;
     debug("Checkpoint C: " + requestToHandle.protocolTo)
     currentRequests.push(requestToHandle);
     debug("Requests left: " + pendingOutRequests.length)
     peripheral.connect(function(err){
+        debug("Connected");
         var characteristicsAlreadyFound = false;
         var myConcurrency = concurrency;
         peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){

@@ -286,11 +286,12 @@ debug("READ")
             
             //debug(requestToHandle)
             if(!currentlyWorking){
-                connectAndHandle(peripheral, requestToHandle);
                 var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == deviceId), 1)[0];
                 //debug("Connecting to queue item");
                 debug(pendingOutRequests.length);
                 debug("Checkpoint B: " + requestToHandle.protocolTo)
+                connectAndHandle(peripheral, requestToHandle);
+                
             }
             
                     

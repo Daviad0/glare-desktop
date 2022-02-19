@@ -283,13 +283,14 @@ debug("READ")
         
         if(pendingOutRequests.findIndex((el) => el.deviceId == deviceId) != -1){
             // something in the queue exists
-            var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == deviceId), 1)[0];
-            //debug("Connecting to queue item");
-debug(pendingOutRequests.length);
-            debug("Checkpoint B: " + requestToHandle.protocolTo)
+            
             //debug(requestToHandle)
             if(!currentlyWorking){
                 connectAndHandle(peripheral, requestToHandle);
+                var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == deviceId), 1)[0];
+                //debug("Connecting to queue item");
+                debug(pendingOutRequests.length);
+                debug("Checkpoint B: " + requestToHandle.protocolTo)
             }
             
                     

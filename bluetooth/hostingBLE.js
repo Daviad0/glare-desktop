@@ -74,7 +74,7 @@ debug(requestInstance["data"])
     //var sendBuffer = Buffer.concat([headerBuffer, bufferedData])
 	//debug("Trying more writing")    
     characterisic.write(sendBuffer, false, function(err){
-        console.log(err);
+        debug(err);
         //debug("Wrote Message " + requestInstance["currentMessage"]);
     });
 }

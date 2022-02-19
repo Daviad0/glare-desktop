@@ -79,7 +79,6 @@ db.requests.insert({
 db.scouters.insert({
   Name : "David Reeves",
   Score : 0,
-  LastUsed : Date.now(),
   Banned : false
 })
 

@@ -84,7 +84,7 @@ function checkIfFinished(message, peripheral){
         
         peripheral.disconnect(function(err){
             debug("Successfully disconnected")
-            currentlyWorking = false;
+            //currentlyWorking = false;
             noble.stopScanning();
             noble.startScanning([accessibleServiceId], true);
         });
@@ -209,6 +209,10 @@ function connectAndHandle(peripheral, requestToHandle){
             }
         }, 7500)
     })
+    setTimeout(function(){
+        currentlyWorking = false;
+    }, 6000);
+
 }
 
 

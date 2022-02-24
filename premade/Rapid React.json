@@ -7,36 +7,34 @@
          "type":"category",
          "uniqueId":"autonomous",
          "contents":[
-           {
-              "type":"parent",
-              "prettyName":"Alliance Human Player",
-              "uniqueId":"allianceHumanPlayer_parent",
-              "contents":[
-                 {
-                    "type":"text",
-                    "prettyName":"The Alliance Human Player is on the same side as the Alliance Station.",
-                    "uniqueId":"allianceHumanPlayer_Label"
-                 },
-                 {
-                    "type":"stepper",
-                    "prettyName":"Successful Shots",
-                    "uniqueId":"allianceHumanPlayer_success",
-                    "conditions":{
-                       "min":0,
-                       "max":3
-                    }
-                 },
-                 {
-                    "type":"stepper",
-                    "prettyName":"Failed Shots",
-                    "uniqueId":"allianceHumanPlayer_fail",
-                    "conditions":{
-                       "min":0,
-                       "max":3
-                    }
-                 }
-              ]
-           },
+            {
+               "type":"parent",
+               "prettyName":"Cargo Balls High",
+               "uniqueId":"cargoBallsAHigh_parent",
+               "contents":[
+                  {
+                     "type":"text",
+                     "prettyName":"Please select the number of successful and failed shots to the UPPER HUB",
+                     "uniqueId":"cargoBallsAHigh_Label"
+                  },
+                  {
+                     "type":"stepper",
+                     "prettyName":"Successful",
+                     "uniqueId":"cargoBallsAHigh_success",
+                     "conditions":{
+                        "min":0
+                     }
+                  },
+                  {
+                     "type":"stepper",
+                     "prettyName":"Failure",
+                     "uniqueId":"cargoBallsAHigh_fail",
+                     "conditions":{
+                        "min":0
+                     }
+                  }
+               ]
+            },
             {
                "type":"parent",
                "prettyName":"Cargo Balls Low",
@@ -65,34 +63,37 @@
                   }
                ]
             },
-            {
-              "type":"parent",
-              "prettyName":"Cargo Balls High",
-              "uniqueId":"cargoBallsAHigh_parent",
-              "contents":[
-                 {
-                    "type":"text",
-                    "prettyName":"Please select the number of successful and failed shots to the UPPER HUB",
-                    "uniqueId":"cargoBallsAHigh_Label"
-                 },
-                 {
-                    "type":"stepper",
-                    "prettyName":"Successful",
-                    "uniqueId":"cargoBallsAHigh_success",
-                    "conditions":{
-                       "min":0
-                    }
-                 },
-                 {
-                    "type":"stepper",
-                    "prettyName":"Failure",
-                    "uniqueId":"cargoBallsAHigh_fail",
-                    "conditions":{
-                       "min":0
-                    }
-                 }
-              ]
-           },
+            
+           {
+            "type":"parent",
+            "prettyName":"Alliance Human Player",
+            "uniqueId":"allianceHumanPlayer_parent",
+            "contents":[
+               {
+                  "type":"text",
+                  "prettyName":"The Alliance Human Player is on the same side as the Alliance Station.",
+                  "uniqueId":"allianceHumanPlayer_Label"
+               },
+               {
+                  "type":"stepper",
+                  "prettyName":"Successful Shots",
+                  "uniqueId":"allianceHumanPlayer_success",
+                  "conditions":{
+                     "min":0,
+                     "max":3
+                  }
+               },
+               {
+                  "type":"stepper",
+                  "prettyName":"Failed Shots",
+                  "uniqueId":"allianceHumanPlayer_fail",
+                  "conditions":{
+                     "min":0,
+                     "max":3
+                  }
+               }
+            ]
+         },
             {
                "type":"parent",
                "prettyName":"Robot Tasks",
@@ -120,35 +121,35 @@
          "type":"category",
          "uniqueId":"teleop",
          "contents":[
-           {
-              "type":"parent",
-              "prettyName":"Cargo Balls Collection",
-              "uniqueId":"cargoBallsC_parent",
-              "contents":[
-                 {
-                    "type":"text",
-                    "prettyName":"Please note the number of CARGO that the robot collects and its color!",
-                    "uniqueId":"cargoBallsC_Label"
-                 },
-                 {
-                    "type":"stepper",
-                    "prettyName":"Red CARGO",
-                    "uniqueId":"cargoBallsC_red",
-                    "conditions":{
-                       "min":0
-                    }
-                 },
-                 {
-                    "type":"stepper",
-                    "prettyName":"Blue CARGO",
-                    "uniqueId":"cargoBallsC_blue",
-                    "conditions":{
-                       "min":0
-                    }
-                 }
-              ]
-           },
-           {
+            {
+               "type":"parent",
+               "prettyName":"Cargo Balls High",
+               "uniqueId":"cargoBallsTHigh_parent",
+               "contents":[
+                  {
+                     "type":"text",
+                     "prettyName":"Please select the number of successful and failed shots to the UPPER HUB",
+                     "uniqueId":"cargoBallsTHigh_Label"
+                  },
+                  {
+                     "type":"stepper",
+                     "prettyName":"Successful",
+                     "uniqueId":"cargoBallsTHigh_success",
+                     "conditions":{
+                        "min":0
+                     }
+                  },
+                  {
+                     "type":"stepper",
+                     "prettyName":"Failure",
+                     "uniqueId":"cargoBallsTHigh_fail",
+                     "conditions":{
+                        "min":0
+                     }
+                  }
+               ]
+            },
+            {
               "type":"parent",
               "prettyName":"Cargo Balls Low",
               "uniqueId":"cargoBallsTLow_parent",
@@ -176,34 +177,7 @@
                  }
               ]
            },
-           {
-             "type":"parent",
-             "prettyName":"Cargo Balls High",
-             "uniqueId":"cargoBallsTHigh_parent",
-             "contents":[
-                {
-                   "type":"text",
-                   "prettyName":"Please select the number of successful and failed shots to the UPPER HUB",
-                   "uniqueId":"cargoBallsTHigh_Label"
-                },
-                {
-                   "type":"stepper",
-                   "prettyName":"Successful",
-                   "uniqueId":"cargoBallsTHigh_success",
-                   "conditions":{
-                      "min":0
-                   }
-                },
-                {
-                   "type":"stepper",
-                   "prettyName":"Failure",
-                   "uniqueId":"cargoBallsTHigh_fail",
-                   "conditions":{
-                      "min":0
-                   }
-                }
-             ]
-          },
+           
             {
                "type":"parent",
                "prettyName":"Defense",
@@ -212,36 +186,8 @@
                   {
                     "type":"duration",
                     "prettyName":"Length of Defense",
-                    "uniqueId":"defense_length",
-                    "conditions" : {
-                        "enable" : [
-                            "defenseBlock_success", "defenseBlock_fail"
-                        ]
-                    }
-                 },
-                  {
-                   "type":"text",
-                   "prettyName":"Please only track the number of CARGO balls that this robot prevented another one from scoring (both successfully and unsuccessfully)",
-                   "uniqueId":"defenseBlock_Label"
-                },
-                  {
-                   "type":"stepper",
-                   "prettyName":"Successful",
-                   "uniqueId":"defenseBlock_success",
-                   "conditions":{
-                      "min":0,
-                      "start":"disable"
-                   }
-                },
-                {
-                   "type":"stepper",
-                   "prettyName":"Failure",
-                   "uniqueId":"defenseBlock_fail",
-                   "conditions":{
-                      "min":0,
-                      "start":"disable"
-                   }
-                }
+                    "uniqueId":"defense_length"
+                 }
                ]
             }
          ]
@@ -266,9 +212,24 @@
                     "enable": ["rungSuccessful", "rungLevel"]
                 }
            },
+           {
+            "type":"dropdown",
+            "prettyName":"Rung Level",
+            "uniqueId":"rungLevel",
+            "conditions":{
+                 "start" : "disable",
+               "options":[
+                  "N/A",
+                  "Low",
+                  "Mid",
+                  "High",
+                  "Traversal"
+               ]
+            }
+         },
             {
                "type":"toggle",
-               "prettyName":"Completed Rung",
+               "prettyName":"Climb Successful?",
                "uniqueId":"rungSuccessful",
                "conditions":{
                     "start" : "disable",
@@ -277,22 +238,8 @@
                      "Successful"
                   ]
                }
-            },
-            {
-               "type":"dropdown",
-               "prettyName":"Rung Level",
-               "uniqueId":"rungLevel",
-               "conditions":{
-                    "start" : "disable",
-                  "options":[
-                     "N/A",
-                     "Low",
-                     "Mid",
-                     "High",
-                     "Traversal"
-                  ]
-               }
             }
+            
             
          ]
       }

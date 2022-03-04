@@ -305,9 +305,9 @@
             <select class="textbox" style="width: 40vw;padding:5px;text-align: center;" id="create_deviceId"></select>
             <br/>
             <br/>
-            <span class="maintext" style="font-size: 1.2vw;margin-top: 20px;">Communication ID</span>
+            <span class="maintext" style="font-size: 1.2vw;margin-top: 20px;display:none">Communication ID</span>
             <br/>
-            <input class="textbox" style="width: 40vw;padding:5px;text-align: center;" id="create_communicationId"/>
+            <input class="textbox" style="width: 40vw;padding:5px;text-align: center;display:none" id="create_communicationId"/>
           </div>
           <div style="display:none;clear: both;width:100%;height:40vh;" id="requestLog">
             <div class="tablewidthanimation" style="width: 100%;overflow: hidden;display: inline-block;text-align: left;float:left;max-height: 40vh; overflow-y: auto; overflow-x: hidden;" id="requestsCol">
@@ -999,7 +999,7 @@
   }
   document.getElementById("createNewButton").addEventListener('click', switchToCreateNew);
   function checkIfOtherInputsValid(evt){
-    if(document.getElementById("create_deviceId").value.length == 6 && document.getElementById("create_communicationId").value.length == 8 && isHex(document.getElementById("create_communicationId").value)){
+    if(document.getElementById("create_deviceId").value.length == 6 || document.getElementById("create_deviceId").value == "ALLENABLED"){
       if(validFromProtocol && validToProtocol){
         document.getElementById("saveManualSending").classList.replace("bg-error", "bg-success");
       }else{
@@ -1059,7 +1059,7 @@
   document.getElementById("create_protocolFrom").addEventListener('change', checkIfValidFromProtocol);
   document.getElementById("create_data").addEventListener('change', checkIfOtherInputsValid);
   document.getElementById("create_deviceId").addEventListener('change', checkIfOtherInputsValid);
-  document.getElementById("create_communicationId").addEventListener('change', checkIfOtherInputsValid);
+  //document.getElementById("create_communicationId").addEventListener('change', checkIfOtherInputsValid);
   document.getElementById("data_option2").value = "";
   document.getElementById("data_option2").disabled = true;
   document.getElementById("data_option3").value = "";
@@ -1076,7 +1076,7 @@
     }else{
       document.getElementById("create_data").value = "";
       document.getElementById("create_data").disabled = true;
-      document.getElementById("data_option2").value = "";
+      
       document.getElementById("data_option2").disabled = false;
       document.getElementById("data_option2").innerHTML = `
       <option value="single">Single</option>
@@ -1100,6 +1100,7 @@
       }else if(document.getElementById("data_option1").value == "users"){
         allObjectsToUseInData = allScouters;
       }
+      document.getElementById("data_option2").value = "";
     }
   }
   var addedValues = [];
@@ -1520,14 +1521,33 @@
   ipcRenderer.send('getChannelStatus', {'all' : true});
   document.getElementById("saveManualSending").addEventListener('click', function(evt){
     if(validToProtocol && validFromProtocol && inputsValid){
-      ipcRenderer.send('newRequest', {
-        'deviceId' : document.getElementById("create_deviceId").value,
-        'protocolTo' : document.getElementById('create_protocolTo').value,
-        'protocolFrom' : document.getElementById('create_protocolFrom').value,
-        'communicationId' : document.getElementById('create_communicationId').value,
-        'data' : document.getElementById('create_data').value,
-        'sentAt' : new Date()
-      })
+
+      if(document.getElementById("create_deviceId").value == "ALLENABLED"){
+        allDevices.forEach(device => {
+          if(device.onLineup){
+            ipcRenderer.send('newRequest', {
+              'deviceId' : device._id,
+              'protocolTo' : document.getElementById('create_protocolTo').value,
+              'protocolFrom' : document.getElementById('create_protocolFrom').value,
+              'communicationId' : "12345678",
+              'data' : document.getElementById('create_data').value,
+              'sentAt' : new Date()
+            })
+          }
+        });
+      }else{
+        ipcRenderer.send('newRequest', {
+          'deviceId' : document.getElementById("create_deviceId").value,
+          'protocolTo' : document.getElementById('create_protocolTo').value,
+          'protocolFrom' : document.getElementById('create_protocolFrom').value,
+          'communicationId' : "12345678",
+          'data' : document.getElementById('create_data').value,
+          'sentAt' : new Date()
+        })
+        
+      }
+
+      
     }
     
   })
@@ -1584,9 +1604,9 @@
     document.getElementById("activeDeviceContainer").innerHTML = "";
     document.getElementById("inactiveDeviceContainer").innerHTML = "";
     allDevices = args["devices"];
-    document.getElementById("create_deviceId").innerHTML = ""
+    document.getElementById("create_deviceId").innerHTML = `<option value="ALLENABLED">All Enabled Tablets</option>`
     allDevices.forEach(dev => {
-      document.getElementById("create_deviceId").innerHTML += `<option value="` + dev._id + `">` + (dev.deviceName == undefined ? "Unnamed Device" : dev.deviceName) + ` (` + dev._id + `)</value>`
+      document.getElementById("create_deviceId").innerHTML += `<option value="` + dev._id + `">` + (dev.onLineup ? "Ready Tablet" : "Inactive...") + ` (` + dev._id + `)</option>`
     });
     args["devices"].forEach(device => {
       if(device.onLineup){

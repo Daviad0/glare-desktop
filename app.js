@@ -465,6 +465,9 @@ function createWindow (ble) {
       child.stdout.on('data', function(data){
         console.log("[BLE] " + data);
       });
+      child.stderr.on('data', function(data){
+        console.log("[BLERROR] " + data);
+      });
     }
 
 // var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")

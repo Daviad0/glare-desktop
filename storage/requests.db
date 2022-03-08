@@ -327,6 +327,7 @@
 {"deviceId":"680403","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T06:26:22.286Z","_id":"73LUyKmkzrWiQoHU"}
 {"deviceId":"001AEB","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-18T22:09:21.431Z","_id":"73fJGe9OcQWgs1sD"}
 {"deviceId":"E5DD00","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-18T22:27:26.588Z","_id":"73jNJaEo6RPqu1QP"}
+{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1646705532441,"_id":"74J5BSGnXY99ASql"}
 {"deviceId":"FEB11F","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-18T21:48:52.366Z","_id":"74QUGRV0BrKdrRTo"}
 {"deviceId":"42CDDF","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T04:20:18.083Z","_id":"757QmZHWSludZNjL"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1637857791809,"_id":"75XC2QP24rJUOo9C"}
@@ -2360,6 +2361,7 @@
 {"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","sentAt":"2021-08-25T19:59:02.518Z","_id":"p6eAWCYQITPTdepZ"}
 {"deviceId":"7BC154","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T06:51:19.790Z","_id":"pA9BpptuLWM3TpLx"}
 {"deviceId":"78E9C2","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-18T23:36:58.126Z","_id":"pB2fQsktkZYr1ZbQ"}
+{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1646705550869,"_id":"pB5l4DxlKmSonuEC"}
 {"deviceId":"001AEB","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2021-09-22T02:28:14.613Z","_id":"pGoqlVZYZCVxmlaQ"}
 {"deviceId":"7BC154","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-10T19:04:19.801Z","_id":"pI5TtOM2ls3NzdEb"}
 {"deviceId":"7BC154","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-11T01:51:09.416Z","_id":"pIvgx308yaQRZHte"}
@@ -2557,6 +2559,7 @@
 {"deviceId":"7BC154","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-18T22:22:55.089Z","_id":"tJ8BQ7YuiNGaufMq"}
 {"deviceId":"42CDDF","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T05:00:49.432Z","_id":"tJA7nZdIjRv0awja"}
 {"deviceId":"FEB11F","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-18T21:52:55.036Z","_id":"tKBExwcoO0YGKPiN"}
+{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1646705561263,"_id":"tLohbztS3aXXpCjj"}
 {"deviceId":"E5DD00","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T06:51:19.790Z","_id":"tPJf6AcY6dNs2FAA"}
 {"deviceId":"42CDDF","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-18T21:34:14.371Z","_id":"tPZfdkUwYDBsdMNl"}
 {"deviceId":"30A268","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-18T22:05:22.057Z","_id":"tQqEJSCnEWwrElQY"}
@@ -2593,6 +2596,7 @@
 {"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","sentAt":"2021-08-25T22:38:31.048Z","_id":"u8vGaLmsqKSbTzWM"}
 {"deviceId":"BF8613","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Durability test","sentAt":"2021-08-25T21:45:59.298Z","_id":"u9PaDYWYR9sqer9E"}
 {"deviceId":"001AEB","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T04:53:19.182Z","_id":"uAwqqYvkwbmqa93P"}
+{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1646705240623,"_id":"uCLdpwecM01wvPvS"}
 {"deviceId":"2B931F","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-11T01:37:33.004Z","_id":"uCWEG2Rvt5n8yOkH"}
 {"deviceId":"E5DD00","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T06:15:51.936Z","_id":"uDLrealPqWITcSvY"}
 {"deviceId":"42CDDF","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-11T03:05:49.889Z","_id":"uFQnHptaz0GeKf8A"}
@@ -2774,6 +2778,7 @@
 {"deviceId":"896FC0","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-11T02:33:18.444Z","_id":"xhiwUHHKi9sHkauJ"}
 {"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1629910471944,"_id":"xjconLGa6O4m00Rj"}
 {"deviceId":"2B931F","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T04:24:48.232Z","_id":"xjxzi4HmFZCAsrjs"}
+{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1646705457372,"_id":"xkQ4OGfZxd46i2Px"}
 {"deviceId":"42CDDF","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T04:30:48.432Z","_id":"xluVCyMx9V3cK6xd"}
 {"deviceId":"7BC154","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T04:33:48.532Z","_id":"xnTsNRHRj9Qyn4Ew"}
 {"deviceId":"001AEB","protocolTo":"0998","protocolFrom":"0998","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-18T22:54:36.578Z","_id":"xoGPtyDSIEVRSdvD"}
@@ -2870,4 +2875,4 @@
 {"deviceId":"7BC154","protocolTo":"0998","protocolFrom":"c401","communicationId":"12345678","data":"Helo :>","sentAt":"2021-09-22T02:01:19.613Z","_id":"zxiALqFXzXfKhauQ"}
 {"deviceId":"42CDDF","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2021-11-29T05:53:21.183Z","_id":"zxjF8WdBMD7Zu3ed"}
 {"deviceId":"001AEB","protocolTo":"0998","protocolFrom":"c202","communicationId":"12345678","data":"Helo :>","sentAt":"2022-02-11T01:42:05.405Z","_id":"zz1fM9LL71TYTCj2"}
-{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1646705240623,"_id":"uCLdpwecM01wvPvS"}
+{"deviceId":"A00000","protocolTo":"A111","protocolFrom":"0998","communicationId":"12345678","data":"Hello world!","sentAt":1646705620462,"_id":"2v7LdiXs1TWpj2Jb"}

@@ -1,7 +1,7 @@
 var noble = require('@abandonware/noble')
 const notify = require('./updateHandler')
 
-var accessibleServiceId = '862';
+var accessibleServiceId = '0862';
 var writingCharacteristicId = '1'
 var uniqueIdDescriptor = 'a404';
 
@@ -307,8 +307,7 @@ debug("READ")
     
 //}
 
-while(true){
-    // do something?
+setInterval(function(){
     debug(noble.state);
-}
+},10000);
 

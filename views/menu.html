@@ -20,13 +20,17 @@
                 <span class="maintext" style="font-size: 40px;">Server</span>
               </div>
         </div>
+        <div class="statuscontainer" style="text-align: center;">
+            <input type="checkbox" id="ble" style="font-size: 20px;"/>
+            <span class="maintext" style="font-size: 20px;font-weight:300">Enable Bluetooth</span>
+          </div>
         <script>
             const {ipcRenderer} = require('electron');
             document.getElementById("GOTOPLANNING").addEventListener("click", function(){
                 ipcRenderer.send("GOTOPAGE", {page:"planning"});
             });
             document.getElementById("GOTOSERVER").addEventListener("click", function(){
-                ipcRenderer.send("GOTOPAGE", {page:"server"});
+                ipcRenderer.send("GOTOPAGE", {page:"server", ble:document.getElementById("ble").checked});
             });
         </script>
     </body>

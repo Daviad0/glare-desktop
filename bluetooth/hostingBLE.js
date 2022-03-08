@@ -307,5 +307,8 @@ debug("READ")
     
 //}
 
-
+while(true){
+    // do something?
+    debug(noble.state);
+}
 

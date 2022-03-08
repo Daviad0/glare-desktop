@@ -10,6 +10,7 @@ var path = require('path');
 const {app, BrowserWindow, dialog, ipcRenderer} = require('electron')
 const {ipcMain} = require('electron')
 const sudo = require('sudo-prompt');
+const {spawn} = require('child_process');
 // ok so BLE is in sudo-prompt
 // "this is so gonna work"
 // said David Reeves, July 3rd 2021
@@ -407,7 +408,7 @@ function showPlanning(){
 }
 
 // main window that actually allows the user to interact with the show
-function createWindow () {
+function createWindow (ble) {
 
   mainWindow = new BrowserWindow({
     width: 1000,
@@ -448,19 +449,36 @@ function createWindow () {
     });
     
     
-var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
-  console.log(btpath);
-  var options = {
-    name: "Glare Bluetooth Service"
-  }
-  sudo.exec('node ' + btpath, options, 
-    function(err, stdout, stderr){
-      if(err){
-console.log(err);
-}
-      console.log('stdout: ' + stdout)
+    if(ble){
+      console.log("STARTING CHILD PROCESS");
+      var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
+      const child = spawn('sudo', ['node',btpath]);
+      child.on('exit', function(code, signal){
+        console.log("[BLE] Child process exited with code " + code + " and signal " + signal);
+      });
+      child.on('error', function(err){
+        console.log("[BLE] Error: " + err);
+      });
+      child.on('close', function(code, signal){
+        console.log("[BLE] Child process closed with code " + code + " and signal " + signal);
+      });
+      child.stdout.on('data', function(data){
+        console.log("[BLE] " + data);
+      });
     }
-  );
+
+// var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
+//   console.log(btpath);
+//   var options = {
+//     name: "Glare Bluetooth Service"
+//   }
+//   sudo.exec('node ' + btpath, options, 
+//     function(err, stdout, stderr){
+//       if(err){
+//         console.log(err);
+//       }
+//     }
+//   );
   });
   
   
@@ -577,7 +595,7 @@ ipcMain.on('newMatch', (event, args) => {
 ipcMain.on("GOTOPAGE", (event, args) => {
   if(args["page"] == "server"){
     mainWindow.hide();
-    createWindow();
+    createWindow(args["ble"]);
   }else if(args["page"] == "planning"){
     mainWindow.hide();
     showPlanning();

@@ -407,6 +407,34 @@ function showPlanning(){
   });
 }
 
+var child = undefined;
+
+function startChildProcess(){
+  console.log("STARTING CHILD PROCESS");
+      var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
+      child = spawn('sudo', ['node',btpath]);
+      child.on('exit', function(code, signal){
+        console.log("[BLE] Child process exited with code " + code + " and signal " + signal);
+      });
+      child.on('error', function(err){
+        console.log("[BLE] Error: " + err);
+      });
+      child.on('close', function(code, signal){
+        console.log("[BLE] Child process closed with code " + code + " and signal " + signal);
+      });
+      child.stdout.on('data', function(data){
+        
+        console.log("[BLE] " + data);
+      });
+      child.stderr.on('data', function(data){
+        if(!data.includes("buffer overflow")){
+          console.warn("[BLERROR] " + data);
+          mainWindow.webContents.send("BLERROR", {});
+        }
+        
+      });
+}
+
 // main window that actually allows the user to interact with the show
 function createWindow (ble) {
 
@@ -450,24 +478,7 @@ function createWindow (ble) {
     
     
     if(ble){
-      console.log("STARTING CHILD PROCESS");
-      var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
-      const child = spawn('sudo', ['node',btpath]);
-      child.on('exit', function(code, signal){
-        console.log("[BLE] Child process exited with code " + code + " and signal " + signal);
-      });
-      child.on('error', function(err){
-        console.log("[BLE] Error: " + err);
-      });
-      child.on('close', function(code, signal){
-        console.log("[BLE] Child process closed with code " + code + " and signal " + signal);
-      });
-      child.stdout.on('data', function(data){
-        console.log("[BLE] " + data);
-      });
-      child.stderr.on('data', function(data){
-        console.log("[BLERROR] " + data);
-      });
+      startChildProcess();
     }
 
 // var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
@@ -486,6 +497,17 @@ function createWindow (ble) {
   
   
 }
+
+ipcMain.on("restartBLE", (event, args) =>{
+  if(child != undefined){
+    try{
+      child.kill();
+    }catch(e){
+
+    }
+  }
+  startChildProcess();
+});
 
 ipcMain.on('deleteUser', (event, args) => {
   console.log(args);

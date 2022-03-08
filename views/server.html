@@ -222,6 +222,11 @@
         <span class="maintext" style="font-size: 16px;" id="currentTime">12:00 PM</span>
       </div>
     </div>
+    <div class="statuscontainer">
+      <div class="bg-main" id="resetBLE" style="border-radius: 8px;padding: 10px 5px 10px 5px;text-align: center;width:140px">
+        <span class="maintext" style="font-size: 16px;pointer-events:none">Reset BLE</span>
+      </div>
+    </div>
     <div class="menus" style="text-align: right;">
       <div data-menuItem="matches" class="bg-main mainbutton selectableMenuItem" style="border-radius: 8px 0px 0px 8px;width:12vw;padding:15px">
         <span class="maintext" style="font-size: 1vw;pointer-events: none;">Matches</span>
@@ -815,6 +820,11 @@
     }, 250);
     
     
+  });
+
+  document.getElementById("resetBLE").addEventListener('click', function(){
+    ipcRenderer.send('restartBLE', {});
+    document.getElementById("resetBLE").classList.replace("bg-error", "bg-main");
   });
 
   document.getElementById("saveManualSending").addEventListener('click', function(){
@@ -1518,6 +1528,8 @@
     });
   }
 
+
+
   ipcRenderer.send('getChannelStatus', {'all' : true});
   document.getElementById("saveManualSending").addEventListener('click', function(evt){
     if(validToProtocol && validFromProtocol && inputsValid){
@@ -1600,6 +1612,11 @@
   }, 50)
 
   ipcRenderer.send("getDevices")
+
+  ipcRenderer.on("BLERROR", (evt, args)=>{
+    document.getElementById("resetBLE").classList.replace("bg-main", "bg-error");
+  });
+
   ipcRenderer.on("allDevices", (evt, args) => {
     document.getElementById("activeDeviceContainer").innerHTML = "";
     document.getElementById("inactiveDeviceContainer").innerHTML = "";

@@ -2,6 +2,7 @@
 {"onLineup":false,"_id":"0F01C2"}
 {"onLineup":false,"_id":"2B931F"}
 {"onLineup":false,"_id":"30A268"}
+{"onLineup":true,"_id":"3735BB"}
 {"onLineup":false,"_id":"3AC465"}
 {"onLineup":false,"_id":"3B0855"}
 {"onLineup":false,"_id":"42CDDF"}
@@ -12,7 +13,12 @@
 {"onLineup":false,"_id":"8016F5"}
 {"onLineup":false,"_id":"896FC0"}
 {"onLineup":false,"_id":"8EC2A5"}
+{"onLineup":true,"_id":"8FD968"}
+{"onLineup":true,"_id":"9A50AA"}
 {"_id":"ADF5C1","deviceName":"Glare Ready Device (GP-ADF5C1)","lastCommunicated":"23:29:30 GMT-0500 (Eastern Standard Time)","onLineup":false}
+{"onLineup":true,"_id":"B9D02F"}
+{"onLineup":true,"_id":"C1DF4E"}
 {"onLineup":false,"_id":"E5DD00"}
-{"onLineup":true,"_id":"FB9888"}
+{"onLineup":true,"_id":"F893E9"}
+{"onLineup":false,"_id":"FB9888"}
 {"onLineup":false,"_id":"FEB11F"}

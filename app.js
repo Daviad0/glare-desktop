@@ -537,7 +537,7 @@ ipcMain.on('addUsers', (event, args) => {
     fs.readFile('./premade/' + args['file'], 'utf8' , function(err, data){
       console.log(err);
 
-      userList = data.split("\r\n");
+      userList = data.split("\n");
       console.log(userList);
       for(var i = 0; i < userList.length; i++){
         let name = userList[i]; 

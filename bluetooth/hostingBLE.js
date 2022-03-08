@@ -1,7 +1,7 @@
 var noble = require('@abandonware/noble')
 const notify = require('./updateHandler')
 
-var accessibleServiceId = '0862';
+var accessibleServiceId = '862';
 var writingCharacteristicId = '1'
 var uniqueIdDescriptor = 'a404';
 

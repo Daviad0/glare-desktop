@@ -296,6 +296,32 @@ io.on('connection', (socket) => {
           }, 5000);
         })
         break;
+      case "c203":
+          console.log("[BLE] All matches: ");
+          var matches = JSON.parse(message.data);
+          matches.forEach(match => {
+            db.entries.findOne({_id: match._id}, function(err, doc){
+              console.log(err);
+              if(doc == null){
+                // need to create
+                //match["_id"] = match._id;
+                db.entries.insert(match, function(err, newDoc){
+                  console.log("New entry added")
+                })
+              }else{
+                //match["_id"] = match._id;
+                db.entries.update({_id: match._id}, match, function(err, newDoc){
+                  console.log("Entry updated!")
+                })
+              }
+            })
+            setTimeout(function(){
+              db.entries.find({}, function(err, docs){
+                mainWindow.webContents.send("allMatches", {"matches" : docs});
+              })
+            }, 5000);
+          })
+          break;
       case "c301":
         console.log("[BLE] Forced competition schema: " + message.data);
         break;

@@ -1345,6 +1345,10 @@
   });
 
 
+  function setUsersToList(file){
+    ipcRenderer.send('addUsers', {file: file});
+  }
+
 
   function sendCompetition(evt){
     // check if edit or no

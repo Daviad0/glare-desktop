@@ -77,11 +77,7 @@ db.requests.insert({
   sentAt : Date.now()
 })
 
-db.scouters.insert({
-  Name : "David Reeves",
-  Score : 0,
-  Banned : false
-})
+
 
 db.competitions.insert({
   _id: 'davEnv4004',
@@ -534,6 +530,38 @@ ipcMain.on("restartBLE", (event, args) =>{
   }
   startChildProcess();
 });
+
+
+ipcMain.on('addUsers', (event, args) => {
+  db.scouters.remove({}, { multi: true }, function(err, removed){
+    fs.readFile('./premade/' + args['file'], 'utf8' , function(err, data){
+      console.log(err);
+
+      userList = data.split("\r\n");
+      console.log(userList);
+      for(var i = 0; i < userList.length; i++){
+        let name = userList[i]; 
+
+        db.scouters.insert({
+          Name : name,
+          Score : 0,
+          Banned : false
+        }, function(err, newDoc){
+          db.scouters.find({}, function(err, docs){
+            mainWindow.webContents.send("allScouters", {"scouters" : docs});
+          });
+        });
+        
+
+      }
+
+      
+    });
+
+    
+  });
+});
+
 
 ipcMain.on('deleteUser', (event, args) => {
   console.log(args);

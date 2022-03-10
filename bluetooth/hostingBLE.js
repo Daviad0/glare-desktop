@@ -60,6 +60,8 @@ var performingTasks = false;
 
 var totalConnections = 0;
 
+var currentPeripheral = null;
+
 function sendMessageAndCheck(requestInstance, characterisic){
     
 	debug("Writing?")
@@ -109,6 +111,7 @@ function connectAndHandle(peripheral, requestToHandle){
     debug("Requests left: " + pendingOutRequests.length)
     peripheral.connect(function(err){
         debug("Connected");
+        currentPeripheral = peripheral;
         var characteristicsAlreadyFound = false;
         var myConcurrency = concurrency;
         peripheral.discoverAllServicesAndCharacteristics(function(error, services,characteristics){
@@ -248,10 +251,30 @@ debug("READ")
     })
 
     socket.on('restartBLE', ()=> {
-        noble.stopScanning();
-        setTimeout(function(){
-            noble.startScanning([accessibleServiceId], true);
-        }, 2000);
+        try{
+            if(currentPeripheral != null){
+                currentPeripheral.disconnect(function(err){
+                    debug("Successfully disconnected")
+                    //currentlyWorking = false;
+                    noble.stopScanning();
+                    setTimeout(function(){
+                        noble.startScanning([accessibleServiceId], true);
+                    }, 2000);
+                });
+            }else{
+                noble.stopScanning();
+                setTimeout(function(){
+                    noble.startScanning([accessibleServiceId], true);
+                }, 2000);
+            }
+        
+        }catch(e){
+            noble.stopScanning();
+            setTimeout(function(){
+                noble.startScanning([accessibleServiceId], true);
+            }, 2000);
+        }
+        
     })
     
     socket.on('checkQueue', (pendingIn, pendingOut) => {

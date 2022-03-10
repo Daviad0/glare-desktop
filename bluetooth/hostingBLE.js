@@ -5,6 +5,8 @@ var accessibleServiceId = '862';
 var writingCharacteristicId = '1'
 var uniqueIdDescriptor = 'a404';
 
+//var instanceEnabled = true;
+
 var readyToScan = false;
 const io = require("socket.io-client")
 const socket = io.connect("http://localhost:4004", {reconnect: true});
@@ -243,6 +245,13 @@ debug("READ")
 
     socket.on('cancelQueue', ()=> {
         pendingOutRequests = [];
+    })
+
+    socket.on('restartBLE', ()=> {
+        noble.stopScanning();
+        setTimeout(function(){
+            noble.startScanning([accessibleServiceId], true);
+        }, 2000);
     })
     
     socket.on('checkQueue', (pendingIn, pendingOut) => {

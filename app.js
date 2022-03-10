@@ -205,7 +205,7 @@ io.on('connection', (socket) => {
     })
   })
   socket.on("externalDebug", (object) => {
-    console.log(object);
+    //console.log(object);
   });
   socket.on("requestFinished", (message) => {
     
@@ -521,14 +521,8 @@ function createWindow (ble) {
 }
 
 ipcMain.on("restartBLE", (event, args) =>{
-  if(child != undefined){
-    try{
-      child.kill();
-    }catch(e){
-
-    }
-  }
-  startChildProcess();
+  io.emit("restartBLE", {});
+  //startChildProcess();
 });
 
 

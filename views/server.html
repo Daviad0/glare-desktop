@@ -1945,7 +1945,12 @@
       });
     }else{
       if(part.type != "text"){
-        nameMatchup[indexToHold] = prefix + part.uniqueId;
+        if(part.type == "stepper" || part.type == "timer" || part.type == "duration"){
+          nameMatchup[indexToHold] = "(N) " + part.uniqueId;
+        }else{
+          nameMatchup[indexToHold] = "(S) " + part.uniqueId;
+        }
+        
         indexToHold += 1;
       }
       
@@ -1974,8 +1979,9 @@
       var index = 0
       if(m.Data != null){
         m.Data.DataValues.forEach(dV => {
-          if(dV == "0" || dV == null){
+          if(nameMatchup[index].includes("(N)") && (dV == "0" || dV == null)){
             dV = 0;
+            console.log("Changing into number from null...")
           }
           thisEntryObject[nameMatchup[index]] = dV;
           index += 1;

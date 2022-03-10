@@ -1974,6 +1974,9 @@
       var index = 0
       if(m.Data != null){
         m.Data.DataValues.forEach(dV => {
+          if(dV == "0" || dV == null){
+            dV = 0;
+          }
           thisEntryObject[nameMatchup[index]] = dV;
           index += 1;
         });

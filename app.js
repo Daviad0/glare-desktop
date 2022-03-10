@@ -521,8 +521,13 @@ function createWindow (ble) {
 }
 
 ipcMain.on("restartBLE", (event, args) =>{
-  io.emit("restartBLE", {});
-  //startChildProcess();
+  
+  if(args["urgent"]){
+    startChildProcess();
+  }else{
+    io.emit("restartBLE", {});
+  }
+  
 });
 
 

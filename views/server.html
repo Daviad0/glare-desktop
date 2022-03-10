@@ -823,7 +823,8 @@
   });
 
   document.getElementById("resetBLE").addEventListener('click', function(){
-    ipcRenderer.send('restartBLE', {});
+    ipcRenderer.send('restartBLE', {urgent:blerror});
+    blerror = false;
     document.getElementById("resetBLE").classList.replace("bg-error", "bg-main");
   });
 
@@ -1618,8 +1619,9 @@
   }, 50)
 
   ipcRenderer.send("getDevices")
-
+  var blerror = false;
   ipcRenderer.on("BLERROR", (evt, args)=>{
+    blerror = true;
     document.getElementById("resetBLE").classList.replace("bg-main", "bg-error");
   });
 

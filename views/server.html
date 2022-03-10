@@ -390,6 +390,7 @@
             <option value="ping" selected>Ping</option>
             <option value="matchdata">Get Match Data</option>
             <option value="users">Get Users</option>
+            <option value="off">Turn Off</option>
           </select>
           <div class="bg-main mainbutton" id="exitAutomaticOverlay">
             <span class="maintext" style="font-size: 16px;">Exit</span>
@@ -1595,26 +1596,29 @@
     document.getElementById("automaticTimer").innerHTML = min.toString().padStart(2, "0") + ":" + sec.toString().padStart(2, "0");
     if(sec + (min*60) < 0){
       var requestToUse = "";
-      if(document.getElementById("automaticSendingType").value == "ping"){
-        requestToUse = "0998";
-      }else if(document.getElementById("automaticSendingType").value == "matchdata"){
-        requestToUse = "c202";
-      }else if(document.getElementById("automaticSendingType").value == "users"){
-        requestToUse = "c401";
-      }
-      allDevices.forEach(device => {
-        if(device.onLineup){
-          ipcRenderer.send('newRequest', {
-            'deviceId' : device._id,
-            'protocolTo' : "0998",
-            'protocolFrom' : requestToUse,
-            'communicationId' : "12345678",
-            'data' : "Helo :>",
-            'sentAt' : new Date()
-          })
+      if(document.getElementById("automaticSendingType").value != "off"){
+        if(document.getElementById("automaticSendingType").value == "ping"){
+          requestToUse = "0998";
+        }else if(document.getElementById("automaticSendingType").value == "matchdata"){
+          requestToUse = "c202";
+        }else if(document.getElementById("automaticSendingType").value == "users"){
+          requestToUse = "c401";
         }
-      });
-      lastSend = new Date();
+        allDevices.forEach(device => {
+          if(device.onLineup){
+            ipcRenderer.send('newRequest', {
+              'deviceId' : device._id,
+              'protocolTo' : "0998",
+              'protocolFrom' : requestToUse,
+              'communicationId' : "12345678",
+              'data' : "Helo :>",
+              'sentAt' : new Date()
+            })
+          }
+        });
+        lastSend = new Date();
+      }
+      
     }
   }, 50)
 

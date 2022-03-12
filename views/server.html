@@ -1973,7 +1973,7 @@
     });
     matches.forEach(m => {
       var thisEntryObject = {};
-      thisEntryObject["Team"] = m.TeamIdentifier;
+      thisEntryObject["Team"] = m.TeamIdentifier.replace("\r", "");
       thisEntryObject["Match Number"] = m.Number;
       thisEntryObject["Position"] = m.Position;
       thisEntryObject["Competition"] = m.Competition;

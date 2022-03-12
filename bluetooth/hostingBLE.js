@@ -216,7 +216,7 @@ function connectAndHandle(peripheral, requestToHandle){
                 noble.stopScanning();
                 noble.startScanning([accessibleServiceId], true);
             }
-        }, 7500)
+        }, 2000)
     })
     setTimeout(function(){
         currentlyWorking = false;
@@ -262,7 +262,7 @@ debug("READ")
                     noble.stopScanning();
                     setTimeout(function(){
                         noble.startScanning([accessibleServiceId], true);
-                    }, 2000);
+                    }, 500);
                 });
             }else{
                 noble.stopScanning();

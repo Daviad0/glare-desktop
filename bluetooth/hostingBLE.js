@@ -1,7 +1,7 @@
 var noble = require('@abandonware/noble')
 const notify = require('./updateHandler')
 
-var accessibleServiceId = '862';
+var accessibleServiceId = '0862';
 var writingCharacteristicId = '1'
 var uniqueIdDescriptor = 'a404';
 
@@ -71,7 +71,7 @@ function sendMessageAndCheck(requestInstance, characterisic){
     var protocolFrom = requestInstance["protocolFrom"];
     var responseExpected = "1"
     var communicationId = requestInstance["communicationId"];
-debug(requestInstance["data"])
+//debug(requestInstance["data"])
     var bufferedData = Buffer.from(requestInstance["data"])
     var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + requestInstance["currentMessage"].toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
     var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*(requestInstance["currentMessage"]-1)), (dataLength*(requestInstance["currentMessage"])))]);
@@ -107,10 +107,13 @@ function connectAndHandle(peripheral, requestToHandle){
     
     currentlyWorking = true;
     debug("Checkpoint C: " + requestToHandle.protocolTo)
+    if(currentRequests.findIndex((el) => el.deviceId == requestToHandle.deviceId) != -1){
+        currentRequests.splice(currentRequests.findIndex((el) => el.deviceId == requestToHandle.deviceId), 1);
+    }
     currentRequests.push(requestToHandle);
     debug("Requests left: " + pendingOutRequests.length)
     peripheral.connect(function(err){
-        debug("Connected");
+        debug("Connected to " + peripheral.advertisement.localName);
         currentPeripheral = peripheral;
         var characteristicsAlreadyFound = false;
         var myConcurrency = concurrency;
@@ -319,10 +322,9 @@ debug("READ")
             
             //debug(requestToHandle)
             if(!currentlyWorking){
-                var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.id == deviceId), 1)[0];
+                var requestToHandle = pendingOutRequests.splice(pendingOutRequests.findIndex((el) => el.deviceId == deviceId), 1)[0];
                 //debug("Connecting to queue item");
-                debug(pendingOutRequests.length);
-                debug("Checkpoint B: " + requestToHandle.protocolTo)
+                debug("Request for " + requestToHandle.deviceId + " going to " + deviceId + " with data of length " + requestToHandle.data.length);
                 connectAndHandle(peripheral, requestToHandle);
                 
             }

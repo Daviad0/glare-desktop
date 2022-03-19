@@ -1,7 +1,7 @@
 var noble = require('@abandonware/noble')
 const notify = require('./updateHandler')
 
-var accessibleServiceId = '0862';
+var accessibleServiceId = '862';
 var writingCharacteristicId = '1'
 var uniqueIdDescriptor = 'a404';
 
@@ -216,7 +216,7 @@ function connectAndHandle(peripheral, requestToHandle){
                 noble.stopScanning();
                 noble.startScanning([accessibleServiceId], true);
             }
-        }, 7500)
+        }, 2000)
     })
     setTimeout(function(){
         currentlyWorking = false;
@@ -262,7 +262,7 @@ debug("READ")
                     noble.stopScanning();
                     setTimeout(function(){
                         noble.startScanning([accessibleServiceId], true);
-                    }, 2000);
+                    }, 500);
                 });
             }else{
                 noble.stopScanning();

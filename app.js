@@ -330,6 +330,10 @@ io.on('connection', (socket) => {
       case "c701":
         console.log("[BLE] Competition security state mode: " + message.data);
         break;
+      case "e999":
+        console.log("[BLE] Request Failed! Adding to Queue... ");
+        io.emit('addToQueue', message);
+        break;
     }
   });
 });

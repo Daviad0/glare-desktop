@@ -1,4 +1,5 @@
 var noble = require('@abandonware/noble')
+var crypto = require("crypto");
 const notify = require('./updateHandler')
 
 var accessibleServiceId = '862';
@@ -64,23 +65,42 @@ var currentPeripheral = null;
 
 function sendMessageAndCheck(requestInstance, characterisic){
     
-	debug("Writing?")
+	//debug("Writing?")
     var dataLength = 200;
     var teamIdentifier = "0862";
     var protocolTo = requestInstance["protocolTo"];
     var protocolFrom = requestInstance["protocolFrom"];
     var responseExpected = "1"
     var communicationId = requestInstance["communicationId"];
+    var checksum = crypto.createHash('md5').update(requestInstance["data"]).digest("hex").substring(0,6);
 //debug(requestInstance["data"])
     var bufferedData = Buffer.from(requestInstance["data"])
-    var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + requestInstance["currentMessage"].toString().padStart(4, "0") + responseExpected + communicationId, "hex")                                       
+    var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + requestInstance["currentMessage"].toString().padStart(4, "0") + responseExpected + communicationId + checksum, "hex")                                       
     var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*(requestInstance["currentMessage"]-1)), (dataLength*(requestInstance["currentMessage"])))]);
     //var sendBuffer = Buffer.concat([headerBuffer, bufferedData])
 	//debug("Trying more writing")    
+
+    var written = false;
+
     characterisic.write(sendBuffer, false, function(err){
-        debug(err);
+        written = true;
+        //debug(err);
         //debug("Wrote Message " + requestInstance["currentMessage"]);
     });
+
+    setTimeout(function(){
+        if(!written){
+            debug("Failed to write")
+            currentPeripheral.disconnect(function(err){
+                debug("Successfully disconnected")
+                //currentlyWorking = false;
+                noble.stopScanning();
+                setTimeout(function(){
+                    noble.startScanning([accessibleServiceId], true);
+                }, 500);
+            });
+        }
+    },4000);
 }
 
 function checkIfFinished(message, peripheral){
@@ -106,12 +126,12 @@ var currentlyWorking = false;
 function connectAndHandle(peripheral, requestToHandle){
     
     currentlyWorking = true;
-    debug("Checkpoint C: " + requestToHandle.protocolTo)
+    //debug("Checkpoint C: " + requestToHandle.protocolTo)
     if(currentRequests.findIndex((el) => el.deviceId == requestToHandle.deviceId) != -1){
         currentRequests.splice(currentRequests.findIndex((el) => el.deviceId == requestToHandle.deviceId), 1);
     }
     currentRequests.push(requestToHandle);
-    debug("Requests left: " + pendingOutRequests.length)
+    //debug("Requests left: " + pendingOutRequests.length)
     peripheral.connect(function(err){
         debug("Connected to " + peripheral.advertisement.localName);
         currentPeripheral = peripheral;
@@ -310,6 +330,7 @@ debug("READ")
     
     var deviceId = peripheral.advertisement.localName.substring(3);
     debug("DISCOVERED " + deviceId);
+    discovered += 1;
         if(discoveredDevices.findIndex((el) => el.advertisement.localName.substring(3) == deviceId) == -1 && existingDevices.findIndex((el) => el._id == deviceId) == -1){
             discoveredDevices.push(peripheral);
             socket.emit("newDevice", { name: peripheral.advertisement.localName });
@@ -342,6 +363,9 @@ debug("READ")
 //}
 
 setInterval(function(){
-    debug(noble.state);
+    debug("--STATUS BELOW--");
+    debug(noble.state + "\n" + discovered + " devices have been discovered in the past 10 seconds... A number under 10 might indicate interference if the environment is fully running\n" + pendingOutRequests.length + " requests in the queue\n" + currentPeripheral);
+    debug("----------------");
+    discovered = 0;
 },10000);
 

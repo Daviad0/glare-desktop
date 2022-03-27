@@ -75,7 +75,7 @@ function sendMessageAndCheck(requestInstance, characterisic){
     var checksum = crypto.createHash('md5').update(requestInstance["data"]).digest("hex").substring(0,6);
 //debug(requestInstance["data"])
     var bufferedData = Buffer.from(requestInstance["data"])
-    var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + requestInstance["currentMessage"].toString().padStart(4, "0") + responseExpected + communicationId + checksum, "hex")                                       
+    var headerBuffer = Buffer.from(teamIdentifier + requestInstance["deviceId"] + protocolTo + protocolFrom + responseExpected + (requestInstance["currentMessage"] == requestInstance["totalMessages"] ? "e" : "a") + requestInstance["currentMessage"].toString().padStart(4, "0") + communicationId + checksum, "hex")                                       
     var sendBuffer = Buffer.concat([headerBuffer, bufferedData.slice((dataLength*(requestInstance["currentMessage"]-1)), (dataLength*(requestInstance["currentMessage"])))]);
     //var sendBuffer = Buffer.concat([headerBuffer, bufferedData])
 	//debug("Trying more writing")    

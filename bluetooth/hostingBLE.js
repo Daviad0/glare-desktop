@@ -329,7 +329,7 @@ debug("READ")
     noble.on('discover', function(peripheral){
     
     var deviceId = peripheral.advertisement.localName.substring(3);
-    debug("DISCOVERED " + deviceId);
+    debug("DISCOVERED " + deviceId + " w/ RSSI: " + peripheral.rssi);
     discovered += 1;
         if(discoveredDevices.findIndex((el) => el.advertisement.localName.substring(3) == deviceId) == -1 && existingDevices.findIndex((el) => el._id == deviceId) == -1){
             discoveredDevices.push(peripheral);

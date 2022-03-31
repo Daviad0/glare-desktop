@@ -285,12 +285,13 @@ io.on('connection', (socket) => {
               })
             }
           })
-          setTimeout(function(){
-            db.entries.find({}, function(err, docs){
-              mainWindow.webContents.send("allMatches", {"matches" : docs});
-            })
-          }, 5000);
+          
         })
+        setTimeout(function(){
+          db.entries.find({}, function(err, docs){
+            mainWindow.webContents.send("allMatches", {"matches" : docs});
+          })
+        }, 6000);
         break;
       case "c203":
           console.log("[BLE] All matches: ");
@@ -311,12 +312,13 @@ io.on('connection', (socket) => {
                 })
               }
             })
-            setTimeout(function(){
-              db.entries.find({}, function(err, docs){
-                mainWindow.webContents.send("allMatches", {"matches" : docs});
-              })
-            }, 5000);
+            
           })
+          setTimeout(function(){
+            db.entries.find({}, function(err, docs){
+              mainWindow.webContents.send("allMatches", {"matches" : docs});
+            })
+          }, 6000);
           break;
       case "c301":
         console.log("[BLE] Forced competition schema: " + message.data);
@@ -600,11 +602,15 @@ ipcMain.on("getMatches", (event, args) => {
 ipcMain.on('addManually', (event, args) => {
   console.log("ADDING MATCHES");
   listOfMatchObjects(args["schema"], args["competition"], args["file"], function(finalObjects){
+    var notified = finalObjects.length;
     finalObjects.forEach(element => {
       db.entries.insert(element, function(err, newDoc){
 
         db.entries.find({"Competition" : args["competition"]}, function(err, docs){
-          mainWindow.webContents.send("allMatches", {"matches" : docs});
+          notified--;
+          if(notified < 5){
+            mainWindow.webContents.send("allMatches", {"matches" : docs});
+          }
         })
       });
     });

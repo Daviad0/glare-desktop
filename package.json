@@ -40,6 +40,7 @@
     "@abandonware/bleno": "^0.5.1-4",
     "@abandonware/noble": "^1.9.2-14",
     "bleno": "^0.5.0",
+    "bmrequesttype": "0.0.5",
     "bootstrap": "4.2.1",
     "docxtemplater": "^3.16.3",
     "ejs": "^3.0.1",

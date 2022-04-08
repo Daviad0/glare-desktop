@@ -10,6 +10,7 @@ var path = require('path');
 const {app, BrowserWindow, dialog, ipcRenderer} = require('electron')
 const {ipcMain} = require('electron')
 const sudo = require('sudo-prompt');
+const usbService = require('./usb/usb.js');
 const {spawn} = require('child_process');
 // ok so BLE is in sudo-prompt
 // "this is so gonna work"
@@ -52,6 +53,8 @@ db.scouters.loadDatabase();
 db.notes.loadDatabase();
 db.flags.loadDatabase();
 db.plans.loadDatabase();
+
+usbService();
 
 const fs = require('fs')
 fs.readFile('./premade/Rapid React.json', 'utf8' , (err, data) => {

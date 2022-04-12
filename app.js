@@ -10,7 +10,7 @@ var path = require('path');
 const {app, BrowserWindow, dialog, ipcRenderer} = require('electron')
 const {ipcMain} = require('electron')
 const sudo = require('sudo-prompt');
-const usbService = require('./usb/usb.js');
+const usbService = require('./usb/usbButEasier.js');
 const {spawn} = require('child_process');
 // ok so BLE is in sudo-prompt
 // "this is so gonna work"

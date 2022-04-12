@@ -45,25 +45,26 @@ async function startUSB(){
       }
   }
 
+  getMatches(0998, 0999, "HIYA");
 
   var initPhases = [
     {
       "type" : bmRequestType(DIRECTION.In, TYPE.Vendor, RECIPIENT.Device),
-      "request" : 0x51,
+      "request" : 51,
       "value" : 0,
       "index" : 0,
       "data" : Buffer.from([1]),
     },
     {
       "type" : bmRequestType(DIRECTION.Out, TYPE.Vendor, RECIPIENT.Device),
-      "request" : 0x52,
+      "request" : 52,
       "value" : 0,
       "index" : 2,
       "data" : Buffer.from("Glare Server\0"),
     },
     {
       "type" : bmRequestType(DIRECTION.Out, TYPE.Vendor, RECIPIENT.Device),
-      "request" : 0x53,
+      "request" : 53,
       "value" : 0,
       "index" : 2,
       "data" : 0x00,
@@ -77,11 +78,11 @@ async function startUSB(){
 async function getMatches(reqSend, reqGet, data){
   var phaseModel = [
     {
-      "type" : bmRequestType(DIRECTION.In, TYPE.Vendor, RECIPIENT.Device),
-      "request" : 0x54,
+      "type" : Buffer.from([bmRequestType(DIRECTION.Out, TYPE.Vendor, RECIPIENT.Device)]),
+      "request" : 54,
       "value" : 0,
-      "index" : 0,
-      "data" : Buffer.from([reqSend, "\0", reqGet, "\0", data])
+      "index" : 2,
+      "data" : 4,
     },
   ]
   console.log(phaseModel);

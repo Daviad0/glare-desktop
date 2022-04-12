@@ -3,6 +3,13 @@ const net = require('net');
 const port = 6000;
 const host = 'localhost';
 
+const {io} = require('socket.io-client');
+const mSocket = io.connect("http://localhost:4004", {reconnect: true});
+mSocket.on("connect", function(instance){
+  mSocket.emit('Ping');
+})
+
+
 const server = net.createServer(function(){
   console.log("[SERVER] Started");
 });
@@ -23,6 +30,15 @@ const server = net.createServer(function(){
 
  */
 
+var pendingRequests = [];
+
+mSocket.on('addToQueue', (request) => {
+  pendingRequests.push(request);
+});
+
+var requestToHandle = undefined;
+
+
 server.on("connection", (socket) => { 
   console.log("new client connection is made", socket.remoteAddress + ":" + socket.remotePort); 
   socket.on("data", (data) => { 
@@ -30,13 +46,35 @@ server.on("connection", (socket) => {
     try{
       if(r.split(":")[0] == "0"){
         // DEV ID
-        console.log("Connected to " + r);
+        console.log("USB Connected to " + r);
         // look at getting the data from a selected object
-        socket.write(Buffer.from('1:0001*-*0002*-*helloworld!!!')); 
+        if(pendingRequests.filter(p => p.deviceId == r)){
+          requestToHandle = pendingRequests.splice(pendingRequests.findIndex((el) => el.deviceId == deviceId), 1)[0];
+          socket.write(Buffer.from("1:" + requestToHandle.protocolTo + "*-*" + requestToHandle.protocolFrom + "*-*" + requestToHandle.data));
+          
+        }else{
+          socket.write(Buffer.from("1:" + "a111" + "*-*" + "c203" + "*-*" + "USB Automatically Got Data..."));
+        }
+        
       }else if(r.split(":")[0] == "1"){
-        console.log("DATA RESPONSE: " + r);
-        socket.write(Buffer.from('2:END')); 
-        socket.destroy();
+        console.log("USB RESPONSE: " + r);
+        requestToHandle.data = r;
+        mSocket.emit("requestFinished", requestToHandle);
+
+
+        
+
+        socket.write(Buffer.from('3:HOLD')); 
+        
+      }else{
+        // HOLD
+        if(pendingRequests.filter(p => p.deviceId == r)){
+          requestToHandle = pendingRequests.splice(pendingRequests.findIndex((el) => el.deviceId == deviceId), 1)[0];
+          socket.write(Buffer.from("1:" + requestToHandle.protocolTo + "*-*" + requestToHandle.protocolFrom + "*-*" + requestToHandle.data));
+          
+        }else{
+          socket.write(Buffer.from("3:HOLD"));
+        }
       }
     }catch(e){
       console.log("ERROR, Data was " + r);

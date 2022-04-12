@@ -71,14 +71,6 @@ fs.readFile('./premade/Rapid React.json', 'utf8' , (err, data) => {
   })
 })
 
-db.requests.insert({
-  deviceId : "A00000",
-  protocolTo : "A111",
-  protocolFrom : "0998",
-  communicationId : "12345678",
-  data : "Hello world!",
-  sentAt : Date.now()
-})
 
 
 
@@ -210,41 +202,42 @@ io.on('connection', (socket) => {
   socket.on("externalDebug", (object) => {
     //console.log(object);
   });
+  
   socket.on("requestFinished", (message) => {
     
     switch(message.protocolFrom){
       case "0001":
-        console.log("[BLE] Well SOMEONE didn't read the instructions")
+        console.log("[COMM] Well SOMEONE didn't read the instructions")
         break;
       case "0998":
-        console.log("[BLE] Pong!")
+        console.log("[COMM] Pong!")
         break;
       case "0999":
         console.log(message.data);
         break;
       case "a101":
-        console.log("[BLE] Locking state: " + message.data)
+        console.log("[COMM] Locking state: " + message.data)
         break;
       case "a111":
-        console.log("[BLE] HR has to deal with the following complaints: " + message.data)
+        console.log("[COMM] HR has to deal with the following complaints: " + message.data)
         break;
       case "a201":
-        console.log("[BLE] Diagnostics: " + message.data)
+        console.log("[COMM] Diagnostics: " + message.data)
         break;
       case "a202":
-        console.log("[BLE] Failed to compile diagnostic data")
+        console.log("[COMM] Failed to compile diagnostic data")
         break;
       case "a301":
-        console.log("[BLE] Current locking state: " + message.data)
+        console.log("[COMM] Current locking state: " + message.data)
         break;
       case "a701":
-        console.log("[BLE] LockDOWN state: " + message.data)
+        console.log("[COMM] LockDOWN state: " + message.data)
         break;
       case "a711":
-        console.log("[BLE] Your code provided was... " + message.data)
+        console.log("[COMM] Your code provided was... " + message.data)
         break;
       case "a801":
-        console.log("[BLE] Logs: " + message.data)
+        console.log("[COMM] Logs: " + message.data)
         var logs = JSON.parse(message.data);
         var finalString = "";
         logs.forEach((log) => {
@@ -258,19 +251,19 @@ io.on('connection', (socket) => {
         });
         break;
       case "a811":
-        console.log("[BLE] Emergency medical information: " + message.data)
+        console.log("[COMM] Emergency medical information: " + message.data)
         break;
       case "a901":
-        console.log("[BLE] Current debugging state: " + message.data)
+        console.log("[COMM] Current debugging state: " + message.data)
         break;
       case "c101":
-        console.log("[BLE] All schemas: " + message.data);
+        console.log("[COMM] All schemas: " + message.data);
         break;
       case "c201":
-        console.log("[BLE] All matches W/O data: " + message.data);
+        console.log("[COMM] All matches W/O data: " + message.data);
         break;
       case "c202":
-        console.log("[BLE] Updated matches: " + message.data);
+        console.log("[COMM] Updated matches: " + message.data);
         var matches = JSON.parse(message.data);
         matches.forEach(match => {
           db.entries.findOne({_id: match._id}, function(err, doc){
@@ -297,7 +290,7 @@ io.on('connection', (socket) => {
         }, 6000);
         break;
       case "c203":
-          console.log("[BLE] All matches: ");
+          console.log("[COMM] All matches: ");
           var matches = JSON.parse(message.data);
           matches.forEach(match => {
             db.entries.findOne({_id: match._id}, function(err, doc){
@@ -324,19 +317,19 @@ io.on('connection', (socket) => {
           }, 6000);
           break;
       case "c301":
-        console.log("[BLE] Forced competition schema: " + message.data);
+        console.log("[COMM] Forced competition schema: " + message.data);
         break;
       case "c401":
-        console.log("[BLE] All users: " + message.data);
+        console.log("[COMM] All users: " + message.data);
         break;
       case "c501":
-        console.log("[BLE] Last backup time: " + message.data);
+        console.log("[COMM] Last backup time: " + message.data);
         break;
       case "c701":
-        console.log("[BLE] Competition security state mode: " + message.data);
+        console.log("[COMM] Competition security state mode: " + message.data);
         break;
       case "e999":
-        console.log("[BLE] Request Failed! Adding to Queue... ");
+        console.log("[COMM] Request Failed! Adding to Queue... ");
         io.emit('addToQueue', message);
         break;
     }
@@ -445,17 +438,17 @@ function startChildProcess(){
       var btpath = path.join(__dirname, "bluetooth/hostingBLE.js")
       child = spawn('sudo', ['node',btpath]);
       child.on('exit', function(code, signal){
-        console.log("[BLE] Child process exited with code " + code + " and signal " + signal);
+        console.log("[COMM] Child process exited with code " + code + " and signal " + signal);
       });
       child.on('error', function(err){
-        console.log("[BLE] Error: " + err);
+        console.log("[COMM] Error: " + err);
       });
       child.on('close', function(code, signal){
-        console.log("[BLE] Child process closed with code " + code + " and signal " + signal);
+        console.log("[COMM] Child process closed with code " + code + " and signal " + signal);
       });
       child.stdout.on('data', function(data){
         
-        console.log("[BLE] " + data);
+        console.log("[COMM] " + data);
       });
       child.stderr.on('data', function(data){
         if(!data.includes("buffer overflow")){

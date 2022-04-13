@@ -65,8 +65,7 @@ server.on("connection", (socket) => {
         
       }else if(r.split(":")[0] == "1"){
         r = r.substring(2);
-        console.log("USB RESPONSE: " + r);
-        requestToHandle.data = r;
+        requestToHandle.data += r;
         mSocket.emit("requestFinished", requestToHandle);
 
 
@@ -74,17 +73,13 @@ server.on("connection", (socket) => {
 
         socket.write(Buffer.from('3:HOLD')); 
         
-<<<<<<< Updated upstream
-      }else{
-        r = r.substring(2);
-=======
       }else if(r.split(":")[0] == "4"){
         // partial packet
-
-        requestToHandle.data += r.split(":")[1];
+        r = r.substring(2);
+        requestToHandle.data += r;
+        socket.write(Buffer.from('4:CONTINUE'));
       }
       else{
->>>>>>> Stashed changes
         // HOLD
         console.log("USB HOLD: " + requestToHandle.deviceId);
         if(pendingRequests.filter(p => p.deviceId == requestToHandle.deviceId).length > 0){

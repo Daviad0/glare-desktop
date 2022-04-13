@@ -66,6 +66,7 @@ server.on("connection", (socket) => {
       }else if(r.split(":")[0] == "1"){
         r = r.substring(2);
         requestToHandle.data += r;
+        console.log("FINISH: " + requestToHandle.data);
         mSocket.emit("requestFinished", requestToHandle);
 
 
@@ -76,6 +77,7 @@ server.on("connection", (socket) => {
       }else if(r.split(":")[0] == "4"){
         // partial packet
         r = r.substring(2);
+        console.log("CONTINUE")
         requestToHandle.data += r;
         socket.write(Buffer.from('4:CONTINUE'));
       }

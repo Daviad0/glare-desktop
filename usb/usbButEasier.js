@@ -46,17 +46,25 @@ server.on("connection", (socket) => {
     try{
       if(r.split(":")[0] == "0"){
         // DEV ID
+        r = r.substring(2);
         console.log("USB Connected to " + r);
         // look at getting the data from a selected object
-        if(pendingRequests.filter(p => p.deviceId == r)){
-          requestToHandle = pendingRequests.splice(pendingRequests.findIndex((el) => el.deviceId == deviceId), 1)[0];
+        if(pendingRequests.filter(p => p.deviceId == r).length > 0){
+          requestToHandle = pendingRequests.splice(pendingRequests.findIndex((el) => el.deviceId == r), 1)[0];
           socket.write(Buffer.from("1:" + requestToHandle.protocolTo + "*-*" + requestToHandle.protocolFrom + "*-*" + requestToHandle.data));
           
         }else{
+          requestToHandle = {
+            deviceId : r,
+            protocolTo : "a111",
+            protocolFrom : "c203",
+            data : ""
+          }
           socket.write(Buffer.from("1:" + "a111" + "*-*" + "c203" + "*-*" + "USB Automatically Got Data..."));
         }
         
       }else if(r.split(":")[0] == "1"){
+        r = r.substring(2);
         console.log("USB RESPONSE: " + r);
         requestToHandle.data = r;
         mSocket.emit("requestFinished", requestToHandle);
@@ -67,9 +75,11 @@ server.on("connection", (socket) => {
         socket.write(Buffer.from('3:HOLD')); 
         
       }else{
+        r = r.substring(2);
         // HOLD
-        if(pendingRequests.filter(p => p.deviceId == r)){
-          requestToHandle = pendingRequests.splice(pendingRequests.findIndex((el) => el.deviceId == deviceId), 1)[0];
+        console.log("USB HOLD: " + requestToHandle.deviceId);
+        if(pendingRequests.filter(p => p.deviceId == requestToHandle.deviceId).length > 0){
+          requestToHandle = pendingRequests.splice(pendingRequests.findIndex((el) => el.deviceId == requestToHandle.deviceId), 1)[0];
           socket.write(Buffer.from("1:" + requestToHandle.protocolTo + "*-*" + requestToHandle.protocolFrom + "*-*" + requestToHandle.data));
           
         }else{
@@ -77,6 +87,7 @@ server.on("connection", (socket) => {
         }
       }
     }catch(e){
+      console.log(e);
       console.log("ERROR, Data was " + r);
     }
     

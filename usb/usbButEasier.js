@@ -49,6 +49,7 @@ server.on("connection", (socket) => {
         // DEV ID
         r = r.substring(2);
         console.log("USB Connected to " + r);
+        socket.emit("newDevice", { name: peripheral.advertisement.localName });
         // look at getting the data from a selected object
         if(pendingRequests.filter(p => p.deviceId == r).length > 0){
           requestToHandle = pendingRequests.splice(pendingRequests.findIndex((el) => el.deviceId == r), 1)[0];

@@ -52,7 +52,7 @@ server.on("connection", (socket) => {
         if(pendingRequests.filter(p => p.deviceId == r).length > 0){
           requestToHandle = pendingRequests.splice(pendingRequests.findIndex((el) => el.deviceId == r), 1)[0];
           socket.write(Buffer.from("1:" + requestToHandle.protocolTo + "*-*" + requestToHandle.protocolFrom + "*-*" + requestToHandle.data));
-          
+          requestToHandle.data = "";
         }else{
           requestToHandle = {
             deviceId : r,
@@ -74,8 +74,17 @@ server.on("connection", (socket) => {
 
         socket.write(Buffer.from('3:HOLD')); 
         
+<<<<<<< Updated upstream
       }else{
         r = r.substring(2);
+=======
+      }else if(r.split(":")[0] == "4"){
+        // partial packet
+
+        requestToHandle.data += r.split(":")[1];
+      }
+      else{
+>>>>>>> Stashed changes
         // HOLD
         console.log("USB HOLD: " + requestToHandle.deviceId);
         if(pendingRequests.filter(p => p.deviceId == requestToHandle.deviceId).length > 0){

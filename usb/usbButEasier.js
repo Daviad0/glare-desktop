@@ -43,6 +43,7 @@ server.on("connection", (socket) => {
   console.log("new client connection is made", socket.remoteAddress + ":" + socket.remotePort); 
   socket.on("data", (data) => { 
     var r = data.toString();
+	console.log(r);
     try{
       if(r.split(":")[0] == "0"){
         // DEV ID
